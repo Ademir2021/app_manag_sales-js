@@ -1,0 +1,9 @@
+span {
+  color:white;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+}
+
