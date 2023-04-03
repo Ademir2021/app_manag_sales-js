@@ -6,7 +6,7 @@ const option = document.getElementById("options")
 const total = document.getElementById("total");
 const userLogin = document.getElementById("user")
 let id = 1
-const itens = [{ disc_sale: 2.00, fk_name_pers: 1, user: "" }]
+const itens = [{ disc_sale: 2.00, fk_name_pers: 0, user: "", filial:0, user_id:0 }]
 let editId = null
 insertItem() /**Importante !! já inicia invocando esta função */
 
@@ -18,6 +18,9 @@ async function auth() {
     else if (user != null) {
         userLogin.innerHTML = `User Logado: ${user[0].username}`
         itens[0].user = user[0].username
+        itens[0].user_id = user[0].id
+        itens[0].filial = 1
+        itens[0].fk_name_pers = 4
     }
 } auth()
 

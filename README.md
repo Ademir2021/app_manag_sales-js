@@ -9,7 +9,7 @@
 
 - useCase    [x]
 - /home      [x]
-- /persons   []
+- /persons   [x]
 - /products  [x]
 - /sales     [x]
 - /users     [x]
