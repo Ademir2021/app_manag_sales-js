@@ -13,7 +13,7 @@
 <body>
   <header>
     <h1>Console de Vendas</h1>
-    <p id="user"></p>
+   
   </header>
   <main>
     <datalist id="data_itens">
@@ -37,8 +37,8 @@
         <thead>
           <th class="center">ID</th>
           <th class="center">Item</th>
-          <th class="">Descrição Produto(s)</th>
-          <th class="center">Quantidade</th>
+          <th class="">Descrição</th>
+          <th class="center">Quant.</th>
           <th class="center">Valor</th>
           <th class="center">T-Item</th>
           <th class="center">Ações</th>
@@ -48,8 +48,16 @@
       </table>
     </div><br>
     <div class="total" id="total"></div>
-    <span><a href="/">Voltar</a></span>
+
+    <div class="sub-menu">
+    <p id="user"></p><br />
+    <p id="client"><strong>Comprador:</strong>Comsumidor</p><br />
+    <span><a href="/">Encerrar</a></span>
+    </div>
   </main>
+  <footer>
+    <strong>Intregração de Vendas - 2023 1.0.0</strong>
+  </footer>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./js/script.js"></script>
 </body>

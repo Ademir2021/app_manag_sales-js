@@ -16,11 +16,11 @@ async function auth() {
         window.location.replace("/login");
     }
     else if (user != null) {
-        userLogin.innerHTML = `User Logado: ${user[0].username}`
+        userLogin.innerHTML = `<b>Usuário</b>: ${user[0].username}`
         itens[0].user = user[0].username
         itens[0].user_id = user[0].id
         itens[0].filial = 1
-        itens[0].fk_name_pers = 4
+        itens[0].fk_name_pers = 1
     }
 } auth()
 
@@ -184,8 +184,9 @@ function payment(sum) {
             alert("venda está sendo enviada ...")
             registerSale()
             alert("Venda enviada com Sucesso !!")
-            localStorage.removeItem('u');
-            window.location.reload();
+            // localStorage.removeItem('u');
+            // window.location.reload();
+            
         } else {
             let aPagar = tProducts - payment
             alert("O valor não bate com o Total dos Produtos !" +
@@ -198,7 +199,9 @@ async function registerSale(e) {
     event.preventDefault(e)
     await axios.post(urlSales, itens)
         .then(response => {
-            alert(JSON.stringify(response.data))
+            alert(JSON.stringify("Venda num: " + response.data + " efetuada com Sucesso"))
+            const num_sale = response.data
+            window.location.replace(`http://localhost:3000/note/${num_sale}`)
         })
         .catch(error => console.log(error))
 }

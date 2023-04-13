@@ -6,12 +6,12 @@ import api from '../../services/api/api'
 export function FormProduct() {
 
     const [product, setProduct] = useState<IProduct>({
-        descric_product: 'Mouse Serial',
-        val_max_product: 23,
-        val_min_product: 19,
+        descric_product: '',
+        val_max_product: 0,
+        val_min_product: 0,
         fk_brand: 1,
         fk_sector: 1,
-        bar_code: '123'
+        bar_code: ''
     })
 
     const handleChange = (e: any) => {

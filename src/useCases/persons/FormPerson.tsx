@@ -6,9 +6,9 @@ import api from '../../services/api/api'
 export function FormPerson() {
 
     const [person, setPerson] = useState<IPerson>({
-        name_pers: "Ademir",
-        cpf_pers: "323232",
-        address_pers: "Avenida Brasil",
+        name_pers: "",
+        cpf_pers: "",
+        address_pers: "",
         fk_name_filial: 1
     })
 

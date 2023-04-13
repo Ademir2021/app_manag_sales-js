@@ -9,11 +9,11 @@ body {
 }
 
 header {
-    background-color: rgb(33, 33, 32);
+    background-color: rgb(129, 129, 92);
     border-radius: 5px;
     width: 89%;
-    padding: 10px;
-    color: #ffffff;
+    padding: 1rem;
+    /* color: #ffffff; */
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -22,26 +22,26 @@ header {
 
 .card {
     /* background-color: #fff; */
-    background-color:rgb(33, 33, 32);
+    background-color:rgb(204, 204, 196);
     /* border: 3px solid #ccc; */
     margin-left: auto;
     margin-right: auto;
-    width: 6em;
+    /* width: 40rem; */
     width: 89%;
     padding: 20px;
-    margin-top: 15px;
+    margin-top: 1rem;
     border-radius: 5px;
 
 }
 
 label{
-    color:rgb(100, 100, 100);
+    color:rgb(223, 217, 217);
     margin-left: auto;
     margin-right: auto;
 }
 
 main {
-    padding: 30px 50px;
+    padding: 2rem 3rem;
 }
 
 .line_input {
@@ -106,16 +106,16 @@ table {
 }
 
 table th {
-    /* background-color: rgb(214, 214, 214); */
-    background-color: rgb(33, 33, 32);
+    background-color: rgb(214, 214, 214);
+    /* background-color:rgb(204, 204, 196) */
 }
 
 table th,
 td {
-    padding: 1px 5px;
-    font-size: 12px;
+    padding: 1px .33rem;
+    font-size: 0.80rem;
     text-align: left;
-    color: blue;
+    background-color: #ccc;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
 }
 
@@ -129,15 +129,37 @@ table td img {
 }
 
 .total {
-    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Courier New', Courier, monospace; */
     padding: 3px;
     width:89%;
-    font-size: 18px;
-    background:rgb(300,300,300);
-    border:3px solid #ccc;
-    color:rgb(100, 100, 100);
+    font-size: 1rem;
+    /* background:rgb(300,300,300); */
+    /* border:3px solid #ccc; */
+    /* color:rgb(100, 100, 100); */
     text-align: right;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     margin-left: auto;
     margin-right: auto;
+}
+
+.sub-menu{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    width:89%;
+    border-radius: 3px;
+    border: 1px solid #b6aaaa;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    background-color: rgb(214, 214, 214);
+    font-size: 0.8rem;
+    display: block;
+    text-decoration: none;
+}
+footer{
+    width:89%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    text-align: center;
+    font-size: 0.9rem;
 }
