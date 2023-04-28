@@ -14,6 +14,7 @@ export function Links() {
                 <li> <Link to="/list_product">Listar Produtos</Link> </li>
                 <li> <Link to="/form_person">Registrar Pessoas</Link> </li>
                 <li> <Link to="/list_person">Listar Pessoas</Link> </li>
+                <li> <Link to="/user_update">Atualizar Usuarios</Link> </li>
             </ul>
         </nav>
     )

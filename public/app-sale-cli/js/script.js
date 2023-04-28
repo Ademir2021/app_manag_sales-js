@@ -199,7 +199,7 @@ async function registerSale(e) {
     event.preventDefault(e)
     await axios.post(urlSales, itens)
         .then(response => {
-            alert(JSON.stringify("Venda num: " + response.data + " efetuada com Sucesso"))
+            alert(JSON.stringify("Venda Nº:" + response.data + " efetuada com Sucesso"))
             const num_sale = response.data
             window.location.replace(`http://localhost:3000/note/${num_sale}`)
         })

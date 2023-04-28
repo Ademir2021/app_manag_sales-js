@@ -10,6 +10,7 @@ import { FormProduct } from "./useCases/products/FormProduct";
 import { ListProduct } from './useCases/products/ListProduct';
 import { FormPerson } from "./useCases/persons/FormPerson";
 import { ListPerson } from './useCases/persons/ListPerson';
+import { UserUpdate } from "./useCases/users/UserUpdate";
 
 export function AppRoutes() {
 
@@ -26,6 +27,7 @@ export function AppRoutes() {
                 <Route path="/list_product" Component={ListProduct} />
                 <Route path="/form_person" Component={FormPerson} />
                 <Route path="/list_person" Component={ListPerson} />
+                <Route path="/user_update" Component={UserUpdate} />
 
             </Routes>
         </Router>
