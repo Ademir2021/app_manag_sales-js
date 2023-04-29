@@ -3,24 +3,23 @@
     position: relative;
     width: 1440px;
     height: 38rem;
-    /* background: #cecfd8; */
-
-    width: 30rem;
+    background:#cfd1db;
+    width: 86%;
     margin-left: auto;
     margin-right: auto;
+    /* border-radius: 8px; */
 }
 
 .main {
     box-sizing: border-box;
     position: relative;
     height: 38rem;
-    background: rgba(120, 241, 197, 0.31);
-    border: 1px solid rgba(225, 225, 243, 0.17);
+    background:#cbd8e7;
+    border:blue solid 2px;
     border-radius: 8px;
-    width: 28rem;
+    width: 390px;
     margin-left: auto;
     margin-right: auto;
-    border: #291d74 solid;
 }
 
 .header {
@@ -29,7 +28,8 @@
     height: 6rem;
     left: 0.4rem;
     top: 4rem;
-    background: rgba(62, 154, 82, 0.19);
+    border: blue solid 2px;
+    border-radius: 6px;
     border-radius: 6px;
 }
 
@@ -42,18 +42,22 @@
     font-size: 26px;
     font-family: 'Courier New', Courier, monospace;
     line-height: 4rem;
-    color:blue;
+    color: #000000;
 }
 
 .foto-user {
+    display: flex;
+    padding: 2px 2px 1px px;
     position: absolute;
-    width: 8rem;
-    height: 9rem;
+    width: 7rem;
+    height: 8rem;
     left: 0.4rem;
     top: 11rem;
-    border-radius: 6px;
-    background: url('../../../public/img/perfil_user.png');
+    border-radius: 7px;
+    border: blue solid 1px;
+    background: url('../../../public/img/avatar.png');
 }
+
 
 .text-id {
     position: absolute;
@@ -94,6 +98,7 @@
     height: 1px;
     left: 9rem;
     top: 13rem;
+    border: blue solid 1px;
 
 }
 
@@ -103,6 +108,7 @@
     height: 1px;
     left: 9rem;
     top: 17.5rem;
+    border: blue solid 1px;
 }
 
 .in-email {
@@ -112,17 +118,19 @@
     left: 9rem;
     top: 21.5rem;
     background: #FFFFFF;
+    border: blue solid 1px;
 }
 
 .btn-ant {
     position: absolute;
     width: 5rem;
     height: 2rem;
-    left:7.8rem;
+    left: 7.8rem;
     top: 23.5rem;
     font-weight: 1px;
     font-size: 14px;
     line-height: 1px;
+    color: #000000;
 }
 
 .btn-prox {
@@ -134,31 +142,38 @@
     font-weight: 1px;
     font-size: 14px;
     line-height: 1px;
+    color: #000000;
 }
 
 .register {
     position: absolute;
-    width: 6rem;
-    height: 6rem;
-    left: 0.4rem;
-    top: 29.5rem;
+    width: 3.7rem;
+    height: 3.7rem;
+    left: 8rem;
+    top: 27rem;
+    border: blue solid 1px;
+    border-radius: 6px;
     background: url('../../../public/img/register.png');
 }
 
 .update {
     position: absolute;
-    width: 6rem;
-    height: 6rem;
-    left: 9rem;
-    top: 29.5rem;
+    width: 3.7rem;
+    height: 3.7rem;
+    left: 13.2rem;
+    top: 27rem;
+    border: blue solid 1px;
+    border-radius: 6px;
     background: url('../../../public/img/update.png');
 }
 
 .delete {
     position: absolute;
-    width: 6rem;
-    height: 6rem;
-    left: 19.2rem;
-    top: 29.5rem;
+    width: 3.7rem;
+    height: 3.7rem;
+    left: 18.5rem;
+    top: 27rem;
+    border: blue solid 1px;
+    border-radius: 6px;
     background: url('../../../public/img/delete.png')
 }

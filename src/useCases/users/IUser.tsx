@@ -17,3 +17,9 @@ export type IUsers = {
   username:string;
   password:string;
 }
+
+export type UpIUsers ={
+  id:number;
+  name:string;
+  username:string;
+}
