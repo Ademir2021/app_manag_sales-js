@@ -2,13 +2,12 @@ import React from "react"
 
 import { IUsers } from '../../useCases/users/IUser';
 
-
 // interface Props{
 //    user :IUsers
 // }
 
 const ListUSers:React.FC<any> = (
-    { id, created_at, name, username, password }:IUsers) => {
+    { id, created_at, name, username, password, link }:IUsers) => {
 
     return (
         <>
@@ -18,6 +17,7 @@ const ListUSers:React.FC<any> = (
                 <strong>Nome Completo: </strong> {name} <br />
                 <strong>Email: </strong> {username} <br />
                 {/* <strong>Senha: </strong> {password} <br /> */}
+                <strong>Editar: </strong> {link} <br />
                 <br />
             </div>
         </>

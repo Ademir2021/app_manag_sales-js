@@ -16,10 +16,12 @@ export type IUsers = {
   name:string;
   username:string;
   password:string;
+  link?:any;
 }
 
-export type UpIUsers ={
+export type IUpdUsers ={
   id:number;
   name:string;
   username:string;
+  password?:string;
 }

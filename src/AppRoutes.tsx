@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { HomePage } from "./useCases/home/HomePage";
 import { UserLogin } from './useCases/users/UserLogin';
 import { UserRegister } from './useCases/users/UserRegister';
-import { SetUsers } from './useCases/users/UserList';
+import { ListUsers } from './useCases/users/UserList';
 import { Sale } from './components/sales/Sale';
 import { ListSales } from './useCases/sales/ListSale';
 import { FormProduct } from "./useCases/products/FormProduct";
@@ -20,7 +20,7 @@ export function AppRoutes() {
                 <Route path="/" Component={HomePage} />
                 <Route path="/login" Component={UserLogin} />
                 <Route path="/register" Component={UserRegister} />
-                <Route path="/listar" Component={SetUsers} />
+                <Route path="/listar" Component={ListUsers} />
                 <Route path="/sale" Component={Sale} />
                 <Route path="/list_sale" Component={ListSales} />
                 <Route path="/form_product" Component={FormProduct} />

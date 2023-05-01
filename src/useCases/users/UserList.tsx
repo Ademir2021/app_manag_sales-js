@@ -5,7 +5,7 @@ import { FormatDate } from "../../components/utils/formatDate";
 import { IUsers } from './IUser'
 import api from '../../services/api/api'
 
-export function SetUsers() {
+export function ListUsers() {
 
   const [users, setUsers] = useState<IUsers[]>([])
 
@@ -32,6 +32,7 @@ export function SetUsers() {
             name={user.name}
             username={user.username}
           // password={user.password}
+          link={<a href="http://localhost:3001/user_update">Update{user.id}</a>}
           />
         )))}
     </>

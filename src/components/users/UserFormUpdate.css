@@ -15,7 +15,7 @@
     position: relative;
     height: 38rem;
     background:#cbd8e7;
-    border:blue solid 2px;
+    /* border:blue solid 2px; */
     border-radius: 8px;
     width: 390px;
     margin-left: auto;
@@ -28,7 +28,7 @@
     height: 6rem;
     left: 0.4rem;
     top: 4rem;
-    border: blue solid 2px;
+    /* border: blue solid 2px; */
     border-radius: 6px;
     border-radius: 6px;
 }
@@ -54,7 +54,7 @@
     left: 0.4rem;
     top: 11rem;
     border-radius: 7px;
-    border: blue solid 1px;
+    /* border: blue solid 1px; */
     background: url('../../../public/img/avatar.png');
 }
 
@@ -151,7 +151,7 @@
     height: 3.7rem;
     left: 8rem;
     top: 27rem;
-    border: blue solid 1px;
+    /* border: blue solid 1px; */
     border-radius: 6px;
     background: url('../../../public/img/register.png');
 }
@@ -162,7 +162,7 @@
     height: 3.7rem;
     left: 13.2rem;
     top: 27rem;
-    border: blue solid 1px;
+    /* border: blue solid 1px; */
     border-radius: 6px;
     background: url('../../../public/img/update.png');
 }
@@ -173,7 +173,7 @@
     height: 3.7rem;
     left: 18.5rem;
     top: 27rem;
-    border: blue solid 1px;
+    /* border: blue solid 1px; */
     border-radius: 6px;
     background: url('../../../public/img/delete.png')
 }

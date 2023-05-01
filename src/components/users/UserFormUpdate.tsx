@@ -7,8 +7,8 @@ export function UserFormUptdate({handleChange,
                                  handleSubmit,
                                  handleUpdate,
                                  handleDelete,
-                                 handleDecrement,
                                  handleIncrement,
+                                 handleDecrement,
                                  submit}:any) {
     return (
         <>
@@ -24,17 +24,19 @@ export function UserFormUptdate({handleChange,
                             className="in-id"
                             type="text"
                             name="id"
-                            placeholder="ID"
+                            // placeholder="ID"
                             value={children.id || ""}
                             onChange={handleChange}
                         />
+                           <label className="text-id">ID</label>
                         <label className="text-user" >Nome do Usuário</label>
                         <input
                             className="in-user"
-                            type="text"
+                            // list={children.name}
+                            type="search"
                             name="name"
-                            placeholder="Nome do Usúario"
-                            value={children.name || ""}
+                            placeholder="Nome do Usuário"
+                            value={children.name}
                             onChange={handleChange}
                         />
                         <label className="text-email">Email do Usuário</label>
@@ -43,27 +45,27 @@ export function UserFormUptdate({handleChange,
                             type="email"
                             name="username"
                             placeholder="Email do Usuário"
-                            value={children.username || ""}
+                            value={children.username}
                             onChange={handleChange}
                         />
                         <button className="register" type={submit}></button>
                         </form>
                         
                         <form onSubmit={handleUpdate}>
-                        <button className="update" type={submit}>ss</button>
+                        <button className="update" type={submit}></button>
                         </form>
 
                         <form onSubmit={handleDelete}>
                         <button className="delete" type={submit}></button>
                         </form>
                     
-                        <form onSubmit={handleDecrement}>
+                        {/* <form onSubmit={handleDecrement}>
                         <button type={submit} className="btn-ant">Anterior</button>
                         </form>
 
                         <form onSubmit={handleIncrement}>
                         <button type={submit} className="btn-prox">Próximo</button>
-                        </form>
+                        </form> */}
                 </div>
             </div>
         </>
