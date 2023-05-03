@@ -24,8 +24,8 @@ export function UserFormUptdate({handleChange,
                             className="in-id"
                             type="text"
                             name="id"
-                            // placeholder="ID"
-                            value={children.id || ""}
+                            placeholder="ID"
+                            value={children.id || 0}
                             onChange={handleChange}
                         />
                            <label className="text-id">ID</label>
@@ -59,13 +59,14 @@ export function UserFormUptdate({handleChange,
                         <button className="delete" type={submit}></button>
                         </form>
                     
-                        {/* <form onSubmit={handleDecrement}>
+                        <form onSubmit={handleDecrement}>
                         <button type={submit} className="btn-ant">Anterior</button>
                         </form>
 
                         <form onSubmit={handleIncrement}>
                         <button type={submit} className="btn-prox">Próximo</button>
-                        </form> */}
+                        </form>
+                        
                 </div>
             </div>
         </>

@@ -16,11 +16,12 @@ export type IUsers = {
   name:string;
   username:string;
   password:string;
-  link?:any;
+  update?:any;
 }
 
 export type IUpdUsers ={
   id:number;
+  created_at?:any
   name:string;
   username:string;
   password?:string;

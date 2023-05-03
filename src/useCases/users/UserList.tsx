@@ -7,7 +7,7 @@ import api from '../../services/api/api'
 
 export function ListUsers() {
 
-  const [users, setUsers] = useState<IUsers[]>([])
+const [users, setUsers] = useState<IUsers[]>([])
 
   async function getUSers() {
     await api.get<IUsers[]>('/users')
@@ -31,8 +31,8 @@ export function ListUsers() {
             created_at={FormatDate(user.created_at)}
             name={user.name}
             username={user.username}
-          // password={user.password}
-          link={<a href="http://localhost:3001/user_update">Update{user.id}</a>}
+            password={user.password}
+          // update={<a href="http://localhost:3001/user_update">Update{user.id}</a>}
           />
         )))}
     </>

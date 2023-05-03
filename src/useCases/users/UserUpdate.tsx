@@ -1,8 +1,11 @@
+import React from "react"
 import { useState, useEffect } from 'react';
 import { UserFormUptdate } from "../../components/users/UserFormUpdate";
 
+import { FormatDate } from "../../components/utils/formatDate";
 import { IUpdUsers } from './IUser'
 import api from '../../services/api/api'
+import { ListUSers } from "../../components/users/UserList";
 
 export function UserUpdate() {
     let [counter, updateCounter] = useState(0)
@@ -14,16 +17,16 @@ export function UserUpdate() {
         password: "$2a$10$fCflcY3us.ENJ/I/mTeQ2uaFMdLNFF6nKj07qwx7cce6krVv2XcNy"
     })
 
-    function listUpdate(id:any, name: any, username: any) {
+    function listUpdate(id: number, name: string, username: string) {
         user.id = id
         user.name = name
         user.username = username
-        counter = id
         getUsers()
     }
-    
+
     function handleDecrement(e: any) {
         e.preventDefault();
+        getUsers()
         if (counter > 1) {
             updateCounter(counter - 1)
         } else {
@@ -33,7 +36,8 @@ export function UserUpdate() {
 
     function handleIncrement(e: any) {
         e.preventDefault();
-        if (user.name || user.username !== "") {
+        getUsers()
+        if (counter != null) {
             // user.name = ""
             // user.username = ""
             updateCounter(counter + 1)
@@ -64,9 +68,8 @@ export function UserUpdate() {
     }
 
     async function getUsers() {
-
         await api.get<IUpdUsers[]>(`/users`)
-            .then(response => {
+        .then(response => {
                 const res: IUpdUsers[] = response.data
                 setUsers(res)
                 for (let i = 0; res.length > i; i++) {
@@ -80,8 +83,9 @@ export function UserUpdate() {
 
     useEffect(() => {
         getUsers()
-    }, [user.id])
+    }, [user.id] )
 
+  
     async function handleSubmit(e: any) {
         e.preventDefault();
         if (user.name && user.username != "") {
@@ -114,16 +118,26 @@ export function UserUpdate() {
             >
                 {user}
             </UserFormUptdate>
-            {users.map((user) =>
-                <div style={{ color: "blue" }} key={user.id}>
-                    <p>{user.id}</p>
-                    <p>{user.name}</p>
-                    <p>{user.username}</p>
-                    <button onClick={() =>
-                        listUpdate(user.id, user.name, user.username)}>
-                        <a style={{ color: "white" }} href='#'>Update</a></button>
-                </div>
-            )}
+
+            <div></div>
+            {users.length === 0 ? <p>Carregando...</p> : (
+                users.map((user) => (
+                    <ListUSers
+                        key={user.id}
+                        id={user.id}
+                        created_at={FormatDate(user.created_at)}
+                        name={user.name}
+                        username={user.username}
+                        password={user.password}
+                        update={<div onClick={() =>
+                            listUpdate(user.id, user.name, user.username)}>
+                             <a style={{textDecoration:"none",
+                             color:"white"}}
+                             href='#'>Atualizar</a></div>}
+                    />
+                )))}
+                                
         </>
     )
 }
+
