@@ -16,7 +16,7 @@ const ListUSers: React.FC<any> = (
                         <strong className="list_create">Criado: </strong><strong>{created_at}</strong><br />
                         <strong className="list_name">Nome Completo: </strong><strong>{name}</strong><br />
                         <strong className="list_email">Email: </strong><strong>{username}</strong><br />
-                        <strong className="list_password">Senha: </strong><strong>{password}</strong><br />
+                        {/* <strong className="list_password">Senha: </strong><strong>{password}</strong><br /> */}
                         <button className="btn_update">{update}</button>
                     </div>
                 </div>

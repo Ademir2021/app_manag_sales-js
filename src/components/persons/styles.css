@@ -2,12 +2,11 @@
     background-color: black;
     display: flex;
 }
-
 .fieldset{ 
     border-radius: var(--label-border-radius);
-    /* border: black solid 1px; */
+    border: black solid 1px;
     font-family: var(--label-font-family);
-    color: var(--label-color)
+    color: var(--label-color);
 }
 .main{
     padding: 16px;
@@ -17,35 +16,15 @@
     margin-right: auto;
     width: 90%;
     height: auto;
-    /* background-color: darkgray; */
+    /* background-color: rgb(197, 170, 170); */
     border-radius: var(--label-border-radius);
-}
-.container{
-    display:flex;
-    /* position: relative; */
-    /* padding: 3px; */
-    /* margin: auto; */
-    /* height: 6rem; */
-    /* width: auto; */
-    margin-left: auto;
-    margin-right: auto;
-    /* background: #e7e8ee; */
-    border-radius: var(--label-border-radius);
-    /* border: rgb(69, 69, 112) solid 1px; */
 }
 .f-form{
-    /* display: flex; */
     padding: 0px 0px 0px 0px;
     position:relative;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
     width: 20rem;
-    /* border-radius: var(--label-border-radius); */
-    /* margin: auto; */
-    /* height: 0rem; */
-    /* border: gray solid 1px; */
 }
-.button-prod {
+.button-pers {
     position: absolute;
 	background-color: rgb(169, 169, 197);
     color: var(--label-color);
@@ -57,13 +36,13 @@
 	border: none;
 	transition: all 0.5s ease;
     left: 0.1rem;
-    top: 18.2rem;
+    top:12rem;
 }
-.button-prod:hover {
+.button-pers:hover {
     background-color: #444;
 	color: blue;
 }
-.prod-descr-label{
+.pers-name-label{
     position: absolute;
     left: 0.1rem;
     top: 0rem;
@@ -71,13 +50,13 @@
     font-size: var(--label-font-size);
     color: var(--label-color)
 }
-.prod-descr-input{
+.pers-name-input{
     position: absolute;
     left: 0.1rem;
     top: 1.3rem;
     border-radius: var(--label-border-radius);
 }
-.prod-val-max-label{
+.pers-cpf-label{
     position: absolute;
     left: 0.1rem;
     top: 3rem;
@@ -85,13 +64,13 @@
     font-size: var(--label-font-size);
     color: var(--label-color)
 }
-.prod-val-max-input{
+.pers-cpf-input{
     position: absolute;
     left: 0.1rem;
     top: 4.3rem;
     border-radius: var(--label-border-radius);
 }
-.prod-val-min-label{
+.pers-address-label{
     position: absolute;
     left: 0.1rem;
     top: 5.9rem;
@@ -99,13 +78,13 @@
     font-size: var(--label-font-size);
     color: var(--label-color)
 }
-.prod-val-min-input{
+.pers-address-input{
     position: absolute;
     left: 0.1rem;
     top: 7.2rem;
     border-radius: var(--label-border-radius);
 }
-.prod-brand-label{
+.pers-filial-label{
     position: absolute;
     left: 0.1rem;
     top: 8.7rem;
@@ -113,51 +92,9 @@
     font-size: var(--label-font-size);
     color: var(--label-color)
 }
-.prod-brand-input{
+.pers-filial-input{
     position: absolute;
     left: 0.1rem;
     top: 10rem;
-    border-radius: var(--label-border-radius);
-}
-.prod-brand-label{
-    position: absolute;
-    left: 0.1rem;
-    top: 8.7rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
-}
-.prod-brand-input{
-    position: absolute;
-    left: 0.1rem;
-    top: 10rem;
-    border-radius: var(--label-border-radius);
-}
-.prod-sector-label{
-    position: absolute;
-    left: 0.1rem;
-    top: 12rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
-}
-.prod-sector-input{
-    position: absolute;
-    left: 0.1rem;
-    top: 13.2rem;
-    border-radius: var(--label-border-radius);
-}
-.prod-barcode-label{
-    position: absolute;
-    left: 0.1rem;
-    top: 15rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
-}
-.prod-barcode-input{
-    position: absolute;
-    left: 0.1rem;
-    top: 16.3rem;
     border-radius: var(--label-border-radius);
 }

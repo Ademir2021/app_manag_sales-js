@@ -1,7 +1,4 @@
-//import './index.css'
-
 export function ProductList(props: any) {
-
     return (
         <>
              <div style={{ color: "#00ff", fontSize: "12px", display: "inline" }} >

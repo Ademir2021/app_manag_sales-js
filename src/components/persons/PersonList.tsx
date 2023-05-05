@@ -1,5 +1,3 @@
-//import './index.css'
-
 export function PersonList(props: any) {
 
     return (

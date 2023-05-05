@@ -1,14 +1,13 @@
 import React from "react";
-import { Button } from "../users/UserButton";
 
-import "./main.css"
+import "./styles.css"
 
 export function PersonForm({ children, handleChange, handleSubmit, submit }: any) {
 
     return (
         <>
             <div className="main">
-                <main className="container">
+                <main className=''>
                 <fieldset className="fieldset">
                     <form className="f-form" onSubmit={handleSubmit}>
                         <label className="pers-name-label">Seu nome</label>

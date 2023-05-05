@@ -1,4 +1,10 @@
-:root {
+:root{ /* users*/
+    --label-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --label-font-size: 18px;
+    --label-color:black;
+    --label-border-radius:4px;
+}
+:root { /* update e list-update*/
     --main-bg-color: rgb(15, 14, 117);
     --main-font-size: 15px;
     --main-font-family: Arial, Helvetica, sans-serif;
@@ -11,16 +17,150 @@
     --input-border-radius: 6px;
     --main-border-radius: 13px;
 }
-.main {
-    /* padding: 2rem; */
-    position: relative;
-    height: auto;
-    /* background: #cfd1db; */
-    width: 86%;
+.fieldset{ 
+    border-radius: var(--label-border-radius);
+    font-family: var(--label-font-family);
+    background-color:azure;
+    height: 24rem;
+}
+.main{
+    padding: 16px;
+    margin: 0;
+    position: absolute;
     margin-left: auto;
     margin-right: auto;
+    width: 90%;
+    height: auto;
+    border-radius: var(--label-border-radius);
+    /* background-color:rgb(243, 238, 238); */
 }
-.container {
+.f-form{
+    padding: 0px 0px 0px 0px;
+    position:relative;
+    width: 23rem;
+    height: auto;
+}
+.email-label{
+    position: absolute;
+    left: 0.1rem;
+    top: 0rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.email-input{
+    position: absolute;
+    left: 0.1rem;
+    top: 1.3rem;
+    border-radius: var(--label-border-radius);
+}
+.pass-label{
+    position: absolute;
+    left: 0rem;
+    top: 4rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.pass-input{
+    position: absolute;
+    left: 0.1rem;
+    top: 5.3rem;
+    border-radius: var(--label-border-radius);
+}
+.reg-name-label{
+    position: absolute;
+    left: 0.1rem;
+    top: 0rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.reg-name-input{
+    position: absolute;
+    left: 0.1rem;
+    top: 1.3rem;
+    border-radius: var(--label-border-radius);
+}
+.reg-email-label{
+    position: absolute;
+    left: 0.1rem;
+    top: 3rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.reg-email-input{
+    position: absolute;
+    left: 0.1rem;
+    top: 4.3rem;
+    border-radius: var(--label-border-radius);
+}
+.reg-pass-label{
+    position: absolute;
+    left: 0.1rem;
+    top: 5.9rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.reg-pass-input{
+    position: absolute;
+    left: 0.1rem;
+    top: 7.2rem;
+    border-radius: var(--label-border-radius);
+}
+.reg-pass-repeat-label{
+    position: absolute;
+    left: 0.1rem;
+    top: 8.7rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.reg-pass-repeat-input{
+    position: absolute;
+    left: 0.1rem;
+    top: 10rem;
+    border-radius: var(--label-border-radius);
+}
+.button-login {
+    position: absolute;
+	background-color: rgb(169, 169, 197);
+    color: var(--label-color);
+	height: 40px;
+	border-radius: 3px;
+	width: 100px;
+	font-size: 16px;
+	cursor: pointer;
+	border: none;
+	transition: all 0.5s ease;
+    left: 0.1rem;
+    top: 12rem;
+}
+.button-login:hover {
+    background-color: #444;
+	color: blue;
+}
+.login-text{
+    position: absolute;
+    left: 0.1rem;
+    top: 15.6rem;
+    cursor: pointer;
+    text-decoration:none;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.login-company{
+    position: absolute;
+    left: 8rem;
+    top: 13rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.container-update {
     box-sizing: border-box;
     position: relative;
     height: 22rem;
@@ -51,7 +191,6 @@
     color: var(--reader-bg-color);
 }
 .foto-user {
-    /* display: flex; */
     padding: 2px 2px 2px 2px;
     position: absolute;
     width: 5.5rem;
@@ -59,7 +198,6 @@
     left: 1rem;
     top: 5rem;
     border-radius: var(--main-border-radius);
-    /* border: blue solid 1px; */
     background: url('../../../public/img/avatar.png');
 }
 .text-id {
@@ -71,9 +209,6 @@
     font-size: var(--reader-font-size);
     font-family: var(--reader-font-family);
     color: var(--reader-bg-color);
-    /* font-size: 16px; */
-    /* line-height: 29px; */
-    /* color: #000000; */
 }
 .text-user {
     position: absolute;
@@ -84,9 +219,6 @@
     font-size: var(--reader-font-size);
     font-family: var(--reader-font-family);
     color: var(--reader-bg-color);
-    /* font-size: 16px; */
-    /* line-height: 29px; */
-    /* color: #000000; */
 }
 .text-email {
     position: absolute;
@@ -97,9 +229,6 @@
     font-size: var(--reader-font-size);
     font-family: var(--reader-font-family);
     color: var(--reader-bg-color);
-    /* font-size: 16px; */
-    /* line-height: 29px; */
-    /* color: #000000; */
 }
 .in-id {
     position: absolute;
@@ -108,7 +237,6 @@
     left: 8rem;
     top: 6.2rem;
     border:none;
-    /* border: blue solid 1px; */
     border-radius: var(--input-border-radius);
 
 }
@@ -119,7 +247,6 @@
     left: 8rem;
     top: 9.7rem;
     border: none;
-    /* border: blue solid 1px; */
     border-radius: var(--input-border-radius);
 }
 .in-email {
@@ -129,7 +256,6 @@
     left: 8rem;
     top: 13.6rem;
     border: none;
-    /* border: blue solid 1px; */
     border-radius: 3px;
     border-radius: var(--input-border-radius);
 }
@@ -142,7 +268,6 @@
     font-weight: 1px;
     font-size: 14px;
     line-height: 1px;
-    /* color: #000000; */
     border: none;
     cursor: pointer;
     border-radius: var(--input-border-radius);
@@ -156,7 +281,6 @@
     font-weight: 1px;
     font-size: 14px;
     line-height: 1px;
-    /* color: #000000; */
     border: none;
     cursor: pointer;
     border-radius: var(--input-border-radius);
@@ -167,7 +291,6 @@
     height: 2.2rem;
     left: 8rem;
     top: 16rem;
-    /* border: blue solid 1px; */
     border-radius: 6px;
     background: url('../../../public/img/register.png');
     border: none;
@@ -179,7 +302,6 @@
     height: 2.2rem;
     left: 13.4rem;
     top: 16rem;
-    /* border: blue solid 1px; */
     border-radius: 6px;
     background: url('../../../public/img/update.png');
     border: none;
@@ -191,7 +313,6 @@
     height: 2.2rem;
     left: 19rem;
     top: 16rem;
-    /* border: blue solid 1px; */
     border-radius: 6px;
     background: url('../../../public/img/delete.png');
     border: none;
@@ -199,9 +320,9 @@
 }
 .update_list {
     padding: 9px;
-    color: blue;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
+    color: rgb(4, 13, 41);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 12px;
 }
 .list_id {
     padding: var(--main-padding);
@@ -222,6 +343,7 @@
     font-family: var(--main-font-family);
 }
 .list_email {
+    padding: var(--main-padding);
     color: var(--main-bg-color);
     font-size: var(--main-font-size);
     font-family: var(--main-font-family);
@@ -237,11 +359,6 @@
     font-family: var(--main-font-family);
     text-decoration: var(--main-text-decoration);
     font-size: var(--main-font-size);
-    position: relative;
-    width: auto;
-    height: auto;
-    left: auto;
-    top: auto;
-    top: auto;
     border-radius: var(--input-border-radius);
+    border:none;
 }

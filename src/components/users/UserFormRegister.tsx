@@ -2,14 +2,14 @@ import { Button } from './UserButton';
 import { Header } from './UserHeader';
 import { UserLink } from './UserLink';
 
- import './main.css';
+ import './styles.css';
 
 export function UserFormRegister({ children, handleChange, handleSubmit }: any) {
 
     return (
         <>
             < div className='main'>
-                <main className='container' >
+                <main className='' >
             {/* <img src="img/secure.jpg" alt='Logo' /> */}
                 <fieldset className='fieldset'>
                     <Header name="Registrar Usuário" />

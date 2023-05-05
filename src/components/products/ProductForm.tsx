@@ -1,13 +1,12 @@
 import React from "react";
-import { Button } from "../users/UserButton";
 
-import "./main.css"
+import "./styles.css"
 
 export function ProductForm({ children, handleChange, handleSubmit, submit }: any) {
     return (
         <>
             <div className="main">
-                <main className="container">
+                <main className="">
                 <fieldset className="fieldset">
                     <form className="f-form" onSubmit={handleSubmit}>
                         <label className="prod-descr-label" >Descrição Produtos</label>

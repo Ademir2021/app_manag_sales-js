@@ -1,12 +1,12 @@
 import React from "react"
 
-import './UserFormUpdate.css'
+import './styles.css'
 
 export function UserFormUptdate({ handleChange, children, handleSubmit, handleUpdate, handleDelete, handleIncrement, handleDecrement, submit }: any) {
     return (
         <>
-            <div className="main">
-                <div className="container">
+            <div className="">
+                <div className="container-update">
                     <div className="text-reader">Manutenção dos Usuários de Login !!</div>
                     <div className="foto-user" />
 
