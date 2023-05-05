@@ -11,8 +11,8 @@ export type IUserLogin = {
 }
 
 export type IUsers = {
-  id:string;
-  created_at:string;
+  id: string;
+  created_at:string |any;
   name:string;
   username:string;
   password:string;

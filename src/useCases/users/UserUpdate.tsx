@@ -1,11 +1,11 @@
 import React from "react"
 import { useState, useEffect } from 'react';
 import { UserFormUptdate } from "../../components/users/UserFormUpdate";
+import { ListUSers } from "../../components/users/UserList";
 
 import { FormatDate } from "../../components/utils/formatDate";
 import { IUpdUsers } from './IUser'
 import api from '../../services/api/api'
-import { ListUSers } from "../../components/users/UserList";
 
 export function UserUpdate() {
     let [counter, updateCounter] = useState(0)
@@ -131,8 +131,8 @@ export function UserUpdate() {
                         password={user.password}
                         update={<div onClick={() =>
                             listUpdate(user.id, user.name, user.username)}>
-                             <a style={{textDecoration:"none",
-                             color:"white"}}
+                            <a style={{textDecoration:"none",
+                             color:"black"}}
                              href='#'>Atualizar</a></div>}
                     />
                 )))}

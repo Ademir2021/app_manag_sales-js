@@ -1,9 +1,6 @@
-import "./UserButton.css"
-
 export function Button({ children, submit }: any) {
-
     return (
-        <button type={submit} className="button">
+        <button type={submit} className="button-login">
             {children}
         </button>
     )

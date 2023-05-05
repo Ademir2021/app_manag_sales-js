@@ -1,21 +1,13 @@
 import React from "react"
-//import { Button } from "./UserButton"
+
 import './UserFormUpdate.css'
 
-export function UserFormUptdate({handleChange,
-                                 children,
-                                 handleSubmit,
-                                 handleUpdate,
-                                 handleDelete,
-                                 handleIncrement,
-                                 handleDecrement,
-                                 submit}:any) {
+export function UserFormUptdate({ handleChange, children, handleSubmit, handleUpdate, handleDelete, handleIncrement, handleDecrement, submit }: any) {
     return (
         <>
-            <div className="desktop">
-                <div className="main">
-                    <div className="header" />
-                    <div className="text-reader">Manutenção de Users</div>
+            <div className="main">
+                <div className="container">
+                    <div className="text-reader">Manutenção dos Usuários de Login !!</div>
                     <div className="foto-user" />
 
                     <form onSubmit={handleSubmit}>
@@ -28,11 +20,10 @@ export function UserFormUptdate({handleChange,
                             value={children.id || 0}
                             onChange={handleChange}
                         />
-                           <label className="text-id">ID</label>
+                        <label className="text-id">ID</label>
                         <label className="text-user" >Nome do Usuário</label>
                         <input
                             className="in-user"
-                            // list={children.name}
                             type="search"
                             name="name"
                             placeholder="Nome do Usuário"
@@ -49,24 +40,19 @@ export function UserFormUptdate({handleChange,
                             onChange={handleChange}
                         />
                         <button className="register" type={submit}></button>
-                        </form>
-                        
-                        <form onSubmit={handleUpdate}>
+                    </form>
+                    <form onSubmit={handleUpdate}>
                         <button className="update" type={submit}></button>
-                        </form>
-
-                        <form onSubmit={handleDelete}>
+                    </form>
+                    <form onSubmit={handleDelete}>
                         <button className="delete" type={submit}></button>
-                        </form>
-                    
-                        <form onSubmit={handleDecrement}>
+                    </form>
+                    <form onSubmit={handleDecrement}>
                         <button type={submit} className="btn-ant">Anterior</button>
-                        </form>
-
-                        <form onSubmit={handleIncrement}>
+                    </form>
+                    <form onSubmit={handleIncrement}>
                         <button type={submit} className="btn-prox">Próximo</button>
-                        </form>
-                        
+                    </form>
                 </div>
             </div>
         </>

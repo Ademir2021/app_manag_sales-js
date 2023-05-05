@@ -1,0 +1,170 @@
+:root{
+    --label-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --label-font-size: 18px;
+   --label-color:black;
+    --label-border-radius:4px;
+}
+
+.fieldset{ 
+    border-radius: var(--label-border-radius);
+    /* border: black solid 1px; */
+    font-family: var(--label-font-family);
+    color: var(--label-color)
+}
+.main{
+    padding: 16px;
+    margin: 0;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: auto;
+    /* background-color: darkgray; */
+    border-radius: var(--label-border-radius);
+}
+.container{
+    display:flex;
+    /* position: relative; */
+    /* padding: 3px; */
+    /* margin: auto; */
+    /* height: 6rem; */
+    /* width: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    /* background: #e7e8ee; */
+    border-radius: var(--label-border-radius);
+    /* border: rgb(69, 69, 112) solid 1px; */
+}
+.f-form{
+    /* display: flex; */
+    padding: 0px 0px 0px 0px;
+    position:relative;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    width: 20rem;
+    /* border-radius: var(--label-border-radius); */
+    /* margin: auto; */
+    /* height: 0rem; */
+    /* border: gray solid 1px; */
+}
+.email-label{
+    position: absolute;
+    left: 0.1rem;
+    top: 0rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.email-input{
+    position: absolute;
+    left: 0.1rem;
+    top: 1.3rem;
+    border-radius: var(--label-border-radius);
+}
+.pass-label{
+    position: absolute;
+    left: 0rem;
+    top: 4rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.pass-input{
+    position: absolute;
+    left: 0.1rem;
+    top: 5.3rem;
+    border-radius: var(--label-border-radius);
+}
+.reg-name-label{
+    position: absolute;
+    left: 0.1rem;
+    top: 0rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.reg-name-input{
+    position: absolute;
+    left: 0.1rem;
+    top: 1.3rem;
+    border-radius: var(--label-border-radius);
+}
+.reg-email-label{
+    position: absolute;
+    left: 0.1rem;
+    top: 3rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.reg-email-input{
+    position: absolute;
+    left: 0.1rem;
+    top: 4.3rem;
+    border-radius: var(--label-border-radius);
+}
+.reg-pass-label{
+    position: absolute;
+    left: 0.1rem;
+    top: 5.9rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.reg-pass-input{
+    position: absolute;
+    left: 0.1rem;
+    top: 7.2rem;
+    border-radius: var(--label-border-radius);
+}
+.reg-pass-repeat-label{
+    position: absolute;
+    left: 0.1rem;
+    top: 8.7rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.reg-pass-repeat-input{
+    position: absolute;
+    left: 0.1rem;
+    top: 10rem;
+    border-radius: var(--label-border-radius);
+}
+.button-login {
+    position: absolute;
+	background-color: rgb(169, 169, 197);
+    color: var(--label-color);
+	height: 40px;
+	border-radius: 3px;
+	width: 100px;
+	font-size: 16px;
+	cursor: pointer;
+	border: none;
+	transition: all 0.5s ease;
+    left: 0.1rem;
+    top: 12rem;
+}
+.button-login:hover {
+    background-color: #444;
+	color: blue;
+}
+.login-text{
+    position: absolute;
+    left: 0.1rem;
+    top: 15.6rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}
+.login-company{
+    position: absolute;
+    text-decoration: none;
+    left: 8rem;
+    top: 13rem;
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    color: var(--label-color)
+}

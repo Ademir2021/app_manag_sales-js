@@ -2,43 +2,44 @@ import { Button } from './UserButton';
 import { Header } from './UserHeader';
 import { UserLink } from './UserLink';
 
-import './UserForm.css';
+ import './main.css';
 
 export function UserFormRegister({ children, handleChange, handleSubmit }: any) {
 
     return (
         <>
-            <img src="img/secure.jpg" alt='Logo' />
-            <main>
-                <fieldset>
+            < div className='main'>
+                <main className='container' >
+            {/* <img src="img/secure.jpg" alt='Logo' /> */}
+                <fieldset className='fieldset'>
                     <Header name="Registrar Usuário" />
-                    <form onSubmit={handleSubmit}>
-                        <label>Nome completo</label>
-                        <input
+                    <form className='f-form' onSubmit={handleSubmit}>
+                        <label className='reg-name-label' >Nome completo</label>
+                        <input className='reg-name-input'
                             type="text"
                             name="name"
                             placeholder='Usuário'
                             value={children.name || ""}
                             onChange={handleChange}
                         />
-                        <label>Email</label>
-                        <input
+                        <label className='reg-email-label'>Email</label>
+                        < input className='reg-email-input'
                             type="email"
                             name="username"
                             placeholder='Email'
                             value={children.username || ""}
                             onChange={handleChange}
                         />
-                        <label>Senha</label>
-                        <input
+                        <label className='reg-pass-label' >Senha</label>
+                        <input className='reg-pass-input'
                             type="password"
                             name="password"
                             placeholder='Senha'
                             value={children.password || ""}
                             onChange={handleChange}
                         />
-                        <label>Repita senha</label>
-                        <input
+                        <label className='reg-pass-repeat-label'>Repita senha</label>
+                        <input className='reg-pass-repeat-input'
                             type="password"
                             name="psw_repeat"
                             placeholder='Repita senha'
@@ -49,10 +50,12 @@ export function UserFormRegister({ children, handleChange, handleSubmit }: any) 
                         <UserLink
                             title="Já tem login"
                             link={<a href='/login'>Logar-se</a>}
+                            company={"Logar na Company"}
                         />
                     </form>
                 </fieldset>
-            </main>
+                </main>
+            </div>
         </>
     )
 }

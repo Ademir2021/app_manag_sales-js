@@ -1,16 +1,14 @@
-import './UserLink.css'
-
 type Links = {
-    title:string;
-    link:any;
+    title: string;
+    link: any;
+    company: string;
 }
-
-export function UserLink ({title, link}:Links){
-
-    return(
+export function UserLink({ title, link, company }: Links) {
+    return (
         <>
-        <span>{title}!&nbsp; 
-        {link}</span>
+            <strong className='login-text'>{title}!&nbsp;
+                {link}</strong>
+            <span className='login-company'>{company}</span>
         </>
     )
 }

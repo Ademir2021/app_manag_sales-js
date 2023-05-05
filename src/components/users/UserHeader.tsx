@@ -1,4 +1,4 @@
-import "./UserHeader.css"
+import React from "react"
 
 export function Header (props:any){
     return(

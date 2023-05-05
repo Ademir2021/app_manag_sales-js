@@ -32,7 +32,7 @@ const [users, setUsers] = useState<IUsers[]>([])
             name={user.name}
             username={user.username}
             password={user.password}
-          // update={<a href="http://localhost:3001/user_update">Update{user.id}</a>}
+          update={<a href="http://localhost:3001/user_update">Update: {user.id}</a>}
           />
         )))}
     </>
