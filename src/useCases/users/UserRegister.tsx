@@ -20,17 +20,18 @@ export function UserRegister() {
     setUsers(values => ({ ...values, [name]: value }))
   }
 
-  const [msg, setMsg] = useState<String>("Preencha todos os campos")
+  const [msg, setAlert] = useState<String>("")
+  const [message, setMessage] = useState<any>("")
 
   function valFields(user: IUser) {
     let msg = ''
-    if (user.name == '') { msg += '- Digite o seu Nome Completo !! -\n' };
-    if (user.username == '') { msg += '- Digite um Email válido !! -\n' };
-    if (user.password == '') { msg += "- Digite sua Senha !! -\n" };
-    if (user.psw_repeat != user.password) { msg += "- Senha digitada errado !! -\n" };
+    if (user.name == '') { msg += 'Digite o seu Nome Completo!!\n' };
+    if (user.username == '') { msg += 'Digite um Email válido!!\n' };
+    if (user.password == '') { msg += "Digite sua Senha !!\n" };
+    if (user.psw_repeat != user.password) { msg += "Senha digitada errado\n" };
     if (msg != '') {
-      setMsg(msg)
-      alert(msg)
+  
+      setAlert(msg)
       return false;
     };
     return true;
@@ -39,7 +40,7 @@ export function UserRegister() {
   async function handleUser() {
       await api.post<IUser>('/users', user)
         .then(response => {
-          alert(response.data)
+          setMessage(response.data)
         }).catch(error => console.log(error))
   }
 
@@ -54,6 +55,8 @@ export function UserRegister() {
     if (valFields(user)) {
       user.password = crypt()
       handleUser()
+      setAlert("")
+      setMessage("")
     }
   }
 
@@ -64,6 +67,8 @@ export function UserRegister() {
       <UserFormRegister
         handleSubmit={handleSubmit}
         handleChange={handleChange}
+        message={message}
+        alert={msg}
       >
         {user}
       </UserFormRegister>

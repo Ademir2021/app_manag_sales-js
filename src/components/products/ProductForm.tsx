@@ -6,14 +6,14 @@ export function ProductForm({ children, handleChange, handleSubmit, submit }: an
     return (
         <>
             <div className="main">
-                <main className="">
+                <main className="container">
                 <fieldset className="fieldset">
                     <form className="f-form" onSubmit={handleSubmit}>
-                        <label className="prod-descr-label" >Descrição Produtos</label>
+                        <label className="prod-descr-label" >Descrição Produto</label>
                         <input className="prod-descr-input"
                             type="text"
                             name="descric_product"
-                            placeholder='Descrição dos Produtos'
+                            placeholder='Descrição do Produto'
                             value={children.descric_product || ""}
                             onChange={handleChange}
                         />
@@ -21,7 +21,7 @@ export function ProductForm({ children, handleChange, handleSubmit, submit }: an
                         <input className="prod-val-max-input"
                             type="number"
                             name="val_max_product"
-                            placeholder='valor máximo'
+                            placeholder='Valor máximo'
                             value={children.val_max_product || ""}
                             onChange={handleChange}
                         />

@@ -1,35 +1,51 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import React, { useContext } from 'react'
 import { HomePage } from "./useCases/home/HomePage";
 import { UserLogin } from './useCases/users/UserLogin';
+import { Dasboard } from "./useCases/dasboard/Dasboard";
 import { UserRegister } from './useCases/users/UserRegister';
 import { ListUsers } from './useCases/users/UserList';
+import { UserUpdate } from "./useCases/users/UserUpdate";
 import { Sale } from './components/sales/Sale';
 import { ListSales } from './useCases/sales/ListSale';
 import { FormProduct } from "./useCases/products/FormProduct";
 import { ListProduct } from './useCases/products/ListProduct';
 import { FormPerson } from "./useCases/persons/FormPerson";
 import { ListPerson } from './useCases/persons/ListPerson';
-import { UserUpdate } from "./useCases/users/UserUpdate";
+import { AuthProvider, AuthContext } from "./context/auth";
 
 export function AppRoutes() {
+    const Private = ({ children }: any) => {
+        const { authenticated, loading }: any = useContext(AuthContext)
+        
+        if(loading){
+            return <div className="loading">Carregando...</div>
+        }
+        
+        if (!authenticated) {
+            return <Navigate to="/login" />
+        }
+        return children
+    };
 
     return (
         <Router>
-            <Routes>
-                <Route path="/" Component={HomePage} />
-                <Route path="/login" Component={UserLogin} />
-                <Route path="/register" Component={UserRegister} />
-                <Route path="/listar" Component={ListUsers} />
-                <Route path="/sale" Component={Sale} />
-                <Route path="/list_sale" Component={ListSales} />
-                <Route path="/form_product" Component={FormProduct} />
-                <Route path="/list_product" Component={ListProduct} />
-                <Route path="/form_person" Component={FormPerson} />
-                <Route path="/list_person" Component={ListPerson} />
-                <Route path="/user_update" Component={UserUpdate} />
-
-            </Routes>
+            <AuthProvider>
+                <Routes>
+                    <Route path="/" Component={HomePage} />
+                    <Route path="/login" Component={UserLogin} />
+                    <Route path="/register" Component={UserRegister} />
+                    <Route path="/dasboard" element={<Private><Dasboard/></Private>} />
+                    <Route path="/listar" element={<Private><ListUsers/></Private>} />
+                    <Route path="/user_update" element={<Private><UserUpdate/></Private>} />
+                    <Route path="/sale" element={<Private><Sale/></Private>} />
+                    <Route path="/list_sale" element={<Private><ListSales/></Private>} />
+                    <Route path="/form_product" element={<Private><FormProduct/></Private>} />
+                    <Route path="/list_product" element={<Private><ListProduct/></Private>} />
+                    <Route path="/form_person" element={<Private><FormPerson/></Private>} />
+                    <Route path="/list_person" element={<Private><ListPerson/></Private>} />
+                </Routes>
+            </AuthProvider>
         </Router>
     )
 }

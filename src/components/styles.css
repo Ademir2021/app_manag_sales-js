@@ -1,0 +1,31 @@
+.container{
+    padding: 16px;
+    margin: 0;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 44%;
+    height: auto;
+    background-color:rgb(243, 238, 238);
+    border-radius: 12px;
+}
+
+.link-nav{
+    display: flex;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    background-color: rgb(175, 200, 201);
+    text-decoration: none;
+    color: azure;
+    border-radius: 12px;
+}
+.link-ul{
+    text-decoration: none;
+
+}
+.link-li{
+    text-decoration: none;
+    
+}

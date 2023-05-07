@@ -4,12 +4,12 @@ import { UserLink } from './UserLink';
 
  import './styles.css';
 
-export function UserFormRegister({ children, handleChange, handleSubmit }: any) {
+export function UserFormRegister({ children, handleChange, handleSubmit, message, alert }: any) {
 
     return (
         <>
             < div className='main'>
-                <main className='' >
+                <main className='container' >
             {/* <img src="img/secure.jpg" alt='Logo' /> */}
                 <fieldset className='fieldset'>
                     <Header name="Registrar Usuário" />
@@ -50,7 +50,9 @@ export function UserFormRegister({ children, handleChange, handleSubmit }: any) 
                         <UserLink
                             title="Já tem login"
                             link={<a href='/login'>Logar-se</a>}
-                            company={"Logar na Company"}
+                            company={""}
+                            message={message}
+                            alert={alert}
                         />
                     </form>
                 </fieldset>

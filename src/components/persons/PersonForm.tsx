@@ -7,7 +7,7 @@ export function PersonForm({ children, handleChange, handleSubmit, submit }: any
     return (
         <>
             <div className="main">
-                <main className=''>
+                <main className='container'>
                 <fieldset className="fieldset">
                     <form className="f-form" onSubmit={handleSubmit}>
                         <label className="pers-name-label">Seu nome</label>

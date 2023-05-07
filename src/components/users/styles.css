@@ -34,6 +34,17 @@
     border-radius: var(--label-border-radius);
     /* background-color:rgb(243, 238, 238); */
 }
+.container{
+    /* box-sizing: border-box; */
+    position: relative;
+    height: 22rem;
+    /* background: #cbd8e7; */
+    /* border: var(--main-border); */
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border-radius: var(--main-border-radius); */
+}
 .f-form{
     padding: 0px 0px 0px 0px;
     position:relative;
@@ -159,6 +170,20 @@
     font-family: var(--label-font-family);
     font-size: var(--label-font-size);
     color: var(--label-color)
+}
+.login-message{
+    position: absolute;
+    left: 8rem;
+    top: 12rem;
+    font-size: 13px;
+    color: red;
+}
+.login-alert{
+    position: absolute;
+    left: 7rem;
+    top: 12rem;
+    font-size: 13px;
+    color: red;
 }
 .container-update {
     box-sizing: border-box;
@@ -296,6 +321,9 @@
     border: none;
     cursor: pointer;
 }
+.register:hover{
+    background-size: 3rem;
+}
 .update {
     position: absolute;
     width: 2.2rem;
@@ -307,6 +335,9 @@
     border: none;
     cursor: pointer;
 }
+.update:hover{
+    background-size: 4rem;
+}
 .delete {
     position: absolute;
     width: 2.2rem;
@@ -317,6 +348,9 @@
     background: url('../../../public/img/delete.png');
     border: none;
     cursor: pointer;
+}
+.delete:hover{
+    background-size: 2rem;
 }
 .update_list {
     padding: 9px;
