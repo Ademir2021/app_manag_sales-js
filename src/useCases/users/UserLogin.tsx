@@ -24,7 +24,7 @@ setUsers(values => ({ ...values, [name]: value }))
 function valFields(user: IUserLogin) {
     let msg = ''
     if (user.username == '') { msg += "Digite um email válido !!"};
-    if (user.password == '') { msg += "Digite uma senha valida !!" };
+    if (user.password == '') { msg += "Digite uma senha válida !!" };
     if (msg != '') {
       setAlert(msg);
       return false;

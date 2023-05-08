@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }: any) => {
         function compare(pass: string) {
             if (bcrypt.compareSync(password, pass) == true) {
                 setUser(true)
-                navigate("/dasboard")
+                navigate("/dashboard")
             } else {
                 localStorage.removeItem('u');
                 setMessage("Email ou senha inválida !!")

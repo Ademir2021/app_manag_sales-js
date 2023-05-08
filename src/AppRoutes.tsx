@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-d
 import React, { useContext } from 'react'
 import { HomePage } from "./useCases/home/HomePage";
 import { UserLogin } from './useCases/users/UserLogin';
-import { Dasboard } from "./useCases/dasboard/Dasboard";
+import { Dashboard } from "./useCases/dashboard/Dashboard";
 import { UserRegister } from './useCases/users/UserRegister';
 import { ListUsers } from './useCases/users/UserList';
 import { UserUpdate } from "./useCases/users/UserUpdate";
@@ -35,7 +35,7 @@ export function AppRoutes() {
                     <Route path="/" Component={HomePage} />
                     <Route path="/login" Component={UserLogin} />
                     <Route path="/register" Component={UserRegister} />
-                    <Route path="/dasboard" element={<Private><Dasboard/></Private>} />
+                    <Route path="/dashboard" element={<Private><Dashboard/></Private>} />
                     <Route path="/listar" element={<Private><ListUsers/></Private>} />
                     <Route path="/user_update" element={<Private><UserUpdate/></Private>} />
                     <Route path="/sale" element={<Private><Sale/></Private>} />
