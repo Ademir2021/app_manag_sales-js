@@ -22,7 +22,7 @@ async function auth() {
         itens[0].filial = 1
         itens[0].fk_name_pers = 1
     }
-} auth()
+}auth()
 
 async function insertItem() {
     try {

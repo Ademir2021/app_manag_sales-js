@@ -2,46 +2,43 @@
     margin:0;
     padding:0;
 }
-
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: #f0f1f1;
+    background-color: rgb(15, 14, 14);
 }
-
 header {
-    background-color: rgb(129, 129, 92);
-    border-radius: 5px;
-    width: 89%;
-    padding: 1rem;
-    /* color: #ffffff; */
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    /* width: 6em; */
+  /* background-color:rgb(224, 224, 211); */
+  margin-left: auto;
+  margin-right: auto;
+  width: 79%;
+  /* padding: 10px; */
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  color:beige
 }
 
 .card {
     /* background-color: #fff; */
-    background-color:rgb(204, 204, 196);
+    background-color:rgb(190, 190, 179);
     /* border: 3px solid #ccc; */
     margin-left: auto;
     margin-right: auto;
     /* width: 40rem; */
     width: 89%;
-    padding: 20px;
+    padding: 10px;
     margin-top: 1rem;
     border-radius: 5px;
 
 }
 
 label{
-    color:rgb(223, 217, 217);
+    color:rgb(8, 8, 8);
     margin-left: auto;
     margin-right: auto;
 }
 
 main {
-    padding: 2rem 3rem;
+    padding: 1rem 1.5rem;
 }
 
 .line_input {
@@ -51,7 +48,7 @@ main {
 
 .input-seach {
     padding: 10px;
-    width: 80%;
+    width: 50%;
     border: 1px solid #ccc;
     border-radius: 3px;
     outline: 0;
@@ -78,7 +75,6 @@ button {
     width: 265px;
     margin-left: auto;
     margin-right: auto;
-    
     background-color: rgb(55, 43, 226);
     color: #fff;
     border-radius: 3px;
@@ -93,7 +89,7 @@ button:hover {
 }
 
 .content {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 table {
@@ -143,6 +139,7 @@ table td img {
 }
 
 .sub-menu{
+
     margin-left: auto;
     margin-right: auto;
     text-align: left;
@@ -150,16 +147,18 @@ table td img {
     border-radius: 3px;
     border: 1px solid #b6aaaa;
     padding: 0.5rem 0.5rem 0.5rem 1rem;
-    background-color: rgb(214, 214, 214);
+    background-color:rgb(190, 190, 179);
     font-size: 0.8rem;
-    display: block;
+    /* display: block; */
     text-decoration: none;
+    border: blue ;
 }
 footer{
     width:89%;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
+    /* display: flex; */
     text-align: center;
     font-size: 0.9rem;
+    color:beige
 }

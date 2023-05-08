@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { UserFormLogin } from '../../components/users/UserFormLogin'
 import { AuthContext } from '../../context/auth'
 import { IUserLogin } from './IUser'
+import { type } from 'os';
 
 export function UserLogin() {
 
@@ -32,7 +33,7 @@ function valFields(user: IUserLogin) {
     return true;
   };
 
-const handleSubmit = (e: any) => {
+const handleSubmit = (e:any) => {
 e.preventDefault();
 if(valFields(user)){
 login(user.username, user.password)

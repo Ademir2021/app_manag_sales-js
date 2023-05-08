@@ -22,10 +22,10 @@ export const AuthProvider = ({ children }: any) => {
         setLoading(false)
     }, []);
 
-    const login = async (email: any, password: any) => {
+    const login = async (email: string, password: string) => {
 
-        function compare(pass: string) {
-            if (bcrypt.compareSync(password, pass) == true) {
+        function compare(pass: string, username: string) {
+            if (bcrypt.compareSync(password, pass) === true && email === username) {
                 setUser(true)
                 navigate("/dashboard")
             } else {
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }: any) => {
             .then(response => {
                 const res = response.data
                 if (res[0] != undefined) {
-                    compare(res[0].password)
+                    compare(res[0].password, res[0].username)
                     if (user === true) {
                         setUser(user)
                     }
