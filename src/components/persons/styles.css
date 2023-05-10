@@ -1,14 +1,14 @@
-.f-form{
+#f-form{
     background-color: black;
     display: flex;
 }
-.fieldset{ 
+#fieldset{ 
     border-radius: var(--label-border-radius);
     border: black solid 1px;
     font-family: var(--label-font-family);
     color: var(--label-color);
 }
-.main{
+#main{
     padding: 16px;
     margin: 0;
     position: absolute;
@@ -19,7 +19,7 @@
     /* background-color: rgb(197, 170, 170); */
     border-radius: var(--label-border-radius);
 }
-.container{
+#container{
     /* box-sizing: border-box; */
     position: relative;
     height: 22rem;
@@ -30,7 +30,7 @@
     margin-right: auto;
     /* border-radius: var(--main-border-radius); */
 }
-.f-form{
+#f-form{
     padding: 0px 0px 0px 0px;
     position:relative;
     width: 20rem;

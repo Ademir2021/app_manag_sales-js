@@ -2,6 +2,7 @@ import { useState } from 'react';
 import bcrypt from "bcryptjs-react";
 import { UserFormRegister } from '../../components/users/UserFormRegister';
 
+
 import { IUser } from './IUser'
 import api from '../../services/api/api'
 
@@ -62,8 +63,6 @@ export function UserRegister() {
 
   return (
     <>
-      {/* <p style={{ color: "blue" }}>{msg}</p> */}
-
       <UserFormRegister
         handleSubmit={handleSubmit}
         handleChange={handleChange}

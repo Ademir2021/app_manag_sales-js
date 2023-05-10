@@ -5,7 +5,7 @@ import './styles.css'
 export function UserFormUptdate({ handleChange, children, handleSubmit, handleUpdate, handleDelete, handleIncrement, handleDecrement, submit }: any) {
     return (
         <>
-            <div className="">
+            <div className="login">
                 <div className="container-update">
                     <div className="text-reader">Manutenção dos Usuários de Login !!</div>
                     <div className="foto-user" />

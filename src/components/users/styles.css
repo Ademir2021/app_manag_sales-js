@@ -1,3 +1,16 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 2rem;
+}
+
 :root{ /* users*/
     --label-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     --label-font-size: 18px;
@@ -17,41 +30,27 @@
     --input-border-radius: 6px;
     --main-border-radius: 13px;
 }
+#container{
+    height: 32rem;
+    width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 22px 0px 0px 22px;
+    box-sizing: border-box;
+    /* background: #175499; */
+}
 .fieldset{ 
-    border-radius: var(--label-border-radius);
-    font-family: var(--label-font-family);
-    background-color:azure;
-    height: 24rem;
+height: 28rem;
+width: 24rem;
+padding: 22px 0px 0px 22px;
+background-color:rgb(73, 80, 80);
+border: var(--main-border);
+border-radius: var(--main-border-radius);
 }
-.main{
-    padding: 16px;
-    margin: 0;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    height: auto;
-    border-radius: var(--label-border-radius);
-    /* background-color:rgb(243, 238, 238); */
+#f-form{
+  padding: 0;
 }
-.container{
-    /* box-sizing: border-box; */
-    position: relative;
-    height: 22rem;
-    /* background: #cbd8e7; */
-    /* border: var(--main-border); */
-    width: 360px;
-    margin-left: auto;
-    margin-right: auto;
-    /* border-radius: var(--main-border-radius); */
-}
-.f-form{
-    padding: 0px 0px 0px 0px;
-    position:relative;
-    width: 23rem;
-    height: auto;
-}
-.email-label{
+#email-label{
     position: absolute;
     left: 0.1rem;
     top: 0rem;
@@ -59,24 +58,24 @@
     font-size: var(--label-font-size);
     color: var(--label-color)
 }
-.email-input{
+#email-input{
     position: absolute;
     left: 0.1rem;
-    top: 1.3rem;
+    top: 1.6rem;
     border-radius: var(--label-border-radius);
 }
-.pass-label{
+#pass-label{
     position: absolute;
     left: 0rem;
-    top: 4rem;
+    top: 6rem;
     font-family: var(--label-font-family);
     font-size: var(--label-font-size);
     color: var(--label-color)
 }
-.pass-input{
+#pass-input{
     position: absolute;
     left: 0.1rem;
-    top: 5.3rem;
+    top: 7.5rem;
     border-radius: var(--label-border-radius);
 }
 .reg-name-label{
@@ -90,13 +89,13 @@
 .reg-name-input{
     position: absolute;
     left: 0.1rem;
-    top: 1.3rem;
+    top: 1.6rem;
     border-radius: var(--label-border-radius);
 }
 .reg-email-label{
     position: absolute;
     left: 0.1rem;
-    top: 3rem;
+    top: 4rem;
     font-family: var(--label-font-family);
     font-size: var(--label-font-size);
     color: var(--label-color)
@@ -104,13 +103,13 @@
 .reg-email-input{
     position: absolute;
     left: 0.1rem;
-    top: 4.3rem;
+    top: 5.5rem;
     border-radius: var(--label-border-radius);
 }
 .reg-pass-label{
     position: absolute;
     left: 0.1rem;
-    top: 5.9rem;
+    top: 8.2rem;
     font-family: var(--label-font-family);
     font-size: var(--label-font-size);
     color: var(--label-color)
@@ -118,13 +117,13 @@
 .reg-pass-input{
     position: absolute;
     left: 0.1rem;
-    top: 7.2rem;
+    top: 9.7rem;
     border-radius: var(--label-border-radius);
 }
 .reg-pass-repeat-label{
     position: absolute;
     left: 0.1rem;
-    top: 8.7rem;
+    top: 11.9rem;
     font-family: var(--label-font-family);
     font-size: var(--label-font-size);
     color: var(--label-color)
@@ -132,7 +131,7 @@
 .reg-pass-repeat-input{
     position: absolute;
     left: 0.1rem;
-    top: 10rem;
+    top: 13.4rem;
     border-radius: var(--label-border-radius);
 }
 .button-login {
@@ -147,7 +146,7 @@
 	border: none;
 	transition: all 0.5s ease;
     left: 0.1rem;
-    top: 12rem;
+    top: 16rem;
 }
 .button-login:hover {
     background-color: #444;
@@ -156,7 +155,7 @@
 .login-text{
     position: absolute;
     left: 0.1rem;
-    top: 15.6rem;
+    top: 19.6rem;
     cursor: pointer;
     text-decoration:none;
     font-family: var(--label-font-family);
@@ -173,27 +172,28 @@
 }
 .login-message{
     position: absolute;
-    left: 8rem;
-    top: 12rem;
+    left: 6.8rem;
+    top: 16rem;
     font-size: 13px;
-    color: red;
+    color: white;
 }
 .login-alert{
     position: absolute;
-    left: 7rem;
-    top: 12rem;
+    left: 6.8rem;
+    top: 16rem;
     font-size: 13px;
-    color: red;
+    color: white;
 }
 .container-update {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
+    margin-top: 12px;
     position: relative;
-    height: 22rem;
-    background: #cbd8e7;
-    border: var(--main-border);
-    width: 360px;
+    height: 28rem;
+    background-color:rgb(73, 80, 80);
+    width: 390px;
     margin-left: auto;
     margin-right: auto;
+    border: var(--main-border);
     border-radius: var(--main-border-radius);
 }
 .main_list {
@@ -277,7 +277,7 @@
 .in-email {
     position: absolute;
     width: 210px;
-    height: 22px;
+    height: 28px;
     left: 8rem;
     top: 13.6rem;
     border: none;
@@ -396,3 +396,4 @@
     border-radius: var(--input-border-radius);
     border:none;
 }
+

@@ -8,9 +8,9 @@ export function UserFormRegister({ children, handleChange, handleSubmit, message
 
     return (
         <>
-            < div className='main'>
-                <main className='container' >
-            {/* <img src="img/secure.jpg" alt='Logo' /> */}
+                <main className='login' >
+                <img src='./img/secure.png'></img>
+                <h1>< a href="/">Menu Principal</a></h1>
                 <fieldset className='fieldset'>
                     <Header name="Registrar Usuário" />
                     <form className='f-form' onSubmit={handleSubmit}>
@@ -57,7 +57,6 @@ export function UserFormRegister({ children, handleChange, handleSubmit, message
                     </form>
                 </fieldset>
                 </main>
-            </div>
         </>
     )
 }

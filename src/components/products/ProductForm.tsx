@@ -5,8 +5,8 @@ import "./styles.css"
 export function ProductForm({ children, handleChange, handleSubmit, submit }: any) {
     return (
         <>
-            <div className="main">
-                <main className="container">
+            <div className="">
+                <main className="login">
                 <fieldset className="fieldset">
                     <form className="f-form" onSubmit={handleSubmit}>
                         <label className="prod-descr-label" >Descrição Produto</label>

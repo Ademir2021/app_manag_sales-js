@@ -3,6 +3,7 @@ import { FormatDate } from "../../components/utils/formatDate";
 import { ProductList } from "../../components/products/ProductList";
 import { IProduct } from '../products/IProduct'
 import api from "../../services/api/api";
+import { Links } from "../../components/dashboard/Links";
 
 export function ListProduct() {
 
@@ -24,6 +25,7 @@ export function ListProduct() {
 
     return (
         <>
+        <Links/>
             <div style={{ fontSize: '18px' }}>Lista de Produtos</div>
             {products.length === 0 ? <p>Carregando...</p> : (
                 products.map((product: IProduct) => (

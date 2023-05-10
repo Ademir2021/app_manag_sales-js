@@ -3,6 +3,7 @@ import { FormatDate } from "../../components/utils/formatDate";
 import { PersonList } from "../../components/persons/PersonList";
 import { IPerson } from './IPerson'
 import api from "../../services/api/api";
+import { Links } from "../../components/dashboard/Links";
 
 export function ListPerson() {
 
@@ -24,6 +25,7 @@ export function ListPerson() {
 
     return (
         <>
+        <Links/>
             <div style={{ fontSize: '18px' }}>Lista de Pessoas</div>
             {person.length === 0 ? <p>Carregando...</p> : (
                 person.map((person: IPerson) => (

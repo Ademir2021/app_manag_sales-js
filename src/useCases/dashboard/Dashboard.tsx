@@ -3,16 +3,23 @@ import { useContext } from 'react';
 import { AuthContext } from "../../context/auth";
 
 export function Dashboard() {
-    const { logout }: any = useContext(AuthContext);
+    const { logout, user }: any = useContext(AuthContext);
 
     const handleLogout = () => {
         logout()
     }
     return (
         <>
-            <strong>Dashboard</strong> < br />
-            <button onClick={handleLogout}>Logout</button>
             <Links />
+            < br />
+            <strong>DashBoard</strong> < br />< br />
+            <strong> User Logado: <span
+                style={{
+                    color: "blue",
+                    fontSize: "12px"
+                }}>
+                {"ID:"+user[0].id +"  Email:" + user[0].username}</span></strong> <br />< br />
+            <button onClick={handleLogout}>Logout</button>
         </>
     )
 }

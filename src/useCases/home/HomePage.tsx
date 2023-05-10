@@ -1,10 +1,10 @@
-import { Links } from "../../components/Links"
+import { Links } from "../../components/home/Links"
 
 export function HomePage() {
     return (
         <>
-            <strong>Home</strong> < br />
             <Links />
+            <strong>Home</strong> < br />
         </>
     )
 }

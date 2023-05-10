@@ -36,7 +36,7 @@ export function AppRoutes() {
                     <Route path="/login" Component={UserLogin} />
                     <Route path="/register" Component={UserRegister} />
                     <Route path="/dashboard" element={<Private><Dashboard/></Private>} />
-                    <Route path="/listar" element={<Private><ListUsers/></Private>} />
+                    <Route path="/list_users" element={<Private><ListUsers/></Private>} />
                     <Route path="/user_update" element={<Private><UserUpdate/></Private>} />
                     <Route path="/sale" element={<Private><Sale/></Private>} />
                     <Route path="/list_sale" element={<Private><ListSales/></Private>} />

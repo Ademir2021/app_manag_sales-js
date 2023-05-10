@@ -2,34 +2,58 @@ import { Button } from './UserButton';
 import { Header } from './UserHeader';
 import { UserLink } from './UserLink';
 
-import './styles.css';
+ import './styles.css';
 
-export function UserFormLogin({ children, handleChange, handleSubmit, message, alert }: any) {
+type userFormLogin = {
+    children: any;
+    handleChange: any;
+    handleSubmit: any;
+    message: string;
+    alert: string;
+}
+
+export function UserFormLogin({ children, handleChange, handleSubmit, message, alert }: userFormLogin) {
     return (
-        <>  <div className='main'>
-            <main className='container'>
-                <div>< a href="/">Home</a></div>
-                {/* <img src="img/secure.jpg" alt='Logo' /> */}
+        <>
+            <div className='login'>
+                <img src='./img/secure.png'></img>
+                <h1>< a href="/">Menu Principal</a></h1>
                 <fieldset className='fieldset'>
                     <Header name="Login Usuário" />
                     <form className="f-form" onSubmit={handleSubmit}>
-                        <label className='email-label'>Email</label>
-                        <input className='email-input'
+                        <label style={{
+                            position: 'absolute',
+                            left: '0.1rem',
+                            top: '0px'
+                        }}>Email</label>
+                        <input style={{
+                            position: 'absolute',
+                            left: '0.1rem',
+                            top: '1.6rem'
+                        }}
                             type="email"
                             name="username"
                             placeholder='Email'
                             value={children.username || ""}
                             onChange={handleChange}
                         />
-                        <label className='pass-label' >Senha</label>
-                        <input className='pass-input'
+                        <label style={{
+                            position: 'absolute',
+                            left: '0rem',
+                            top: '6rem'
+                        }}>Senha</label>
+                        <input style={{
+                            position: 'absolute',
+                            left: '0.1rem',
+                            top: '7.5rem'
+                        }}
                             type="password"
                             name="password"
                             placeholder='Senha'
                             value={children.password || ""}
                             onChange={handleChange}
                         />
-                       <Button>Login</Button>
+                        <Button>Login</Button>
                         <UserLink
                             title="Não tem login"
                             link={<a href='/register'>Registre-se</a>}
@@ -39,8 +63,7 @@ export function UserFormLogin({ children, handleChange, handleSubmit, message, a
                         />
                     </form>
                 </fieldset>
-            </main>
-        </div>
+            </div>
         </>
     )
 }
