@@ -1,8 +1,12 @@
 *{
-    font-family: 'Courier New', Courier, monospace;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #0b0c3d;
+    border-radius: 3px;
 }
-
-.login{
+::placeholder{
+    font-size: 14px;
+}
+.container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,138 +14,179 @@
     min-height: 100vh;
     padding: 0 2rem;
 }
-
-:root{ /* users*/
-    --label-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    --label-font-size: 18px;
-    --label-color:black;
-    --label-border-radius:4px;
-}
-:root { /* update e list-update*/
-    --main-bg-color: rgb(15, 14, 117);
-    --main-font-size: 15px;
-    --main-font-family: Arial, Helvetica, sans-serif;
-    --main-padding: 3px;
-    --main-text-decoration: none;
-    --main-border:rgb(175, 200, 201) solid 2px;
-    --reader-font-family: var(--main-font-family);
-    --reader-bg-color: var(--main-bg-color);
-    --reader-font-size: 18px;
-    --input-border-radius: 6px;
-    --main-border-radius: 13px;
-}
-#container{
-    height: 32rem;
-    width: 28rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 22px 0px 0px 22px;
-    box-sizing: border-box;
-    /* background: #175499; */
-}
-.fieldset{ 
+.main{ 
 height: 28rem;
 width: 24rem;
 padding: 22px 0px 0px 22px;
 background-color:rgb(73, 80, 80);
-border: var(--main-border);
-border-radius: var(--main-border-radius);
 }
-#f-form{
-  padding: 0;
+.f-form{
+    padding: 0px 0px 0px 0px;
+    position:relative;
+    width: 20rem;
 }
-#email-label{
+.email-label{
     position: absolute;
     left: 0.1rem;
     top: 0rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
 }
-#email-input{
+.email-input{
     position: absolute;
     left: 0.1rem;
     top: 1.6rem;
-    border-radius: var(--label-border-radius);
 }
-#pass-label{
+.pass-label{
     position: absolute;
     left: 0rem;
     top: 6rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
 }
-#pass-input{
+.pass-input{
     position: absolute;
     left: 0.1rem;
     top: 7.5rem;
-    border-radius: var(--label-border-radius);
 }
 .reg-name-label{
     position: absolute;
     left: 0.1rem;
     top: 0rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
 }
 .reg-name-input{
     position: absolute;
     left: 0.1rem;
     top: 1.6rem;
-    border-radius: var(--label-border-radius);
 }
 .reg-email-label{
     position: absolute;
     left: 0.1rem;
     top: 4rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
 }
 .reg-email-input{
     position: absolute;
     left: 0.1rem;
     top: 5.5rem;
-    border-radius: var(--label-border-radius);
 }
 .reg-pass-label{
     position: absolute;
     left: 0.1rem;
     top: 8.2rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
 }
 .reg-pass-input{
     position: absolute;
     left: 0.1rem;
     top: 9.7rem;
-    border-radius: var(--label-border-radius);
 }
 .reg-pass-repeat-label{
     position: absolute;
     left: 0.1rem;
     top: 11.9rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
 }
 .reg-pass-repeat-input{
     position: absolute;
     left: 0.1rem;
     top: 13.4rem;
-    border-radius: var(--label-border-radius);
+}
+.update-foto-user {
+    position: absolute;
+    width: 6rem;
+    height: 8rem;
+    left: -0.6rem;
+    top: 4.2rem;
+    border: 1px solid bisque;
+    border-radius: 4px;
+}
+.update-text-id {
+    position: absolute;
+    left: 6rem;
+    top: 3rem;
+}
+.update-text-user {
+    position: absolute;
+    left: 6rem;
+    top: 7rem;
+}
+.update-text-email {
+    position: absolute;
+    left: 6rem;
+    top: 11rem;
+}
+.update-in-id {
+    position: absolute;
+    width: 2rem;
+    left: 6rem;
+    top: 4.2rem;
+}
+.update-in-user {
+    position: absolute;
+    left: 6rem;
+    top: 8.2rem;
+}
+.update-in-email {
+    position: absolute;
+    left: 6rem;
+    top: 12.2rem;
+}
+.update-btn-ant {
+    position: absolute;
+    height: 2rem;
+    left: 6rem;
+    top: 20rem;
+    border: none;
+    cursor: pointer;
+}
+.update-btn-prox {
+    position: absolute;
+    height: 2rem;
+    left: 15rem;
+    top: 20rem;
+    border: none;
+    cursor: pointer;
+}
+.update-register {
+    position: absolute;
+    width: 2.2rem;
+    height: 2.2rem;
+    left: 6rem;
+    top: 16rem;
+    background: url('../../../public/img/register.png');
+    border: none;
+    cursor: pointer;
+}
+.update-register:hover{
+    background-size: 3rem;
+}
+.update-update {
+    position: absolute;
+    width: 2.2rem;
+    height: 2.2rem;
+    left: 11.4rem;
+    top: 16rem;
+    border-radius: 6px;
+    background: url('../../../public/img/update.png');
+    border: none;
+    cursor: pointer;
+}
+.update-update:hover{
+    background-size: 4rem;
+}
+.update-delete {
+    position: absolute;
+    width: 2.2rem;
+    height: 2.2rem;
+    left: 17rem;
+    top: 16rem;
+    border-radius: 6px;
+    background: url('../../../public/img/delete.png');
+    border: none;
+    cursor: pointer;
+}
+.update-delete:hover{
+    background-size: 2rem;
 }
 .button-login {
     position: absolute;
-	background-color: rgb(169, 169, 197);
-    color: var(--label-color);
 	height: 40px;
 	border-radius: 3px;
 	width: 100px;
-	font-size: 16px;
 	cursor: pointer;
 	border: none;
 	transition: all 0.5s ease;
@@ -184,22 +229,8 @@ border-radius: var(--main-border-radius);
     font-size: 13px;
     color: white;
 }
-.container-update {
-    /* box-sizing: border-box; */
-    margin-top: 12px;
-    position: relative;
-    height: 28rem;
-    background-color:rgb(73, 80, 80);
-    width: 390px;
-    margin-left: auto;
-    margin-right: auto;
-    border: var(--main-border);
-    border-radius: var(--main-border-radius);
-}
-.main_list {
-    padding: 2px;
-}
-.container_list {
+/* Listagens */
+.container-list {
     height: auto;
     background: #cbd8e7;
     border: var(--main-border);
@@ -208,192 +239,32 @@ border-radius: var(--main-border-radius);
     margin-right: auto;
     border-radius: 13px;
 }
-
-.text-reader {
-    padding: 26px 0px 0px 1rem;
-    font-size: var(--reader-font-size);
-    font-family: var(--reader-font-family);
-    color: var(--reader-bg-color);
-}
-.foto-user {
-    padding: 2px 2px 2px 2px;
-    position: absolute;
-    width: 5.5rem;
-    height: 8em;
-    left: 1rem;
-    top: 5rem;
-    border-radius: var(--main-border-radius);
-    background: url('../../../public/img/avatar.png');
-}
-.text-id {
-    position: absolute;
-    width: 1rem;
-    height: 1rem;
-    left: 8rem;
-    top: 5rem;
-    font-size: var(--reader-font-size);
-    font-family: var(--reader-font-family);
-    color: var(--reader-bg-color);
-}
-.text-user {
-    position: absolute;
-    width: 12rem;
-    height: 1rem;
-    left: 8rem;
-    top: 8.5rem;
-    font-size: var(--reader-font-size);
-    font-family: var(--reader-font-family);
-    color: var(--reader-bg-color);
-}
-.text-email {
-    position: absolute;
-    width: 12rem;
-    height: 1rem;
-    left: 8rem;
-    top: 12.4rem;
-    font-size: var(--reader-font-size);
-    font-family: var(--reader-font-family);
-    color: var(--reader-bg-color);
-}
-.in-id {
-    position: absolute;
-    width: 23px;
-    height: 23px;
-    left: 8rem;
-    top: 6.2rem;
-    border:none;
-    border-radius: var(--input-border-radius);
-
-}
-.in-user {
-    position: absolute;
-    width: 218px;
-    height: 28px;
-    left: 8rem;
-    top: 9.7rem;
-    border: none;
-    border-radius: var(--input-border-radius);
-}
-.in-email {
-    position: absolute;
-    width: 210px;
-    height: 28px;
-    left: 8rem;
-    top: 13.6rem;
-    border: none;
-    border-radius: 3px;
-    border-radius: var(--input-border-radius);
-}
-.btn-ant {
-    position: absolute;
-    width: 5rem;
-    height: 2rem;
-    left: 9rem;
-    top: 19rem;
-    font-weight: 1px;
-    font-size: 14px;
-    line-height: 1px;
-    border: none;
-    cursor: pointer;
-    border-radius: var(--input-border-radius);
-}
-.btn-prox {
-    position: absolute;
-    width: 5rem;
-    height: 2rem;
-    left: 15rem;
-    top: 19rem;
-    font-weight: 1px;
-    font-size: 14px;
-    line-height: 1px;
-    border: none;
-    cursor: pointer;
-    border-radius: var(--input-border-radius);
-}
-.register {
-    position: absolute;
-    width: 2.2rem;
-    height: 2.2rem;
-    left: 8rem;
-    top: 16rem;
-    border-radius: 6px;
-    background: url('../../../public/img/register.png');
-    border: none;
-    cursor: pointer;
-}
-.register:hover{
-    background-size: 3rem;
-}
-.update {
-    position: absolute;
-    width: 2.2rem;
-    height: 2.2rem;
-    left: 13.4rem;
-    top: 16rem;
-    border-radius: 6px;
-    background: url('../../../public/img/update.png');
-    border: none;
-    cursor: pointer;
-}
-.update:hover{
-    background-size: 4rem;
-}
-.delete {
-    position: absolute;
-    width: 2.2rem;
-    height: 2.2rem;
-    left: 19rem;
-    top: 16rem;
-    border-radius: 6px;
-    background: url('../../../public/img/delete.png');
-    border: none;
-    cursor: pointer;
-}
-.delete:hover{
-    background-size: 2rem;
-}
-.update_list {
-    padding: 9px;
-    color: rgb(4, 13, 41);
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.update-list {
+    padding: 12px;
     font-size: 12px;
 }
-.list_id {
-    padding: var(--main-padding);
-    color: var(--main-bg-color);
-    font-size: var(--main-font-size);
-    font-family: var(--main-font-family);
+:root{
+    --list--font-size: 14px;
+    --list--color:black
 }
-.list_create {
-    padding: var(--main-padding);
-    color: var(--main-bg-color);
-    font-size: var(--main-font-size);
-    font-family: var(--main-font-family);
+.list-id {
+  font-size: var(--list--font-size);
+  color:var(--list--color)
 }
-.list_name {
-    padding: var(--main-padding);
-    color: var(--main-bg-color);
-    font-size: var(--main-font-size);
-    font-family: var(--main-font-family);
+.list-create {
+    font-size: var(--list--font-size);
+    color:var(--list--color)
 }
-.list_email {
-    padding: var(--main-padding);
-    color: var(--main-bg-color);
-    font-size: var(--main-font-size);
-    font-family: var(--main-font-family);
+.list-name {
+    font-size: var(--list--font-size);
+    color:var(--list--color)
 }
-
-.list_password {
-    padding: var(--main-padding);
-    color: var(--main-bg-color);
-    font-size: var(--main-font-size);
-    font-family: var(--main-font-family);
+.list-email {
+    font-size: var(--list--font-size);
+  color:var(--list--color)
 }
-.btn_update {
-    font-family: var(--main-font-family);
-    text-decoration: var(--main-text-decoration);
-    font-size: var(--main-font-size);
-    border-radius: var(--input-border-radius);
-    border:none;
+.list-password {
+    font-size: var(--list--font-size);
+    color:var(--list--color)
 }
 

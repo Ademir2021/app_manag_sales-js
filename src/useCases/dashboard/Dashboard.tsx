@@ -3,7 +3,10 @@ import { useContext } from 'react';
 import { AuthContext } from "../../context/auth";
 
 export function Dashboard() {
-    const { logout, user }: any = useContext(AuthContext);
+    const { logout }: any = useContext(AuthContext);
+
+    const res:any = localStorage.getItem('u')
+    const user = JSON.parse(res)
 
     const handleLogout = () => {
         logout()

@@ -8,10 +8,10 @@ export function UserFormRegister({ children, handleChange, handleSubmit, message
 
     return (
         <>
-                <main className='login' >
+                <div className='container' >
                 <img src='./img/secure.png'></img>
-                <h1>< a href="/">Menu Principal</a></h1>
-                <fieldset className='fieldset'>
+                < a style={{textDecoration:'none'}} href="/">Menu Principal</a>
+                <fieldset className='main'>
                     <Header name="Registrar Usuário" />
                     <form className='f-form' onSubmit={handleSubmit}>
                         <label className='reg-name-label' >Nome completo</label>
@@ -56,7 +56,7 @@ export function UserFormRegister({ children, handleChange, handleSubmit, message
                         />
                     </form>
                 </fieldset>
-                </main>
+                </div>
         </>
     )
 }

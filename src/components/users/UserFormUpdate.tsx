@@ -1,58 +1,60 @@
 import React from "react"
+import { Header } from "./UserHeader"
 
 import './styles.css'
 
 export function UserFormUptdate({ handleChange, children, handleSubmit, handleUpdate, handleDelete, handleIncrement, handleDecrement, submit }: any) {
     return (
         <>
-            <div className="login">
-                <div className="container-update">
-                    <div className="text-reader">Manutenção dos Usuários de Login !!</div>
-                    <div className="foto-user" />
-
+            <div className="container">
+                <div className="main">
+                <Header name="Atualizar Usuário" />
+                    <div className="f-form">
+                    <img src='./img/avatar.png' className="update-foto-user"></img>
                     <form onSubmit={handleSubmit}>
-                        <label className="text-id">ID</label>
+                        <label className="update-text-id">ID</label>
                         <input
-                            className="in-id"
+                            className="update-in-id"
                             type="text"
                             name="id"
                             placeholder="ID"
                             value={children.id || 0}
                             onChange={handleChange}
                         />
-                        <label className="text-id">ID</label>
-                        <label className="text-user" >Nome do Usuário</label>
+                        <label className="update-text-id">ID</label>
+                        <label className="update-text-user" >Nome do Usuário</label>
                         <input
-                            className="in-user"
+                            className="update-in-user"
                             type="search"
                             name="name"
                             placeholder="Nome do Usuário"
                             value={children.name}
                             onChange={handleChange}
                         />
-                        <label className="text-email">Email do Usuário</label>
+                        <label className="update-text-email">Email do Usuário</label>
                         <input
-                            className="in-email"
+                            className="update-in-email"
                             type="email"
                             name="username"
                             placeholder="Email do Usuário"
                             value={children.username}
                             onChange={handleChange}
                         />
-                        <button className="register" type={submit}></button>
+                        <button className="update-register" type={submit}></button>
                     </form>
                     <form onSubmit={handleUpdate}>
-                        <button className="update" type={submit}></button>
+                        <button className="update-update" type={submit}></button>
                     </form>
                     <form onSubmit={handleDelete}>
-                        <button className="delete" type={submit}></button>
+                        <button className="update-delete" type={submit}></button>
                     </form>
                     <form onSubmit={handleDecrement}>
-                        <button type={submit} className="btn-ant">Anterior</button>
+                        <button type={submit} className="update-btn-ant">Anterior</button>
                     </form>
                     <form onSubmit={handleIncrement}>
-                        <button type={submit} className="btn-prox">Próximo</button>
+                        <button type={submit} className="update-btn-prox">Próximo</button>
                     </form>
+                </div>
                 </div>
             </div>
         </>

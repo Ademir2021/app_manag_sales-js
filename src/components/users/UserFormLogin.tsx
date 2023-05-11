@@ -15,45 +15,29 @@ type userFormLogin = {
 export function UserFormLogin({ children, handleChange, handleSubmit, message, alert }: userFormLogin) {
     return (
         <>
-            <div className='login'>
+            <div className='container'>
                 <img src='./img/secure.png'></img>
-                <h1>< a href="/">Menu Principal</a></h1>
-                <fieldset className='fieldset'>
+                < a style={{textDecoration:'none'}} href="/">Menu Principal</a>
+                <fieldset className='main'>
                     <Header name="Login Usuário" />
                     <form className="f-form" onSubmit={handleSubmit}>
-                        <label style={{
-                            position: 'absolute',
-                            left: '0.1rem',
-                            top: '0px'
-                        }}>Email</label>
-                        <input style={{
-                            position: 'absolute',
-                            left: '0.1rem',
-                            top: '1.6rem'
-                        }}
+                        <label className='email-label'>Email</label>
+                        <input className='email-input'
                             type="email"
                             name="username"
                             placeholder='Email'
                             value={children.username || ""}
                             onChange={handleChange}
                         />
-                        <label style={{
-                            position: 'absolute',
-                            left: '0rem',
-                            top: '6rem'
-                        }}>Senha</label>
-                        <input style={{
-                            position: 'absolute',
-                            left: '0.1rem',
-                            top: '7.5rem'
-                        }}
+                        <label className='pass-label'>Senha</label>
+                        <input className='pass-input'
                             type="password"
                             name="password"
                             placeholder='Senha'
                             value={children.password || ""}
                             onChange={handleChange}
                         />
-                        <Button>Login</Button>
+                        <Button>Logar_se</Button>
                         <UserLink
                             title="Não tem login"
                             link={<a href='/register'>Registre-se</a>}

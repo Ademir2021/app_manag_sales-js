@@ -1,53 +1,12 @@
-#f-form{
-    background-color: black;
-    display: flex;
-}
-#fieldset{ 
-    border-radius: var(--label-border-radius);
-    border: black solid 1px;
-    font-family: var(--label-font-family);
-    color: var(--label-color);
-}
-#main{
-    padding: 16px;
-    margin: 0;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    height: auto;
-    /* background-color: rgb(197, 170, 170); */
-    border-radius: var(--label-border-radius);
-}
-#container{
-    /* box-sizing: border-box; */
-    position: relative;
-    height: 22rem;
-    /* background: #cbd8e7; */
-    /* border: var(--main-border); */
-    width: 360px;
-    margin-left: auto;
-    margin-right: auto;
-    /* border-radius: var(--main-border-radius); */
-}
-#f-form{
-    padding: 0px 0px 0px 0px;
-    position:relative;
-    width: 20rem;
-}
 .button-pers {
     position: absolute;
-	background-color: rgb(169, 169, 197);
-    color: var(--label-color);
 	height: 40px;
 	border-radius: 3px;
-	width: 100px;
-	font-size: 16px;
 	cursor: pointer;
 	border: none;
 	transition: all 0.5s ease;
     left: 0.1rem;
-    top:12rem;
+    top:18rem;
 }
 .button-pers:hover {
     background-color: #444;
@@ -56,56 +15,40 @@
 .pers-name-label{
     position: absolute;
     left: 0.1rem;
-    top: 0rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
+    top: 1.5rem;
 }
 .pers-name-input{
     position: absolute;
     left: 0.1rem;
-    top: 1.3rem;
-    border-radius: var(--label-border-radius);
+    top: 3rem;
 }
 .pers-cpf-label{
     position: absolute;
     left: 0.1rem;
-    top: 3rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
+    top: 5.1rem;
 }
 .pers-cpf-input{
     position: absolute;
     left: 0.1rem;
-    top: 4.3rem;
-    border-radius: var(--label-border-radius);
+    top: 6.6rem;
 }
 .pers-address-label{
     position: absolute;
     left: 0.1rem;
-    top: 5.9rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
+    top: 8.8rem;
 }
 .pers-address-input{
     position: absolute;
     left: 0.1rem;
-    top: 7.2rem;
-    border-radius: var(--label-border-radius);
+    top: 10.4rem;
 }
 .pers-filial-label{
     position: absolute;
     left: 0.1rem;
-    top: 8.7rem;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    color: var(--label-color)
+    top: 12.5rem;
 }
 .pers-filial-input{
     position: absolute;
     left: 0.1rem;
-    top: 10rem;
-    border-radius: var(--label-border-radius);
+    top: 14rem;
 }

@@ -4,10 +4,8 @@ import "./styles.css"
 
 export function ProductForm({ children, handleChange, handleSubmit, submit }: any) {
     return (
-        <>
-            <div className="">
-                <main className="login">
-                <fieldset className="fieldset">
+                <div className="container">
+                <fieldset className="main">
                     <form className="f-form" onSubmit={handleSubmit}>
                         <label className="prod-descr-label" >Descrição Produto</label>
                         <input className="prod-descr-input"
@@ -62,8 +60,6 @@ export function ProductForm({ children, handleChange, handleSubmit, submit }: an
                          </button>
                     </form>
                 </fieldset>
-                </main>
-            </div>
-        </>
+                </div>
     )
 }

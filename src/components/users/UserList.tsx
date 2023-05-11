@@ -8,20 +8,17 @@ import { IUsers } from '../../useCases/users/IUser';
 const ListUSers: React.FC<any> = (
     { id, created_at, name, username, password, update }: IUsers) => {
     return (
-        <>
-            <div className="main_list">
-                <div className="container_list">
-                    <div className="update_list">
-                        <strong className="list_id">ID_User: </strong><strong>{id}</strong><br />
-                        <strong className="list_create">Criado: </strong><strong>{created_at}</strong><br />
-                        <strong className="list_name">Nome Completo: </strong><strong>{name}</strong><br />
-                        <strong className="list_email">Email: </strong><strong>{username}</strong><br />
-                        {/* <strong className="list_password">Senha: </strong><strong>{password}</strong><br /> */}
-                        <button className="btn_update">{update}</button>
-                    </div>
+
+        <div className="container-list">
+            <div className="update-list">
+                <strong className="list-id">ID_User: </strong><strong>{id}</strong><br />
+                <strong className="list-create">Criado: </strong><strong>{created_at}</strong><br />
+                <strong className="list-name">Nome Completo: </strong><strong>{name}</strong><br />
+                <strong className="list-email">Email: </strong><strong>{username}</strong><br />
+                {/* <strong className="list-password">Senha: </strong><strong>{password}</strong><br /> */}
+                <button className="">{update}</button>
                 </div>
-            </div>
-        </>
+        </div>
     )
 }
 export { ListUSers }
