@@ -4,7 +4,7 @@ import { NavBar } from '../../components/navbar/Navbar';
 
 const register = './register'
 const home = './'
-const user_update = './user_update'
+const update = './user_update'
 const login = './'
 
 export function Dashboard() {
@@ -21,7 +21,7 @@ export function Dashboard() {
             <NavBar
              register={register}
              home={home}
-             user_update={user_update}
+             update={update}
              login={login}
             />
             < br />

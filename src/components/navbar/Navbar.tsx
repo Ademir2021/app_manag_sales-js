@@ -2,16 +2,13 @@ import React, { useState, useContext, useEffect } from 'react'
 
 import "../assets/dist/css/bootstrap.min.css"
 
-let isLogin: string
+export function NavBar(props:any) {
+
+let [isLogin] = useState<string>('Login')
 const res: any = localStorage.getItem('u')
-if (JSON.parse(res) === null) {
-    isLogin = 'Login'
-} else {
+if (JSON.parse(res) !== null) {
     isLogin = 'Logout'
 }
-
-export function NavBar({ register, home, user_update, login }: any) {
-
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
             <div className="container-fluid">
@@ -29,16 +26,16 @@ export function NavBar({ register, home, user_update, login }: any) {
                     <div className="offcanvas-body">
                         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href={home}>Home</a>
+                                <a className="nav-link active" aria-current="page" href={props.home}>Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href={register}>Registrar</a>
+                                <a className="nav-link" href={props.register}>Registrar</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href={user_update}>Atualizar Usuário</a>
+                                <a className="nav-link" href={props.update}>Atualizar Usuário</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href={login}>{isLogin}</a>
+                                <a className="nav-link" href={props.login}>{isLogin}</a>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -49,6 +46,7 @@ export function NavBar({ register, home, user_update, login }: any) {
                                     <li>
                                         <hr className="dropdown-divider" />
                                     </li>
+                                    <li><a className="dropdown-item" href="#">Vazio</a></li>
                                     <li><a className="dropdown-item" href="#">Vazio</a></li>
                                 </ul>
                             </li>
