@@ -7,10 +7,9 @@ import { UserLink } from './UserLink';
 export function UserFormRegister({ children, handleChange, handleSubmit, message, alert }: any) {
 
     return (
-        <>
                 <div className='container' >
-                <img src='./img/secure.png'></img>
-                < a style={{textDecoration:'none'}} href="/">Menu Principal</a>
+                <img style={{width:"60px",height:"60px"}} src='./img/secure.png'></img>
+                < a style={{textDecoration:'none'}} href="/">------| Menu Principal |------</a>
                 <fieldset className='main'>
                     <Header name="Registrar Usuário" />
                     <form className='f-form' onSubmit={handleSubmit}>
@@ -57,6 +56,5 @@ export function UserFormRegister({ children, handleChange, handleSubmit, message
                     </form>
                 </fieldset>
                 </div>
-        </>
     )
 }

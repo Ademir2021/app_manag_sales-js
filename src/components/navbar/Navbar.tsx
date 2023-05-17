@@ -1,12 +1,21 @@
-import React from "react"
+import React, { useState, useContext, useEffect } from 'react'
 
 import "../assets/dist/css/bootstrap.min.css"
 
-export function Links() {
+let isLogin: string
+const res: any = localStorage.getItem('u')
+if (JSON.parse(res) === null) {
+    isLogin = 'Login'
+} else {
+    isLogin = 'Logout'
+}
+
+export function NavBar({ register, home, user_update, login }: any) {
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
             <div className="container-fluid">
-                <a className="navbar-brand" href="/">Menu Principal</a>
+                <a className="navbar-brand" href="/">Logo da Empresa</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
                     aria-controls="offcanvasNavbar2">
                     <span className="navbar-toggler-icon"></span>
@@ -20,16 +29,16 @@ export function Links() {
                     <div className="offcanvas-body">
                         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">Home</a>
+                                <a className="nav-link active" aria-current="page" href={home}>Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="./register">Registrar</a>
+                                <a className="nav-link" href={register}>Registrar</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="./user_update">Atualizar Usuário</a>
+                                <a className="nav-link" href={user_update}>Atualizar Usuário</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="./Login">Login</a>
+                                <a className="nav-link" href={login}>{isLogin}</a>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

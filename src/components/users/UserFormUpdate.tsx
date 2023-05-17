@@ -3,14 +3,15 @@ import { Header } from "./UserHeader"
 
 import './styles.css'
 
+const avatar = './img/avatar.png'
+
 export function UserFormUptdate({ handleChange, children, handleSubmit, handleUpdate, handleDelete, handleIncrement, handleDecrement, submit }: any) {
     return (
-        <>
             <div className="container">
                 <div className="main">
                 <Header name="Atualizar Usuário" />
                     <div className="f-form">
-                    <img src='./img/avatar.png' className="update-foto-user"></img>
+                    <img src={avatar} className="update-foto-user"></img>
                     <form onSubmit={handleSubmit}>
                         <label className="update-text-id">ID</label>
                         <input
@@ -57,6 +58,5 @@ export function UserFormUptdate({ handleChange, children, handleSubmit, handleUp
                 </div>
                 </div>
             </div>
-        </>
     )
 }

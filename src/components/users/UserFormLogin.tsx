@@ -16,8 +16,8 @@ export function UserFormLogin({ children, handleChange, handleSubmit, message, a
     return (
         <>
             <div className='container'>
-                <img src='./img/secure.png'></img>
-                < a style={{textDecoration:'none'}} href="/">Menu Principal</a>
+                <img style={{width:"60px",height:"60px"}} src='./img/secure.png'></img>
+                < a style={{textDecoration:'none'}} href="/">------| Menu Principal |------</a>
                 <fieldset className='main'>
                     <Header name="Login Usuário" />
                     <form className="f-form" onSubmit={handleSubmit}>

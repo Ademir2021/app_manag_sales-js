@@ -1,83 +1,98 @@
 .button-prod {
-        position: absolute;
-        height: 40px;
-        border-radius: 3px;
-        cursor: pointer;
-        border: none;
-        transition: all 0.5s ease;
-        left: 0.1rem;
-        top:23rem;
+    position: absolute;
+    height: 40px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.5s ease;
+    left: 0.1rem;
+    top: 23rem;
 }
+
 .button-prod:hover {
     background-color: #444;
-	color: blue;
+    color: blue;
 }
-.prod-descr-label{
+
+.prod-descr-label {
     position: absolute;
     left: 0.1rem;
     top: 0rem;
 }
-.prod-descr-input{
+
+.prod-descr-input {
     position: absolute;
     left: 0.1rem;
     top: 1.5rem;
 }
-.prod-val-max-label{
+
+.prod-val-max-label {
     position: absolute;
     left: 0.1rem;
     top: 3.5rem;
 }
-.prod-val-max-input{
+
+.prod-val-max-input {
     position: absolute;
     left: 0.1rem;
     top: 5rem;
 }
-.prod-val-min-label{
+
+.prod-val-min-label {
     position: absolute;
     left: 0.1rem;
     top: 7.2rem;
 }
-.prod-val-min-input{
+
+.prod-val-min-input {
     position: absolute;
     left: 0.1rem;
     top: 8.6rem;
 }
-.prod-brand-label{
+
+.prod-brand-label {
     position: absolute;
     left: 0.1rem;
     top: 0rem;
 }
-.prod-brand-input{
+
+.prod-brand-input {
     position: absolute;
     left: 0.1rem;
     top: 0rem;
 }
-.prod-brand-label{
+
+.prod-brand-label {
     position: absolute;
     left: 0.1rem;
     top: 10.9rem;
 }
-.prod-brand-input{
+
+.prod-brand-input {
     position: absolute;
     left: 0.1rem;
     top: 12.3rem;
 }
-.prod-sector-label{
+
+.prod-sector-label {
     position: absolute;
     left: 0.1rem;
     top: 14.6rem;
 }
-.prod-sector-input{
+
+.prod-sector-input {
     position: absolute;
     left: 0.1rem;
     top: 16rem;
 }
-.prod-barcode-label{
+
+.prod-barcode-label {
     position: absolute;
     left: 0.1rem;
     top: 18.5rem;
 }
-.prod-barcode-input{
+
+.prod-barcode-input {
     position: absolute;
     left: 0.1rem;
     top: 20rem;

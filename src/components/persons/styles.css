@@ -1,53 +1,62 @@
 .button-pers {
     position: absolute;
-	height: 40px;
-	border-radius: 3px;
-	cursor: pointer;
-	border: none;
-	transition: all 0.5s ease;
+    height: 40px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.5s ease;
     left: 0.1rem;
-    top:18rem;
+    top: 18rem;
 }
+
 .button-pers:hover {
     background-color: #444;
-	color: blue;
+    color: blue;
 }
-.pers-name-label{
+
+.pers-name-label {
     position: absolute;
     left: 0.1rem;
     top: 1.5rem;
 }
-.pers-name-input{
+
+.pers-name-input {
     position: absolute;
     left: 0.1rem;
     top: 3rem;
 }
-.pers-cpf-label{
+
+.pers-cpf-label {
     position: absolute;
     left: 0.1rem;
     top: 5.1rem;
 }
-.pers-cpf-input{
+
+.pers-cpf-input {
     position: absolute;
     left: 0.1rem;
     top: 6.6rem;
 }
-.pers-address-label{
+
+.pers-address-label {
     position: absolute;
     left: 0.1rem;
     top: 8.8rem;
 }
-.pers-address-input{
+
+.pers-address-input {
     position: absolute;
     left: 0.1rem;
     top: 10.4rem;
 }
-.pers-filial-label{
+
+.pers-filial-label {
     position: absolute;
     left: 0.1rem;
     top: 12.5rem;
 }
-.pers-filial-input{
+
+.pers-filial-input {
     position: absolute;
     left: 0.1rem;
     top: 14rem;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PersonForm } from '../../components/persons/PersonForm';
 import { IPerson } from "./IPerson";
 import api from '../../services/api/api'
-import { Links } from "../../components/dashboard/Links";
+
 
 export function FormPerson() {
 
@@ -48,7 +48,6 @@ export function FormPerson() {
 
     return (
         <>
-            <Links/>
             <PersonForm
                 handleSubmit={handleSubmit}
                 handleChange={handleChange}

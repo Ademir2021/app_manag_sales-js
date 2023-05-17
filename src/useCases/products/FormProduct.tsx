@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ProductForm } from '../../components/products/ProductForm';
 import { IProduct } from "./IProduct";
 import api from '../../services/api/api'
-import { Links } from "../../components/dashboard/Links";
 
 export function FormProduct() {
 
@@ -51,7 +50,6 @@ export function FormProduct() {
 
     return (
         <>
-            <Links/>
             <ProductForm
                 handleSubmit={handleSubmit}
                 handleChange={handleChange}

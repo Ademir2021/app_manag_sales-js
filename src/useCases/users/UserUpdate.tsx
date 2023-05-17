@@ -2,7 +2,6 @@ import React from "react"
 import { useState, useEffect } from 'react';
 import { UserFormUptdate } from "../../components/users/UserFormUpdate";
 import { ListUSers } from "../../components/users/UserList";
-import { Links } from "../../components/dashboard/Links";
 
 import { FormatDate } from "../../components/utils/formatDate";
 import { IUpdUsers } from './IUser'
@@ -109,7 +108,6 @@ export function UserUpdate() {
 
     return (
         <>
-        <Links/>
             <UserFormUptdate
                 handleIncrement={handleIncrement}
                 handleDecrement={handleDecrement}

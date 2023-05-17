@@ -4,7 +4,6 @@ import { FormatDate } from "../../components/utils/formatDate";
 
 import { IUsers } from './IUser'
 import api from '../../services/api/api'
-import { Links } from "../../components/dashboard/Links";
 
 export function ListUsers() {
 
@@ -23,7 +22,6 @@ const [users, setUsers] = useState<IUsers[]>([])
 
   return (
     <>
-    <Links/>
       <div style={{ padding: '12px' }}>Lista de Users</div>
       {users.length === 0 ? <p>Carregando...</p> : (
         users.map((user) => (

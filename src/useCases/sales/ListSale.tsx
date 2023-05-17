@@ -3,7 +3,6 @@ import { FormatDate } from "../../components/utils/formatDate";
 import { SalesList } from "../../components/sales/SaleList";
 import { ISale } from "./ISale";
 import api from '../../services/api/api'
-import { Links } from "../../components/dashboard/Links";
 
 export function ListSales() {
 
@@ -26,7 +25,6 @@ export function ListSales() {
 
   return (
     <>
-    <Links/>
       <div style={{ fontSize: '18px' }}>Lista de Vendas</div>
       {sales.length === 0 ? <p>Carregando...</p> : (
         sales.map((sale: ISale) => (

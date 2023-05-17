@@ -1,6 +1,11 @@
-import { Links, } from "../../components/dashboard/Links"
 import { useContext } from 'react';
 import { AuthContext } from "../../context/auth";
+import { NavBar } from '../../components/navbar/Navbar';
+
+const register = './register'
+const home = './'
+const user_update = './user_update'
+const login = './'
 
 export function Dashboard() {
     const { logout }: any = useContext(AuthContext);
@@ -13,7 +18,12 @@ export function Dashboard() {
     }
     return (
         <>
-            <Links />
+            <NavBar
+             register={register}
+             home={home}
+             user_update={user_update}
+             login={login}
+            />
             < br />
             <strong>DashBoard</strong> < br />< br />
             <strong> User Logado: <span

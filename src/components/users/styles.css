@@ -1,12 +1,14 @@
-*{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #0b0c3d;
     border-radius: 3px;
 }
-::placeholder{
+
+::placeholder {
     font-size: 14px;
 }
-.container{
+
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,77 +16,92 @@
     min-height: 100vh;
     padding: 0 2rem;
 }
-.main{ 
-height: 28rem;
-width: 24rem;
-padding: 22px 0px 0px 22px;
-background-color:rgb(73, 80, 80);
+
+.main {
+    height: 28rem;
+    width: 24rem;
+    padding: 22px 0px 0px 22px;
+    background-color: rgb(73, 80, 80);
 }
-.f-form{
+
+.f-form {
     padding: 0px 0px 0px 0px;
-    position:relative;
+    position: relative;
     width: 20rem;
 }
-.email-label{
+
+.email-label {
     position: absolute;
     left: 0.1rem;
     top: 0rem;
 }
-.email-input{
+
+.email-input {
     position: absolute;
     left: 0.1rem;
     top: 1.6rem;
 }
-.pass-label{
+
+.pass-label {
     position: absolute;
     left: 0rem;
     top: 6rem;
 }
-.pass-input{
+
+.pass-input {
     position: absolute;
     left: 0.1rem;
     top: 7.5rem;
 }
-.reg-name-label{
+
+.reg-name-label {
     position: absolute;
     left: 0.1rem;
     top: 0rem;
 }
-.reg-name-input{
+
+.reg-name-input {
     position: absolute;
     left: 0.1rem;
     top: 1.6rem;
 }
-.reg-email-label{
+
+.reg-email-label {
     position: absolute;
     left: 0.1rem;
     top: 4rem;
 }
-.reg-email-input{
+
+.reg-email-input {
     position: absolute;
     left: 0.1rem;
     top: 5.5rem;
 }
-.reg-pass-label{
+
+.reg-pass-label {
     position: absolute;
     left: 0.1rem;
     top: 8.2rem;
 }
-.reg-pass-input{
+
+.reg-pass-input {
     position: absolute;
     left: 0.1rem;
     top: 9.7rem;
 }
-.reg-pass-repeat-label{
+
+.reg-pass-repeat-label {
     position: absolute;
     left: 0.1rem;
     top: 11.9rem;
 }
-.reg-pass-repeat-input{
+
+.reg-pass-repeat-input {
     position: absolute;
     left: 0.1rem;
     top: 13.4rem;
 }
+
 .update-foto-user {
     position: absolute;
     width: 6rem;
@@ -94,37 +111,44 @@ background-color:rgb(73, 80, 80);
     border: 1px solid bisque;
     border-radius: 4px;
 }
+
 .update-text-id {
     position: absolute;
     left: 6rem;
     top: 3rem;
 }
+
 .update-text-user {
     position: absolute;
     left: 6rem;
     top: 7rem;
 }
+
 .update-text-email {
     position: absolute;
     left: 6rem;
     top: 11rem;
 }
+
 .update-in-id {
     position: absolute;
     width: 2rem;
     left: 6rem;
     top: 4.2rem;
 }
+
 .update-in-user {
     position: absolute;
     left: 6rem;
     top: 8.2rem;
 }
+
 .update-in-email {
     position: absolute;
     left: 6rem;
     top: 12.2rem;
 }
+
 .update-btn-ant {
     position: absolute;
     height: 2rem;
@@ -133,6 +157,7 @@ background-color:rgb(73, 80, 80);
     border: none;
     cursor: pointer;
 }
+
 .update-btn-prox {
     position: absolute;
     height: 2rem;
@@ -141,6 +166,7 @@ background-color:rgb(73, 80, 80);
     border: none;
     cursor: pointer;
 }
+
 .update-register {
     position: absolute;
     width: 2.2rem;
@@ -151,9 +177,11 @@ background-color:rgb(73, 80, 80);
     border: none;
     cursor: pointer;
 }
-.update-register:hover{
+
+.update-register:hover {
     background-size: 3rem;
 }
+
 .update-update {
     position: absolute;
     width: 2.2rem;
@@ -165,9 +193,11 @@ background-color:rgb(73, 80, 80);
     border: none;
     cursor: pointer;
 }
-.update-update:hover{
+
+.update-update:hover {
     background-size: 4rem;
 }
+
 .update-delete {
     position: absolute;
     width: 2.2rem;
@@ -179,35 +209,40 @@ background-color:rgb(73, 80, 80);
     border: none;
     cursor: pointer;
 }
-.update-delete:hover{
+
+.update-delete:hover {
     background-size: 2rem;
 }
+
 .button-login {
     position: absolute;
-	height: 40px;
-	border-radius: 3px;
-	width: 100px;
-	cursor: pointer;
-	border: none;
-	transition: all 0.5s ease;
+    height: 40px;
+    border-radius: 3px;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.5s ease;
     left: 0.1rem;
     top: 16rem;
 }
+
 .button-login:hover {
     background-color: #444;
-	color: blue;
+    color: blue;
 }
-.login-text{
+
+.login-text {
     position: absolute;
     left: 0.1rem;
     top: 19.6rem;
     cursor: pointer;
-    text-decoration:none;
+    text-decoration: none;
     font-family: var(--label-font-family);
     font-size: var(--label-font-size);
     color: var(--label-color)
 }
-.login-company{
+
+.login-company {
     position: absolute;
     left: 8rem;
     top: 13rem;
@@ -215,20 +250,23 @@ background-color:rgb(73, 80, 80);
     font-size: var(--label-font-size);
     color: var(--label-color)
 }
-.login-message{
+
+.login-message {
     position: absolute;
     left: 6.8rem;
     top: 16rem;
     font-size: 13px;
     color: white;
 }
-.login-alert{
+
+.login-alert {
     position: absolute;
     left: 6.8rem;
     top: 16rem;
     font-size: 13px;
     color: white;
 }
+
 /* Listagens */
 .container-list {
     height: auto;
@@ -239,32 +277,38 @@ background-color:rgb(73, 80, 80);
     margin-right: auto;
     border-radius: 13px;
 }
+
 .update-list {
     padding: 12px;
     font-size: 12px;
 }
-:root{
+
+:root {
     --list--font-size: 14px;
-    --list--color:black
-}
-.list-id {
-  font-size: var(--list--font-size);
-  color:var(--list--color)
-}
-.list-create {
-    font-size: var(--list--font-size);
-    color:var(--list--color)
-}
-.list-name {
-    font-size: var(--list--font-size);
-    color:var(--list--color)
-}
-.list-email {
-    font-size: var(--list--font-size);
-  color:var(--list--color)
-}
-.list-password {
-    font-size: var(--list--font-size);
-    color:var(--list--color)
+    --list--color: black
 }
 
+.list-id {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-create {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-name {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-email {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-password {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
