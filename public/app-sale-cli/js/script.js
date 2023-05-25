@@ -6,7 +6,7 @@ const option = document.getElementById("options")
 const total = document.getElementById("total");
 const userLogin = document.getElementById("user")
 let id = 1
-const itens = [{ disc_sale: 2.00, fk_name_pers: 0, user: "", filial:0, user_id:0 }]
+const itens = [{ disc_sale: 2.00, fk_name_pers: 0, user: "", filial: 0, user_id: 0 }]
 let editId = null
 insertItem() /**Importante !! já inicia invocando esta função */
 
@@ -22,7 +22,7 @@ async function auth() {
         itens[0].filial = 1
         itens[0].fk_name_pers = 1
     }
-}auth()
+} auth()
 
 async function insertItem() {
     try {
@@ -43,19 +43,27 @@ async function insertItem() {
                         || setItem == products[i].id_product /**id */
                         || setItem == products[i].bar_code) { /**init insert Item */
                         const item = {}
-                        item.id = id++
                         item.id_product = products[i].id_product
                         item.descric = products[i].descric_product
                         item.amount_product = setAmount
                         item.val_product = parseFloat(products[i].val_max_product).toFixed(2)
                         item.tItem = parseFloat(item.amount_product * item.val_product).toFixed(2)
-                        save(item)
+                        verifItem(item)
                     }
             })
     } catch (error) {
         alert("API de itens não localizada !!")
         console.log(error, "Error Occurred !!")
     }
+}
+
+function verifItem(item) {
+    for (let i = 1; itens.length > i; i++)
+        if (item.id_product === itens[i].id_product) {
+            return alert('Item já foi lançado')
+        }
+    item.id = id++
+    return save(item)
 }
 
 function save(item) {
@@ -116,7 +124,6 @@ function listItens() {
         imgDelete.setAttribute("onclick", "delItem(" + itens[i].id + ")")
         td_acoes.appendChild(imgEdit)
         td_acoes.appendChild(imgDelete)
-        console.log(itens)
     }
 }
 
@@ -186,7 +193,7 @@ function payment(sum) {
             alert("Venda enviada com Sucesso !!")
             // localStorage.removeItem('u');
             // window.location.reload();
-            
+
         } else {
             let aPagar = tProducts - payment
             alert("O valor não bate com o Total dos Produtos !" +

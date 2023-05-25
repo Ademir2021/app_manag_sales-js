@@ -3,9 +3,11 @@ import { AuthContext } from "../../context/auth";
 import { NavBar } from '../../components/navbar/Navbar';
 
 const register = './register'
-const home = './'
+const home = './dashboard'
 const update = './user_update'
 const login = './'
+
+const person = './form_person'
 
 export function Dashboard() {
     const { logout }: any = useContext(AuthContext);
@@ -23,6 +25,7 @@ export function Dashboard() {
              home={home}
              update={update}
              login={login}
+             person={person}
             />
             < br />
             <strong>DashBoard</strong> < br />< br />

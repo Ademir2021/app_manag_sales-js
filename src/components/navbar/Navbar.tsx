@@ -5,9 +5,13 @@ import "../assets/dist/css/bootstrap.min.css"
 export function NavBar(props:any) {
 
 let [isLogin] = useState<string>('Login')
+let [isMenuA] = useState<string>('Atendimento')
+let [isSubMenuB] = useState<string>('')
 const res: any = localStorage.getItem('u')
 if (JSON.parse(res) !== null) {
     isLogin = 'Logout'
+    isMenuA = 'Cadastros'
+    isSubMenuB = "Novo Cliente"
 }
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
@@ -39,9 +43,9 @@ if (JSON.parse(res) !== null) {
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">Atendimento</a>
+                                    aria-expanded="false">{isMenuA}</a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">Vazio</a></li>
+                                    <li><a className="dropdown-item" href={props.person}>{isSubMenuB}</a></li>
                                     <li><a className="dropdown-item" href="#">Vazio</a></li>
                                     <li>
                                         <hr className="dropdown-divider" />

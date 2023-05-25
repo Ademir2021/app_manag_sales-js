@@ -2,6 +2,7 @@ import { useState } from "react";
 import { PersonForm } from '../../components/persons/PersonForm';
 import { IPerson } from "./IPerson";
 import api from '../../services/api/api'
+import { HomePage } from "../home/HomePage";
 
 
 export function FormPerson() {
@@ -48,6 +49,7 @@ export function FormPerson() {
 
     return (
         <>
+        <HomePage/>
             <PersonForm
                 handleSubmit={handleSubmit}
                 handleChange={handleChange}
