@@ -2,10 +2,15 @@ type Links = {
     title: string;
     link: any;
     company: string;
-    message:string;
-    alert:string
+    message: string;
+    alert: string
 }
-export function UserLink({ title, link, company, message, alert}: Links) {
+export function UserLink({
+    title,
+    link,
+    company,
+    message,
+    alert }: Links) {
     return (
         <>
             <strong className='login-text'>{title}!&nbsp;

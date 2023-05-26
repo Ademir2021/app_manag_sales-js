@@ -1,18 +1,39 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import "../assets/dist/css/bootstrap.min.css"
 
-export function NavBar(props:any) {
-
-let [isLogin] = useState<string>('Login')
-let [isMenuA] = useState<string>('Atendimento')
-let [isSubMenuB] = useState<string>('')
-const res: any = localStorage.getItem('u')
-if (JSON.parse(res) !== null) {
-    isLogin = 'Logout'
-    isMenuA = 'Cadastros'
-    isSubMenuB = "Novo Cliente"
+interface INavBar {
+    home: string;
+    register: string;
+    update: string;
+    login: string;
+    sale: string
+    person: string;
+    product: string
+    listPerson: string;
+    listProduct: string;
 }
+
+export function NavBar(props: INavBar): JSX.Element {
+    let [isLogin] = useState<string>('Login')
+    let [isSale] = useState<string>('Vendas Logar')
+    let [isCadastros] = useState<string>('Atendimento')
+    let [isPerson] = useState<string>('')
+    let [isProduct] = useState<string>('')
+    let [isListagem] = useState<string>('Listagem')
+    let [isListPerson] = useState<string>('')
+    let [isListProduct] = useState<string>('')
+    const res: any = localStorage.getItem('u')
+    if (JSON.parse(res) !== null) {
+        isLogin = 'Logout'
+        isSale = 'Vendas Logado'
+        isCadastros = 'Cadastros'
+        isPerson = "Novo Cliente"
+        isProduct = 'Novo Produto'
+        isListagem = "Listagem"
+        isListPerson = "Listar Pessoas"
+        isListProduct = 'Listar Produtos'
+    }
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
             <div className="container-fluid">
@@ -41,12 +62,28 @@ if (JSON.parse(res) !== null) {
                             <li className="nav-item">
                                 <a className="nav-link" href={props.login}>{isLogin}</a>
                             </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href={props.sale}>{isSale}</a>
+                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">{isMenuA}</a>
+                                    aria-expanded="false">{isCadastros}</a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href={props.person}>{isSubMenuB}</a></li>
+                                    <li><a className="dropdown-item" href={props.person}>{isPerson}</a></li>
+                                    <li><a className="dropdown-item" href={props.product}>{isProduct}</a></li>
+                                    <li>
+                                        <hr className="dropdown-divider" />
+                                    </li>
                                     <li><a className="dropdown-item" href="#">Vazio</a></li>
+                                    <li><a className="dropdown-item" href="#">Vazio</a></li>
+                                </ul>
+                            </li>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">{isListagem}</a>
+                                <ul className="dropdown-menu">
+                                    <li><a className="dropdown-item" href={props.listPerson}>{isListPerson}</a></li>
+                                    <li><a className="dropdown-item" href={props.listProduct}>{isListProduct}</a></li>
                                     <li>
                                         <hr className="dropdown-divider" />
                                     </li>

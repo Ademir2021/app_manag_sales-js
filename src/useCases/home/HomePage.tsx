@@ -1,18 +1,23 @@
 import { NavBar } from "../../components/navbar/Navbar";
 
-const register = './register'
-const home = './'
-const update = './user_update'
-const login = './login'
+const home = '/'
+const register = '/register'
+const update = '/user_update'
+const login = '/login'
 
 export function HomePage() {
     return (
         <>
             <NavBar
-            register={register}
-            home={home}
-            update={update}
-            login={login}
+                home={home}
+                register={register}
+                update={update}
+                login={login}
+                person={''}
+                product={''}
+                sale={''}
+                listPerson={''}
+                listProduct={''}
             />
             <strong>Home</strong> < br />
         </>

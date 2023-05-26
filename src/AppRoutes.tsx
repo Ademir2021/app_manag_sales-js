@@ -13,6 +13,7 @@ import { ListProduct } from './useCases/products/ListProduct';
 import { FormPerson } from "./useCases/persons/FormPerson";
 import { ListPerson } from './useCases/persons/ListPerson';
 import { AuthProvider, AuthContext } from "./context/auth";
+import { Logout } from "./components/utils/logout/Logout";
 
 export function AppRoutes() {
     const Private = ({ children }: any) => {
@@ -34,6 +35,7 @@ export function AppRoutes() {
                 <Routes>
                     <Route path="/" Component={HomePage} />
                     <Route path="/login" Component={UserLogin} />
+                    <Route path="/logout" Component={Logout} />
                     <Route path="/register" Component={UserRegister} />
                     <Route path="/dashboard" element={<Private><Dashboard/></Private>} />
                     <Route path="/list_users" element={<Private><ListUsers/></Private>} />

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ProductForm } from '../../components/products/ProductForm';
 import { IProduct } from "./IProduct";
+import { Dashboard } from "../dashboard/Dashboard";
 import api from '../../services/api/api'
 
 export function FormProduct() {
@@ -50,6 +51,7 @@ export function FormProduct() {
 
     return (
         <>
+        <Dashboard/>
             <ProductForm
                 handleSubmit={handleSubmit}
                 handleChange={handleChange}

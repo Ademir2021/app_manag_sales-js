@@ -1,4 +1,4 @@
-import { Button } from './UserButton';
+import { Button } from '../button/Button';
 import { Header } from './UserHeader';
 import { UserLink } from './UserLink';
 
@@ -12,12 +12,17 @@ type userFormLogin = {
     alert: string;
 }
 
-export function UserFormLogin({ children, handleChange, handleSubmit, message, alert }: userFormLogin) {
+export function UserFormLogin({ 
+    children, 
+    handleChange,
+    handleSubmit,
+    message, 
+    alert }: userFormLogin) {
     return (
         <>
             <div className='container'>
                 <img style={{width:"60px",height:"60px"}} src='./img/secure.png'></img>
-                < a style={{textDecoration:'none'}} href="/dashboard">------| Menu Principal |------</a>
+                < a style={{textDecoration:'none'}} href="/">------| Menu Principal |------</a>
                 <fieldset className='main'>
                     <Header name="Login Usuário" />
                     <form className="f-form" onSubmit={handleSubmit}>

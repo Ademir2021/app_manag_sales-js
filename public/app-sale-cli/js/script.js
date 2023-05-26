@@ -1,5 +1,5 @@
-const url = "http://localhost:3000/products"
-const urlSales = "http://localhost:3000/sales"
+const url = "http://192.168.80.109:3000/products"
+const urlSales = "http://192.168.80.109::3000/sales"
 const getItem = document.getElementById("submit_item")
 const getAmount = document.getElementById("submit_amount")
 const option = document.getElementById("options")

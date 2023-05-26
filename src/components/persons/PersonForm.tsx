@@ -1,9 +1,17 @@
-import React from "react";
+import { Button } from "../button/Button";
 
 import "./styles.css"
 
-export function PersonForm({ children, handleChange, handleSubmit, submit }: any) {
+interface IPersonForm {
+    children: any;
+    handleChange: any;
+    handleSubmit: any;
+}
 
+export function PersonForm({
+    children,
+    handleChange,
+    handleSubmit }: IPersonForm): JSX.Element {
     return (
         <div className='container'>
             <fieldset className="main">
@@ -40,9 +48,8 @@ export function PersonForm({ children, handleChange, handleSubmit, submit }: any
                         value={children.fk_name_filial || ""}
                         onChange={handleChange}
                     />
-                    <button type={submit}
-                        className="button-pers">Registrar
-                    </button>
+                    <div className="button-pers">
+                        <Button>Registrar</Button></div>
                 </form>
             </fieldset>
         </div>

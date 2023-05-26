@@ -1,16 +1,32 @@
-import React from "react"
 import { Header } from "./UserHeader"
 
 import './styles.css'
 
+interface IUserFormUpdate {
+    handleChange:any;
+    children: any;
+    handleSubmit: any;
+    handleUpdate: any;
+    handleDelete: any;
+    handleIncrement: any;
+    handleDecrement: any;
+}
+
 const avatar = './img/avatar.png'
 
-export function UserFormUptdate({ handleChange, children, handleSubmit, handleUpdate, handleDelete, handleIncrement, handleDecrement, submit }: any) {
+export function UserFormUpdate({
+    handleChange,
+    children,
+    handleSubmit,
+    handleUpdate,
+    handleDelete,
+    handleIncrement,
+    handleDecrement }: IUserFormUpdate) {
     return (
-            <div className="container">
-                <div className="main">
+        <div className="container">
+            <div className="main">
                 <Header name="Atualizar Usuário" />
-                    <div className="f-form">
+                <div className="f-form">
                     <img src={avatar} className="update-foto-user"></img>
                     <form onSubmit={handleSubmit}>
                         <label className="update-text-id">ID</label>
@@ -41,22 +57,22 @@ export function UserFormUptdate({ handleChange, children, handleSubmit, handleUp
                             value={children.username}
                             onChange={handleChange}
                         />
-                        <button className="update-register" type={submit}></button>
+                        <button className="update-register"></button>
                     </form>
                     <form onSubmit={handleUpdate}>
-                        <button className="update-update" type={submit}></button>
+                        <button className="update-update"></button>
                     </form>
                     <form onSubmit={handleDelete}>
-                        <button className="update-delete" type={submit}></button>
+                        <button className="update-delete"></button>
                     </form>
                     <form onSubmit={handleDecrement}>
-                        <button type={submit} className="update-btn-ant">Anterior</button>
+                        <button className="update-btn-ant">Anterior</button>
                     </form>
                     <form onSubmit={handleIncrement}>
-                        <button type={submit} className="update-btn-prox">Próximo</button>
+                        <button className="update-btn-prox">Próximo</button>
                     </form>
                 </div>
-                </div>
             </div>
+        </div>
     )
 }

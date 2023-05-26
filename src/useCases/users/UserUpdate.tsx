@@ -1,11 +1,12 @@
 import React from "react"
 import { useState, useEffect } from 'react';
-import { UserFormUptdate } from "../../components/users/UserFormUpdate";
+import { UserFormUpdate } from "../../components/users/UserFormUpdate";
 import { ListUSers } from "../../components/users/UserList";
 
 import { FormatDate } from "../../components/utils/formatDate";
 import { IUpdUsers } from './IUser'
 import api from '../../services/api/api'
+import { Dashboard } from "../dashboard/Dashboard";
 
 export function UserUpdate() {
     let [counter, updateCounter] = useState(0)
@@ -108,7 +109,8 @@ export function UserUpdate() {
 
     return (
         <>
-            <UserFormUptdate
+           <Dashboard/>
+            <UserFormUpdate
                 handleIncrement={handleIncrement}
                 handleDecrement={handleDecrement}
                 handleSubmit={handleSubmit}
@@ -117,7 +119,7 @@ export function UserUpdate() {
                 handleChange={handleChange}
             >
                 {user}
-            </UserFormUptdate>
+            </UserFormUpdate>
 
             <div></div>
             {users.length === 0 ? <p>Carregando...</p> : (
