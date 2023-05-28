@@ -2,7 +2,6 @@ import { useState } from 'react';
 import bcrypt from "bcryptjs-react";
 import { UserFormRegister } from '../../components/users/UserFormRegister';
 
-
 import { IUser } from './IUser'
 import api from '../../services/api/api'
 
@@ -31,7 +30,7 @@ export function UserRegister() {
     if (user.password == '') { msg += "Digite sua Senha !!\n" };
     if (user.psw_repeat != user.password) { msg += "Senha digitada errado\n" };
     if (msg != '') {
-  
+
       setAlert(msg)
       return false;
     };
@@ -39,10 +38,10 @@ export function UserRegister() {
   };
 
   async function handleUser() {
-      await api.post<IUser>('/users', user)
-        .then(response => {
-          setMessage(response.data)
-        }).catch(error => console.log(error))
+    await api.post<IUser>('/users', user)
+      .then(response => {
+        setMessage(response.data)
+      }).catch(error => console.log(error))
   }
 
   function crypt() {

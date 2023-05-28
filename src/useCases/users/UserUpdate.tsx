@@ -1,15 +1,15 @@
-import React from "react"
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { UserFormUpdate } from "../../components/users/UserFormUpdate";
 import { ListUSers } from "../../components/users/UserList";
 
 import { FormatDate } from "../../components/utils/formatDate";
 import { IUpdUsers } from './IUser'
 import api from '../../services/api/api'
-import { Dashboard } from "../dashboard/Dashboard";
+
+import '../../App.css'
 
 export function UserUpdate() {
-    let [counter, updateCounter] = useState(0)
+
     const [users, setUsers] = useState<IUpdUsers[]>([])
     const [user, setUser] = useState<IUpdUsers>({
         id: 0,
@@ -18,33 +18,15 @@ export function UserUpdate() {
         password: "$2a$10$fCflcY3us.ENJ/I/mTeQ2uaFMdLNFF6nKj07qwx7cce6krVv2XcNy"
     })
 
+    const [dropdown, setDropdown] = useState<string>("");
+    const modalRef = useRef<any>(null);
+
     function listUpdate(id: number, name: string, username: string) {
         user.id = id
         user.name = name
         user.username = username
         getUsers()
-    }
-
-    function handleDecrement(e: any) {
-        e.preventDefault();
-        getUsers()
-        if (counter > 1) {
-            updateCounter(counter - 1)
-        } else {
-            alert("Fim")
-        }
-    }
-
-    function handleIncrement(e: any) {
-        e.preventDefault();
-        getUsers()
-        if (counter != null) {
-            // user.name = ""
-            // user.username = ""
-            updateCounter(counter + 1)
-        } else {
-            alert("Fim")
-        }
+        toggleDropdown()
     }
 
     const handleChange = (e: any) => {
@@ -70,7 +52,7 @@ export function UserUpdate() {
 
     async function getUsers() {
         await api.get<IUpdUsers[]>(`/users`)
-        .then(response => {
+            .then(response => {
                 const res: IUpdUsers[] = response.data
                 setUsers(res)
                 for (let i = 0; res.length > i; i++) {
@@ -84,15 +66,14 @@ export function UserUpdate() {
 
     useEffect(() => {
         getUsers()
-    }, [user.id] )
+    }, [user.id])
 
-  
     async function handleSubmit(e: any) {
         e.preventDefault();
         if (user.name && user.username != "") {
             registerUser()
         } else {
-            alert("Digite um Usuário")
+            alert("Digite um Novo Usuário")
         }
     }
 
@@ -104,24 +85,42 @@ export function UserUpdate() {
 
     async function handleDelete(e: any) {
         e.preventDefault();
-        alert("delete")
+        setUser({
+            id: 0,
+            name: "",
+            username: "",
+            password: "$2a$10$fCflcY3us.ENJ/I/mTeQ2uaFMdLNFF6nKj07qwx7cce6krVv2XcNy"
+        })
+        alert("Digite um novo Usuário !!")
+    }
+
+    function toggleDropdown() {
+        setDropdown("modal-show");
+    }
+
+    function closeDropdown(event: { stopPropagation: () => void; target: any; }) {
+        event.stopPropagation();
+        const contain = modalRef.current.contains(event.target);
+        if (contain) {
+            setDropdown("");
+            document.body.removeEventListener("click", closeDropdown);
+        }
     }
 
     return (
         <>
-           <Dashboard/>
+            < a className='menu-home' href="/dashboard">------| Menu Principal |------</a>
             <UserFormUpdate
-                handleIncrement={handleIncrement}
-                handleDecrement={handleDecrement}
                 handleSubmit={handleSubmit}
                 handleUpdate={handleUpdate}
                 handleDelete={handleDelete}
                 handleChange={handleChange}
+                close={closeDropdown}
+                className={dropdown}
+                modalRef={modalRef}
             >
                 {user}
             </UserFormUpdate>
-
-            <div></div>
             {users.length === 0 ? <p>Carregando...</p> : (
                 users.map((user) => (
                     <ListUSers
@@ -132,13 +131,11 @@ export function UserUpdate() {
                         username={user.username}
                         password={user.password}
                         update={<div onClick={() =>
-                            listUpdate(user.id, user.name, user.username)}>
-                            <a style={{textDecoration:"none",
-                             color:"black"}}
-                             href='#'>Atualizar</a></div>}
+                            listUpdate(user.id, user.name, user.username)}>Atualizar</div>}
+
                     />
+
                 )))}
-                                
         </>
     )
 }

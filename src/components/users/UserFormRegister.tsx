@@ -4,12 +4,21 @@ import { UserLink } from './UserLink';
 
 import './styles.css';
 
+type IUserFormRegister = {
+    children:any;
+    handleChange:any;
+    handleSubmit:any;
+    message:any;
+    alert:any;
+}
+
 export function UserFormRegister({
     children,
     handleChange,
     handleSubmit,
     message,
-    alert }: any) {
+    alert
+     }: IUserFormRegister) {
 
     return (
         <div className='container' >

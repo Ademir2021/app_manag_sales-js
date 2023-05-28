@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }: any) => {
     const logout = () => {
         localStorage.removeItem('u');
         setUser(null)
-        navigate("/login")
+        navigate("/")
     }
     return (
         <AuthContext.Provider

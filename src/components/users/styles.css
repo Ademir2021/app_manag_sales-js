@@ -8,6 +8,16 @@
     font-size: 14px;
 }
 
+.modal {
+    display: none;
+    margin-top: 3rem;
+}
+
+.btn-modal {
+    display:contents;
+    cursor: pointer;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -15,6 +25,23 @@
     justify-content: center;
     min-height: 100vh;
     padding: 0 2rem;
+}
+
+.container-modal {
+    display: flex;
+    position:fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 2rem;
+}
+.main-modal {
+    display: inline;
+    height: 28rem;
+    width: 24rem;
+    padding: 22px 0px 0px 22px;
+    background-color: rgb(73, 80, 80);
 }
 
 .main {
@@ -114,66 +141,49 @@
 
 .update-text-id {
     position: absolute;
-    left: 6rem;
-    top: 3rem;
+    left: 2rem;
+    top: 2.8rem;
 }
 
 .update-text-user {
     position: absolute;
-    left: 6rem;
-    top: 7rem;
+    left: 2rem;
+    top: 6.9rem;
 }
 
 .update-text-email {
     position: absolute;
-    left: 6rem;
-    top: 11rem;
+    left: 2rem;
+    top: 10.9rem;
 }
 
 .update-in-id {
     position: absolute;
     width: 2rem;
-    left: 6rem;
+    left: 2rem;
     top: 4.2rem;
 }
 
 .update-in-user {
     position: absolute;
-    left: 6rem;
+    width: 15rem;
+    left: 2rem;
     top: 8.2rem;
 }
 
 .update-in-email {
     position: absolute;
-    left: 6rem;
+    width: 15rem;
+    left: 2rem;
     top: 12.2rem;
-}
-
-.update-btn-ant {
-    position: absolute;
-    height: 2rem;
-    left: 6rem;
-    top: 20rem;
-    border: none;
-    cursor: pointer;
-}
-
-.update-btn-prox {
-    position: absolute;
-    height: 2rem;
-    left: 15rem;
-    top: 20rem;
-    border: none;
-    cursor: pointer;
 }
 
 .update-register {
     position: absolute;
-    width: 2.2rem;
+    width: 5rem;
     height: 2.2rem;
-    left: 6rem;
+    left: 2rem;
     top: 16rem;
-    background: url('../../../public/img/register.png');
     border: none;
     cursor: pointer;
 }
@@ -184,12 +194,10 @@
 
 .update-update {
     position: absolute;
-    width: 2.2rem;
+    width: 5rem;
     height: 2.2rem;
-    left: 11.4rem;
+    left: 8rem;
     top: 16rem;
-    border-radius: 6px;
-    background: url('../../../public/img/update.png');
     border: none;
     cursor: pointer;
 }
@@ -200,12 +208,10 @@
 
 .update-delete {
     position: absolute;
-    width: 2.2rem;
+    width: 5rem;
     height: 2.2rem;
-    left: 17rem;
+    left: 14rem;
     top: 16rem;
-    border-radius: 6px;
-    background: url('../../../public/img/delete.png');
     border: none;
     cursor: pointer;
 }
@@ -269,13 +275,13 @@
 
 /* Listagens */
 .container-list {
-    height: auto;
-    background: #cbd8e7;
-    border: var(--main-border);
-    width: 360px;
+    /* height: auto; */
+    display:flex;
+    background: #848a94;
+    width: 24rem;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 13px;
+    padding-top: 1px;
 }
 
 .update-list {
@@ -285,7 +291,7 @@
 
 :root {
     --list--font-size: 14px;
-    --list--color: black
+    --list--color:rgb(15, 9, 55);
 }
 
 .list-id {

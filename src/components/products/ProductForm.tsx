@@ -1,3 +1,4 @@
+import AppModal from "../../useCases/modal/AppModal";
 import { Button } from "../button/Button";
 
 import "./styles.css"

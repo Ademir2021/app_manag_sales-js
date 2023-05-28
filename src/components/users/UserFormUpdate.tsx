@@ -1,50 +1,48 @@
-import { Header } from "./UserHeader"
 
 import './styles.css'
 
 interface IUserFormUpdate {
-    handleChange:any;
-    children: any;
+    handleChange: any;
     handleSubmit: any;
+    children: any;
     handleUpdate: any;
     handleDelete: any;
-    handleIncrement: any;
-    handleDecrement: any;
+    modalRef: any;
+    className: string;
+    close: any;
 }
-
-const avatar = './img/avatar.png'
 
 export function UserFormUpdate({
     handleChange,
-    children,
     handleSubmit,
+    children,
     handleUpdate,
     handleDelete,
-    handleIncrement,
-    handleDecrement }: IUserFormUpdate) {
+    modalRef,
+    className,
+    close
+}: IUserFormUpdate) {
     return (
-        <div className="container">
-            <div className="main">
-                <Header name="Atualizar Usuário" />
-                <div className="f-form">
-                    <img src={avatar} className="update-foto-user"></img>
+
+        <div ref={modalRef} className={`${className} modal`}>
+            <div className="container">
+                <div className="main">
+                    <button className="btn-modal" onClick={close}>Fechar</button>
+                    <div className='f-form'>
                     <form onSubmit={handleSubmit}>
                         <label className="update-text-id">ID</label>
                         <input
                             className="update-in-id"
                             type="text"
                             name="id"
-                            placeholder="ID"
-                            value={children.id || 0}
+                            value={children.id }
                             onChange={handleChange}
                         />
-                        <label className="update-text-id">ID</label>
                         <label className="update-text-user" >Nome do Usuário</label>
                         <input
                             className="update-in-user"
                             type="search"
                             name="name"
-                            placeholder="Nome do Usuário"
                             value={children.name}
                             onChange={handleChange}
                         />
@@ -53,26 +51,23 @@ export function UserFormUpdate({
                             className="update-in-email"
                             type="email"
                             name="username"
-                            placeholder="Email do Usuário"
                             value={children.username}
                             onChange={handleChange}
                         />
-                        <button className="update-register"></button>
+                        <button className="update-register">Registrar</button>
                     </form>
+
                     <form onSubmit={handleUpdate}>
-                        <button className="update-update"></button>
+                        <button className="update-update">Atualizar</button>
                     </form>
+
                     <form onSubmit={handleDelete}>
-                        <button className="update-delete"></button>
+                        <button className="update-delete">Novo</button>
                     </form>
-                    <form onSubmit={handleDecrement}>
-                        <button className="update-btn-ant">Anterior</button>
-                    </form>
-                    <form onSubmit={handleIncrement}>
-                        <button className="update-btn-prox">Próximo</button>
-                    </form>
+
                 </div>
             </div>
+        </div>
         </div>
     )
 }

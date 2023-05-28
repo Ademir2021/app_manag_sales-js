@@ -1,0 +1,28 @@
+.show{
+  display: block !important;
+}
+
+.modal-show{
+  display: block !important;
+}
+
+.modal-btn-open {
+  position: absolute;
+  height: 2rem;
+  left: 18rem;
+  top: 30rem;
+  border: none;
+  cursor: pointer;
+}
+.modal-btn-update{
+  text-decoration: none;
+  color: black;
+}
+.menu-home{
+  display: flex;
+  text-decoration: none;
+  margin-top: 1rem;
+  justify-content: center;
+  padding: 12px;
+
+}

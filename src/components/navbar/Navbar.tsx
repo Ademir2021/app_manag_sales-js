@@ -15,18 +15,25 @@ interface INavBar {
 }
 
 export function NavBar(props: INavBar): JSX.Element {
-    let [isLogin] = useState<string>('Login')
-    let [isSale] = useState<string>('Vendas Logar')
+    let [isHome] = useState<string>('Home')
+    let [isLogin] = useState<string>('Entrar')
+    let [isRegister] = useState<string>('Criar conta')
+    let [isUpdate] = useState<string>('')
+    let [isSale] = useState<string>('Compras')
     let [isCadastros] = useState<string>('Atendimento')
     let [isPerson] = useState<string>('')
     let [isProduct] = useState<string>('')
     let [isListagem] = useState<string>('Listagem')
     let [isListPerson] = useState<string>('')
     let [isListProduct] = useState<string>('')
+    
     const res: any = localStorage.getItem('u')
     if (JSON.parse(res) !== null) {
-        isLogin = 'Logout'
-        isSale = 'Vendas Logado'
+        isHome = "Painel Usuário"
+        isLogin = 'Sair'
+        isRegister=''
+        isUpdate = 'Atualizar conta'
+        isSale = 'Comprar'
         isCadastros = 'Cadastros'
         isPerson = "Novo Cliente"
         isProduct = 'Novo Produto'
@@ -51,13 +58,13 @@ export function NavBar(props: INavBar): JSX.Element {
                     <div className="offcanvas-body">
                         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href={props.home}>Home</a>
+                                <a className="nav-link active" aria-current="page" href={props.home}>{isHome}</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href={props.register}>Registrar</a>
+                                <a className="nav-link" href={props.register}>{isRegister}</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href={props.update}>Atualizar Usuário</a>
+                                <a className="nav-link" href={props.update}>{isUpdate}</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href={props.login}>{isLogin}</a>
