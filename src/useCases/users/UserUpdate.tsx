@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { UserFormUpdate } from "../../components/users/UserFormUpdate";
 import { ListUSers } from "../../components/users/UserList";
-
 import { FormatDate } from "../../components/utils/formatDate";
-import { IUpdUsers } from './IUser'
+import { crypt, UsersValFields } from '../../components/utils/crypt/Crypt'
+import { IUpdUsers, } from './IUser'
 import api from '../../services/api/api'
 
 import '../../App.css'
@@ -15,7 +15,8 @@ export function UserUpdate() {
         id: 0,
         name: "",
         username: "",
-        password: "$2a$10$fCflcY3us.ENJ/I/mTeQ2uaFMdLNFF6nKj07qwx7cce6krVv2XcNy"
+        password: "",
+        psw_repeat: ""
     })
 
     const [dropdown, setDropdown] = useState<string>("");
@@ -70,7 +71,8 @@ export function UserUpdate() {
 
     async function handleSubmit(e: any) {
         e.preventDefault();
-        if (user.name && user.username != "") {
+        if (UsersValFields(user)) {
+            user.password = crypt(user.password)
             registerUser()
         } else {
             alert("Digite um Novo Usuário")
@@ -79,8 +81,13 @@ export function UserUpdate() {
 
     async function handleUpdate(e: any) {
         e.preventDefault();
-        getUsers()
-        updateUser()
+        if (UsersValFields(user)) {
+            user.password = crypt(user.password)
+            getUsers()
+            updateUser()
+            user.password = ''
+            user.psw_repeat = ''
+        }
     }
 
     async function handleDelete(e: any) {
@@ -89,7 +96,8 @@ export function UserUpdate() {
             id: 0,
             name: "",
             username: "",
-            password: "$2a$10$fCflcY3us.ENJ/I/mTeQ2uaFMdLNFF6nKj07qwx7cce6krVv2XcNy"
+            password: "",
+            psw_repeat: ""
         })
         alert("Digite um novo Usuário !!")
     }
@@ -121,6 +129,7 @@ export function UserUpdate() {
             >
                 {user}
             </UserFormUpdate>
+
             {users.length === 0 ? <p>Carregando...</p> : (
                 users.map((user) => (
                     <ListUSers
@@ -132,9 +141,7 @@ export function UserUpdate() {
                         password={user.password}
                         update={<div onClick={() =>
                             listUpdate(user.id, user.name, user.username)}>Atualizar</div>}
-
                     />
-
                 )))}
         </>
     )

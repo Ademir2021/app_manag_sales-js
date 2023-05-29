@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import bcrypt from "bcryptjs-react";
+import { crypt, UsersValFields } from '../../components/utils/crypt/Crypt'
 import { UserFormRegister } from '../../components/users/UserFormRegister';
 
 import { IUser } from './IUser'
@@ -20,22 +20,8 @@ export function UserRegister() {
     setUsers(values => ({ ...values, [name]: value }))
   }
 
-  const [msg, setAlert] = useState<String>("")
+  // const [msg, setAlert] = useState<String>("")
   const [message, setMessage] = useState<any>("")
-
-  function valFields(user: IUser) {
-    let msg = ''
-    if (user.name == '') { msg += 'Digite o seu Nome Completo!!\n' };
-    if (user.username == '') { msg += 'Digite um Email válido!!\n' };
-    if (user.password == '') { msg += "Digite sua Senha !!\n" };
-    if (user.psw_repeat != user.password) { msg += "Senha digitada errado\n" };
-    if (msg != '') {
-
-      setAlert(msg)
-      return false;
-    };
-    return true;
-  };
 
   async function handleUser() {
     await api.post<IUser>('/users', user)
@@ -44,18 +30,16 @@ export function UserRegister() {
       }).catch(error => console.log(error))
   }
 
-  function crypt() {
-    const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(user.password, salt);
-    return hash
-  }
-
   async function handleSubmit(e: any) {
     e.preventDefault();
-    if (valFields(user)) {
-      user.password = crypt()
+    if (UsersValFields(user)) {
+      user.password = crypt(user.password)
       handleUser()
-      setAlert("")
+      setUsers({
+        name: "",
+        username: "",
+        password: "",
+        psw_repeat: ""})
       setMessage("")
     }
   }
@@ -66,7 +50,7 @@ export function UserRegister() {
         handleSubmit={handleSubmit}
         handleChange={handleChange}
         message={message}
-        alert={msg}
+        alert={""}/**Aguardando Ajustes */
       >
         {user}
       </UserFormRegister>

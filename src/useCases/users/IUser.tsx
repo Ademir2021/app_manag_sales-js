@@ -25,5 +25,6 @@ export type IUpdUsers ={
   name:string;
   username:string;
   password?:string;
+  psw_repeat: string;
   props?:any;
 }

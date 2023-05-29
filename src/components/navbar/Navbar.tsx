@@ -1,3 +1,4 @@
+import {Button} from '../button/Button'
 import "../assets/dist/css/bootstrap.min.css"
 
 type PropsNavBar = {
@@ -40,14 +41,14 @@ export function NavBar(props: PropsNavBar): JSX.Element {
         isListProduct = 'Listar Produtos'
     }
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark_origin" style={{backgroundColor:'gray'}} aria-label="Offcanvas navbar large">
             <div className="container-fluid">
                 <a className="navbar-brand" href="/">Logo da Empresa</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
                     aria-controls="offcanvasNavbar2">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="offcanvas offcanvas-end text-bg-dark" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+                <div className="offcanvas offcanvas-end text-bg-dark_origin" style={{backgroundColor:'gray'}} id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
                     <div className="offcanvas-header">
                         <h5 className="offcanvas-title" id="offcanvasNavbar2Label">Menu Principal</h5>
                         <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas"
@@ -99,7 +100,7 @@ export function NavBar(props: PropsNavBar): JSX.Element {
                         </ul>
                         <form className="d-flex mt-3 mt-lg-0" role="search">
                             <input className="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Pesquisar</button>
+                            <button className="btn btn-primary" type="submit">Pesquisar</button>
                         </form>
                     </div>
                 </div>

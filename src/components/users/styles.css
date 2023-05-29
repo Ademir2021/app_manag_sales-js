@@ -142,40 +142,68 @@
 .update-text-id {
     position: absolute;
     left: 2rem;
-    top: 2.8rem;
+    top: 0.8rem;
 }
 
 .update-text-user {
     position: absolute;
     left: 2rem;
-    top: 6.9rem;
+    top: 4.9rem;
 }
 
 .update-text-email {
     position: absolute;
     left: 2rem;
-    top: 10.9rem;
+    top: 8.9rem;
+}
+
+.update-text-password{
+    position: absolute;
+    left: 2rem;
+    top: 12.9rem;
+
+}
+
+.update-text-psw_repeat{
+    position: absolute;
+    left: 2rem;
+    top: 16.9rem;
 }
 
 .update-in-id {
     position: absolute;
     width: 2rem;
     left: 2rem;
-    top: 4.2rem;
+    top: 2.2rem;
 }
 
 .update-in-user {
     position: absolute;
     width: 15rem;
     left: 2rem;
-    top: 8.2rem;
+    top: 6.2rem;
 }
 
 .update-in-email {
     position: absolute;
     width: 15rem;
     left: 2rem;
-    top: 12.2rem;
+    top: 10.2rem;
+}
+
+.update-in-password{
+    position: absolute;
+    width: 15rem;
+    left: 2rem;
+    top: 14.2rem;
+}
+
+.update-in-psw-repeat{
+    position: absolute;
+    width: 15rem;
+    left: 2rem;
+    top: 18.2rem;
+
 }
 
 .update-register {
@@ -183,7 +211,7 @@
     width: 5rem;
     height: 2.2rem;
     left: 2rem;
-    top: 16rem;
+    top: 22rem;
     border: none;
     cursor: pointer;
 }
@@ -197,7 +225,7 @@
     width: 5rem;
     height: 2.2rem;
     left: 8rem;
-    top: 16rem;
+    top: 22rem;
     border: none;
     cursor: pointer;
 }
@@ -211,7 +239,7 @@
     width: 5rem;
     height: 2.2rem;
     left: 14rem;
-    top: 16rem;
+    top: 22rem;
     border: none;
     cursor: pointer;
 }

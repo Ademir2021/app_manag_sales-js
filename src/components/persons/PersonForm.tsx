@@ -2,7 +2,7 @@ import { Button } from "../button/Button";
 
 import "./styles.css"
 
-interface IPersonForm {
+type IPersonForm = {
     children: any;
     handleChange: any;
     handleSubmit: any;

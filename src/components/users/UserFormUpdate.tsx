@@ -1,16 +1,14 @@
-import { Button } from '../button/Button';
-
 import './styles.css'
 
-interface IUserFormUpdate {
+type IUserFormUpdate = {
     handleChange: any;
     handleSubmit: any;
     children: any;
     handleUpdate: any;
     handleDelete: any;
-    modalRef: any;
-    className: string;
-    close: any;
+    modalRef?: any;
+    className?: string;
+    close?: any;
 }
 
 export function UserFormUpdate({
@@ -46,6 +44,7 @@ export function UserFormUpdate({
                             name="name"
                             value={children.name}
                             onChange={handleChange}
+                            required
                         />
                         <label className="update-text-email">Email do Usuário</label>
                         <input
@@ -54,7 +53,27 @@ export function UserFormUpdate({
                             name="username"
                             value={children.username}
                             onChange={handleChange}
+                            required
                         />
+                        <label className="update-text-password">Nova senha</label>
+                        <input
+                            className="update-in-password"
+                            type="password"
+                            name="password"
+                            value={children.password || ''}
+                            onChange={handleChange}
+                            required
+                        />
+                        <label className="update-text-psw_repeat">confirme a senha</label>
+                        <input
+                            className="update-in-psw-repeat"
+                            type="password"
+                            name="psw_repeat"
+                            value={children.psw_repeat || ''}
+                            onChange={handleChange}
+                            required
+                        />
+                        
                         <button className="update-register">Registrar</button>
                     </form>
 
