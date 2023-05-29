@@ -1,11 +1,13 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext } from "../../../context/auth";
 
-export function Logout(): void {
+export const Logout = (): void => {
     const { logout }: any = useContext(AuthContext);
-    function handleLogout(): void {
+    const handleLogout = (): void => {
         logout()
-    }
+    };
 
-    return (handleLogout())
+    useEffect(() => {
+        handleLogout()
+    }, []); 
 }

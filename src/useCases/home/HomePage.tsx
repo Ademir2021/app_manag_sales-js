@@ -1,13 +1,13 @@
 import { NavBar } from "../../components/navbar/Navbar";
-import AppModal from "../modal/AppModal";
-
-const home = '/#'
-const register = '/register#'
-const update = '/user_update#'
-const login = '/login#'
-const sales = '/sale#'
 
 export function HomePage() {
+
+    const home = '/#'
+    const register = '/register#'
+    const update = '/user_update#'
+    const login = '/login#'
+    const sales = '/sale#'
+
     return (
         <>
             <NavBar
@@ -22,7 +22,6 @@ export function HomePage() {
                 listProduct={''}
             />
             <strong>Home</strong> < br />
-           
         </>
     )
 }

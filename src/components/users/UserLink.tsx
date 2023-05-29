@@ -1,4 +1,4 @@
-type Links = {
+type PropsLinks = {
     title: string;
     link: any;
     company: string;
@@ -10,7 +10,7 @@ export function UserLink({
     link,
     company,
     message,
-    alert }: Links) {
+    alert }: PropsLinks) {
     return (
         <>
             <strong className='login-text'>{title}!&nbsp;

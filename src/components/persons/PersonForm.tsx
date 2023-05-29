@@ -11,7 +11,8 @@ interface IPersonForm {
 export function PersonForm({
     children,
     handleChange,
-    handleSubmit }: IPersonForm): JSX.Element {
+    handleSubmit
+ }: IPersonForm): JSX.Element {
     return (
         <div className='container'>
             <fieldset className="main">
@@ -49,7 +50,9 @@ export function PersonForm({
                         onChange={handleChange}
                     />
                     <div className="button-pers">
-                        <Button>Registrar</Button></div>
+                        <Button onSubmit={'submit'}
+                        children={"Registrar"}
+                    /></div>
                 </form>
             </fieldset>
         </div>

@@ -42,7 +42,9 @@ export function UserFormLogin({
                             value={children.password || ""}
                             onChange={handleChange}
                         />
-                        <Button>Logar_se</Button>
+                        <Button onSubmit='submit'
+                        children='Logar_se'
+                        />
                         <UserLink
                             title="Não tem login"
                             link={<a href='/register'>Registre-se</a>}

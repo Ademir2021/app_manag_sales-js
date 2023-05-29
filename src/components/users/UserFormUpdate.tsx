@@ -1,3 +1,4 @@
+import { Button } from '../button/Button';
 
 import './styles.css'
 

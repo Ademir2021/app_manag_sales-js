@@ -59,7 +59,7 @@ export function UserFormRegister({
                         value={children.psw_repeat || ""}
                         onChange={handleChange}
                     />
-                    <Button>Registrar</Button>
+                    <Button onSubmit='submit' children='Registre_se'/>
                     <UserLink
                         title="Já tem login"
                         link={<a href='/login'>Logar-se</a>}

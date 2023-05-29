@@ -1,9 +1,8 @@
-import AppModal from "../../useCases/modal/AppModal";
 import { Button } from "../button/Button";
 
 import "./styles.css"
 
-interface IProdctForm{
+type IProdctForm = {
     children:any;
     handleChange:any;
     handleSubmit:any;
@@ -66,7 +65,9 @@ export function ProductForm({
                         onChange={handleChange}
                     />
                     <div className="button-prod">
-                        <Button>registrar</Button></div>
+                        <Button onSubmit={'submit'}
+                        children={'Registrar'}
+                    /></div>
                 </form>
             </fieldset>
         </div>

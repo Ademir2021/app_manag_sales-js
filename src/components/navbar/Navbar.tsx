@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
-
 import "../assets/dist/css/bootstrap.min.css"
 
-interface INavBar {
+type PropsNavBar = {
     home: string;
     register: string;
     update: string;
@@ -14,24 +12,24 @@ interface INavBar {
     listProduct: string;
 }
 
-export function NavBar(props: INavBar): JSX.Element {
-    let [isHome] = useState<string>('Home')
-    let [isLogin] = useState<string>('Entrar')
-    let [isRegister] = useState<string>('Criar conta')
-    let [isUpdate] = useState<string>('')
-    let [isSale] = useState<string>('Compras')
-    let [isCadastros] = useState<string>('Atendimento')
-    let [isPerson] = useState<string>('')
-    let [isProduct] = useState<string>('')
-    let [isListagem] = useState<string>('Listagem')
-    let [isListPerson] = useState<string>('')
-    let [isListProduct] = useState<string>('')
-    
+export function NavBar(props: PropsNavBar): JSX.Element {
+
+    let isHome = 'Home'
+    let isLogin = 'Entrar'
+    let isRegister = 'Criar conta'
+    let isUpdate = ''
+    let isSale = 'Compras'
+    let isCadastros = 'Atendimento'
+    let isPerson = ''
+    let isProduct = ''
+    let isListagem = 'Listagem'
+    let isListPerson = ''
+    let isListProduct = ''
     const res: any = localStorage.getItem('u')
     if (JSON.parse(res) !== null) {
         isHome = "Painel Usuário"
         isLogin = 'Sair'
-        isRegister=''
+        isRegister = ''
         isUpdate = 'Atualizar conta'
         isSale = 'Comprar'
         isCadastros = 'Cadastros'
