@@ -1,5 +1,5 @@
 type PropsButton ={
-    children:string;
+    children: string | number | readonly string[] | undefined ;
     onSubmit:"submit" | "button" | "reset" | undefined
 }
 

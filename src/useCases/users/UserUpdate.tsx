@@ -3,6 +3,7 @@ import { UserFormUpdate } from "../../components/users/UserFormUpdate";
 import { ListUSers } from "../../components/users/UserList";
 import { FormatDate } from "../../components/utils/formatDate";
 import { crypt, UsersValFields } from '../../components/utils/crypt/Crypt'
+import {BackHome} from "../../components/utils/backHome/BackHome"
 import { AuthContext } from '../../context/auth'
 import api from '../../services/api/api'
 
@@ -10,7 +11,7 @@ import '../../App.css'
 
 type TUpdateUser ={
     id:number;
-    created_at?:string | any;
+    created_at?: 'date' | 'null' | undefined;
     name:string;
     username:string;
     password?:string;
@@ -33,8 +34,6 @@ export function UserUpdate() {
     const [dropdown, setDropdown] = useState<string>("");
     const modalRef = useRef<any>(null);
 
- 
-   
     function listUpdate(id: number, name: string, username: string) {
         user.id = id
         user.name = name
@@ -115,7 +114,7 @@ export function UserUpdate() {
         alert("Digite um novo Usuário !!")
     }
 
-    function toggleDropdown() {
+    function toggleDropdown():void {
         setDropdown("modal-show");
     }
 
@@ -130,7 +129,7 @@ export function UserUpdate() {
 
     return (
         <>
-            < a className='menu-home' href="/dashboard">------| Menu Principal |------</a>
+          <BackHome/>
             <UserFormUpdate
                 handleSubmit={handleSubmit}
                 handleUpdate={handleUpdate}

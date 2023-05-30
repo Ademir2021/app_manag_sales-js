@@ -1,13 +1,14 @@
 import { Button } from '../button/Button';
+import { BackHome } from '../utils/backHome/BackHome';
 import { Header } from './UserHeader';
 import { UserLink } from './UserLink';
 
 import './styles.css';
 
 type PropsUserFormRegister = {
-    children:any;
-    handleChange:any;
-    handleSubmit:any;
+    children: string | number | readonly string[] | undefined | any;
+    handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+    handleSubmit: React.FormEventHandler<HTMLFormElement> | undefined;
     message:string;
     alert:string;
 }
@@ -23,7 +24,7 @@ export function UserFormRegister({
     return (
         <div className='container' >
             <img style={{ width: "60px", height: "60px" }} src='./img/secure.png'></img>
-            < a style={{ textDecoration: 'none' }} href="/">------| Menu Principal |------</a>
+            <BackHome />
             <fieldset className='main'>
                 <Header name="Registrar Usuário" />
                 <form className='f-form' onSubmit={handleSubmit}>

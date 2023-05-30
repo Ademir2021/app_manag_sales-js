@@ -6,7 +6,7 @@ export type PropsUsers = {
     name: string;
     username: string;
     password?: string;
-    update?: any;
+    update?: 'date' | any;
 }
 
 const ListUSers = (

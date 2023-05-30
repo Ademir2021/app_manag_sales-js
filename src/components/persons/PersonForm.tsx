@@ -3,9 +3,9 @@ import { Button } from "../button/Button";
 import "./styles.css"
 
 type IPersonForm = {
-    children: any;
-    handleChange: any;
-    handleSubmit: any;
+    children:string | number | readonly string[] | undefined | any;
+    handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+    handleSubmit: React.FormEventHandler<HTMLFormElement> | undefined;
 }
 
 export function PersonForm({

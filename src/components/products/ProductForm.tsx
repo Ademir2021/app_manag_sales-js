@@ -3,9 +3,9 @@ import { Button } from "../button/Button";
 import "./styles.css"
 
 type IProdctForm = {
-    children:any;
-    handleChange:any;
-    handleSubmit:any;
+    children:React.ChangeEventHandler<HTMLInputElement> | undefined | any;
+    handleChange:React.ChangeEventHandler<HTMLInputElement> | undefined;
+    handleSubmit:React.FormEventHandler<HTMLFormElement> | undefined;
 }
 
 export function ProductForm({

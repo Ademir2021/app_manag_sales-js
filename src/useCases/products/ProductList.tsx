@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { FormatDate } from "../../components/utils/formatDate";
 import { ProductList } from "../../components/products/ProductList";
 import { TProductRegister } from './ProductRegister'
+import {BackHome} from "../../components/utils/backHome/BackHome"
 import api from "../../services/api/api";
 
 export function ProductsList() {
@@ -24,7 +25,7 @@ export function ProductsList() {
 
     return (
         <>
-            <div style={{ fontSize: '18px' }}>Lista de Produtos</div>
+            <BackHome/>
             {products.length === 0 ? <p>Carregando...</p> : (
                 products.map((product: TProductRegister) => (
                     <ProductList

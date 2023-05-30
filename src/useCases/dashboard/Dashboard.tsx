@@ -33,14 +33,13 @@ export function Dashboard() {
                 listPerson={listPerson}
                 listProduct={listProduct}
             />
+            <header style={{backgroundColor:''}}>
             < br />
-            <strong>DashBoard</strong> < br />< br />
+            <h1>Painel Principal</h1>
             <strong> User Logado: <span
-                style={{
-                    color: "blue",
-                    fontSize: "12px"
-                }}>
-                {"ID:" + user[0].id + "  Email:" + user[0].username}</span></strong> <br />< br />
+                style={{color: "blue",fontSize: "12px"}}>
+                {"ID:" + user[0].id + "  Email:" + user[0].username}</span></strong> <hr />
+            </header>
             <button onClick={handleLogout}>Logout</button>
         </>
     )

@@ -2,14 +2,16 @@ export function PersonList(props: any) {
 
     return (
         <>
-             <div style={{ color: "#00ff", fontSize: "12px", display: "inline" }} >
-                <strong>ID:</strong> {props.id}<br />
-                <strong>Data Cadastro:</strong>  {props.create}<br />
-                <strong>Nome Pessoa:</strong>  {props.name}<br />
-                <strong>CPF:</strong>  {props.cpf}<br />
-                <strong>Endereço:</strong>  {props.address}<br />
-                <strong>Filial:</strong>  {props.filial}<br />
-                <br />
+             <div className="container-module-list" >
+                <div className="main-module-list">
+                <strong className="list-person-id" >ID:</strong> {props.id}<br />
+                <strong className="list-person-create" >Data Cadastro:</strong>  {props.create}<br />
+                <strong className="list-person-name" >Nome Pessoa:</strong>  {props.name}<br />
+                <strong className="list-person-cpf" >CPF:</strong>  {props.cpf}<br />
+                <strong className="list-person-address" >Endereço:</strong>  {props.address}<br />
+                <strong className="list-person-branch" >Filial:</strong>  {props.filial}<br />
+                <hr />
+                </div>
             </div>
         </>
     )

@@ -1,0 +1,96 @@
+.menu-home{
+    display: flex;
+    text-decoration: none;
+    margin-top: 1rem;
+    justify-content: center;
+    padding: 12px;
+  
+  }
+
+.container-module-list {
+    /* height: auto; */
+    display:flex;
+    background: #848a94;
+    width: 24rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1px;
+}
+
+.main-module-list {
+    padding: 12px;
+    font-size: 12px;
+}
+
+:root {
+    --list--font-size: 14px;
+    --list--color:rgb(15, 9, 55);
+}
+
+.list-product-id {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-product-create {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-product-descricao {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-product-val-max {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-product-val-min {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-product-brand {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-product-sector {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-product-barcode {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-person-id {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-person-create {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+.list-person-name {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-person-cpf {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-person-address {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+.list-person-branch {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}

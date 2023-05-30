@@ -2,9 +2,9 @@
 import "./Modal.css";
 
 type PropsModal = {
-    className: any
-    modalRef:any;
-    close:any
+    className: JSX.Element | any;
+    modalRef:React.LegacyRef<HTMLDivElement> | undefined;
+    close:React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
 export function Modal(props: PropsModal) {

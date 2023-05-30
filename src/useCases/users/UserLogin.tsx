@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { UserFormLogin } from '../../components/users/UserFormLogin'
 import { AuthContext } from '../../context/auth'
 
+
 export type TUserLogin = {
   username: string;
   password: string;
@@ -9,7 +10,7 @@ export type TUserLogin = {
 
 export function UserLogin() {
 
-  const { authenticated, login, message }: any = useContext(AuthContext);
+  const { authenticated, login, message }: any  = useContext(AuthContext);
   
   const [alert, setAlert] = useState<string>('')
   const [user, setUsers] = useState<TUserLogin>(
@@ -18,7 +19,8 @@ export function UserLogin() {
       password: ""
     })
 
-  const handleChange = (e: any) => {
+  
+  const handleChange = (e:any) => {
     const name = e.target.name;
     const value = e.target.value;
     setUsers(values => ({ ...values, [name]: value }))

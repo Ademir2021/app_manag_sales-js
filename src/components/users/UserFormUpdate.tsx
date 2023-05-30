@@ -1,9 +1,9 @@
 import './styles.css'
 
 type PropsUsersFormUpdate = {
-    handleChange: any;
-    handleSubmit: any;
-    children: any;
+    children: string | number | readonly string[] | undefined | any;
+    handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+    handleSubmit: React.FormEventHandler<HTMLFormElement> | undefined;
     handleUpdate: any;
     handleDelete: any;
     modalRef?: any;

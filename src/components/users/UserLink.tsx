@@ -1,6 +1,6 @@
 type PropsLinks = {
     title: string;
-    link: any;
+    link:React.FC | any;
     company: string;
     message: string;
     alert: string

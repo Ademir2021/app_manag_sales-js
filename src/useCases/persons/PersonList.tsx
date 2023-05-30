@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { FormatDate } from "../../components/utils/formatDate";
 import { PersonList } from "../../components/persons/PersonList";
 import { TPersonRegister } from './PersonRegister'
+import {BackHome} from "../../components/utils/backHome/BackHome"
 import api from "../../services/api/api";
 
 export function PersonsList() {
@@ -24,7 +25,7 @@ export function PersonsList() {
 
     return (
         <>
-            <div style={{ fontSize: '18px' }}>Lista de Pessoas</div>
+           <BackHome/>
             {person.length === 0 ? <p>Carregando...</p> : (
                 person.map((person: TPersonRegister) => (
                     <PersonList

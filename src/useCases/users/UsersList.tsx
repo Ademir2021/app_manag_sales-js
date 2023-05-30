@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { ListUSers, PropsUsers } from "../../components/users/UserList"
 import { FormatDate } from "../../components/utils/formatDate";
+import { BackHome } from "../../components/utils/backHome/BackHome"
 import api from '../../services/api/api'
 
 export function UsersList() {
@@ -20,7 +21,7 @@ const [users, setUsers] = useState<PropsUsers[]>([])
 
   return (
     <>
-      <div style={{ padding: '12px' }}>Lista de Users</div>
+      <BackHome/>
       {users.length === 0 ? <p>Carregando...</p> : (
         users.map((user) => (
           <ListUSers
