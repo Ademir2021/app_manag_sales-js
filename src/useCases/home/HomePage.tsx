@@ -6,7 +6,7 @@ export function HomePage() {
     const register = '/register#'
     const update = '/user_update#'
     const login = '/login#'
-    const sales = '/sale#'
+    const sale = '/sale#'
 
     return (
         <>
@@ -17,9 +17,11 @@ export function HomePage() {
                 login={login}
                 person={''}
                 product={''}
-                sale={sales}
+                sale={sale}
                 listPerson={''}
                 listProduct={''}
+                listSale=""
+                usersList=""
             />
             <header style={{backgroundColor:''}}>
                 <br />

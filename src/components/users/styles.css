@@ -18,30 +18,20 @@
     cursor: pointer;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 0 2rem;
+.login-secure{
+    width:60px;
+    height:60px;
+    margin-top: 6.7rem;
 }
 
-.container-modal {
+.container {
+    margin-top: -6.2rem;
     display: flex;
-    position:fixed;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     padding: 0 2rem;
-}
-.main-modal {
-    display: inline;
-    height: 28rem;
-    width: 24rem;
-    padding: 22px 0px 0px 22px;
-    background-color: rgb(73, 80, 80);
 }
 
 .main {

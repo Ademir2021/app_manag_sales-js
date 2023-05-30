@@ -22,7 +22,7 @@ export function UserFormLogin({
     return (
         <>
             <div className='container'>
-                <img style={{width:"60px",height:"60px"}} src='./img/secure.png'></img>
+                <img className='login-secure' src='./img/secure.png'></img>
                 <BackHome/>
                 <fieldset className='main'>
                     <Header name="Login Usuário" />

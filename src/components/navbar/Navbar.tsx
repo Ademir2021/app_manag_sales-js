@@ -1,5 +1,6 @@
-import {Button} from '../button/Button'
 import "../assets/dist/css/bootstrap.min.css"
+import { ListSales } from '../../useCases/sales/ListSale';
+import { UsersList } from '../../useCases/users/UsersList';
 
 type PropsNavBar = {
     home: string;
@@ -11,6 +12,8 @@ type PropsNavBar = {
     product: string
     listPerson: string;
     listProduct: string;
+    listSale:string;
+    usersList:string
 }
 
 export function NavBar(props: PropsNavBar): JSX.Element {
@@ -20,12 +23,14 @@ export function NavBar(props: PropsNavBar): JSX.Element {
     let isRegister = 'Criar conta'
     let isUpdate = ''
     let isSale = 'Compras'
-    let isCadastros = 'Atendimento'
+    let isCadastros = 'Cadastros'
     let isPerson = ''
     let isProduct = ''
-    let isListagem = 'Listagem'
+    let isListagem = 'Consultas'
     let isListPerson = ''
     let isListProduct = ''
+    let isListSale =''
+    let isListUser = ''
     const res: any = localStorage.getItem('u')
     if (JSON.parse(res) !== null) {
         isHome = "Painel Usuário"
@@ -33,17 +38,19 @@ export function NavBar(props: PropsNavBar): JSX.Element {
         isRegister = ''
         isUpdate = 'Atualizar conta'
         isSale = 'Comprar'
-        isCadastros = 'Cadastros'
+        isCadastros = 'Cadastrar'
         isPerson = "Novo Cliente"
         isProduct = 'Novo Produto'
-        isListagem = "Listagem"
+        isListagem = "Consultar"
         isListPerson = "Listar Pessoas"
         isListProduct = 'Listar Produtos'
+        isListSale = 'Listar Vendas'
+        isListUser = 'Listar Usuários'
     }
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark_origin" style={{backgroundColor:'gray'}} aria-label="Offcanvas navbar large">
             <div className="container-fluid">
-                <a className="navbar-brand" href="/">Logo da Empresa</a>
+                <a className="navbar-brand" style={{color:'blue'}} href="/">{ '< LOGO DA EMPRESA / >'}</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
                     aria-controls="offcanvasNavbar2">
                     <span className="navbar-toggler-icon"></span>
@@ -80,8 +87,8 @@ export function NavBar(props: PropsNavBar): JSX.Element {
                                     <li>
                                         <hr className="dropdown-divider" />
                                     </li>
-                                    <li><a className="dropdown-item" href="#">Vazio</a></li>
-                                    <li><a className="dropdown-item" href="#">Vazio</a></li>
+                                    <li><a className="dropdown-item" href="#">-</a></li>
+                                    <li><a className="dropdown-item" href="#">-</a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
@@ -93,8 +100,8 @@ export function NavBar(props: PropsNavBar): JSX.Element {
                                     <li>
                                         <hr className="dropdown-divider" />
                                     </li>
-                                    <li><a className="dropdown-item" href="#">Vazio</a></li>
-                                    <li><a className="dropdown-item" href="#">Vazio</a></li>
+                                    <li><a className="dropdown-item" href={props.listSale}>{isListSale}</a></li>
+                                    <li><a className="dropdown-item" href={props.usersList}>{isListUser}</a></li>
                                 </ul>
                             </li>
                         </ul>
