@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { FormatDate } from "../../components/utils/formatDate";
 import { PersonList } from "../../components/persons/PersonList";
-import { IPerson } from './IPerson'
+import { TPersonRegister } from './PersonRegister'
 import api from "../../services/api/api";
 
-export function ListPerson() {
+export function PersonsList() {
 
-    const [person, setPerson] = useState<IPerson[]>([])
+    const [person, setPerson] = useState<TPersonRegister[]>([])
 
     const getPerson = async () => {
         try {
-            await api.get<IPerson[]>('persons')
+            await api.get<TPersonRegister[]>('persons')
                 .then(response => {
                     setPerson(response.data)
                 })
@@ -26,7 +26,7 @@ export function ListPerson() {
         <>
             <div style={{ fontSize: '18px' }}>Lista de Pessoas</div>
             {person.length === 0 ? <p>Carregando...</p> : (
-                person.map((person: IPerson) => (
+                person.map((person: TPersonRegister) => (
                     <PersonList
                         key={person.id_person}
                         id={person.id_person}

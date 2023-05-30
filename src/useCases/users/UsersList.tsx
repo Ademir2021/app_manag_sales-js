@@ -1,16 +1,14 @@
 import { useState, useEffect } from "react"
-import { ListUSers } from "../../components/users/UserList"
+import { ListUSers, PropsUsers } from "../../components/users/UserList"
 import { FormatDate } from "../../components/utils/formatDate";
-
-import { IUsers } from './IUser'
 import api from '../../services/api/api'
 
-export function ListUsers() {
+export function UsersList() {
 
-const [users, setUsers] = useState<IUsers[]>([])
+const [users, setUsers] = useState<PropsUsers[]>([])
 
   async function getUSers() {
-    await api.get<IUsers[]>('/users')
+    await api.get<PropsUsers[]>('/users')
       .then(response => {
         setUsers(response.data)
       })
@@ -32,7 +30,7 @@ const [users, setUsers] = useState<IUsers[]>([])
             name={user.name}
             username={user.username}
             password={user.password}
-          update={<a href="http://localhost:3001/user_update">Update: {user.id}</a>}
+            // update={<a href="http://localhost:3001/user_update">Update: {user.id}</a>}
           />
         )))}
     </>

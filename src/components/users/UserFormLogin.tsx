@@ -4,7 +4,7 @@ import { UserLink } from './UserLink';
 
  import './styles.css';
 
-type userFormLogin = {
+type PropsUserFormLogin = {
     children: any;
     handleChange: any;
     handleSubmit: any;
@@ -17,7 +17,7 @@ export function UserFormLogin({
     handleChange,
     handleSubmit,
     message, 
-    alert }: userFormLogin) {
+    alert }: PropsUserFormLogin) {
     return (
         <>
             <div className='container'>

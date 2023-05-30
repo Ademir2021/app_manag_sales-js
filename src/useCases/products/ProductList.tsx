@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { FormatDate } from "../../components/utils/formatDate";
 import { ProductList } from "../../components/products/ProductList";
-import { IProduct } from '../products/IProduct'
+import { TProductRegister } from './ProductRegister'
 import api from "../../services/api/api";
 
-export function ListProduct() {
+export function ProductsList() {
 
-    const [products, setProducts] = useState<IProduct[]>([])
+    const [products, setProducts] = useState<TProductRegister[]>([])
 
     const getProducts = async () => {
         try {
-            await api.get<IProduct[]>('products')
+            await api.get<TProductRegister[]>('products')
                 .then(response => {
                     setProducts(response.data)
                 })
@@ -26,7 +26,7 @@ export function ListProduct() {
         <>
             <div style={{ fontSize: '18px' }}>Lista de Produtos</div>
             {products.length === 0 ? <p>Carregando...</p> : (
-                products.map((product: IProduct) => (
+                products.map((product: TProductRegister) => (
                     <ProductList
                         key={product.id_product}
                         id={product.id_product}

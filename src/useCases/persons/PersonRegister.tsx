@@ -1,12 +1,20 @@
 import { useState } from "react";
 import { PersonForm } from '../../components/persons/PersonForm';
-import { IPerson } from "./IPerson";
 import api from '../../services/api/api'
 import { Dashboard } from "../dashboard/Dashboard";
 
+export type TPersonRegister = {
+    id_person?: number;
+    created_at?: Date | any;
+    name_pers: string | any;
+    cpf_pers: string;
+    address_pers: string;
+    fk_name_filial: number;
+  }
+
 export function FormPerson() {
 
-    const [person, setPerson] = useState<IPerson>({
+    const [person, setPerson] = useState<TPersonRegister>({
         name_pers: "",
         cpf_pers: "",
         address_pers: "",
@@ -19,7 +27,7 @@ export function FormPerson() {
         setPerson(values => ({ ...values, [name]: value }))
     }
 
-    function valFields(person: IPerson) {
+    function valFields(person: TPersonRegister) {
         let msg = ''
         if (person.name_pers == '') { msg += '- Digite o seu Nome Completo !! -\n' };
         if (person.cpf_pers == '') { msg += '- Digite seu CPF !! -\n' };
@@ -33,7 +41,7 @@ export function FormPerson() {
     };
 
     async function handlePerson() {
-        await api.post<IPerson>('/persons', person)
+        await api.post<TPersonRegister>('/persons', person)
             .then(response => {
                 alert(response.data)
             }).catch(error => alert(error))

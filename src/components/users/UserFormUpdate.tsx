@@ -1,6 +1,6 @@
 import './styles.css'
 
-type IUserFormUpdate = {
+type PropsUsersFormUpdate = {
     handleChange: any;
     handleSubmit: any;
     children: any;
@@ -20,7 +20,7 @@ export function UserFormUpdate({
     modalRef,
     className,
     close
-}: IUserFormUpdate) {
+}: PropsUsersFormUpdate) {
     return (
 
         <div ref={modalRef} className={`${className} modal`}>

@@ -1,8 +1,8 @@
 import './styles.css'
 
-type PropsUsers = {
+export type PropsUsers = {
     id: number;
-    created_at: string | any;
+    created_at:string;
     name: string;
     username: string;
     password?: string;
@@ -29,6 +29,7 @@ const ListUSers = (
                     <strong className="list-email">Email: </strong><strong>{username}</strong><br />
                     {/* <strong className="list-password">Senha: </strong><strong>{password}</strong><br /> */}
                     <button className="">{update}</button>
+                    <hr />
                 </div>
             </div>
         </>

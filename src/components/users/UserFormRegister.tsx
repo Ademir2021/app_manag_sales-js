@@ -4,12 +4,12 @@ import { UserLink } from './UserLink';
 
 import './styles.css';
 
-type IUserFormRegister = {
+type PropsUserFormRegister = {
     children:any;
     handleChange:any;
     handleSubmit:any;
-    message:any;
-    alert:any;
+    message:string;
+    alert:string;
 }
 
 export function UserFormRegister({
@@ -18,7 +18,7 @@ export function UserFormRegister({
     handleSubmit,
     message,
     alert
-     }: IUserFormRegister) {
+     }: PropsUserFormRegister) {
 
     return (
         <div className='container' >

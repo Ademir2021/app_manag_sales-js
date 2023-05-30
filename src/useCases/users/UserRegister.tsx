@@ -2,12 +2,18 @@ import { useState } from 'react';
 import { crypt, UsersValFields } from '../../components/utils/crypt/Crypt'
 import { UserFormRegister } from '../../components/users/UserFormRegister';
 
-import { IUser } from './IUser'
 import api from '../../services/api/api'
+
+type TUserRegister = {
+  name: string;
+  username: string;
+  password: string;
+  psw_repeat: string;
+}
 
 export function UserRegister() {
 
-  const [user, setUsers] = useState<IUser>({
+  const [user, setUsers] = useState<TUserRegister>({
     name: "",
     username: "",
     password: "",
@@ -24,7 +30,7 @@ export function UserRegister() {
   const [message, setMessage] = useState<any>("")
 
   async function handleUser() {
-    await api.post<IUser>('/users', user)
+    await api.post<TUserRegister>('/users', user)
       .then(response => {
         setMessage(response.data)
       }).catch(error => console.log(error))

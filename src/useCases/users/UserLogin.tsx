@@ -1,15 +1,18 @@
 import React, { useState, useContext } from 'react'
 import { UserFormLogin } from '../../components/users/UserFormLogin'
 import { AuthContext } from '../../context/auth'
-import { IUserLogin } from './IUser'
+
+export type TUserLogin = {
+  username: string;
+  password: string;
+}
 
 export function UserLogin() {
 
   const { authenticated, login, message }: any = useContext(AuthContext);
   
   const [alert, setAlert] = useState<string>('')
-  
-  const [user, setUsers] = useState<IUserLogin>(
+  const [user, setUsers] = useState<TUserLogin>(
     {
       username: "",
       password: ""
@@ -21,7 +24,7 @@ export function UserLogin() {
     setUsers(values => ({ ...values, [name]: value }))
   }
 
-  function valFields(user: IUserLogin) {
+  function valFields(user: TUserLogin) {
     let msg = ''
     if (user.username == '') { msg += "Digite um email válido !!" };
     if (user.password == '') { msg += "Digite uma senha válida !!" };

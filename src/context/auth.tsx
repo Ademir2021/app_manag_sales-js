@@ -1,8 +1,7 @@
 import React, { useState, createContext, useEffect } from "react";
 import bcrypt from "bcryptjs-react"
 import { useNavigate } from "react-router";
-
-import { IUserLogin } from '../useCases/users/IUser'
+import { TUserLogin  } from '../useCases/users/UserLogin'
 import api from '../services/api/api'
 
 export const AuthContext = createContext(null);
@@ -34,7 +33,7 @@ export const AuthProvider = ({ children }: any) => {
             }
         }
 
-        await api.get<IUserLogin[]>(`/login/${email}`)
+        await api.get<TUserLogin[]>(`/login/${email}`)
             .then(response => {
                 const res = response.data
                 if (res[0] != undefined) {

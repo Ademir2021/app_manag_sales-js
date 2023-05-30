@@ -1,17 +1,28 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import { UserFormUpdate } from "../../components/users/UserFormUpdate";
 import { ListUSers } from "../../components/users/UserList";
 import { FormatDate } from "../../components/utils/formatDate";
 import { crypt, UsersValFields } from '../../components/utils/crypt/Crypt'
-import { IUpdUsers, } from './IUser'
+import { AuthContext } from '../../context/auth'
 import api from '../../services/api/api'
 
 import '../../App.css'
 
+type TUpdateUser ={
+    id:number;
+    created_at?:string | any;
+    name:string;
+    username:string;
+    password?:string;
+    psw_repeat: string;
+  }
+
 export function UserUpdate() {
 
-    const [users, setUsers] = useState<IUpdUsers[]>([])
-    const [user, setUser] = useState<IUpdUsers>({
+    const { user: isLogged }: any = useContext(AuthContext);
+
+    const [users, setUsers] = useState<TUpdateUser[]>([])
+    const [user, setUser] = useState<TUpdateUser>({
         id: 0,
         name: "",
         username: "",
@@ -22,6 +33,8 @@ export function UserUpdate() {
     const [dropdown, setDropdown] = useState<string>("");
     const modalRef = useRef<any>(null);
 
+ 
+   
     function listUpdate(id: number, name: string, username: string) {
         user.id = id
         user.name = name
@@ -37,14 +50,14 @@ export function UserUpdate() {
     }
 
     async function registerUser() {
-        await api.post<IUpdUsers[]>('/users', user)
+        await api.post<TUpdateUser[]>('/users', user)
             .then(response => {
                 alert(response.data)
             }).catch(error => console.log(error))
     }
 
     async function updateUser() {
-        await api.put<IUpdUsers>(`/users/${user.id}`, user)
+        await api.put<TUpdateUser>(`/users/${user.id}`, user)
             .then(response => {
                 alert(response.data)
             })
@@ -52,10 +65,10 @@ export function UserUpdate() {
     }
 
     async function getUsers() {
-        await api.get<IUpdUsers[]>(`/users`)
+        await api.get<TUpdateUser[]>(`/users`)
             .then(response => {
-                const res: IUpdUsers[] = response.data
-                setUsers(res)
+                const res: TUpdateUser[] = response.data
+                        setUsers(res)
                 for (let i = 0; res.length > i; i++) {
                     if (user.id === res[i].id) {
                         user.name = res[i].name
@@ -129,14 +142,13 @@ export function UserUpdate() {
             >
                 {user}
             </UserFormUpdate>
-
-            {users.length === 0 ? <p>Carregando...</p> : (
-                users.map((user) => (
+            {isLogged.length === 0 ? <p>Carregando...</p> : (
+                isLogged.map((user:any) => (
                     <ListUSers
                         key={user.id}
                         id={user.id}
-                        created_at={FormatDate(user.created_at)}
-                        name={user.name}
+                        created_at={ 'null' || FormatDate(user.created_at)}
+                        name={'null'}
                         username={user.username}
                         password={user.password}
                         update={<div onClick={() =>
