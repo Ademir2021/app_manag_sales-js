@@ -1,3 +1,5 @@
+import '../../components/listStyles/module-list.css'
+
 export function PersonList(props: any) {
 
     return (

@@ -1,16 +1,25 @@
 import { useState, useEffect } from "react";
 import { FormatDate } from "../../components/utils/formatDate";
 import { SalesList } from "../../components/sales/SaleList";
-import { ISale } from "./ISale";
 import api from '../../services/api/api'
+import { BackHome } from "../../components/utils/backHome/BackHome";
+
+type TSaleList = {
+  id_sale: string;
+  created_at: 'date' | string | any;
+  fk_name_pers: number;
+  val_rec: number;
+  disc_sale: number;
+  total_sale: number
+};
 
 export function ListSales() {
 
-  const [sales, setSales] = useState<ISale[]>([]);
+  const [sales, setSales] = useState<TSaleList[]>([]);
 
   const getSales = async () => {
     try {
-      await api.get<ISale[]>('/sales')
+      await api.get<TSaleList[]>('/sales')
         .then(response => {
           setSales(response.data)
         })
@@ -25,9 +34,9 @@ export function ListSales() {
 
   return (
     <>
-      <div style={{ fontSize: '18px' }}>Lista de Vendas</div>
+      <BackHome />
       {sales.length === 0 ? <p>Carregando...</p> : (
-        sales.map((sale: ISale) => (
+        sales.map((sale: TSaleList) => (
           <SalesList
             key={sale.id_sale}
             id={sale.id_sale}

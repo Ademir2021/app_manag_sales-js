@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react'
 import { UserFormLogin } from '../../components/users/UserFormLogin'
 import { AuthContext } from '../../context/auth'
 
-
 export type TUserLogin = {
   username: string;
   password: string;

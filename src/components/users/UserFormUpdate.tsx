@@ -26,7 +26,7 @@ export function UserFormUpdate({
         <div ref={modalRef} className={`${className} modal`}>
             <div className="container">
                 <div className="main">
-                    <button className="btn-modal" onClick={close}>Fechar</button>
+                    <button className="btn-modal" onClick={close}>Voltar</button>
                     <div className='f-form'>
                     <form onSubmit={handleSubmit}>
                         <label className="update-text-id">ID</label>

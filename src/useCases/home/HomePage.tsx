@@ -23,10 +23,10 @@ export function HomePage() {
                 listSale=""
                 usersList=""
             />
-            <header style={{backgroundColor:''}}>
+            <header>
                 <br />
             <h1>Home</h1>
-            <strong>Usuário Deslogado: <span>Null</span></strong>< hr />
+            <p>Usuário Deslogado: <span>{'!!'}</span></p>< hr />
             </header>
         </>
     )

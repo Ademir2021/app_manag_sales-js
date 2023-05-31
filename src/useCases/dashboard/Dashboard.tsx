@@ -37,12 +37,11 @@ export function Dashboard() {
                 listSale={listSale}
                 usersList={listUser}
             />
-            <header style={{backgroundColor:''}}>
+            <header>
             < br />
             <h1>Painel Principal</h1>
-            <strong> User Logado: <span
-                style={{color: "blue",fontSize: "12px"}}>
-                {"ID:" + user[0].id + "  Email:" + user[0].username}</span></strong> <hr />
+            <p> User Logado: <span style={{color: "red",fontSize: "12px"}}>
+            {"ID:" + user[0].id + "  Email:" + user[0].username}</span></p> <hr />
             </header>
             <button onClick={handleLogout}>Logout</button>
         </>
