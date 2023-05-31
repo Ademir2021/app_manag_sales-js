@@ -29,12 +29,13 @@ export function UserFormUpdate({
                     <button className="btn-modal" onClick={close}>Voltar</button>
                     <div className='f-form'>
                     <form onSubmit={handleSubmit}>
-                        <label className="update-text-id">ID</label>
+                        <label className="update-text-id">ID do Usuário</label>
                         <input
                             className="update-in-id"
                             type="text"
                             name="id"
-                            value={children.id }
+                            value={children.id  || 0 }
+                            disabled
                             onChange={handleChange}
                         />
                         <label className="update-text-user" >Nome do Usuário</label>

@@ -1,5 +1,5 @@
 const url = "http://192.168.80.109:3000/products"
-const urlSales = "http://192.168.80.109::3000/sales"
+const urlSales = "http://192.168.80.109:3000/sales"
 const getItem = document.getElementById("submit_item")
 const getAmount = document.getElementById("submit_amount")
 const option = document.getElementById("options")
@@ -190,7 +190,7 @@ function payment(sum) {
             alert("Pagto efet. com sucesso: " + payment)
             alert("venda está sendo enviada ...")
             registerSale()
-            alert("Venda enviada com Sucesso !!")
+            // alert("Venda enviada com Sucesso !!")
             // localStorage.removeItem('u');
             // window.location.reload();
 
@@ -202,13 +202,22 @@ function payment(sum) {
     }
 }
 
+
 async function registerSale(e) {
-    event.preventDefault(e)
-    await axios.post(urlSales, itens)
-        .then(response => {
-            alert(JSON.stringify("Venda Nº:" + response.data + " efetuada com Sucesso"))
-            const num_sale = response.data
-            window.location.replace(`http://localhost:3000/note/${num_sale}`)
-        })
-        .catch(error => console.log(error))
+    // event.preventDefault(e)
+    try {
+        const response = await fetch(urlSales, {
+            method: "POST", // or 'PUT'
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(itens),
+        });
+        const num_sale = await response.json();
+        alert(JSON.stringify("Venda Nº:" + num_sale + " efetuada com Sucesso"))
+        window.location.replace(`http://localhost:3000/note/${num_sale}`)
+    } catch (error) {
+        console.error("Error:", error);
+    }
 }
+
