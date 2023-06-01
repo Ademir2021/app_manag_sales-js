@@ -1,14 +1,27 @@
-const url = "http://192.168.80.109:3000/products"
-const urlSales = "http://192.168.80.109:3000/sales"
+const url = "http://192.168.80.109:3000"
+const urlProduct = url + "/products"
+const urlSales = url + "/sales"
+const urlNote = url + "/note"
 const getItem = document.getElementById("submit_item")
 const getAmount = document.getElementById("submit_amount")
 const option = document.getElementById("options")
 const total = document.getElementById("total");
 const userLogin = document.getElementById("user")
+const personLogin = document.getElementById("client")
+
 let id = 1
-const itens = [{ disc_sale: 2.00, fk_name_pers: 0, user: "", filial: 0, user_id: 0 }]
+
+const itens = [{
+    disc_sale: 2.00,
+    fk_name_pers: 1,
+    user: "", filial: 0,
+    user_id: 0
+}]
+
 let editId = null
-insertItem() /**Importante !! já inicia invocando esta função */
+
+insertItem()
+auth()
 
 async function auth() {
     const user = await JSON.parse(localStorage.getItem('u'))
@@ -16,32 +29,28 @@ async function auth() {
         window.location.replace("/login");
     }
     else if (user != null) {
-        userLogin.innerHTML = `<b>Usuário</b>: ${user[0].username}`
+        userLogin.innerHTML = `${user[0].username}`
+        personLogin.innerHTML = `Cliente: ${itens[0].fk_name_pers}`
         itens[0].user = user[0].username
         itens[0].user_id = user[0].id
         itens[0].filial = 1
-        itens[0].fk_name_pers = 1
     }
-} auth()
+}
 
 async function insertItem() {
     try {
-
-        await fetch(url)
-            .then(data => {
-                return data.json();
-            })
-            .then(products => { /**console.log(products) */
+        await fetch(urlProduct)
+            .then(data => { return data.json() })
+            .then(products => {
                 products.map((val) => {
-                    option.innerHTML += ` 
-<option value = "${val.descric_product}"></option>`
+                    option.innerHTML += `<option value = "${val.descric_product}"></option>`
                 })
                 const setItem = getItem.value
                 const setAmount = getAmount.value
                 for (let i = 0; products.length > i; i++)
-                    if (setItem == products[i].descric_product /**item */
-                        || setItem == products[i].id_product /**id */
-                        || setItem == products[i].bar_code) { /**init insert Item */
+                    if (setItem == products[i].descric_product
+                        || setItem == products[i].id_product
+                        || setItem == products[i].bar_code) {
                         const item = {}
                         item.id_product = products[i].id_product
                         item.descric = products[i].descric_product
@@ -143,7 +152,6 @@ function delItem(id) {
                 tbody.deleteRow(i)
                 sumItens()
                 listItens()
-                //cancelItens()
             }
         }
     }
@@ -160,11 +168,11 @@ function valFields(item) {
     return true
 }
 
-function prepareEdition(dados) {
-    if (confirm("deseja realmente atualizar o item: " + dados.id)) {
-        editId = dados.id
-        document.getElementById("submit_item").value = dados.id_product
-        document.getElementById("submit_amount").value = dados.amount_product
+function prepareEdition(item) {
+    if (confirm("deseja realmente atualizar o item: " + item.id)) {
+        editId = item.id
+        document.getElementById("submit_item").value = item.id_product
+        document.getElementById("submit_amount").value = item.amount_product
         document.getElementById('btn1').innerText = 'Atualizar'
     }
 }
@@ -174,10 +182,9 @@ function sumItens() {
     for (var i = 1; i < itens.length; i++) {
         sum += (itens[i].amount_product * itens[i].val_product)
     }
-    total.innerHTML = `Total Produto(s): R$ ${parseFloat(sum).toFixed(3)}`
+    total.innerHTML = `Total item(s) R$${parseFloat(sum).toFixed(2)}`
     return sum
-} /**Não invocar a função sumItens() para não aparecer Total == 0 */
-
+}
 
 function payment(sum) {
     let payment = 1000
@@ -190,10 +197,6 @@ function payment(sum) {
             alert("Pagto efet. com sucesso: " + payment)
             alert("venda está sendo enviada ...")
             registerSale()
-            // alert("Venda enviada com Sucesso !!")
-            // localStorage.removeItem('u');
-            // window.location.reload();
-
         } else {
             let aPagar = tProducts - payment
             alert("O valor não bate com o Total dos Produtos !" +
@@ -202,20 +205,16 @@ function payment(sum) {
     }
 }
 
-
-async function registerSale(e) {
-    // event.preventDefault(e)
+async function registerSale() {
     try {
         const response = await fetch(urlSales, {
-            method: "POST", // or 'PUT'
-            headers: {
-                "Content-Type": "application/json",
-            },
+            method: "POST",
+            headers: { "Content-Type": "application/json", },
             body: JSON.stringify(itens),
         });
         const num_sale = await response.json();
-        alert(JSON.stringify("Venda Nº:" + num_sale + " efetuada com Sucesso"))
-        window.location.replace(`http://localhost:3000/note/${num_sale}`)
+        alert(JSON.stringify("Venda Nº:" + num_sale + " efetuada com Sucesso !!"))
+        window.location.replace(`${urlNote}/${num_sale}`)
     } catch (error) {
         console.error("Error:", error);
     }

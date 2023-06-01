@@ -1,44 +1,91 @@
-*{
-    margin:0;
-    padding:0;
-}
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(15, 14, 14);
-}
-header {
-  /* background-color:rgb(224, 224, 211); */
-  margin-left: auto;
-  margin-right: auto;
-  width: 79%;
-  /* padding: 10px; */
-  margin-top: 0.5rem;
-  border-radius: 5px;
-  color:beige
 }
 
-.card {
-    /* background-color: #fff; */
-    background-color:rgb(190, 190, 179);
-    /* border: 3px solid #ccc; */
-    margin-left: auto;
-    margin-right: auto;
-    /* width: 40rem; */
-    width: 89%;
-    padding: 10px;
+.header-sale {
+    display: flex;
+    color: blue;
     margin-top: 1rem;
-    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
 
 }
 
-label{
-    color:rgb(8, 8, 8);
+.footer-sale {
+    display: flex;
+    color: blue;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+.container {
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    background-color: rgb(73, 80, 80);
+    ;
+    margin-left: auto;
+    margin-right: auto;
+    width: 23.6rem;
+    padding: 1rem;
+}
+
+.total-product {
+    display: flex;
+    margin-top: 1rem;
+    color: blanchedalmond;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    min-height: 1vh;
     margin-left: auto;
     margin-right: auto;
 }
 
-main {
-    padding: 1rem 1.5rem;
+.user-logged {
+    display: flex;
+    margin-top: 1px;
+    color: rgb(5, 14, 42);
+    align-items: left;
+    justify-content: left;
+    min-height: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.person-logged {
+    display: flex;
+    margin-top: 1px;
+    color: rgb(5, 14, 42);
+    align-items: center;
+    justify-content: center;
+    min-height: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.close-sale {
+    display: flex;
+    margin-top: 1px;
+    align-items: center;
+    justify-content: center;
+    min-height: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    color: blue;
 }
 
 .line_input {
@@ -47,23 +94,18 @@ main {
 }
 
 .input-seach {
-    padding: 10px;
-    width: 50%;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    outline: 0;
-    margin: 3px;
+    width: 23rem;
+    height: 2rem;
+    border: none;
     margin-left: auto;
     margin-right: auto;
 }
 
 .input-amount {
-    padding: 10px;
-    width: 190px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    outline: 0;
-    margin: 3px;
+    margin-top: 1rem;
+    width: 4rem;
+    height: 1.8rem;
+    border: none;
     margin-left: auto;
     margin-right: auto;
 }
@@ -72,11 +114,11 @@ button {
     border: 0px;
     padding: 8px;
     outline: 0;
-    width: 265px;
+    width: 9rem;
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(55, 43, 226);
-    color: #fff;
+    color: rgb(5, 14, 42);
     border-radius: 3px;
     font-weight: bold;
     margin-top: 12px;
@@ -88,8 +130,8 @@ button:hover {
     background-color: rgb(31, 168, 168);
 }
 
-.content {
-    margin-top: 10px;
+.contssent {
+    margin-top: 3px;
 }
 
 table {
@@ -97,13 +139,8 @@ table {
     border: 1px solid #ccc;
     margin-left: auto;
     margin-right: auto;
-    /* width: 6em; */
-    width: 89%;
-}
-
-table th {
-    background-color: rgb(214, 214, 214);
-    /* background-color:rgb(204, 204, 196) */
+    width: 6em;
+    width: 25.6rem;
 }
 
 table th,
@@ -112,7 +149,7 @@ td {
     font-size: 0.80rem;
     text-align: left;
     background-color: #ccc;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 table td img {
@@ -122,43 +159,4 @@ table td img {
 
 .center {
     text-align: center;
-}
-
-.total {
-    /* font-family: 'Courier New', Courier, monospace; */
-    padding: 3px;
-    width:89%;
-    font-size: 1rem;
-    /* background:rgb(300,300,300); */
-    /* border:3px solid #ccc; */
-    color:rgb(100, 100, 100);
-    text-align: right;
-    /* border-radius: 3px; */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.sub-menu{
-
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-    width:89%;
-    border-radius: 3px;
-    border: 1px solid #b6aaaa;
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
-    background-color:rgb(190, 190, 179);
-    font-size: 0.8rem;
-    /* display: block; */
-    text-decoration: none;
-    border: blue ;
-}
-footer{
-    width:89%;
-    margin-left: auto;
-    margin-right: auto;
-    /* display: flex; */
-    text-align: center;
-    font-size: 0.9rem;
-    color:beige
 }
