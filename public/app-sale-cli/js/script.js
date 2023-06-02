@@ -1,27 +1,33 @@
 const url = "http://192.168.80.109:3000"
-const urlProduct = url + "/products"
+const urlProducts = url + "/products"
 const urlSales = url + "/sales"
 const urlNote = url + "/note"
 const getItem = document.getElementById("submit_item")
 const getAmount = document.getElementById("submit_amount")
-const option = document.getElementById("options")
-const total = document.getElementById("total");
+const searchOption = document.getElementById("options")
+const discSaleItens = document.getElementById("input_disc_note")
+const totalItens = document.getElementById("total_itens")
+const discNote = document.getElementById("disc_note");
+const totalNote = document.getElementById("total_note")
+const inputPersonLogged = document.getElementById("input-person-logged")
+const personLogged = document.getElementById("person-logged")
 const userLogin = document.getElementById("user")
-const personLogin = document.getElementById("client")
+const msgsales = document.getElementById("msgs_sale")
+const paymentSale = document.getElementById("input_payment_sale")
 
 let id = 1
 
 const itens = [{
-    disc_sale: 2.00,
-    fk_name_pers: 1,
+    disc_sale: 0,
+    fk_name_pers: 2,
     user: "", filial: 0,
     user_id: 0
 }]
 
 let editId = null
 
-insertItem()
 auth()
+insertItem()
 
 async function auth() {
     const user = await JSON.parse(localStorage.getItem('u'))
@@ -30,7 +36,6 @@ async function auth() {
     }
     else if (user != null) {
         userLogin.innerHTML = `${user[0].username}`
-        personLogin.innerHTML = `Cliente: ${itens[0].fk_name_pers}`
         itens[0].user = user[0].username
         itens[0].user_id = user[0].id
         itens[0].filial = 1
@@ -39,11 +44,11 @@ async function auth() {
 
 async function insertItem() {
     try {
-        await fetch(urlProduct)
+        await fetch(urlProducts)
             .then(data => { return data.json() })
             .then(products => {
                 products.map((val) => {
-                    option.innerHTML += `<option value = "${val.descric_product}"></option>`
+                    searchOption.innerHTML += `<option value = "${val.descric_product}"></option>`
                 })
                 const setItem = getItem.value
                 const setAmount = getAmount.value
@@ -61,7 +66,7 @@ async function insertItem() {
                     }
             })
     } catch (error) {
-        alert("API de itens não localizada !!")
+        msgsales.innerHTML = ("API de itens não localizada !!")
         console.log(error, "Error Occurred !!")
     }
 }
@@ -69,7 +74,7 @@ async function insertItem() {
 function verifItem(item) {
     for (let i = 1; itens.length > i; i++)
         if (item.id_product === itens[i].id_product) {
-            return alert('Item já foi lançado')
+            return msgsales.innerHTML = ("Item já foi lançado !!")
         }
     item.id = id++
     return save(item)
@@ -77,6 +82,7 @@ function verifItem(item) {
 
 function save(item) {
     sumItens()
+    msgsales.innerHTML = ""
     if (valFields(item)) {
         if (editId == null) {
             itens.push(item)
@@ -159,17 +165,17 @@ function delItem(id) {
 
 function valFields(item) {
     let msg = ''
-    if (item.descric == '') { msg += 'Pesquise um Item !!\n' }
-    if (item.amount_product < 1) { msg += 'Informe a Quant !!\n' }
+    if (item.descric == '') { msg += 'Pesquise um item !!\n' }
+    if (item.amount_product < 1) { msg += 'Informe a quantidade !!\n' }
     if (msg != '') {
-        alert(msg)
+        msgsales.innerHTML = msg
         return false
     }
     return true
 }
 
 function prepareEdition(item) {
-    if (confirm("deseja realmente atualizar o item: " + item.id)) {
+    if (confirm("Deseja realmente atualizar o item: " + item.id)) {
         editId = item.id
         document.getElementById("submit_item").value = item.id_product
         document.getElementById("submit_amount").value = item.amount_product
@@ -182,25 +188,36 @@ function sumItens() {
     for (var i = 1; i < itens.length; i++) {
         sum += (itens[i].amount_product * itens[i].val_product)
     }
-    total.innerHTML = `Total item(s) R$${parseFloat(sum).toFixed(2)}`
+    personLogged.innerHTML = `Cliente: ${itens[0].fk_name_pers}`
+    itens[0].fk_name_pers = inputPersonLogged.value
+    totalItens.innerHTML = `+ R$${parseFloat(sum).toFixed(2)}`
+    itens[0].disc_sale = discSaleItens.value
+    discNote.innerHTML = `- R$${parseFloat(itens[0].disc_sale).toFixed(2)}`
+    totalNote.innerHTML = `= R$${parseFloat(sum - itens[0].disc_sale).toFixed(2)}`
     return sum
 }
 
 function payment(sum) {
-    let payment = 1000
-    let tProducts = 0
-    tProducts = sumItens(sum)
-    if (tProducts == 0) {
-        alert("Nenhum item(s) no momento")
+    const payment = paymentSale.value
+    let totalNote = 0
+    const limitDesc = (itens[0].disc_sale >= sumItens(sum)*0.10)//Desconta até 10%
+    totalNote += sumItens(sum)
+    totalNote -= itens[0].disc_sale
+    if (limitDesc) {
+        msgsales.innerHTML = "Desconto não autorizado"
     } else {
-        if (payment == tProducts || payment == 1000) {
-            alert("Pagto efet. com sucesso: " + payment)
-            alert("venda está sendo enviada ...")
-            registerSale()
+        if (totalNote == 0 ) {
+            msgsales.innerHTML = "Nenhum item(s) no momento !!"
         } else {
-            let aPagar = tProducts - payment
-            alert("O valor não bate com o Total dos Produtos !" +
-                "\nEfetue o pagamento de: " + aPagar)
+            if (payment == totalNote) {
+                msgsales.innerHTML = ("Pagto OK = " + ('R$ ' + parseFloat(payment).toFixed(2)))
+                alert("A venda será enviada !!")
+                //  registerSale()
+                paymentSale.value = 0
+                discSaleItens.value = 0
+            } else {
+                msgsales.innerHTML = ("Realizar pagto." + ('R$' + parseFloat(totalNote).toFixed(2)))
+            }
         }
     }
 }
@@ -213,10 +230,9 @@ async function registerSale() {
             body: JSON.stringify(itens),
         });
         const num_sale = await response.json();
-        alert(JSON.stringify("Venda Nº:" + num_sale + " efetuada com Sucesso !!"))
+        alert(JSON.stringify("Venda Nº:" + num_sale + " efetuada com sucesso !!"))
         window.location.replace(`${urlNote}/${num_sale}`)
     } catch (error) {
-        console.error("Error:", error);
+        console.error("Error:", error)
     }
 }
-

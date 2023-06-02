@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,24 +8,56 @@
   <link href="css/style.css" rel="stylesheet">
   <title>Terminal de Vendas</title>
 </head>
-
 <body>
   <h2 class="header-sale">Terminal de Vendas Rápida</h2>
   <datalist id="data_itens">
     <option id="options"></option>
   </datalist>
   <div class="container">
+    <strong id="msgs_sale" class="msgs-sale"></strong>
     <div class="line_input">
-      <input class="input-seach" type="search" list="data_itens" id="submit_item" placeholder="Pesquise um item"
-        required>
-      <input class="input-amount" type="number" id="submit_amount" placeholder="UN" value="1" required>
-      <button onclick="insertItem()" id="btn1">Inserir item</button>
+      <input class="input-seach" 
+      type="search"
+      list="data_itens"
+      id="submit_item"
+      placeholder="Pesquisar item (s)."
+      required
+      >
+      <input class="input-amount"
+      type="number"
+      id="submit_amount"
+      placeholder="Quantidade"
+      value="1"
+      required
+      >
+      <button onclick="insertItem()" id="btn1">Salvar item</button>
       <button onclick="cancelItens() ">Cancelar Operações</button>
       <button onclick="payment() ">Enviar Venda</button>
-      <p class="total-product" id="total"></p>
-      <p class="user-logged" id="user"></p>
-      <p class="person-logged" id="client"></p>
-      <a class="close-sale" href="/dashboard">Encerrar</a>
+      <strong class="total-itens" id="total_itens"></strong>
+      <strong class="disc-note" id="disc_note"></strong>
+      <strong class="total-note" id="total_note"></strong>
+      <span class="user-logged" id="user"></span>
+      <span class="person-logged" id="person-logged"></span>
+      <strong><a class="close-sale" href="/dashboard">Encerrar</a></strong>
+      <input class="input-disc-note"
+        type="number"
+        id="input_disc_note"
+        placeholder="Desconto"
+        value=""
+        >
+        <input class="input-person-sale"
+        type="number"
+        id="input-person-logged"
+        placeholder="Cliente"
+        value="2"
+        disabled
+        >
+        <input class="input-payment-sale"
+        type="number"
+        id="input_payment_sale"
+        placeholder="Pagamento"
+        value=""
+        >
     </div>
   </div>
   <table>

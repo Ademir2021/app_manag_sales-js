@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .header-sale {
@@ -13,7 +13,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: auto;
-
 }
 
 .footer-sale {
@@ -29,28 +28,83 @@ body {
 
 .container {
     display: flex;
-    margin-top: 1rem;
+    margin-top: 2rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 60vh;
     background-color: rgb(73, 80, 80);
-    ;
     margin-left: auto;
     margin-right: auto;
     width: 23.6rem;
     padding: 1rem;
 }
 
-.total-product {
-    display: flex;
+:root {
+    /* --totais--font-family: none; */
+    --totais--font-size: 1.3rem;
+    --totais--color:rgb(131, 138, 199);
+}
+
+.total-itens {
     margin-top: 1rem;
-    color: blanchedalmond;
-    font-size: 24px;
-    align-items: center;
-    justify-content: center;
+    /* margin-left: 12rem; */
     min-height: 1vh;
     margin-left: auto;
+    margin-right: auto;
+    font-family: var(--totais--font-family);
+    color: var(--totais--color);
+    font-size: var(--totais--font-size);
+}
+
+.disc-note {
+    margin-top: 0rem;
+    /* margin-left: 12.5rem; */
+    min-height: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--totais--font-family);
+    color: var(--totais--color);
+    font-size: var(--totais--font-size);
+}
+
+.total-note {
+    margin-top: 0rem;
+    /* margin-left: 13.6rem; */
+    min-height: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--totais--font-family);
+    color: var(--totais--color);
+    font-size: var(--totais--font-size);
+}
+
+
+.input-payment-sale{
+    margin-top: -1.9rem;
+    width: 5rem;
+    height: 1.8rem;
+    border: none;
+    margin-left: 4.5rem;
+    margin-right: auto;
+}
+
+.input-disc-note{
+    margin-top: 1rem;
+    width: 5rem;
+    height: 1.8rem;
+    border: none;
+    margin-left: 12rem;
+    margin-right: auto;
+
+}
+
+.input-person-sale{
+    margin-top: -1.9rem;
+    width: 5rem;
+    height: 1.8rem;
+    border: none;
+    margin-left: 19rem;
     margin-right: auto;
 }
 
@@ -58,8 +112,8 @@ body {
     display: flex;
     margin-top: 1px;
     color: rgb(5, 14, 42);
-    align-items: left;
-    justify-content: left;
+    align-items: right;
+    justify-content: right;
     min-height: 1vh;
     margin-left: auto;
     margin-right: auto;
@@ -103,7 +157,7 @@ body {
 
 .input-amount {
     margin-top: 1rem;
-    width: 4rem;
+    width: 6rem;
     height: 1.8rem;
     border: none;
     margin-left: auto;
@@ -159,4 +213,11 @@ table td img {
 
 .center {
     text-align: center;
+}
+.msgs-sale{
+    color:rgb(240, 236, 236);
+    font-size: 1.1rem;
+    margin-block-end: 1rem;
+    align-items: center;
+    justify-content: center;
 }
