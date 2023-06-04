@@ -40,6 +40,7 @@ body {
     /* width: 24rem; */
     width: 100%;
     padding: 22px 0px 0px 22px;
+    border: black 2px solid;
     background-color: rgb(73, 80, 80);
 }
 
@@ -80,9 +81,9 @@ body {
     left: 15.6rem;
     top: 12rem;
     height: 2rem;
+    cursor: pointer;
     border-radius: 3px;
     width: 5rem;
-
 }
 
 .label-disc-sale {
@@ -96,6 +97,7 @@ body {
     left: 8.3rem;
     top: 12rem;
     height: 2rem;
+    cursor: pointer;
     border-radius: 3px;
     width: 5rem;
 }
@@ -111,6 +113,7 @@ body {
     left: 1rem;
     top: 12rem;
     height: 2rem;
+    cursor: pointer;
     border-radius: 3px;
     width: 5rem;
 }
@@ -149,6 +152,7 @@ body {
     position: absolute;
     left:15.6rem;
     top: 4rem;
+    cursor: pointer;
     height: 2rem;
     border-radius: 3px;
     width: 5rem;
@@ -205,7 +209,6 @@ body {
     color: blue;
 }
 
-/*Inicio Tabelas **/
 .table-margin-top {
     margin-top: 0.2rem;
     border: 1px solid blue;

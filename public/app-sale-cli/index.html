@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,66 +9,36 @@
   <link href="css/style.css" rel="stylesheet">
   <title>Terminal de Vendas</title>
 </head>
+
 <body>
   <h2 class="header-sale">Terminal de Vendas Rápida</h2>
   <datalist id="data_itens">
     <option id="options"></option>
   </datalist>
-
   <div class="container">
     <div class="main">
       <div class="f-form">
-    <strong id="msgs_sale" class="msgs-sale"></strong>
-      <input class="input-search" 
-      type="search"
-      list="data_itens"
-      id="submit_item"
-      placeholder="Pesquisar item (s)."
-      required
-      >
-      <input class="input-amount"
-      type="number"
-      id="submit_amount"
-      placeholder="Quantidade"
-      value="1"
-      required
-      >
-      <button class="button-sale-save" onclick="insertItem()" id="btn1">Salvar Item</button>
-      <button class="button-sale-cancel" onclick="cancelItens() ">Cancelar</button>
-      <button class="button-sale-send" onclick="payment() ">Enviar Venda</button>
-
-      <strong class="label-payment-sale">Pagamento</strong>
-      <input class="input-payment-sale"
-        type="number"
-        id="input_payment_sale"
-        placeholder="Pagamento"
-        value=""
-        >
+        <strong id="msgs_sale" class="msgs-sale"></strong>
+        <input class="input-search" type="search" list="data_itens" id="submit_item" placeholder="Pesquisar item (s)."
+          required>
+        <input class="input-amount" type="number" id="submit_amount" placeholder="Quantidade" value="1" required>
+        <button class="button-sale-save" onclick="insertItem()" id="btn1">Salvar Item</button>
+        <button class="button-sale-cancel" onclick="cancelItens() ">Cancelar</button>
+        <button class="button-sale-send" onclick="payment() ">Enviar Venda</button>
+        <strong class="label-payment-sale">Pagamento</strong>
+        <input class="input-payment-sale" type="number" id="input_payment_sale" placeholder="Pagamento" value="">
         <strong class="label-disc-sale">Desconto</strong>
-        <input class="input-disc-note"
-        type="number"
-        id="input_disc_note"
-        placeholder="Desconto"
-        value=""
-        >
+        <input class="input-disc-note" type="number" id="input_disc_note" placeholder="Desconto" value="">
         <strong class="label-person-sale">Cliente</strong>
-        <input class="input-person-sale"
-        type="number"
-        id="input_person_logged"
-        placeholder="Cliente"
-        value="2"
-        >
-
+        <input class="input-person-sale" type="number" id="input_person_logged" placeholder="Cliente" value="2">
         <strong class="person-logged" id="person-logged"></strong>
         <strong class="user-logged" id="user"></strong>
         <strong><a class="close-sale" href="/dashboard">Encerrar</a></strong>
-     
         <strong class="total-itens" id="total_itens"></strong>
         <strong class="disc-note" id="disc_note"></strong>
         <strong class="total-note" id="total_note"></strong>
-      
+      </div>
     </div>
-  </div>
   </div>
   <table class="table-margin-top" border="">
     <thead>
@@ -83,7 +54,7 @@
     </tbody>
   </table>
   <p class="footer-sale">Todos os direitos Resevados - 2023</p>
-  <script src="./js/script.js" defer ></script>
+  <script src="./js/script.js" defer></script>
 </body>
 
 </html>

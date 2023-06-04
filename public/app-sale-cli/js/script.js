@@ -44,7 +44,7 @@ async function auth() {
 }
 
 const currencyMoney = (valor) => {
-    if(valor) {
+    if (valor) {
         return valor.toFixed(2)
     }
 }
