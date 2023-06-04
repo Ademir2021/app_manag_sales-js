@@ -1,7 +1,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
-    color: rgb(10, 10, 74);
+    color:rgb(1, 1, 38);
 }
 
 .header-sale{
@@ -17,7 +17,12 @@ body {
 }
 
 .msgs-sale {
-    color: aqua;
+    position: absolute;
+    left: 1.2rem;
+    top: 0rem;
+    margin-top: -4px;
+    font-size: 1rem;
+    color: rgb(10, 52, 52);
 }
 
 .container {
@@ -32,9 +37,11 @@ body {
 
 .main {
     height: 24rem;
-    width: 24rem;
+    /* width: 24rem; */
+    width: 100%;
     padding: 22px 0px 0px 22px;
-    background-color: rgb(73, 80, 80);
+    /* background-color: rgb(73, 80, 80); */
+    background-color: rgb(210, 205, 196);
 }
 
 .f-form {
@@ -65,13 +72,13 @@ body {
 
 .label-payment-sale {
     position: absolute;
-    left: 15rem;
+    left: 15.6rem;
     top: 11rem;
 }
 
 .input-payment-sale {
     position: absolute;
-    left: 15rem;
+    left: 15.6rem;
     top: 12rem;
     height: 2rem;
     border-radius: 3px;
@@ -81,13 +88,13 @@ body {
 
 .label-disc-sale {
     position: absolute;
-    left: 8rem;
+    left: 8.3rem;
     top: 11rem;
 }
 
 .input-disc-note {
     position: absolute;
-    left: 8rem;
+    left: 8.3rem;
     top: 12rem;
     height: 2rem;
     border-radius: 3px;
@@ -117,27 +124,35 @@ body {
 
 .person-logged {
     position: absolute;
-    left: 0rem;
+    left: 1rem;
     top: 16rem;
 }
 
 .close-sale {
     position: absolute;
-    left: 0rem;
+    left: 1rem;
     top: 22rem;
     text-decoration: none;
     color: blue;
 }
 
-.line_input {
-    display: grid;
-    margin-bottom: 10px;
+.input-search {
+    position: absolute;
+    left: 1.1rem;
+    top: 1rem;
+    height: 2.6rem;
+    border-radius: 3px;
+    width: 20rem;
+    cursor: pointer;
 }
 
 .input-amount {
     position: absolute;
-    left: 6rem;
+    left:15.6rem;
     top: 4rem;
+    height: 2rem;
+    border-radius: 3px;
+    width: 5rem;
 }
 
 .button-sale-save {

@@ -46,7 +46,7 @@ async function auth() {
 
 const currencyMoney = (valor) => {
     if(valor) {
-        return valor.toFixed(1)
+        return valor.toFixed(2)
     }
 }
 
@@ -225,7 +225,7 @@ function payment(sum) {
             if (payment == totalNote) {
                 msgsales.innerHTML = `Pagto OK. ${currencyFormat(payment)}`
                 alert("A venda será enviada !!")
-                //registerSale()
+                registerSale()
                 paymentSale.value = 0
                 discSaleItens.value = 0
             } else {
