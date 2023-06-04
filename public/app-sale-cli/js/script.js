@@ -7,32 +7,34 @@ const getAmount = document.getElementById("submit_amount")
 const searchOption = document.getElementById("options")
 const discSaleItens = document.getElementById("input_disc_note")
 const totalItens = document.getElementById("total_itens")
-const discNote = document.getElementById("disc_note");
+const discNote = document.getElementById("disc_note")
 const totalNote = document.getElementById("total_note")
-const inputPersonLogged = document.getElementById("input-person-logged")
+const inputPersonLogged = document.getElementById("input_person_logged")
 const personLogged = document.getElementById("person-logged")
 const userLogin = document.getElementById("user")
 const msgsales = document.getElementById("msgs_sale")
 const paymentSale = document.getElementById("input_payment_sale")
 
+
 let id = 1
 
 const itens = [{
     disc_sale: 0,
-    fk_name_pers: 2,
-    user: "", filial: 0,
+    fk_name_pers: 0,
+    user: "",
+    filial: 0,
     user_id: 0
-}]
+}];
 
 let editId = null
 
-auth()
-insertItem()
+auth();
+insertItem();
 
 async function auth() {
     const user = await JSON.parse(localStorage.getItem('u'))
     if (user == null) {
-        window.location.replace("/login");
+        window.location.replace("/login")
     }
     else if (user != null) {
         userLogin.innerHTML = `${user[0].username}`
@@ -40,6 +42,17 @@ async function auth() {
         itens[0].user_id = user[0].id
         itens[0].filial = 1
     }
+}
+
+const currencyMoney = (valor) => {
+    if(valor) {
+        return valor.toFixed(1)
+    }
+}
+
+const currencyFormat = (valor) => {
+    return valor.toLocaleString('pt-BR',
+        { style: 'currency', currency: 'BRL' })
 }
 
 async function insertItem() {
@@ -60,8 +73,8 @@ async function insertItem() {
                         item.id_product = products[i].id_product
                         item.descric = products[i].descric_product
                         item.amount_product = setAmount
-                        item.val_product = parseFloat(products[i].val_max_product).toFixed(2)
-                        item.tItem = parseFloat(item.amount_product * item.val_product).toFixed(2)
+                        item.val_product = currencyFormat(products[i].val_max_product)
+                        item.tItem = currencyFormat(item.amount_product * item.val_product)
                         verifItem(item)
                     }
             })
@@ -188,35 +201,35 @@ function sumItens() {
     for (var i = 1; i < itens.length; i++) {
         sum += (itens[i].amount_product * itens[i].val_product)
     }
-    personLogged.innerHTML = `Cliente: ${itens[0].fk_name_pers}`
+    personLogged.innerHTML = `Cliente:${itens[0].fk_name_pers}`
     itens[0].fk_name_pers = inputPersonLogged.value
-    totalItens.innerHTML = `+ R$${parseFloat(sum).toFixed(2)}`
+    totalItens.innerHTML = `Itens:${currencyFormat(sum)}`
     itens[0].disc_sale = discSaleItens.value
-    discNote.innerHTML = `- R$${parseFloat(itens[0].disc_sale).toFixed(2)}`
-    totalNote.innerHTML = `= R$${parseFloat(sum - itens[0].disc_sale).toFixed(2)}`
+    discNote.innerHTML = `Desconto:${currencyFormat(itens[0].disc_sale)}`
+    totalNote.innerHTML = `Total:${currencyFormat(sum - itens[0].disc_sale)}`
     return sum
 }
 
 function payment(sum) {
-    const payment = paymentSale.value
+    let payment = paymentSale.value
     let totalNote = 0
-    const limitDesc = (itens[0].disc_sale >= sumItens(sum)*0.10)//Desconta até 10%
+    const limitDesc = (itens[0].disc_sale > sumItens(sum) * 0.10)
     totalNote += sumItens(sum)
     totalNote -= itens[0].disc_sale
     if (limitDesc) {
         msgsales.innerHTML = "Desconto não autorizado"
     } else {
-        if (totalNote == 0 ) {
+        if (totalNote == 0) {
             msgsales.innerHTML = "Nenhum item(s) no momento !!"
         } else {
             if (payment == totalNote) {
-                msgsales.innerHTML = ("Pagto OK = " + ('R$ ' + parseFloat(payment).toFixed(2)))
+                msgsales.innerHTML = `Pagto OK. ${currencyFormat(payment)}`
                 alert("A venda será enviada !!")
-                //  registerSale()
+                //registerSale()
                 paymentSale.value = 0
                 discSaleItens.value = 0
             } else {
-                msgsales.innerHTML = ("Realizar pagto." + ('R$' + parseFloat(totalNote).toFixed(2)))
+                msgsales.innerHTML = `Realizar pagto. ${currencyFormat(totalNote)}`
             }
         }
     }

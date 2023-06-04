@@ -1,143 +1,130 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: rgb(10, 10, 74);
 }
 
-.header-sale {
+.header-sale{
     display: flex;
-    color: blue;
-    margin-top: 1rem;
     align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
+    flex-direction: column;
 }
 
-.footer-sale {
+.footer-sale{
     display: flex;
-    color: blue;
-    margin-top: 1rem;
     align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
+    flex-direction: column;
+}
+
+.msgs-sale {
+    color: aqua;
 }
 
 .container {
     display: flex;
-    margin-top: 2rem;
+    margin-top: 0rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 60vh;
-    background-color: rgb(73, 80, 80);
-    margin-left: auto;
-    margin-right: auto;
-    width: 23.6rem;
-    padding: 1rem;
+    min-height: 0vh;
+    padding: 0 1rem;
 }
 
-:root {
-    /* --totais--font-family: none; */
-    --totais--font-size: 1.3rem;
-    --totais--color:rgb(131, 138, 199);
+.main {
+    height: 24rem;
+    width: 24rem;
+    padding: 22px 0px 0px 22px;
+    background-color: rgb(73, 80, 80);
+}
+
+.f-form {
+    padding: 0px 0px 0px 0px;
+    position: relative;
+    width: 20rem;
 }
 
 .total-itens {
-    margin-top: 1rem;
-    /* margin-left: 12rem; */
-    min-height: 1vh;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: var(--totais--font-family);
-    color: var(--totais--color);
-    font-size: var(--totais--font-size);
+    position: absolute;
+    left: 6rem;
+    top: 19rem;
 }
 
 .disc-note {
-    margin-top: 0rem;
-    /* margin-left: 12.5rem; */
-    min-height: 1vh;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: var(--totais--font-family);
-    color: var(--totais--color);
-    font-size: var(--totais--font-size);
+    position: absolute;
+    left: 6rem;
+    top: 20rem;
 }
 
 .total-note {
-    margin-top: 0rem;
-    /* margin-left: 13.6rem; */
-    min-height: 1vh;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: var(--totais--font-family);
-    color: var(--totais--color);
-    font-size: var(--totais--font-size);
-}
-
-
-.input-payment-sale{
-    margin-top: -1.9rem;
-    width: 5rem;
-    height: 1.8rem;
-    border: none;
-    margin-left: 4.5rem;
-    margin-right: auto;
-}
-
-.input-disc-note{
-    margin-top: 1rem;
-    width: 5rem;
-    height: 1.8rem;
-    border: none;
-    margin-left: 12rem;
-    margin-right: auto;
+    position: absolute;
+    left: 6rem;
+    top: 21rem;
+    font-size: 1.2rem;
 
 }
 
-.input-person-sale{
-    margin-top: -1.9rem;
+.label-payment-sale {
+    position: absolute;
+    left: 15rem;
+    top: 11rem;
+}
+
+.input-payment-sale {
+    position: absolute;
+    left: 15rem;
+    top: 12rem;
+    height: 2rem;
+    border-radius: 3px;
     width: 5rem;
-    height: 1.8rem;
-    border: none;
-    margin-left: 19rem;
-    margin-right: auto;
+
+}
+
+.label-disc-sale {
+    position: absolute;
+    left: 8rem;
+    top: 11rem;
+}
+
+.input-disc-note {
+    position: absolute;
+    left: 8rem;
+    top: 12rem;
+    height: 2rem;
+    border-radius: 3px;
+    width: 5rem;
+}
+
+.label-person-sale {
+    position: absolute;
+    left: 1rem;
+    top: 11rem;
+}
+
+.input-person-sale {
+    position: absolute;
+    left: 1rem;
+    top: 12rem;
+    height: 2rem;
+    border-radius: 3px;
+    width: 5rem;
 }
 
 .user-logged {
-    display: flex;
-    margin-top: 1px;
-    color: rgb(5, 14, 42);
-    align-items: right;
-    justify-content: right;
-    min-height: 1vh;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    left: 10rem;
+    top: 16rem;
 }
 
 .person-logged {
-    display: flex;
-    margin-top: 1px;
-    color: rgb(5, 14, 42);
-    align-items: center;
-    justify-content: center;
-    min-height: 1vh;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    left: 0rem;
+    top: 16rem;
 }
 
 .close-sale {
-    display: flex;
-    margin-top: 1px;
-    align-items: center;
-    justify-content: center;
-    min-height: 1vh;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    left: 0rem;
+    top: 22rem;
     text-decoration: none;
     color: blue;
 }
@@ -147,45 +134,67 @@ body {
     margin-bottom: 10px;
 }
 
-.input-seach {
-    width: 23rem;
-    height: 2rem;
-    border: none;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .input-amount {
-    margin-top: 1rem;
-    width: 6rem;
-    height: 1.8rem;
-    border: none;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    left: 6rem;
+    top: 4rem;
 }
 
-button {
-    border: 0px;
-    padding: 8px;
-    outline: 0;
-    width: 9rem;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgb(55, 43, 226);
-    color: rgb(5, 14, 42);
+.button-sale-save {
+    position: absolute;
+    height: 40px;
     border-radius: 3px;
-    font-weight: bold;
-    margin-top: 12px;
+    width: 100px;
     cursor: pointer;
-    transition: all ease 0.3s;
+    border: none;
+    transition: all 0.5s ease;
+    left: 8rem;
+    top: 7rem;
 }
 
-button:hover {
-    background-color: rgb(31, 168, 168);
+.button-sale-save:hover {
+    background-color: #444;
+    color: blue;
 }
 
-.contssent {
-    margin-top: 3px;
+.button-sale-cancel {
+    position: absolute;
+    height: 40px;
+    border-radius: 3px;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.5s ease;
+    left: 1rem;
+    top: 7rem;
+}
+
+.button-sale-cancel:hover {
+    background-color: #444;
+    color: blue;
+}
+
+.button-sale-send {
+    position: absolute;
+    height: 40px;
+    border-radius: 3px;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.5s ease;
+    left: 15rem;
+    top: 7rem;
+}
+
+.button-sale-send:hover {
+    background-color: #444;
+    color: blue;
+}
+
+/*Inicio Tabelas **/
+.table-margin-top {
+    margin-top: 0.2rem;
+    border: 1px solid blue;
 }
 
 table {
@@ -194,7 +203,8 @@ table {
     margin-left: auto;
     margin-right: auto;
     width: 6em;
-    width: 25.6rem;
+    /* width: 25.6rem; */
+    width: 100%;
 }
 
 table th,
@@ -213,11 +223,4 @@ table td img {
 
 .center {
     text-align: center;
-}
-.msgs-sale{
-    color:rgb(240, 236, 236);
-    font-size: 1.1rem;
-    margin-block-end: 1rem;
-    align-items: center;
-    justify-content: center;
 }

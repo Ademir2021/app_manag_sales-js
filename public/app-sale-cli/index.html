@@ -13,7 +13,10 @@
   <datalist id="data_itens">
     <option id="options"></option>
   </datalist>
+
   <div class="container">
+    <div class="main">
+      <div class="f-form">
     <strong id="msgs_sale" class="msgs-sale"></strong>
     <div class="line_input">
       <input class="input-seach" 
@@ -30,37 +33,45 @@
       value="1"
       required
       >
-      <button onclick="insertItem()" id="btn1">Salvar item</button>
-      <button onclick="cancelItens() ">Cancelar Operações</button>
-      <button onclick="payment() ">Enviar Venda</button>
-      <strong class="total-itens" id="total_itens"></strong>
-      <strong class="disc-note" id="disc_note"></strong>
-      <strong class="total-note" id="total_note"></strong>
-      <span class="user-logged" id="user"></span>
-      <span class="person-logged" id="person-logged"></span>
-      <strong><a class="close-sale" href="/dashboard">Encerrar</a></strong>
-      <input class="input-disc-note"
-        type="number"
-        id="input_disc_note"
-        placeholder="Desconto"
-        value=""
-        >
-        <input class="input-person-sale"
-        type="number"
-        id="input-person-logged"
-        placeholder="Cliente"
-        value="2"
-        disabled
-        >
-        <input class="input-payment-sale"
+      <button class="button-sale-save" onclick="insertItem()" id="btn1">Salvar Item</button>
+      <button class="button-sale-cancel" onclick="cancelItens() ">Cancelar</button>
+      <button class="button-sale-send" onclick="payment() ">Enviar Venda</button>
+
+      <strong class="label-payment-sale">Pagamento</strong>
+      <input class="input-payment-sale"
         type="number"
         id="input_payment_sale"
         placeholder="Pagamento"
         value=""
         >
+        <strong class="label-disc-sale">Desconto</strong>
+        <input class="input-disc-note"
+        type="number"
+        id="input_disc_note"
+        placeholder="Desconto"
+        value=""
+        >
+        <strong class="label-person-sale">Cliente</strong>
+        <input class="input-person-sale"
+        type="number"
+        id="input_person_logged"
+        placeholder="Cliente"
+        value="2"
+        >
+
+        <strong class="person-logged" id="person-logged"></strong>
+        <strong class="user-logged" id="user"></strong>
+        <strong><a class="close-sale" href="/dashboard">Encerrar</a></strong>
+     
+        <strong class="total-itens" id="total_itens"></strong>
+        <strong class="disc-note" id="disc_note"></strong>
+        <strong class="total-note" id="total_note"></strong>
+      
+    </div>
     </div>
   </div>
-  <table>
+  </div>
+  <table class="table-margin-top" border="">
     <thead>
       <th class="center">ID</th>
       <th class="center">Item</th>
@@ -74,7 +85,7 @@
     </tbody>
   </table>
   <p class="footer-sale">Todos os direitos Resevados - 2023</p>
-  <script src="./js/script.js"></script>
+  <script src="./js/script.js" defer ></script>
 </body>
 
 </html>
