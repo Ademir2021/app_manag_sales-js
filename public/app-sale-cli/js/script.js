@@ -85,7 +85,7 @@ async function insertItem() {
 
 function verifItem(item) {
     for (let i = 1; itens.length > i; i++)
-        if (item.id_product === itens[i].id_product) {
+        if (item.id_product === itens[i].id_product && editId == null) {
             return msgsales.innerHTML = ("Item já foi lançado !!")
         }
     item.id = id++

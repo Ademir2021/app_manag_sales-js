@@ -8,6 +8,8 @@ export function HomePage() {
     const login = '/login#'
     const sale = '/sale#'
 
+    const color = "blue" || "red"
+
     return (
         <>
             <NavBar
@@ -23,10 +25,10 @@ export function HomePage() {
                 listSale=""
                 usersList=""
             />
-            <header>
+            <header style={{color:color}}>
                 <br />
             <h1>Home</h1>
-            <p>Usuário Deslogado: <span>{'!!'}</span></p>< hr />
+            <p style={{color:color}}>Usuário Deslogado: <span style={{color:color}}>{'!!'}</span></p>< hr />
             </header>
         </>
     )

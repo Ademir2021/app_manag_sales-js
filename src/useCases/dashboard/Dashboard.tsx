@@ -15,6 +15,9 @@ export function Dashboard() {
     const listProduct = '/product_list#'
     const listSale = '/list_sale#'
     const listUser = '/users_list#'
+
+    const color = "blue" || "red"
+
     const { logout }: any = useContext(AuthContext);
     const res: any = localStorage.getItem('u')
     const user = JSON.parse(res)
@@ -37,10 +40,10 @@ export function Dashboard() {
                 listSale={listSale}
                 usersList={listUser}
             />
-            <header>
+            <header style={{color:color}}>
             < br />
             <h1>Painel Principal</h1>
-            <p> User Logado: <span style={{color: "red",fontSize: "12px"}}>
+            <p style={{color:color}}> User Logado: <span style={{color: "red",fontSize: "12px"}}>
             {"ID:" + user[0].id + "  Email:" + user[0].username}</span></p> <hr />
             </header>
             <button onClick={handleLogout}>Logout</button>
