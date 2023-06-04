@@ -15,7 +15,6 @@ const userLogin = document.getElementById("user")
 const msgsales = document.getElementById("msgs_sale")
 const paymentSale = document.getElementById("input_payment_sale")
 
-
 let id = 1
 
 const itens = [{

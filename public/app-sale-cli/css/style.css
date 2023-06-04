@@ -1,7 +1,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
-    color:rgb(1, 1, 38);
+    color:black;
 }
 
 .header-sale{
@@ -22,7 +22,7 @@ body {
     top: 0rem;
     margin-top: -4px;
     font-size: 1rem;
-    color: rgb(10, 52, 52);
+    color:yellow;
 }
 
 .container {
@@ -40,8 +40,7 @@ body {
     /* width: 24rem; */
     width: 100%;
     padding: 22px 0px 0px 22px;
-    /* background-color: rgb(73, 80, 80); */
-    background-color: rgb(210, 205, 196);
+    background-color: rgb(73, 80, 80);
 }
 
 .f-form {
