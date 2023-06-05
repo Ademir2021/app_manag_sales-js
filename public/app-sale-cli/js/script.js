@@ -2,6 +2,7 @@ const url = "http://192.168.80.109:3000"
 const urlProducts = url + "/products"
 const urlSales = url + "/sales"
 const urlNote = url + "/note"
+ const urlPerson = url + "/person/"
 const getItem = document.getElementById("submit_item")
 const getAmount = document.getElementById("submit_amount")
 const searchOption = document.getElementById("options")
@@ -17,9 +18,12 @@ const paymentSale = document.getElementById("input_payment_sale")
 
 let id = 1
 
+const teste = 0
+
 const itens = [{
     disc_sale: 0,
     fk_name_pers: 0,
+    name_pers: "",
     user: "",
     filial: 0,
     user_id: 0
@@ -36,12 +40,25 @@ async function auth() {
         window.location.replace("/login")
     }
     else if (user != null) {
-        userLogin.innerHTML = `${user[0].username}`
         itens[0].user = user[0].username
         itens[0].user_id = user[0].id
-        itens[0].filial = 1
+        await fetch(urlPerson + user[0].id)
+            .then(data => { return data.json() })
+            .then(persons => {
+                for (i = 0; persons.length > i; i++) {
+                    if (persons[i].fk_id_user === user[0].id) {
+                        userLogin.innerHTML = `Login: ${user[0].username}`;
+                        itens[0].filial = persons[i].fk_name_filial;
+                        itens[0].fk_name_pers = persons[i].id_person;
+                        inputPersonLogged.value = itens[0].fk_name_pers;
+                        itens[0].name_pers = persons[i].name_pers;
+                        personLogged.innerHTML = `Cliente:${itens[0].name_pers}`;
+                    }
+                }
+            })
     }
 }
+
 
 const currencyMoney = (valor) => {
     if (valor) {
@@ -200,8 +217,6 @@ function sumItens() {
     for (var i = 1; i < itens.length; i++) {
         sum += (itens[i].amount_product * itens[i].val_product)
     }
-    personLogged.innerHTML = `Cliente:${itens[0].fk_name_pers}`
-    itens[0].fk_name_pers = inputPersonLogged.value
     totalItens.innerHTML = `Itens:${currencyFormat(sum)}`
     itens[0].disc_sale = discSaleItens.value
     discNote.innerHTML = `Desconto:${currencyFormat(itens[0].disc_sale)}`

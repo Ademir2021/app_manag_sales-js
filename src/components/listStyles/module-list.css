@@ -94,6 +94,10 @@
     font-size: var(--list--font-size);
     color: var(--list--color)
 }
+.list-person-user {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
 
 .list-sale-id {
     font-size: var(--list--font-size);

@@ -10,7 +10,9 @@ export type TPersonRegister = {
     cpf_pers: string;
     address_pers: string;
     fk_name_filial: number;
+    fk_id_user:number;
   }
+
 
 export function FormPerson() {
 
@@ -18,8 +20,13 @@ export function FormPerson() {
         name_pers: "",
         cpf_pers: "",
         address_pers: "",
-        fk_name_filial: 1
+        fk_name_filial: 1,
+        fk_id_user:0
     })
+
+    const res:any = localStorage.getItem('u')
+    const [userIdLogged ] = useState(JSON.parse(res))
+    person.fk_id_user = userIdLogged[0].id
 
     const handleChange = (e: any) => {
         const name = e.target.name;

@@ -12,6 +12,7 @@ export function PersonList(props: any) {
                 <strong className="list-person-cpf" >CPF:</strong>  {props.cpf}<br />
                 <strong className="list-person-address" >Endereço:</strong>  {props.address}<br />
                 <strong className="list-person-branch" >Filial:</strong>  {props.filial}<br />
+                <strong className="list-person-user" >Usuário:</strong>  {props.id_user}<br />
                 <hr />
                 </div>
             </div>
