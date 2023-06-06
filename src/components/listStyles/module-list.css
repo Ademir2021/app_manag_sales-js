@@ -1,5 +1,4 @@
 .menu-home{
-    display: flex;
     text-decoration: none;
     margin-top: 1rem;
     justify-content: center;
@@ -9,8 +8,8 @@
 
 .container-module-list {
     /* height: auto; */
-    display:flex;
-    background: #848a94;
+    /* background: #848a94; */
+    background: #112a49;
     width: 24rem;
     margin-left: auto;
     margin-right: auto;
@@ -24,7 +23,8 @@
 
 :root {
     --list--font-size: 14px;
-    --list--color:rgb(15, 9, 55);
+    /* --list--color:rgb(15, 9, 55); */
+    --list--color:rgb(181, 178, 201);
 }
 
 .list-product-id {
@@ -86,6 +86,11 @@
     color: var(--list--color)
 }
 
+.list-person-phone {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
 .list-person-address {
     font-size: var(--list--font-size);
     color: var(--list--color)
@@ -127,3 +132,32 @@
     font-size: var(--list--font-size);
     color: var(--list--color)
 }
+
+
+.list-user-id {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-user-create {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-user-name {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-user-email {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+
+.list-user-password {
+    font-size: var(--list--font-size);
+    color: var(--list--color)
+}
+.list-user-btn {
+    display: contents;
+ }

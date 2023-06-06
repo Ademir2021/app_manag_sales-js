@@ -1,4 +1,4 @@
-import './styles.css'
+import '../listStyles/module-list.css'
 
 export type PropsUsers = {
     id: number;
@@ -21,14 +21,14 @@ const ListUSers = (
 
     return (
         <>
-            <div className="container-list">
-                <div className="update-list">
-                    <strong className="list-id">ID_User: </strong><strong>{id}</strong><br />
-                    <strong className="list-create">Criado: </strong><strong>{created_at}</strong><br />
-                    <strong className="list-name">Nome Completo: </strong><strong>{name}</strong><br />
-                    <strong className="list-email">Email: </strong><strong>{username}</strong><br />
-                    {/* <strong className="list-password">Senha: </strong><strong>{password}</strong><br /> */}
-                    <button className="">{update}</button>
+            <div className="container-module-list">
+                <div className="main-module-list">
+                    <strong className="list-user-id">ID_User: </strong><strong>{id}</strong><br />
+                    <strong className="list-user-create">Criado: </strong><strong>{created_at}</strong><br />
+                    <strong className="list-user-name">Nome Completo: </strong><strong>{name}</strong><br />
+                    <strong className="list-user-email">Email: </strong><strong>{username}</strong><br />
+                    {/* <strong className="list-user-password">Senha: </strong><strong>{password}</strong><br /> */}
+                    <button className='list-user-btn'>{update}</button>
                     <hr />
                 </div>
             </div>

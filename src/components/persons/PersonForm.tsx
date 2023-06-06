@@ -1,3 +1,5 @@
+import React from "react";
+import InputMask from "react-input-mask";
 import { Button } from "../button/Button";
 
 import "./styles.css"
@@ -11,13 +13,13 @@ type IPersonForm = {
 export function PersonForm({
     children,
     handleChange,
-    handleSubmit
+    handleSubmit,
  }: IPersonForm): JSX.Element {
     return (
         <div className='container'>
             <fieldset className="main">
                 <form className="f-form" onSubmit={handleSubmit}>
-                    <label className="pers-name-label">Digite seu nome</label>
+                    <label className="pers-name-label">Nome *</label>
                     <input className="pers-name-input"
                         type="text"
                         name="name_pers"
@@ -25,15 +27,33 @@ export function PersonForm({
                         value={children.name_pers || ""}
                         onChange={handleChange}
                     />
-                    <label className="pers-cpf-label">Digite seu CPF</label>
-                    <input className="pers-cpf-input"
+                    <label className="pers-cpf-label">CPF *</label>
+                    <InputMask className="pers-cpf-input"
                         type="text"
                         name="cpf_pers"
-                        placeholder='cpf'
+                        placeholder="000.000.000-00"
+                        mask="999.999.999-99"
+                        mask-selectonfocus="true"
+                        // maxLength={14}
+                        autoComplete="off"
+                        maskChar={null}
                         value={children.cpf_pers || ""}
                         onChange={handleChange}
                     />
-                    <label className="pers-address-label">Digite seu endereço</label>
+                    <label className="pers-phone-label">Telefone *</label>
+                      <InputMask className="pers-phone-input"
+                        type="text"
+                        name="phone_pers"
+                        placeholder="()99999-9999"
+                        mask="(99)99999-9999"
+                        mask-selectonfocus="true"
+                        // maxLength={14}
+                        autoComplete="off"
+                        maskChar={null}
+                        value={children.phone_pers || ""}
+                        onChange={handleChange}
+                    />
+                    <label className="pers-address-label">Endereço *</label>
                     <input className="pers-address-input"
                         type="text"
                         name="address_pers"
@@ -41,11 +61,12 @@ export function PersonForm({
                         value={children.address_pers || ""}
                         onChange={handleChange}
                     />
-                    <label className="pers-filial-label">Código da filial</label>
+                    <label className="pers-filial-label">Filial *</label>
                     <input className="pers-filial-input"
                         type="text"
                         name="fk_name_filial"
                         placeholder='Filial'
+                        disabled
                         value={children.fk_name_filial || ""}
                         onChange={handleChange}
                     />

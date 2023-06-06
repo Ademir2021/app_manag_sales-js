@@ -6,7 +6,7 @@
     border: none;
     transition: all 0.5s ease;
     left: 0.1rem;
-    top: 1rem;
+    top: 6rem;
 }
 
 .button-pers:hover {
@@ -22,6 +22,7 @@
 
 .pers-name-input {
     position: absolute;
+    width: 16rem;
     left: 0.1rem;
     top: 3rem;
 }
@@ -29,35 +30,51 @@
 .pers-cpf-label {
     position: absolute;
     left: 0.1rem;
-    top: 5.1rem;
+    top: 5.3rem;
 }
 
 .pers-cpf-input {
     position: absolute;
+    width: 9rem;
     left: 0.1rem;
     top: 6.6rem;
+}
+
+.pers-phone-label {
+    position: absolute;
+    left: 0.1rem;
+    top: 9.1rem;
+}
+
+.pers-phone-input {
+    position: absolute;
+    width: 9rem;
+    left: 0.1rem;
+    top: 10.4rem;
 }
 
 .pers-address-label {
     position: absolute;
     left: 0.1rem;
-    top: 8.8rem;
+    top: 12.8rem;
 }
 
 .pers-address-input {
     position: absolute;
+    width: 18rem;
     left: 0.1rem;
-    top: 10.4rem;
+    top: 14.2rem;
 }
 
 .pers-filial-label {
     position: absolute;
     left: 0.1rem;
-    top: 12.5rem;
+    top: 16.8rem;
 }
 
 .pers-filial-input {
     position: absolute;
+    width: 4rem;
     left: 0.1rem;
-    top: 14rem;
+    top: 18.1rem;
 }

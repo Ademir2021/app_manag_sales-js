@@ -1,6 +1,7 @@
-* {
+div {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #0b0c3d;
+    /* color: #0b0c3d; */
+    color:rgb(165, 191, 191);
     border-radius: 3px;
 }
 
@@ -35,7 +36,7 @@
 }
 
 .main {
-    height: 28rem;
+    height: 29rem;
     width: 24rem;
     padding: 22px 0px 0px 22px;
     background-color: rgb(73, 80, 80);
@@ -117,16 +118,6 @@
     position: absolute;
     left: 0.1rem;
     top: 13.4rem;
-}
-
-.update-foto-user {
-    position: absolute;
-    width: 6rem;
-    height: 8rem;
-    left: -0.6rem;
-    top: 4.2rem;
-    border: 1px solid bisque;
-    border-radius: 4px;
 }
 
 .update-text-id {
@@ -289,50 +280,4 @@
     top: 16rem;
     font-size: 13px;
     color: white;
-}
-
-/* Listagens */
-.container-list {
-    /* height: auto; */
-    display:flex;
-    background: #848a94;
-    width: 24rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 1px;
-}
-
-.update-list {
-    padding: 12px;
-    font-size: 12px;
-}
-
-:root {
-    --list--font-size: 14px;
-    --list--color:rgb(15, 9, 55);
-}
-
-.list-id {
-    font-size: var(--list--font-size);
-    color: var(--list--color)
-}
-
-.list-create {
-    font-size: var(--list--font-size);
-    color: var(--list--color)
-}
-
-.list-name {
-    font-size: var(--list--font-size);
-    color: var(--list--color)
-}
-
-.list-email {
-    font-size: var(--list--font-size);
-    color: var(--list--color)
-}
-
-.list-password {
-    font-size: var(--list--font-size);
-    color: var(--list--color)
 }

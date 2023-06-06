@@ -25,9 +25,9 @@ export function HomePage() {
                 listSale=""
                 usersList=""
             />
-            <header style={{color:color, padding:'1rem'}}>
-            <h4>Home</h4>
-            <p style={{color:color}}>Usuário Deslogado: <span style={{color:color}}>{'!!'}</span></p>< hr />
+            <header style={{color:color, padding:'0.5rem'}}>
+            <strong>Home</strong>
+            <p style={{color:color}}>Usuário Deslogado: <span style={{color:color}}>{'!!'}</span></p>
             </header>
         </>
     )

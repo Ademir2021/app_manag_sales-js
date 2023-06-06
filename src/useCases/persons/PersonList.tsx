@@ -34,6 +34,7 @@ export function PersonsList() {
                         create={FormatDate(person.created_at)}
                         name={person.name_pers}
                         cpf={person.cpf_pers}
+                        phone={person.phone_pers}
                         address={person.address_pers}
                         filial={person.fk_name_filial}
                         id_user={person.fk_id_user}

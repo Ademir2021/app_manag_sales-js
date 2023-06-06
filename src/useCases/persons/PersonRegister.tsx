@@ -8,17 +8,18 @@ export type TPersonRegister = {
     created_at?: Date | any;
     name_pers: string | any;
     cpf_pers: string;
+    phone_pers:string;
     address_pers: string;
     fk_name_filial: number;
     fk_id_user:number;
   }
-
 
 export function FormPerson() {
 
     const [person, setPerson] = useState<TPersonRegister>({
         name_pers: "",
         cpf_pers: "",
+        phone_pers:"",
         address_pers: "",
         fk_name_filial: 1,
         fk_id_user:0
@@ -36,10 +37,11 @@ export function FormPerson() {
 
     function valFields(person: TPersonRegister) {
         let msg = ''
-        if (person.name_pers == "") { msg += "Digite o seu Nome Completo !\n" };
+        if (person.name_pers == "") { msg += "Digite seu nome completo !\n" };
         if (person.cpf_pers == "") { msg += "Digite seu CPF !\n" };
-        if (person.address_pers == "") { msg += "Digite seu Endereço !\n" };
-        if (person.fk_name_filial == 0) { msg += "Informe o num Loja !\n" };
+        if (person.phone_pers == "") { msg += "Digite um  telefone !\n" };
+        if (person.address_pers == "") { msg += "Digite seu endereço !\n" };
+        if (person.fk_name_filial == 0) { msg += "Informe o num loja !\n" };
         if (msg != '') {
             alert(msg)
             return false;
@@ -57,7 +59,14 @@ export function FormPerson() {
     async function handleSubmit(e: any) {
         e.preventDefault();
         if (valFields(person)) {
+            person.cpf_pers = person.cpf_pers.replace('.','')
+            person.cpf_pers = person.cpf_pers.replace('.','')
+            person.cpf_pers = person.cpf_pers.replace('-','')
+            person.phone_pers = person.phone_pers.replace('(','')
+            person.phone_pers = person.phone_pers.replace(')','')
+            person.phone_pers = person.phone_pers.replace('-','')
             handlePerson()
+            // console.log(person)
         }
     }
 
