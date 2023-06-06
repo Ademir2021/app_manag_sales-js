@@ -36,10 +36,10 @@ export function FormPerson() {
 
     function valFields(person: TPersonRegister) {
         let msg = ''
-        if (person.name_pers == '') { msg += '- Digite o seu Nome Completo !! -\n' };
-        if (person.cpf_pers == '') { msg += '- Digite seu CPF !! -\n' };
-        if (person.address_pers == '') { msg += "- Digite seu Endereço !! -\n" };
-        if (person.fk_name_filial == 0) { msg += "- informe o num Loja !! -\n" };
+        if (person.name_pers == "") { msg += "Digite o seu Nome Completo !\n" };
+        if (person.cpf_pers == "") { msg += "Digite seu CPF !\n" };
+        if (person.address_pers == "") { msg += "Digite seu Endereço !\n" };
+        if (person.fk_name_filial == 0) { msg += "Informe o num Loja !\n" };
         if (msg != '') {
             alert(msg)
             return false;

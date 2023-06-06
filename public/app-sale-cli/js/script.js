@@ -2,7 +2,7 @@ const url = "http://192.168.80.109:3000"
 const urlProducts = url + "/products"
 const urlSales = url + "/sales"
 const urlNote = url + "/note"
- const urlPerson = url + "/person/"
+const urlPerson = url + "/person/"
 const getItem = document.getElementById("submit_item")
 const getAmount = document.getElementById("submit_amount")
 const searchOption = document.getElementById("options")
@@ -17,8 +17,6 @@ const msgsales = document.getElementById("msgs_sale")
 const paymentSale = document.getElementById("input_payment_sale")
 
 let id = 1
-
-const teste = 0
 
 const itens = [{
     disc_sale: 0,
@@ -238,7 +236,7 @@ function payment(sum) {
         } else {
             if (payment == totalNote) {
                 msgsales.innerHTML = `Pagto OK. ${currencyFormat(payment)}`
-                alert("A venda será enviada !!")
+                alert("A venda será enviada !")
                 registerSale()
                 paymentSale.value = 0
                 discSaleItens.value = 0
@@ -253,11 +251,11 @@ async function registerSale() {
     try {
         const response = await fetch(urlSales, {
             method: "POST",
-            headers: { "Content-Type": "application/json", },
+            headers: { "Content-Type": "application/json",},
             body: JSON.stringify(itens),
         });
         const num_sale = await response.json();
-        alert(JSON.stringify("Venda Nº:" + num_sale + " efetuada com sucesso !!"))
+        alert(JSON.stringify("Venda Nº:" + num_sale + " efetuada com sucesso !"))
         window.location.replace(`${urlNote}/${num_sale}`)
     } catch (error) {
         console.error("Error:", error)
