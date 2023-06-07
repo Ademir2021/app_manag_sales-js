@@ -22,7 +22,7 @@ export function UserUpdate() {
 
     const { user: isLogged }: any = useContext(AuthContext);
 
-    const [users, setUsers] = useState<TUpdateUser[]>([])
+    const [users, setUsers] = useState<TUpdateUser[]>()
     const [user, setUser] = useState<TUpdateUser>({
         id: 0,
         name: "",
@@ -48,14 +48,14 @@ export function UserUpdate() {
         setUser(values => ({ ...values, [name]: value }))
     }
 
-    async function registerUser() {
+    async function registerUser():Promise<void> {
         await api.post<TUpdateUser[]>('/users', user)
             .then(response => {
                 alert(response.data)
             }).catch(error => console.log(error))
     }
 
-    async function updateUser() {
+    async function updateUser():Promise<void> {
         await api.put<TUpdateUser>(`/users/${user.id}`, user)
             .then(response => {
                 alert(response.data)
@@ -63,7 +63,7 @@ export function UserUpdate() {
             .catch(error => alert(error))
     }
 
-    async function getUsers() {
+    async function getUsers():Promise<void> {
         await api.get<TUpdateUser[]>(`/users`)
             .then(response => {
                 const res: TUpdateUser[] = response.data
@@ -78,8 +78,8 @@ export function UserUpdate() {
     }
 
     useEffect(() => {
-        getUsers()
-    }, [user.id])
+        setUsers(users)
+    },[users])
 
     async function handleSubmit(e: any) {
         e.preventDefault();
@@ -87,7 +87,7 @@ export function UserUpdate() {
             user.password = crypt(user.password)
             registerUser()
         } else {
-            alert("Digite um Novo Usuário")
+            alert("Digite um novo usuário")
         }
     }
 
@@ -111,7 +111,7 @@ export function UserUpdate() {
             password: "",
             psw_repeat: ""
         })
-        alert("Digite um novo Usuário !!")
+        alert("Digite um novo usuário !!")
     }
 
     function toggleDropdown():void {
