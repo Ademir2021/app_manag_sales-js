@@ -2,7 +2,7 @@ const url = "http://192.168.80.109:3000"
 const urlProducts = url + "/products"
 const urlSales = url + "/sales"
 const urlNote = url + "/note"
-const urlPerson = url + "/person/"
+const urlPerson = url + "/person_users/"
 const getItem = document.getElementById("submit_item")
 const getAmount = document.getElementById("submit_amount")
 const searchOption = document.getElementById("options")
@@ -34,10 +34,10 @@ insertItem();
 
 async function auth() {
     const user = await JSON.parse(localStorage.getItem('u'))
-    if (user == null) {
+    if (user == null ) {
         window.location.replace("/login")
     }
-    else if (user != null) {
+    else if (user != null ) {
         itens[0].user = user[0].username
         itens[0].user_id = user[0].id
         await fetch(urlPerson + user[0].id)
@@ -45,12 +45,12 @@ async function auth() {
             .then(persons => {
                 for (i = 0; persons.length > i; i++) {
                     if (persons[i].fk_id_user === user[0].id) {
-                        userLogin.innerHTML = `Login: ${user[0].username}`;
+                        userLogin.innerHTML = user[0].username;
                         itens[0].filial = persons[i].fk_name_filial;
                         itens[0].fk_name_pers = persons[i].id_person;
                         inputPersonLogged.value = itens[0].fk_name_pers;
                         itens[0].name_pers = persons[i].name_pers;
-                        personLogged.innerHTML = `Cliente:${itens[0].name_pers}`;
+                        personLogged.innerHTML = itens[0].name_pers;
                     }
                 }
             })

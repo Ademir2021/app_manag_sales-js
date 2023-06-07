@@ -1,12 +1,13 @@
 div {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     /* color: #0b0c3d; */
-    color:rgb(165, 191, 191);
+    /* color:rgb(165, 191, 191); */
+    color: white;
     border-radius: 3px;
 }
 
 ::placeholder {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .modal {
@@ -58,6 +59,7 @@ div {
     position: absolute;
     left: 0.1rem;
     top: 1.6rem;
+    cursor: pointer;
 }
 
 .pass-label {
@@ -70,6 +72,7 @@ div {
     position: absolute;
     left: 0.1rem;
     top: 7.5rem;
+    cursor: pointer;
 }
 
 .reg-name-label {
@@ -82,6 +85,7 @@ div {
     position: absolute;
     left: 0.1rem;
     top: 1.6rem;
+    cursor: pointer;
 }
 
 .reg-email-label {
@@ -94,6 +98,7 @@ div {
     position: absolute;
     left: 0.1rem;
     top: 5.5rem;
+    cursor: pointer;
 }
 
 .reg-pass-label {
@@ -106,6 +111,7 @@ div {
     position: absolute;
     left: 0.1rem;
     top: 9.7rem;
+    cursor: pointer;
 }
 
 .reg-pass-repeat-label {
@@ -118,6 +124,7 @@ div {
     position: absolute;
     left: 0.1rem;
     top: 13.4rem;
+    cursor: pointer;
 }
 
 .update-text-id {
@@ -126,10 +133,26 @@ div {
     top: 0.8rem;
 }
 
+.update-in-id {
+    position: absolute;
+    width: 2rem;
+    left: 2rem;
+    top: 2.2rem;
+    cursor: pointer;
+}
+
 .update-text-user {
     position: absolute;
     left: 2rem;
     top: 4.9rem;
+}
+
+.update-in-user {
+    position: absolute;
+    width: 15rem;
+    left: 2rem;
+    top: 6.2rem;
+    cursor: pointer;
 }
 
 .update-text-email {
@@ -138,11 +161,26 @@ div {
     top: 8.9rem;
 }
 
+.update-in-email {
+    position: absolute;
+    width: 15rem;
+    left: 2rem;
+    top: 10.2rem;
+    cursor: pointer;
+}
+
 .update-text-password{
     position: absolute;
     left: 2rem;
     top: 12.9rem;
+}
 
+.update-in-password{
+    position: absolute;
+    width: 15rem;
+    left: 2rem;
+    top: 14.2rem;
+    cursor: pointer;
 }
 
 .update-text-psw_repeat{
@@ -151,39 +189,12 @@ div {
     top: 16.9rem;
 }
 
-.update-in-id {
-    position: absolute;
-    width: 2rem;
-    left: 2rem;
-    top: 2.2rem;
-}
-
-.update-in-user {
-    position: absolute;
-    width: 15rem;
-    left: 2rem;
-    top: 6.2rem;
-}
-
-.update-in-email {
-    position: absolute;
-    width: 15rem;
-    left: 2rem;
-    top: 10.2rem;
-}
-
-.update-in-password{
-    position: absolute;
-    width: 15rem;
-    left: 2rem;
-    top: 14.2rem;
-}
-
 .update-in-psw-repeat{
     position: absolute;
     width: 15rem;
     left: 2rem;
     top: 18.2rem;
+    cursor: pointer;
 
 }
 

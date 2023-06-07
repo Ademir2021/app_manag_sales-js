@@ -25,6 +25,7 @@
     width: 16rem;
     left: 0.1rem;
     top: 3rem;
+    cursor: pointer;
 }
 
 .pers-cpf-label {
@@ -38,6 +39,7 @@
     width: 9rem;
     left: 0.1rem;
     top: 6.6rem;
+    cursor: pointer;
 }
 
 .pers-phone-label {
@@ -51,6 +53,7 @@
     width: 9rem;
     left: 0.1rem;
     top: 10.4rem;
+    cursor: pointer;
 }
 
 .pers-address-label {
@@ -64,6 +67,7 @@
     width: 18rem;
     left: 0.1rem;
     top: 14.2rem;
+    cursor: pointer;
 }
 
 .pers-filial-label {
@@ -77,4 +81,5 @@
     width: 4rem;
     left: 0.1rem;
     top: 18.1rem;
+    cursor: pointer;
 }
