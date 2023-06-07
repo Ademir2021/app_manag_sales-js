@@ -1,4 +1,3 @@
-
 import '../../components/listStyles/module-list.css'
 
 export function ProductList(props: any) {

@@ -6,9 +6,7 @@ import {BackHome} from "../../components/utils/backHome/BackHome"
 import api from "../../services/api/api";
 
 export function PersonsList() {
-
     const [person, setPerson] = useState<TPersonRegister[]>([])
-
     const getPerson = async () => {
         try {
             await api.get<TPersonRegister[]>('persons')

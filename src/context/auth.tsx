@@ -5,9 +5,7 @@ import { TUserLogin  } from '../useCases/users/UserLogin'
 import api from '../services/api/api'
 
 export const AuthContext = createContext(null);
-
 export const AuthProvider = ({ children }: any) => {
-
     const navigate = useNavigate();
     const [user, setUser] = useState<any>(null);
     const [loading, setLoading] = useState<any>(true)
@@ -22,7 +20,6 @@ export const AuthProvider = ({ children }: any) => {
     }, []);
 
     const login = async (email: string, password: string) => {
-
         function compare(pass: string, username: string) {
             if (bcrypt.compareSync(password, pass) === true && email === username) {
                 setUser(true)
@@ -36,7 +33,7 @@ export const AuthProvider = ({ children }: any) => {
         await api.get<TUserLogin[]>(`/login/${email}`)
             .then(response => {
                 const res = response.data
-                if (res[0] != undefined) {
+                if (res[0] !== undefined) {
                     compare(res[0].password, res[0].username)
                     if (user === true) {
                         setUser(user)
@@ -60,4 +57,3 @@ export const AuthProvider = ({ children }: any) => {
         </AuthContext.Provider>
     )
 }
-

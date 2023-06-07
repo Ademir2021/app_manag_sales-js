@@ -9,7 +9,7 @@ export type TUserLogin = {
 
 export function UserLogin() {
 
-  const { authenticated, login, message }: any  = useContext(AuthContext);
+  const { login, message }: any  = useContext(AuthContext);
   
   const [alert, setAlert] = useState<string>('')
   const [user, setUsers] = useState<TUserLogin>(
@@ -27,9 +27,9 @@ export function UserLogin() {
 
   function valFields(user: TUserLogin) {
     let msg = ""
-    if (user.username == "") { msg += "Digite um email válido !" };
-    if (user.password == "") { msg += "Digite uma senha válida !" };
-    if (msg != "") {
+    if (user.username === "") { msg += "Digite um email válido !" };
+    if (user.password === "") { msg += "Digite uma senha válida !" };
+    if (msg !== "") {
       setAlert(msg);
       return false;
     };

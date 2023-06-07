@@ -37,12 +37,12 @@ export function FormPerson() {
 
     function valFields(person: TPersonRegister) {
         let msg = ''
-        if (person.name_pers == "") { msg += "Digite seu nome completo !\n" };
-        if (person.cpf_pers == "") { msg += "Digite seu CPF !\n" };
-        if (person.phone_pers == "") { msg += "Digite um  telefone !\n" };
-        if (person.address_pers == "") { msg += "Digite seu endereço !\n" };
-        if (person.fk_name_filial == 0) { msg += "Informe o num loja !\n" };
-        if (msg != '') {
+        if (person.name_pers === "") { msg += "Digite seu nome completo !\n" };
+        if (person.cpf_pers === "") { msg += "Digite seu CPF !\n" };
+        if (person.phone_pers === "") { msg += "Digite um  telefone !\n" };
+        if (person.address_pers === "") { msg += "Digite seu endereço !\n" };
+        if (person.fk_name_filial === 0) { msg += "Informe o num loja !\n" };
+        if (msg !== '') {
             alert(msg)
             return false;
         };
@@ -66,7 +66,6 @@ export function FormPerson() {
             person.phone_pers = person.phone_pers.replace(')','')
             person.phone_pers = person.phone_pers.replace('-','')
             handlePerson()
-            // console.log(person)
         }
     }
 

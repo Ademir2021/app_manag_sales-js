@@ -9,5 +9,5 @@ export const Logout = (): void => {
 
     useEffect(() => {
         handleLogout()
-    }, []); 
+    }, ); 
 }

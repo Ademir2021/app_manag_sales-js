@@ -8,11 +8,11 @@ export function crypt(user: any) {
 
 export function UsersValFields(user:any) {
   let msg = ""
-  if (user.name == "") { msg += "Digite o seu nome completo !\n" };
-  if (user.username == "") { msg += "Digite um email válido !\n" };
-  if (user.password == "") { msg += "Digite sua senha !\n" };
-  if (user.psw_repeat != user.password) { msg += "Senha digitada está errada !\n" };
-  if (msg != "") {
+  if (user.name === "") { msg += "Digite o seu nome completo !\n" };
+  if (user.username === "") { msg += "Digite um email válido !\n" };
+  if (user.password === "") { msg += "Digite sua senha !\n" };
+  if (user.psw_repeat !== user.password) { msg += "Senha digitada está errada !\n" };
+  if (msg !== "") {
     alert(msg)
     return false;
   };

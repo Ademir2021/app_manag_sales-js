@@ -1,13 +1,11 @@
 import { NavBar } from "../../components/navbar/Navbar";
 
 export function HomePage() {
-
     const home = '/#'
     const register = '/register#'
     const update = '/user_update#'
     const login = '/login#'
     const sale = '/sale#'
-
     const color = "blue" || "red"
 
     return (

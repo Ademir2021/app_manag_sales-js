@@ -3,7 +3,6 @@ import { AuthContext } from "../../context/auth";
 import { NavBar } from '../../components/navbar/Navbar';
 
 export function Dashboard() {
-
     const home = '/dashboard#'
     const register = '/register#'
     const update = '/user_update#'
@@ -15,7 +14,6 @@ export function Dashboard() {
     const listProduct = '/product_list#'
     const listSale = '/list_sale#'
     const listUser = '/users_list#'
-
     const { logout }: any = useContext(AuthContext);
     const res: any = localStorage.getItem('u')
     const user = JSON.parse(res)
