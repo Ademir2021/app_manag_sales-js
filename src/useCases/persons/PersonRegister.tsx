@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { PersonForm } from '../../components/persons/PersonForm';
 import api from '../../services/api/api'
+import { PersonsValFields } from '../../components/utils/crypt/Crypt';
 import { Dashboard } from "../dashboard/Dashboard";
 
 export type TPersonRegister = {
-    id_person?: number;
-    created_at?: Date | any;
+    id_person?: number | any;
+    created_at?: 'date' | any;
     name_pers: string | any;
     cpf_pers: string;
     phone_pers:string;
@@ -35,20 +36,6 @@ export function FormPerson() {
         setPerson(values => ({ ...values, [name]: value }))
     }
 
-    function valFields(person: TPersonRegister) {
-        let msg = ''
-        if (person.name_pers === "") { msg += "Digite seu nome completo !\n" };
-        if (person.cpf_pers === "") { msg += "Digite seu CPF !\n" };
-        if (person.phone_pers === "") { msg += "Digite um  telefone !\n" };
-        if (person.address_pers === "") { msg += "Digite seu endereço !\n" };
-        if (person.fk_name_filial === 0) { msg += "Informe o num loja !\n" };
-        if (msg !== '') {
-            alert(msg)
-            return false;
-        };
-        return true;
-    };
-
     async function handlePerson() {
         await api.post<TPersonRegister>('/persons', person)
             .then(response => {
@@ -58,13 +45,9 @@ export function FormPerson() {
 
     async function handleSubmit(e: any) {
         e.preventDefault();
-        if (valFields(person)) {
-            person.cpf_pers = person.cpf_pers.replace('.','')
-            person.cpf_pers = person.cpf_pers.replace('.','')
-            person.cpf_pers = person.cpf_pers.replace('-','')
-            person.phone_pers = person.phone_pers.replace('(','')
-            person.phone_pers = person.phone_pers.replace(')','')
-            person.phone_pers = person.phone_pers.replace('-','')
+        if (PersonsValFields(person)) {
+            person.cpf_pers = person.cpf_pers.replace(/[..-]/g ,'')
+            person.phone_pers = person.phone_pers.replace(/[()-]/g ,'')
             handlePerson()
         }
     }

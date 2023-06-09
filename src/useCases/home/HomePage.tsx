@@ -6,7 +6,6 @@ export function HomePage() {
     const update = '/user_update#'
     const login = '/login#'
     const sale = '/sale#'
-    const color = "blue" || "red"
 
     return (
         <>
@@ -22,11 +21,13 @@ export function HomePage() {
                 listProduct={''}
                 listSale=""
                 usersList=""
+                upPerson=""
             />
-            <header style={{color:color, padding:'0.5rem'}}>
+            <header style={{color:"blue", padding:'0.5rem'}}>
             <strong>Home</strong>
-            <p style={{color:color}}>Usuário Deslogado: <span style={{color:color}}>{'!!'}</span></p>
+            <p style={{color:"blue"}}>Usuário Deslogado: <span style={{color:"blue"}}>{'!!'}</span></p>
             </header>
+            
         </>
     )
 }

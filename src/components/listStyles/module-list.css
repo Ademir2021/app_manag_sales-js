@@ -3,7 +3,6 @@
     margin-top: 1rem;
     justify-content: center;
     padding: 12px;
-  
   }
 
 .container-module-list {
@@ -95,10 +94,12 @@
     font-size: var(--list--font-size);
     color: var(--list--color)
 }
+
 .list-person-branch {
     font-size: var(--list--font-size);
     color: var(--list--color)
 }
+
 .list-person-user {
     font-size: var(--list--font-size);
     color: var(--list--color)
@@ -157,6 +158,7 @@
     font-size: var(--list--font-size);
     color: var(--list--color)
 }
+
 .list-user-btn {
     display: contents;
  }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FormatDate } from "../../components/utils/formatDate";
-import { PersonList } from "../../components/persons/PersonList";
+import { PersonList, TPropsPerson } from "../../components/persons/PersonList";
 import { TPersonRegister } from './PersonRegister'
 import {BackHome} from "../../components/utils/backHome/BackHome"
 import api from "../../services/api/api";
@@ -25,17 +25,19 @@ export function PersonsList() {
         <>
            <BackHome/>
             {person.length === 0 ? <p>Carregando...</p> : (
-                person.map((person: TPersonRegister) => (
+                person.map((person:TPersonRegister) => (
                     <PersonList
-                        key={person.id_person}
-                        id={person.id_person}
-                        create={FormatDate(person.created_at)}
-                        name={person.name_pers}
-                        cpf={person.cpf_pers}
-                        phone={person.phone_pers}
-                        address={person.address_pers}
-                        filial={person.fk_name_filial}
-                        id_user={person.fk_id_user}
+                    key={person.id_person}
+                    id_person={person.id_person}
+                    create={FormatDate(person.created_at)}
+                    name={person.name_pers}
+                    phone=''
+                    address=""
+                    cpf={person.cpf_pers}
+                    id_user={person.id_person}
+                    filial={person.fk_name_filial}
+                    update=''
+
                     />
                 )))}
         </>

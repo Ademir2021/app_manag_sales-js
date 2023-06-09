@@ -12,10 +12,10 @@ type PropsNavBar = {
     listProduct: string;
     listSale:string;
     usersList:string
+    upPerson:string
 }
 
 export function NavBar(props: PropsNavBar): JSX.Element {
-
     let isHome = 'Home'
     let isLogin = 'Entrar'
     let isRegister = 'Criar conta'
@@ -29,6 +29,7 @@ export function NavBar(props: PropsNavBar): JSX.Element {
     let isListProduct = ''
     let isListSale =''
     let isListUser = ''
+    let isUpPerson = ''
     const res: any = localStorage.getItem('u')
     if (JSON.parse(res) !== null) {
         isHome = "Painel Usuário"
@@ -40,10 +41,11 @@ export function NavBar(props: PropsNavBar): JSX.Element {
         isPerson = "Novo Cliente"
         isProduct = 'Novo Produto'
         isListagem = "Consultar"
-        isListPerson = "Listar Pessoas"
+        isListPerson = "Listar Clientes"
         isListProduct = 'Listar Produtos'
         isListSale = 'Listar Vendas'
         isListUser = 'Listar Usuários'
+        isUpPerson = "Atualizar Clientes"
     }
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{backgroundColor:'gray'}} aria-label="Offcanvas navbar large">
@@ -77,7 +79,7 @@ export function NavBar(props: PropsNavBar): JSX.Element {
                                 <a className="nav-link" href={props.sale}>{isSale}</a>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                <a className="nav-link dropdown-toggle" href="##" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">{isCadastros}</a>
                                 <ul className="dropdown-menu">
                                     <li><a className="dropdown-item" href={props.person}>{isPerson}</a></li>
@@ -85,13 +87,12 @@ export function NavBar(props: PropsNavBar): JSX.Element {
                                     <li>
                                         <hr className="dropdown-divider" />
                                     </li>
-                                    <li><a className="dropdown-item" href="#">-</a></li>
-                                    <li><a className="dropdown-item" href="#">-</a></li>
+                                    <li><a className="dropdown-item" href={props.upPerson}>{isUpPerson}</a></li>
+                                    <li><a className="dropdown-item" href="##">-</a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">{isListagem}</a>
+                                <a className="nav-link dropdown-toggle" href="##" role="button" data-bs-toggle="dropdown" aria-expanded="false">{isListagem}</a>
                                 <ul className="dropdown-menu">
                                     <li><a className="dropdown-item" href={props.listPerson}>{isListPerson}</a></li>
                                     <li><a className="dropdown-item" href={props.listProduct}>{isListProduct}</a></li>

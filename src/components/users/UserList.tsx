@@ -2,14 +2,14 @@ import '../listStyles/module-list.css'
 
 export type PropsUsers = {
     id: number;
-    created_at:string;
+    created_at:'date' | any;
     name: string;
     username: string;
     password?: string;
     update?: 'date' | any;
 }
 
-const ListUSers = (
+export const ListUSers = (
     {
         id,
         created_at,
@@ -35,4 +35,3 @@ const ListUSers = (
         </>
     )
 }
-export { ListUSers }

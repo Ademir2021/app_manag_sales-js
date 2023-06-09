@@ -12,7 +12,6 @@ type TUserRegister = {
 }
 
 export function UserRegister() {
-
   const [user, setUsers] = useState<TUserRegister>({
     name: "",
     username: "",

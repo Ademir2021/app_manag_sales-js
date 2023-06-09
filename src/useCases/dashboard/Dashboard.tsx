@@ -14,6 +14,7 @@ export function Dashboard() {
     const listProduct = '/product_list#'
     const listSale = '/list_sale#'
     const listUser = '/users_list#'
+    const upPerson = '/person_update#'
     const { logout }: any = useContext(AuthContext);
     const res: any = localStorage.getItem('u')
     const user = JSON.parse(res)
@@ -35,6 +36,7 @@ export function Dashboard() {
                 listProduct={listProduct}
                 listSale={listSale}
                 usersList={listUser}
+                upPerson={upPerson}
             />
             <header style={{color:'blue', padding:'0.5rem'}}>
             <strong>Dashboard</strong>

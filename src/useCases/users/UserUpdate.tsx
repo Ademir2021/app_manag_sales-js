@@ -1,27 +1,25 @@
 import { useState, useEffect, useRef, useContext } from 'react';
 import { UserFormUpdate } from "../../components/users/UserFormUpdate";
-import { ListUSers } from "../../components/users/UserList";
+import { ListUSers, PropsUsers } from "../../components/users/UserList";
 import { FormatDate } from "../../components/utils/formatDate";
 import { crypt, UsersValFields } from '../../components/utils/crypt/Crypt'
-import {BackHome} from "../../components/utils/backHome/BackHome"
+import { BackHome } from "../../components/utils/backHome/BackHome"
 import { AuthContext } from '../../context/auth'
 import api from '../../services/api/api'
 
 import '../../App.css'
 
-type TUpdateUser ={
-    id:number;
+type TUpdateUser = {
+    id: number;
     created_at?: 'date' | 'null' | undefined;
-    name:string;
-    username:string;
-    password?:string;
+    name: string;
+    username: string;
+    password?: string;
     psw_repeat: string;
-  }
+}
 
 export function UserUpdate() {
-
     const { user: isLogged }: any = useContext(AuthContext);
-
     const [users, setUsers] = useState<TUpdateUser[]>()
     const [user, setUser] = useState<TUpdateUser>({
         id: 0,
@@ -42,20 +40,20 @@ export function UserUpdate() {
         toggleDropdown()
     }
 
-    const handleChange = (e: any) => {
+    const handleChange = (e:any) => {
         const name = e.target.name;
         const value = e.target.value;
         setUser(values => ({ ...values, [name]: value }))
     }
 
-    async function registerUser():Promise<void> {
+    async function registerUser(): Promise<void> {
         await api.post<TUpdateUser[]>('/users', user)
             .then(response => {
                 alert(response.data)
             }).catch(error => console.log(error))
     }
 
-    async function updateUser():Promise<void> {
+    async function updateUser(): Promise<void> {
         await api.put<TUpdateUser>(`/users/${user.id}`, user)
             .then(response => {
                 alert(response.data)
@@ -63,11 +61,11 @@ export function UserUpdate() {
             .catch(error => alert(error))
     }
 
-    async function getUsers():Promise<void> {
+    async function getUsers(): Promise<void> {
         await api.get<TUpdateUser[]>(`/users`)
             .then(response => {
                 const res: TUpdateUser[] = response.data
-                        setUsers(res)
+                setUsers(res)
                 for (let i = 0; res.length > i; i++) {
                     if (user.id === res[i].id) {
                         user.name = res[i].name
@@ -75,13 +73,13 @@ export function UserUpdate() {
                     }
                 }
             })
-    }
+        }
 
     useEffect(() => {
         setUsers(users)
-    },[users])
+    }, [users])
 
-    async function handleSubmit(e: any) {
+    async function handleSubmit(e: Event) {
         e.preventDefault();
         if (UsersValFields(user)) {
             user.password = crypt(user.password)
@@ -91,7 +89,7 @@ export function UserUpdate() {
         }
     }
 
-    async function handleUpdate(e: any) {
+    async function handleUpdate(e: Event) {
         e.preventDefault();
         if (UsersValFields(user)) {
             user.password = crypt(user.password)
@@ -102,7 +100,7 @@ export function UserUpdate() {
         }
     }
 
-    async function handleDelete(e: any) {
+    async function handleDelete(e: Event) {
         e.preventDefault();
         setUser({
             id: 0,
@@ -114,13 +112,13 @@ export function UserUpdate() {
         alert("Digite um novo usuário !!")
     }
 
-    function toggleDropdown():void {
+    function toggleDropdown(): void {
         setDropdown("modal-show");
     }
 
-    function closeDropdown(event: { stopPropagation: () => void; target: any; }) {
-        event.stopPropagation();
-        const contain = modalRef.current.contains(event.target);
+    function closeDropdown(e: Event) {
+        e.stopPropagation();
+        const contain = modalRef.current.contains(e.target);
         if (contain) {
             setDropdown("");
             document.body.removeEventListener("click", closeDropdown);
@@ -129,7 +127,7 @@ export function UserUpdate() {
 
     return (
         <>
-          <BackHome/>
+            <BackHome />
             <UserFormUpdate
                 handleSubmit={handleSubmit}
                 handleUpdate={handleUpdate}
@@ -142,11 +140,11 @@ export function UserUpdate() {
                 {user}
             </UserFormUpdate>
             {isLogged.length === 0 ? <p>Carregando...</p> : (
-                isLogged.map((user:any) => (
+                isLogged.map((user: PropsUsers) => (
                     <ListUSers
                         key={user.id}
                         id={user.id}
-                        created_at={ 'null' || FormatDate(user.created_at)}
+                        created_at={'date' || FormatDate(user.created_at)}
                         name={'null'}
                         username={user.username}
                         password={user.password}
@@ -157,4 +155,3 @@ export function UserUpdate() {
         </>
     )
 }
-

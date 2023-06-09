@@ -11,6 +11,7 @@ import { ListSales } from './useCases/sales/ListSale';
 import { FormProduct } from "./useCases/products/ProductRegister";
 import { ProductsList } from './useCases/products/ProductList';
 import { FormPerson } from "./useCases/persons/PersonRegister";
+import { PersonUpdate } from "./useCases/persons/PersonUpdate";
 import { PersonsList } from './useCases/persons/PersonList';
 import { AuthProvider, AuthContext } from "./context/auth";
 import { Logout } from "./components/utils/logout/Logout";
@@ -46,6 +47,7 @@ export function AppRoutes() {
                     <Route path="/product_list" element={<Private><ProductsList/></Private>} />
                     <Route path="/form_person" element={<Private><FormPerson/></Private>} />
                     <Route path="/person_list" element={<Private><PersonsList/></Private>} />
+                    <Route path="/person_update" element={<Private><PersonUpdate/></Private>} />
                 </Routes>
             </AuthProvider>
         </Router>

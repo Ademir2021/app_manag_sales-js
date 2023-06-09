@@ -1,3 +1,15 @@
+.modal {
+    display: none;
+    margin-top: 3rem;
+}
+
+.btn-modal {
+    display:contents;
+    cursor: pointer;
+}
+
+
+
 .button-pers {
     position: absolute;
     height: 40px;
@@ -81,5 +93,152 @@
     width: 4rem;
     left: 0.1rem;
     top: 18.1rem;
+    cursor: pointer;
+}
+
+
+
+.update-register {
+    position: absolute;
+    width: 5rem;
+    height: 2.2rem;
+    left: 2rem;
+    top: 23rem;
+    border: none;
+    cursor: pointer;
+}
+
+.update-register:hover {
+    background-size: 3rem;
+}
+
+.update-update {
+    position: absolute;
+    width: 5rem;
+    height: 2.2rem;
+    left: 8rem;
+    top: 23rem;
+    border: none;
+    cursor: pointer;
+}
+
+.update-update:hover {
+    background-size: 4rem;
+}
+
+.update-delete {
+    position: absolute;
+    width: 5rem;
+    height: 2.2rem;
+    left: 14rem;
+    top: 23rem;
+    border: none;
+    cursor: pointer;
+}
+
+.update-delete:hover {
+    background-size: 2rem;
+}
+
+
+.pers-up-label-id{
+    position: absolute;
+    width: 7rem;
+    left: 12rem;
+    top: 0.3rem;
+}
+
+.pers-up-in-id{
+    position: absolute;
+    width: 4rem;
+    left: 17rem;
+    top: 0rem;
+    cursor: pointer;
+}
+
+.pers-up-label-name{
+    position: absolute;
+    left: 0.1rem;
+    top: 1.5rem;
+}
+
+.pers-up-in-name{
+    position: absolute;
+    width: 21rem;
+    left: 0.1rem;
+    top: 2.7rem;
+    cursor: pointer;
+}
+
+.pers-up-label-cpf{
+    position: absolute;
+    left: 0.1rem;
+    top: 5rem;
+}
+
+.pers-up-in-cpf{
+    position: absolute;
+    width: 9rem;
+    left: 0.1rem;
+    top: 6.2rem;
+    cursor: pointer;
+}
+
+
+.pers-up-label-phone{
+    position: absolute;
+    left: 0.1rem;
+    top: 8.5rem;
+}
+
+.pers-up-in-phone{
+    position: absolute;
+    width: 10rem;
+    left: 0.1rem;
+    top: 9.7rem;
+    cursor: pointer;
+}
+
+
+.pers-up-label-address{
+    position: absolute;
+    left: 0.1rem;
+    top: 11.8rem;
+}
+
+.pers-up-in-address{
+    position: absolute;
+    width: 21rem;
+    left: 0.1rem;
+    top: 13.1rem;
+    cursor: pointer;
+}
+
+.pers-up-label-filial{
+    position: absolute;
+    left: 0.1rem;
+    top: 15.3rem;
+}
+
+.pers-up-in-filial{
+    position: absolute;
+    width: 4rem;
+    left: 0.1rem;
+    top: 16.5rem;
+    cursor: pointer;
+}
+
+.pers-up-label-user{
+    position: absolute;
+    left: 0.1rem;
+    top: 18.8rem;
+
+}
+
+.pers-up-in-user{
+    position: absolute;
+    width: 4rem;
+    left: 0.1rem;
+    top: 20rem;
     cursor: pointer;
 }
