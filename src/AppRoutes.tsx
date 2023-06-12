@@ -6,7 +6,7 @@ import { Dashboard } from "./useCases/dashboard/Dashboard";
 import { UserRegister } from './useCases/users/UserRegister';
 import { UsersList } from './useCases/users/UsersList';
 import { UserUpdate } from "./useCases/users/UserUpdate";
-import { Sale } from './components/sales/Sale';
+import { Sale } from './useCases/sales/Sale'
 import { ListSales } from './useCases/sales/ListSale';
 import { FormProduct } from "./useCases/products/ProductRegister";
 import { ProductsList } from './useCases/products/ProductList';
@@ -15,6 +15,7 @@ import { PersonUpdate } from "./useCases/persons/PersonUpdate";
 import { PersonsList } from './useCases/persons/PersonList';
 import { AuthProvider, AuthContext } from "./context/auth";
 import { Logout } from "./components/utils/logout/Logout";
+import { FormModel } from "./useCases/formModel/FormModel";
 
 export function AppRoutes() {
     const Private = ({ children }: any) => {
@@ -37,6 +38,7 @@ export function AppRoutes() {
                     <Route path="/" Component={HomePage} />
                     <Route path="/login" Component={UserLogin} />
                     <Route path="/logout" Component={Logout} />
+                    <Route path="/form_model" Component={FormModel} />
                     <Route path="/register" Component={UserRegister} />
                     <Route path="/dashboard" element={<Private><Dashboard/></Private>} />
                     <Route path="/users_list" element={<Private><UsersList/></Private>} />

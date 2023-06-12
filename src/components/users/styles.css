@@ -2,8 +2,8 @@ div {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     /* color: #0b0c3d; */
     /* color:rgb(165, 191, 191); */
-    color: white;
-    border-radius: 3px;
+    /* color: white; */
+    border-radius: 2px;
 }
 
 ::placeholder {

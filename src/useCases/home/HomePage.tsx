@@ -22,6 +22,7 @@ export function HomePage() {
                 listSale=""
                 usersList=""
                 upPerson=""
+                uṕProduct=""
             />
             <header style={{color:"blue", padding:'0.5rem'}}>
             <strong>Home</strong>

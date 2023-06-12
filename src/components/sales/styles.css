@@ -1,0 +1,134 @@
+.modal {
+    display: none;
+    margin-top: 3rem;
+}
+
+.btn-modal {
+    display:contents;
+    cursor: pointer;
+}
+.btn-editar{
+    color: blue;
+}
+
+.container {
+    margin-top: -6.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 2rem;
+}
+
+.main {
+    height: 29rem;
+    width: 24rem;
+    padding: 22px 0px 0px 22px;
+    background-color: rgb(73, 80, 80);
+}
+
+.f-form {
+    padding: 0px 0px 0px 0px;
+    position: relative;
+    width: 20rem;
+}
+
+.container-list-itens{
+    display: flex;
+    margin-top: 0.1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 6vh;
+    padding: 0px 0px 0px 0px;
+
+}
+
+.main-list-itens {
+    height: 1.4rem;
+    width: 96%;
+    color:rgba(0, 0, 0, 0.711);
+    font-size: 12px;
+    border: 1px rgba(225, 225, 235, 0.889) solid;
+    background-color: rgba(199, 217, 217, 0.559);
+    padding: 2px 0px 0px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.sale-send {
+    position: absolute;
+    width: 5rem;
+    height: 2.2rem;
+    left: 15rem;
+    top: 23rem;
+    border: none;
+    cursor: pointer;
+}
+
+.sale-send:hover {
+    background-size: 3rem;
+}
+
+.sale-edit {
+    position: absolute;
+    width: 5rem;
+    height: 2.2rem;
+    left: 0rem;
+    top: 23rem;
+    border: none;
+    cursor: pointer;
+}
+
+.sale-edit:hover {
+    background-size: 4rem;
+}
+
+.sale-new {
+    position: absolute;
+    width: 7rem;
+    height: 2.2rem;
+    left: 6.6rem;
+    top: 23rem;
+    border: none;
+    cursor: pointer;
+}
+
+.sale-new:hover {
+    background-size: 2rem;
+}
+
+.sale-label-item {
+    position: absolute;
+    width: 18rem;
+    left: 0.1rem;
+    top: 7rem;
+    color: aqua;
+    font-size: 23px;
+}
+
+.sale-input-item {
+    position: absolute;
+    width: 18rem;
+    left: 0.1rem;
+    top: 2rem;
+    cursor: pointer;
+}
+
+.sale-label-amount {
+    position: absolute;
+    width: 18rem;
+    left: 11rem;
+    top: 4.8rem;
+    color: aqua;
+    font-size: 23px;
+}
+
+.sale-input-amount {
+    position: absolute;
+    width: 5rem;
+    left: 13.1rem;
+    top: 5rem;
+    cursor: pointer;
+}

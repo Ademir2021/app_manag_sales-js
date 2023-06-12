@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FormatDate } from "../../components/utils/formatDate";
-import { PersonList, TPropsPerson } from "../../components/persons/PersonList";
+import { PersonList } from "../../components/persons/PersonList";
 import { TPersonRegister } from './PersonRegister'
 import {BackHome} from "../../components/utils/backHome/BackHome"
 import api from "../../services/api/api";
@@ -31,8 +31,8 @@ export function PersonsList() {
                     id_person={person.id_person}
                     create={FormatDate(person.created_at)}
                     name={person.name_pers}
-                    phone=''
-                    address=""
+                    phone={person.phone_pers}
+                    address={person.address_pers}
                     cpf={person.cpf_pers}
                     id_user={person.id_person}
                     filial={person.fk_name_filial}

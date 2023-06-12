@@ -11,8 +11,9 @@ type PropsNavBar = {
     listPerson: string;
     listProduct: string;
     listSale:string;
-    usersList:string
-    upPerson:string
+    usersList:string;
+    upPerson:string;
+    uṕProduct:string;
 }
 
 export function NavBar(props: PropsNavBar): JSX.Element {
@@ -30,6 +31,7 @@ export function NavBar(props: PropsNavBar): JSX.Element {
     let isListSale =''
     let isListUser = ''
     let isUpPerson = ''
+    let isUpProduct = ''
     const res: any = localStorage.getItem('u')
     if (JSON.parse(res) !== null) {
         isHome = "Painel Usuário"
@@ -46,11 +48,12 @@ export function NavBar(props: PropsNavBar): JSX.Element {
         isListSale = 'Listar Vendas'
         isListUser = 'Listar Usuários'
         isUpPerson = "Atualizar Clientes"
+        isUpProduct ="Atualizar Produtos"
     }
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{backgroundColor:'gray'}} aria-label="Offcanvas navbar large">
             <div className="container-fluid">
-                <a className="navbar-brand" style={{color:'gray'}} href="/">{ 'Sistema de Gestão de Vendas'}</a>
+                <a className="navbar-brand" style={{color:'gray'}} href="/dashboard">{ 'Sistema de Gestão de Vendas'}</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
                     aria-controls="offcanvasNavbar2">
                     <span className="navbar-toggler-icon"></span>
@@ -88,7 +91,7 @@ export function NavBar(props: PropsNavBar): JSX.Element {
                                         <hr className="dropdown-divider" />
                                     </li>
                                     <li><a className="dropdown-item" href={props.upPerson}>{isUpPerson}</a></li>
-                                    <li><a className="dropdown-item" href="##">-</a></li>
+                                    <li><a className="dropdown-item" href={props.uṕProduct}>{isUpProduct}</a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
