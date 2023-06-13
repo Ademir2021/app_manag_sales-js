@@ -4,7 +4,7 @@ import { Dashboard } from "../dashboard/Dashboard";
 import api from '../../services/api/api'
 
 export type TProductRegister = {
-    id_product?: number;
+    id_product?: number | any;
     created_at?: Date | any;
     descric_product: string;
     val_max_product: number;

@@ -55,13 +55,13 @@ export function SaleForm({
                 placeholder='Quant'
                 onChange={handleChange}
               />
-              <button className='sale-send'>Enviar</button>
+              <button className='sale-send'>Salvar</button>
             </form>
-            <form onSubmit={handleEdit}>
-              <button className='sale-edit'>editar</button>
+            <form onClick={handleEdit}>
+              <button className='sale-edit'>Editar</button>
             </form>
             <form onSubmit={handleNew}>
-              <button className='sale-new'>Novo Item</button>
+              <button className='sale-delete'>Deletar</button>
             </form>
           </div>
         </div>

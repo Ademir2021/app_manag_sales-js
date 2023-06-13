@@ -85,7 +85,7 @@
     background-size: 4rem;
 }
 
-.sale-new {
+.sale-delete {
     position: absolute;
     width: 7rem;
     height: 2.2rem;
@@ -95,7 +95,7 @@
     cursor: pointer;
 }
 
-.sale-new:hover {
+.sale-delete:hover {
     background-size: 2rem;
 }
 
