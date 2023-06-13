@@ -4,28 +4,34 @@ type TSaleForm = {
   children: string | number | readonly string[] | undefined | any;
   handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
   handleSubmit: React.FormEventHandler<HTMLFormElement> | undefined | any;
-  handleEdit: any;
-  handleNew: any;
+  handleDelete: any;
+  handleSaveUpdate: any;
+  handleSearchItem: any
   modalRef?: any;
   className?: string;
   close?: any;
   list: HTMLSelectElement | HTMLOptionElement | any;
   item: any
-  amount: number
+  amount: number | string;
+  valor:number | string
+  statusBtn: string;
 }
 
 export function SaleForm({
   handleChange,
   handleSubmit,
   children,
-  handleEdit,
-  handleNew,
+  handleDelete,
+  handleSaveUpdate,
+  handleSearchItem,
   modalRef,
   className,
   close,
   list,
   item,
-  amount
+  amount,
+  valor,
+  statusBtn
 }: TSaleForm) {
 
   return (
@@ -34,16 +40,16 @@ export function SaleForm({
         <div className="main">
           <button className="btn-modal" onClick={close}>Voltar</button>
           <div className='f-form'>
-            <form onSubmit={handleSubmit}>
-              <label className='sale-label-item'>{item}</label>
+            <form onSubmit={handleSaveUpdate}>
+              <label className='sale-label-descric'>{item}</label>
               <datalist id="data-itens">
                 {list}
               </datalist>
-              <input className='sale-input-item'
+              <input className='sale-input-descric'
                 type="search"
                 list="data-itens"
                 name="descric"
-                value={children.descric || ""}
+                value={children.descric}
                 placeholder='Busque um Item'
                 onChange={handleChange}
               />
@@ -51,17 +57,39 @@ export function SaleForm({
               <input className='sale-input-amount'
                 type="number"
                 name="amount"
-                value={children.amount || 1}
+                value={children.amount}
                 placeholder='Quant'
                 onChange={handleChange}
               />
-              <button className='sale-send'>Salvar</button>
+               <input className='sale-input-id'
+                type="text"
+                name="id"
+                value={children.id }
+                placeholder='Quant'
+                onChange={handleChange}
+                disabled
+              />
+               <input className='sale-input-item'
+                type="text"
+                name="item"
+                value={children.item}
+                placeholder='Quant'
+                onChange={handleChange}
+                disabled
+              />
+
+              <label className='sale-label-valor' >{valor}</label>
+              
+              <button className='sale-save-update'>{statusBtn}</button>
             </form>
-            <form onClick={handleEdit}>
-              <button className='sale-edit'>Editar</button>
+            <form onClick={handleSubmit}>
+              <button className='sale-submit'>Enviar</button>
             </form>
-            <form onSubmit={handleNew}>
+            <form onSubmit={handleDelete}>
               <button className='sale-delete'>Deletar</button>
+            </form>
+            <form onSubmit={handleSearchItem}>
+              <button className='sale-search-item'>Ver Preço</button>
             </form>
           </div>
         </div>

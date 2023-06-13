@@ -26,11 +26,13 @@ type TItens = {
 export function Sale() {
 
     let [editId, setEditId] = useState<number | null | any>(null);
+    let [preco, setPreco] = useState<number>(0)
+    const [statusBtn, setStatusBtn] = useState<string>("Salvar");
     const [products, setProducts] = useState<TProductRegister[]>([]);
     const [product, setProduct] = useState<TPproduct>(
-        {id:0, item:0, descric:'', valor: 0, amount:0, tItem:0});
+        { id: 0, item: 0, descric: '', valor: 0, amount: 0, tItem: 0 });
     const [itens,] = useState<TItens[]>([
-        {id:0, item:0, descric: "", amount:0, valor:0, tItem:0}]);
+        { id: 0, item: 0, descric: "", amount: 0, valor: 0, tItem: 0 }]);
     const [dropdown, setDropdown] = useState<string>("");
     const modalRef = useRef<any>(null);
     const [id, setId] = useState<number>(1)
@@ -53,7 +55,7 @@ export function Sale() {
 
     useEffect(() => {
         getProducts()
-    }, [product.id])
+    },[product.id])
 
     console.log(itens)
 
@@ -70,22 +72,16 @@ export function Sale() {
                     product.tItem = product.amount * product.valor
                     itens.push(product)
                     setId(id + 1)
-                    setProduct({
-                        id: 0,
-                        item: 0,
-                        descric: '',
-                        valor: 0,
-                        amount: 1,
-                        tItem: 0
-                    })
+                    setProduct({id:0, item:0, descric:'', valor:0, amount:0, tItem:0});
                 }
             } else {
-                toggleDropdown()
+                setDropdown('')
             }
         }
     };
 
     function updateProduct(item: TItens) {
+        setStatusBtn("Atualizar")
         setEditId(item.id)
         product.id = item.id
         product.item = item.item
@@ -99,36 +95,38 @@ export function Sale() {
     function deleteProduct() {
         for (let i = 0; itens.length > i; i++) {
             setEditId(editId)
-        if (itens[i].id === editId) {
-            //  alert(editId)
-            itens.splice(i, 1)
-            setEditId(null)
+            if (itens[i].id === editId) {
+                //  alert(editId)
+                itens.splice(i, 1)
+                setEditId(null)
             }
         }
     };
 
-    async function handleSave(e: Event) {
+    async function handleSaveUpdate(e: Event) {
         e.preventDefault();
         if (editId === null) {
             saveProduct()
         } else {
             alert("Modo Edição")
+            saveProduct()
         }
-    };
-    async function handleUpdate(e: Event) {
-        e.preventDefault();
-      
     };
     async function handleDelete(e: Event) {
         e.preventDefault();
-        if(editId !== null){
-        deleteProduct()
-        alert("Item " +editId+ " Deletado com sucesso")
-        }else{
+        if (editId !== null) {
+            deleteProduct()
+            alert("Item " + editId + " Deletado com sucesso")
+            setProduct({ id: 0, item: 0, descric: '', valor: 0, amount: 0, tItem: 0 });
+            setDropdown('');
+        } else {
             alert("Nenhum item para deletar")
         }
     };
+    async function handleSubmit(e: Event) {
+        e.preventDefault();
 
+    };
     function toggleDropdown(): void {
         setDropdown("modal-show");
     };
@@ -136,6 +134,8 @@ export function Sale() {
         e.stopPropagation();
         const contain = modalRef.current.contains(e.target);
         if (contain) {
+            setStatusBtn("Salvar")
+            setEditId(null)
             setDropdown("");
             document.body.removeEventListener("click", closeDropdown);
         }
@@ -150,6 +150,26 @@ export function Sale() {
             tItem: 0
         })
         toggleDropdown()
+        setStatusBtn("Salvar")
+        setEditId(null)
+        setPreco(0)
+    };
+    function searchItem(){
+        for (let i = 0; products.length > i; i++) {
+            if (editId === null) {
+                if (product.descric === products[i].id_product
+                    || product.descric === products[i].bar_code
+                    || product.descric === products[i].descric_product) {
+                    product.id = id
+                    product.item = products[i].id_product
+                    product.descric = products[i].descric_product
+                    product.valor = products[i].val_max_product
+                    setPreco(product.valor)
+                    // setProduct({ id: 0, item: 0, descric: '', valor: 0, amount: 0, tItem: 0 });
+                    // setProduct(product)
+                }
+            }
+        }
     }
 
     return (
@@ -157,17 +177,20 @@ export function Sale() {
             <button style={{ margin: '18px' }} onClick={() => { open() }}>Abrir Venda</button>
             <SaleForm
                 handleChange={handleChange}
-                handleSubmit={handleSave}
-                handleEdit={handleUpdate}
-                handleNew={handleDelete}
+                handleSaveUpdate={handleSaveUpdate}
+                handleSubmit={handleSubmit}
+                handleDelete={handleDelete}
+                handleSearchItem={searchItem}
                 close={closeDropdown}
                 className={dropdown}
                 modalRef={modalRef}
                 list={<select>{products.map((product) => (
                     <option>{product.descric_product}</option>))}
                 </select>}
-                item={product.descric}
-                amount={product.amount}
+                item={(product.descric)}
+                amount={product.amount <= 0 ? '' : product.amount}
+                valor={preco <= 0 ? '' : preco + ' X '}
+                statusBtn={statusBtn}
             >
                 {product}
             </SaleForm>
