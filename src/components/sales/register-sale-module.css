@@ -1,18 +1,5 @@
-.modal {
-    display: none;
-    margin-top: 3rem;
-}
-
-.btn-modal {
-    display:contents;
-    cursor: pointer;
-}
-.btn-editar{
-    color: blue;
-}
-
 .container {
-    margin-top: -6.2rem;
+    margin-top: -6.6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,13 +17,13 @@
 
 .f-form {
     padding: 0px 0px 0px 0px;
-    position: relative;
-    width: 20rem;
 }
 
-/* .container-list-itens{
+.container-list-itens{
     display: flex;
-    margin-top: 0.1rem;
+    width: 19.4rem;
+    display: flex;
+    margin-top: 0rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -46,16 +33,26 @@
 }
 
 .main-list-itens {
-    height: 1.4rem;
-    width: 96%;
-    color:rgba(0, 0, 0, 0.711);
+    height: 2.4rem;
+    width: 24.5rem;
+    color:rgba(1, 10, 24, 0.711);
     font-size: 12px;
     border: 1px rgba(225, 225, 235, 0.889) solid;
     background-color: rgba(199, 217, 217, 0.559);
-    padding: 2px 0px 0px 2px;
-    cursor: pointer;
+    padding: 0px 2px 0px 0px;
     border-radius: 2px;
-} */
+    padding: 0px 0px 0px 12px;
+}
+
+.load-list-itens{
+    font-size: 12px;
+    display: inline;
+    position: relative;
+     border:none;
+     width: 99%;
+     left: 1rem;
+     top: 28rem;
+}
 
 .sale-save-update {
     position: absolute;
@@ -119,7 +116,7 @@
 .sale-label-amount {
     position: absolute;
     width: 18rem;
-    left: 9rem;
+    left: 0rem;
     top: 12rem;
     color: aqua;
     font-size: 26px;
@@ -153,7 +150,7 @@
 .sale-label-valor{
     position: absolute;
     width: 18rem;
-    left: 0rem;
+    left: 4rem;
     top: 12rem;
     color: aqua;
     font-size: 28px;
@@ -171,3 +168,4 @@
     cursor: pointer;
 
 }
+

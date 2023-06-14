@@ -7,6 +7,7 @@ import { UserRegister } from './useCases/users/UserRegister';
 import { UsersList } from './useCases/users/UsersList';
 import { UserUpdate } from "./useCases/users/UserUpdate";
 import { Sale } from './useCases/sales/Sale'
+import { RegisterSale } from "./useCases/sales/RegisterSale";
 import { ListSales } from './useCases/sales/ListSale';
 import { FormProduct } from "./useCases/products/ProductRegister";
 import { ProductsList } from './useCases/products/ProductList';
@@ -43,7 +44,8 @@ export function AppRoutes() {
                     <Route path="/dashboard" element={<Private><Dashboard/></Private>} />
                     <Route path="/users_list" element={<Private><UsersList/></Private>} />
                     <Route path="/user_update" element={<Private><UserUpdate/></Private>} />
-                    <Route path="/sale" element={<Private><Sale/></Private>} />
+                    <Route path="/update_sale" element={<Private><Sale/></Private>} />
+                    <Route path="/sale" element={<Private><RegisterSale/></Private>} />
                     <Route path="/list_sale" element={<Private><ListSales/></Private>} />
                     <Route path="/form_product" element={<Private><FormProduct/></Private>} />
                     <Route path="/product_list" element={<Private><ProductsList/></Private>} />

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { SaleForm } from "../../components/sales/SaleForm";
 import { Itens } from "../../components/sales/Itens";
 import { TProductRegister } from "../products/ProductRegister";
+
 import api from "../../services/api/api";
 
 import "../../App.css"
@@ -54,7 +55,8 @@ export function Sale() {
     };
 
     useEffect(() => {
-        getProducts()
+    getProducts()
+         
     },[product.id])
 
     console.log(itens)
