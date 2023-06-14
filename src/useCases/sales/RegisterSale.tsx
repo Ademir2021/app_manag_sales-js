@@ -24,16 +24,25 @@ type TItens = {
 };
 
 export function RegisterSale (){
-    let [editId, setEditId] = useState<number | null | any>(null);
-    let [preco, setPreco] = useState<number>(0)
-    const [statusBtnSaleSubmit, setStatusBtnSaleSubmit] = useState<boolean | string>("Iniciar")
-    const [statusBtnSaveUpdate, setStatusBtn] = useState<string>("Salvar");
-    const [products, setProducts] = useState<TProductRegister[]>([]);
-    const [product, setProduct] = useState<TPproduct>(
-        { id: 0, item: 0, descric: '', valor: 0, amount: 0, tItem: 0 });
+
     const [itens,] = useState<TItens[]>([]);
 
-    const [id, setId] = useState<number>(1)
+    const [id, setId] = useState<number>(1);
+
+    let [editId, setEditId] = useState<number | null | any>(null);
+
+    let [preco, setPreco] = useState<number>(0);
+
+    const [statusBtnSaleSubmit, setStatusBtnSaleSubmit] = useState<"Iniciar" | "Enviar">("Iniciar");
+
+    const [statusBtnSaveUpdate, setStatusBtnSaveUpdate] = useState<"Salvar" | "Atualizar">("Salvar");
+
+    const [products, setProducts] = useState<TProductRegister[]>([]);
+
+    const [product, setProduct] = useState<TPproduct>(
+        { id: 0, item: 0, descric: '', valor: 0, amount: 0, tItem: 0 });
+
+
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -44,12 +53,9 @@ export function RegisterSale (){
         try {
             await api.get<TProductRegister[]>('products')
                 .then(response => {
-                    const products = response.data
-                    setProducts(products)
+                    setProducts(response.data)
                 })
-        } catch (err) {
-            alert("error occurred !" + err)
-        }
+        } catch (err) { console.log("error occurred !" + err) }
     };
 
     useEffect(() => {
@@ -59,7 +65,7 @@ export function RegisterSale (){
         function saveProduct() {
             for (let i = 0; products.length > i; i++) {
                 if (editId === null) {
-                    if (product.descric == products[i].id_product
+                    if (product.descric === products[i].id_product
                         || product.descric === products[i].bar_code
                         || product.descric === products[i].descric_product) {
                         product.id = id
@@ -79,7 +85,7 @@ export function RegisterSale (){
         };
     
         function updateProduct(item: TItens) {
-            setStatusBtn("Atualizar")
+            setStatusBtnSaveUpdate("Atualizar")
             setEditId(item.id)
             product.id = item.id
             product.item = item.item
@@ -96,6 +102,8 @@ export function RegisterSale (){
                     //  alert(editId)
                     itens.splice(i, 1)
                     setEditId(null)
+                    openClearNewSale()
+                    setStatusBtnSaleSubmit("Enviar")
                 }
             }
         };
@@ -116,7 +124,8 @@ export function RegisterSale (){
                 alert("Item " + editId + " Deletado com sucesso")
                 setProduct({ id: 0, item: 0, descric: '', valor: 0, amount: 0, tItem: 0 });
             } else {
-                alert("Nenhum item para deletar")
+                 alert("Busque um novo item !")
+                openClearNewSale()
             }
         };
         async function handleSubmit(e: Event) {
@@ -126,15 +135,13 @@ export function RegisterSale (){
                 openClearNewSale()
                 setStatusBtnSaleSubmit("Enviar")
             }else{
-              
                setStatusBtnSaleSubmit("Iniciar")
             }
-    
         };
 
         function openClearNewSale() {
             setProduct({id:0, item:0, descric:'', valor:0, amount:1, tItem:0});
-            setStatusBtn("Salvar")
+            setStatusBtnSaveUpdate("Salvar")
             setStatusBtnSaleSubmit("Iniciar")
             setEditId(null)
             setPreco(0)
@@ -144,7 +151,7 @@ export function RegisterSale (){
             e.preventDefault()
             for (let i = 0; products.length > i; i++) {
                 if (editId === null) {
-                    if (product.descric == products[i].id_product
+                    if (product.descric === products[i].id_product
                         || product.descric === products[i].bar_code
                         || product.descric === products[i].descric_product) {
                         product.id = id
@@ -158,9 +165,9 @@ export function RegisterSale (){
                 }
             }
         }
+        console.log(itens)
 
     return(
-    
         <>
             <BackHome/>  
             <RegisterSaleForm
@@ -170,12 +177,12 @@ export function RegisterSale (){
                 handleDelete={handleDelete}
                 handleSearchItem={searchItem}
                 list={<select>{products.map((product) => (
-                    <option>{product.descric_product}</option>))}
+                    <option key={product.id_product}>{product.descric_product}</option>))}
                 </select>}
                 item={(product.descric)}
                 amount={product.amount <= 0 ? '' : product.amount}
                 valor={preco <= 0 ? '' : ' X ' + preco}
-                statusBtn={statusBtnSaveUpdate}
+                statusBtnSaveUpdate={statusBtnSaveUpdate}
                 statusBtnSaleSubmit={statusBtnSaleSubmit}
                 loadItens= {itens.length === 0 ? <strong>Carregando...</strong> : (
                     itens.map((item: TItens) => (
@@ -188,7 +195,7 @@ export function RegisterSale (){
                             valor={item.valor}
                             tItem={item.tItem}
                             editar={<div onClick={() =>
-                                updateProduct(item)}><a style={{textDecoration:'none'}} href="#">Atualizar</a></div>}
+                                updateProduct(item)}><a style={{textDecoration:'none'}} href="##">Atualizar</a></div>}
                         />
                         )))}
             >

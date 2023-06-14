@@ -1,21 +1,18 @@
 import './register-sale-module.css'
 
-type TSaleForm = {
+type TRegisterSaleForm = {
   children: string | number | readonly string[] | undefined | any;
   handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
   handleSubmit: React.FormEventHandler<HTMLFormElement> | undefined | any;
   handleDelete: any;
   handleSaveUpdate: any;
   handleSearchItem: any
-  modalRef?: any;
-  className?: string;
-  close?: any;
   list: HTMLSelectElement | HTMLOptionElement | any;
   item: any
   amount: number | string;
   valor:number | string
-  statusBtn: string;
-  statusBtnSaleSubmit:string | boolean;
+  statusBtnSaveUpdate: "Salvar" | "Atualizar";
+  statusBtnSaleSubmit:"Iniciar" | "Enviar";
   loadItens:string | any;
 }
 
@@ -30,10 +27,10 @@ export function RegisterSaleForm({
   item,
   amount,
   valor,
-  statusBtn,
+  statusBtnSaveUpdate,
   statusBtnSaleSubmit,
   loadItens
-}: TSaleForm) {
+}: TRegisterSaleForm) {
 
   return (
       <div className="container">
@@ -64,7 +61,7 @@ export function RegisterSaleForm({
                 type="text"
                 name="id"
                 value={children.id }
-                placeholder='Quant'
+                placeholder='ID'
                 onChange={handleChange}
                 disabled
               />
@@ -72,14 +69,22 @@ export function RegisterSaleForm({
                 type="text"
                 name="item"
                 value={children.item}
-                placeholder='Quant'
+                placeholder='Item'
+                onChange={handleChange}
+                disabled
+              />
+              <input className='sale-input-val-max'
+                type="number"
+                name="valor"
+                value={children.valor}
+                placeholder='Valor'
                 onChange={handleChange}
                 disabled
               />
 
               <span className='load-list-itens' >{loadItens}</span>
               <label className='sale-label-valor' >{valor}</label>
-              <button className='sale-save-update'>{statusBtn}</button>
+              <button className='sale-save-update'>{statusBtnSaveUpdate}</button>
             </form>
             <form onClick={handleSubmit}>
               <button className='sale-submit'>{statusBtnSaleSubmit}</button>

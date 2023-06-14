@@ -107,8 +107,8 @@
 
 .sale-input-descric {
     position: absolute;
-    width: 18rem;
-    left: 0.1rem;
+    width: 21rem;
+    left: 0rem;
     top: 2rem;
     cursor: pointer;
 }
@@ -116,7 +116,7 @@
 .sale-label-amount {
     position: absolute;
     width: 18rem;
-    left: 0rem;
+    left: 3rem;
     top: 12rem;
     color: aqua;
     font-size: 26px;
@@ -125,15 +125,24 @@
 .sale-input-amount {
     position: absolute;
     width: 5rem;
-    left: 13.1rem;
+    left: 16rem;
     top: 4rem;
+    cursor: pointer;
+}
+
+
+.sale-input-val-max {
+    position: absolute;
+    width: 6rem;
+    left: 15rem;
+    top: 12.3rem;
     cursor: pointer;
 }
 
 .sale-input-id{
     position: absolute;
     width: 3rem;
-    left: 12.1rem;
+    left: 15rem;
     top: 0rem;
     cursor: pointer;
 
@@ -141,7 +150,7 @@
 .sale-input-item{
     position: absolute;
     width: 3rem;
-    left: 15.1rem;
+    left: 18rem;
     top: 0rem;
     cursor: pointer;
 
@@ -150,7 +159,7 @@
 .sale-label-valor{
     position: absolute;
     width: 18rem;
-    left: 4rem;
+    left: 4.5rem;
     top: 12rem;
     color: aqua;
     font-size: 28px;
