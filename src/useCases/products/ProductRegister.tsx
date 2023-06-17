@@ -4,9 +4,9 @@ import { Dashboard } from "../dashboard/Dashboard";
 import api from '../../services/api/api'
 
 export type TProductRegister = {
-    id_product?: number | any;
-    created_at?: Date | any;
-    descric_product: string;
+    id_product: number;
+    created_at?: "date" | any;
+    descric_product: string | number | "" | 0;
     val_max_product: number;
     val_min_product: number;
     fk_brand: number;
@@ -17,6 +17,7 @@ export type TProductRegister = {
 export function FormProduct() {
 
     const [product, setProduct] = useState<TProductRegister>({
+        id_product:0,
         descric_product: '',
         val_max_product: 0,
         val_min_product: 0,

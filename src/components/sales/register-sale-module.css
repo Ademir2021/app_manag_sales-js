@@ -10,8 +10,7 @@
 
 .main {
     height: 29rem;
-    width: 24rem;
-    padding: 22px 0px 0px 22px;
+    width: 25.6rem;
     background-color: rgb(73, 80, 80);
 }
 
@@ -21,27 +20,27 @@
 
 .container-list-itens{
     display: flex;
-    width: 19.4rem;
-    display: flex;
-    margin-top: 0rem;
+    width: 21rem;
+    height: 4rem;
+    margin-top: 1px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 6vh;
-    padding: 0px 0px 0px 0px;
-
 }
 
 .main-list-itens {
-    height: 2.4rem;
-    width: 24.5rem;
-    color:rgba(1, 10, 24, 0.711);
+    height: 3rem;
+    width: 25.6rem;
     font-size: 12px;
     border: 1px rgba(225, 225, 235, 0.889) solid;
     background-color: rgba(199, 217, 217, 0.559);
-    padding: 0px 2px 0px 0px;
     border-radius: 2px;
-    padding: 0px 0px 0px 12px;
+}
+.f-form-itens {
+    padding: 2px 2px 2px 5px;
+    color:rgba(2, 12, 28, 0.882);
+    width: 23rem;
 }
 
 .load-list-itens{
@@ -58,7 +57,7 @@
     position: absolute;
     width: 7rem;
     height: 2.2rem;
-    left: 7rem;
+    left: 8rem;
     top: 23rem;
     border: none;
     cursor: pointer;
@@ -72,7 +71,7 @@
     position: absolute;
     width: 6rem;
     height: 2.2rem;
-    left: 15rem;
+    left: 16rem;
     top: 23rem;
     border: none;
     cursor: pointer;
@@ -86,7 +85,7 @@
     position: absolute;
     width: 6rem;
     height: 2.2rem;
-    left: 0rem;
+    left: 1rem;
     top: 23rem;
     border: none;
     cursor: pointer;
@@ -99,7 +98,7 @@
 .sale-label-descric {
     position: absolute;
     width: 18rem;
-    left: 0.1rem;
+    left: 1rem;
     top: 7rem;
     color: aqua;
     font-size: 23px;
@@ -108,7 +107,7 @@
 .sale-input-descric {
     position: absolute;
     width: 21rem;
-    left: 0rem;
+    left: 1rem;
     top: 2rem;
     cursor: pointer;
 }
@@ -130,27 +129,37 @@
     cursor: pointer;
 }
 
-
 .sale-input-val-max {
     position: absolute;
     width: 6rem;
-    left: 15rem;
+    left: 16rem;
     top: 12.3rem;
+    cursor: pointer;
+}
+
+.sale-label-total-itens{
+    position: absolute;
+    font-size: 1.1rem;
+    color:aqua;
+    width: 17rem;
+    left: 7rem;
+    top: 15rem;
     cursor: pointer;
 }
 
 .sale-input-id{
     position: absolute;
     width: 3rem;
-    left: 15rem;
+    left: 15.9rem;
     top: 0rem;
     cursor: pointer;
 
 }
+
 .sale-input-item{
     position: absolute;
     width: 3rem;
-    left: 18rem;
+    left: 19rem;
     top: 0rem;
     cursor: pointer;
 
@@ -159,11 +168,10 @@
 .sale-label-valor{
     position: absolute;
     width: 18rem;
-    left: 4.5rem;
+    left: 6rem;
     top: 12rem;
     color: aqua;
     font-size: 28px;
-
 }
 
 .sale-search-item{
@@ -172,9 +180,8 @@
     position: absolute;
     border:none;
     width: 4.3rem;
-    left: 0.1rem;
+    left: 1rem;
     top: 5rem;
     cursor: pointer;
-
 }
 

@@ -74,7 +74,8 @@ export function Sale() {
                     product.tItem = product.amount * product.valor
                     itens.push(product)
                     setId(id + 1)
-                    setProduct({id:0, item:0, descric:'', valor:0, amount:0, tItem:0});
+                    // searchItem()
+                    // setProduct({id:0, item:0, descric:'', valor:0, amount:0, tItem:0});
                 }
             } else {
                 setDropdown('')
