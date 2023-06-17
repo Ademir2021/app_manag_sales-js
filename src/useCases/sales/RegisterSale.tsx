@@ -90,7 +90,6 @@ export function RegisterSale() {
         getSale()
     }, [getSale]);
 
-
     const getProducts = useCallback(async () => {
         try {
             await api.get<TProductRegister[]>('products')
@@ -178,15 +177,20 @@ export function RegisterSale() {
         return itens.push(product)
     };
 
+    const currencyFormat = (valor:number) => {
+        return valor.toLocaleString('pt-BR',
+            { style: 'currency', currency: 'BRL', })
+    };
 
     function sumItens() {
         let sum = 0
         for (var i = 0; i < itens.length; i++) {
-           sum+= (itens[i].amount * itens[i].valor)
-
+            sum += (itens[i].amount * itens[i].valor)
         }
+        currencyFormat(sum)
         setTotalItens(sum)
-    }
+        return sum
+    };
 
     async function handleSaveUpdate(e: Event) {
         e.preventDefault();
@@ -215,6 +219,7 @@ export function RegisterSale() {
             openClearNewSale()
         }
     };
+
     async function handleSubmit(e: Event) {
         e.preventDefault();
         if (statusBtnSaleSubmit === "Iniciar") {
@@ -227,15 +232,16 @@ export function RegisterSale() {
             const itens_store_res: [] | any = localStorage.getItem('i')
             const itens_store = JSON.parse(itens_store_res)
             console.log(itens_store)
-            if(itens_store_res === null){
-            localStorage.setItem("i", JSON.stringify(itens))
-            alert("Pedido gravado com sucesso")
-            }else{
+            if (itens_store_res === null) {
+                localStorage.setItem("i", JSON.stringify(itens))
+                localStorage.setItem("s", JSON.stringify(sumItens()))
+                alert("Pedido gravado com sucesso")
+                window.location.replace("/process_sale")
+            } else {
                 alert("Aguarde o retorno! existe um pedido gravado em aberto !")
             }
         }
     };
-    
 
     function openClearNewSale() {
         setProduct({ id: 0, item: 0, descric: '', valor: 0, amount: 1, tItem: 0 });
@@ -264,7 +270,7 @@ export function RegisterSale() {
 
     return (
         <>
-            <BackHome/>
+            <BackHome />
             <RegisterSaleForm
                 handleChange={handleChange}
                 handleSaveUpdate={handleSaveUpdate}
@@ -280,7 +286,7 @@ export function RegisterSale() {
                 valor={preco <= 0 ? '' : ' X ' + preco}
                 statusBtnSaveUpdate={statusBtnSaveUpdate}
                 statusBtnSaleSubmit={statusBtnSaleSubmit}
-                totalItens={totalItens <=0 ? '' : "Total compra: " + totalItens}
+                totalItens={totalItens <= 0 ? '' : "Total compra: R$" + totalItens}
                 loadItens={itens.length === 0 ?
                     <strong style={{ color: "blue" }} >Carregando...</strong> : (
                         itens.map((item: TItens) => (
@@ -300,18 +306,18 @@ export function RegisterSale() {
                         )))}
             >
                 {product}
-            </RegisterSaleForm> 
-            
-               {/* <div>
-               <input
-               type="number"
-               value={diskSale}
-               onChange={(e:any)=> setDisc_sale(e.target.value)}
-               />
-               <button ></button>
-               </div> */}
-                      
-            <footer><br /><strong style={{color:'blue'}}>Fim</strong></footer>
+            </RegisterSaleForm>
+
+            {/* <div>
+<input
+type="number"
+value={diskSale}
+onChange={(e:any)=> setDisc_sale(e.target.value)}
+/>
+<button ></button>
+</div> */}
+                <div><a href="/process_sale" >Nota</a></div>
+            <footer><br /><strong style={{ color: 'blue' }}>Fim</strong></footer>
         </>
     )
 }

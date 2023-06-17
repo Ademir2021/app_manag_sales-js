@@ -100,7 +100,7 @@
     width: 18rem;
     left: 1rem;
     top: 7rem;
-    color: aqua;
+    color:rgb(1, 16, 16);
     font-size: 23px;
 }
 
@@ -115,17 +115,17 @@
 .sale-label-amount {
     position: absolute;
     width: 18rem;
-    left: 3rem;
-    top: 12rem;
-    color: aqua;
+    left: 1rem;
+    top: 12.3rem;
+    color:rgb(1, 16, 16);
     font-size: 26px;
 }
 
 .sale-input-amount {
     position: absolute;
     width: 5rem;
-    left: 16rem;
-    top: 4rem;
+    left: 17rem;
+    top: 4.5rem;
     cursor: pointer;
 }
 
@@ -139,11 +139,11 @@
 
 .sale-label-total-itens{
     position: absolute;
-    font-size: 1.1rem;
-    color:aqua;
-    width: 17rem;
-    left: 7rem;
-    top: 15rem;
+    font-size: 1.5rem;
+    color:rgb(1, 16, 16);
+    width: 19rem;
+    left: 1rem;
+    top: 16rem;
     cursor: pointer;
 }
 
@@ -168,9 +168,9 @@
 .sale-label-valor{
     position: absolute;
     width: 18rem;
-    left: 6rem;
-    top: 12rem;
-    color: aqua;
+    left: 3rem;
+    top: 12.2rem;
+    color:rgb(1, 16, 16);
     font-size: 28px;
 }
 
@@ -179,9 +179,17 @@
     display: flex;
     position: absolute;
     border:none;
-    width: 4.3rem;
-    left: 1rem;
-    top: 5rem;
+    width: 4.2rem;
+    left: 17.7rem;
+    top:14.3rem;
     cursor: pointer;
+}
+.sale-input-disc_sale{
+    position: absolute;
+    width: 6rem;
+    left: 8.6rem;
+    top: 20rem;
+    cursor: pointer;
+
 }
 
