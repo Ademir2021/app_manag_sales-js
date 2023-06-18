@@ -12,7 +12,6 @@ export function ProcessItensSaleForm({
   handleSubmit,
   children,
   loadItens
-
 }: TProcessItensSaleForm) {
 
   return (

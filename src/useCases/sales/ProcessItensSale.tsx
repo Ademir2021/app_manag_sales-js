@@ -5,7 +5,7 @@ import { BackHome } from "../../components/utils/backHome/BackHome";
 import "../../App.css"
 
 type TSale = {
-    filial: number | any;
+    filial: number;
     user_id: number;
     user: string;
     fk_name_pers: number;
@@ -19,7 +19,7 @@ type TSale = {
 type TItens = {
     id: number;
     item: number;
-    descric: string | number | "" | 0;
+    descric: string;
     amount: number;
     valor: number;
     tItem: number;
@@ -32,6 +32,7 @@ export function ProcessItensSale() {
     const [itens, setItens] = useState<TItens[]>([]);
     const [sale, setSale] = useState<TSale>(
         { filial: 0, user_id: 0, user: "", fk_name_pers: 0, name_pers: "", disc_sale: 0, tItens: 0, tNote: 0, paySale: 0 });
+
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -62,6 +63,7 @@ export function ProcessItensSale() {
     }, [sale]);
 
     function payment() {
+        if(itens !== null ){
         const sum: number = processNote()
         let payment = sale.paySale
         let totalNote = 0
@@ -79,17 +81,23 @@ export function ProcessItensSale() {
                     alert("A venda será enviada !")
                     registerSale()
                     registerItens()
+                    localStorage.removeItem('i');
+                    setTimeout(() => { 
+                        window.location.replace("/sale")
+                    }, 3000);
                 } else {
                     alert("Realizar pagto. " + (totalNote - sale.paySale))
                 }
             }
         }
+    }
+    else
+    {alert("Pedido já foi Enviado")}
     };
 
     async function handleSubmit(e: Event) {
         e.preventDefault();
-        payment()
-        localStorage.removeItem('i');
+            payment()  
     };
 
     async function registerSale() {
@@ -99,8 +107,6 @@ export function ProcessItensSale() {
                 headers: { "Content-Type": "application/json", },
                 body: JSON.stringify(sale),
             });
-            const num_sale = await response.json();
-            alert(JSON.stringify("Venda Nº:" + num_sale + " efetuada com sucesso !"))
         } catch (error) {
             console.error("Error:", error)
         }
@@ -129,7 +135,5 @@ export function ProcessItensSale() {
                 {sale}
             </ProcessItensSaleForm>
         </>
-
-
     )
 }

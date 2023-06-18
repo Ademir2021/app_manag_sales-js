@@ -109,7 +109,7 @@ export function RegisterSale() {
         for (let i = 0; products.length > i; i++) {
             setEditId(editId)
             if (editId === null) {
-                if (product.descric === products[i].id_product
+                if (product.descric == products[i].id_product
                     || product.descric === products[i].bar_code
                     || product.descric === products[i].descric_product) {
                     product.id = id
@@ -177,7 +177,7 @@ export function RegisterSale() {
         return itens.push(product)
     };
 
-    const currencyFormat = (valor:number) => {
+    const currencyFormat = (valor: number) => {
         return valor.toLocaleString('pt-BR',
             { style: 'currency', currency: 'BRL', })
     };
@@ -236,7 +236,9 @@ export function RegisterSale() {
                 localStorage.setItem("i", JSON.stringify(itens))
                 localStorage.setItem("s", JSON.stringify(sumItens()))
                 alert("Pedido gravado com sucesso")
-                window.location.replace("/process_sale")
+                setTimeout(() => {
+                    window.location.replace("/process_sale")
+                }, 1000)
             } else {
                 alert("Aguarde o retorno! existe um pedido gravado em aberto !")
             }
@@ -307,16 +309,7 @@ export function RegisterSale() {
             >
                 {product}
             </RegisterSaleForm>
-
-            {/* <div>
-<input
-type="number"
-value={diskSale}
-onChange={(e:any)=> setDisc_sale(e.target.value)}
-/>
-<button ></button>
-</div> */}
-                <div><a href="/process_sale" >Nota</a></div>
+            <div><a href="/process_sale" >Nota</a></div>
             <footer><br /><strong style={{ color: 'blue' }}>Fim</strong></footer>
         </>
     )
