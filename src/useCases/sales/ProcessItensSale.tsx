@@ -62,7 +62,7 @@ export function ProcessItensSale() {
         processNote()
     }, [sale]);
 
-    function payment() {
+   function payment() {
         if(itens !== null ){
         const sum: number = processNote()
         let payment = sale.paySale
@@ -80,7 +80,7 @@ export function ProcessItensSale() {
                     alert("Pagto OK." + payment)
                     alert("A venda será enviada !")
                     registerSale()
-                    registerItens()
+                    setTimeout(()=>{ registerItens()},1000)
                     localStorage.removeItem('i');
                     setTimeout(() => { 
                         window.location.replace("/sale")
@@ -90,9 +90,9 @@ export function ProcessItensSale() {
                 }
             }
         }
-    }
-    else
-    {alert("Pedido já foi Enviado")}
+    }else{
+            alert("Pedido já foi Enviado")
+         }
     };
 
     async function handleSubmit(e: Event) {
@@ -107,6 +107,8 @@ export function ProcessItensSale() {
                 headers: { "Content-Type": "application/json", },
                 body: JSON.stringify(sale),
             });
+            const num_sale = await response.json();
+            console.log(num_sale)
         } catch (error) {
             console.error("Error:", error)
         }
