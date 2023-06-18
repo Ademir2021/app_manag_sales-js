@@ -56,7 +56,7 @@ export function ProcessItensSaleForm({
               <input className='sale-input-disc_sale'
                 type='number'
                 name="disc_sale"
-                value={children.disc_sale || "" }
+                value={children.disc_sale || ""}
                 placeholder='Desconto'
                 required
                 onChange={handleChange}

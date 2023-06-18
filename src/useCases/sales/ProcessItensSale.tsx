@@ -13,10 +13,7 @@ type TSale = {
     disc_sale: number;
     tItens: number;
     tNote: number;
-    paySale: number
-};
-
-type TItens = {
+    paySale: number;
     id: number;
     item: number;
     descric: string;
@@ -26,12 +23,31 @@ type TItens = {
 };
 
 export function ProcessItensSale() {
-    const url = "http://192.168.80.109:3000"
-    const urlSales = url + "/sales"
-    const urlItens = url + "/itens"
-    const [itens, setItens] = useState<TItens[]>([]);
-    const [sale, setSale] = useState<TSale>(
-        { filial: 0, user_id: 0, user: "", fk_name_pers: 0, name_pers: "", disc_sale: 0, tItens: 0, tNote: 0, paySale: 0 });
+
+    const url = "http://192.168.80.109:3000";
+    const urlSales = url + "/sales";
+
+    const [itens, setItens] = useState<TSale[]>([]);
+
+    const [sale, setSale] = useState<TSale>({
+        filial: 0,
+        user_id: 0,
+        user: "",
+        fk_name_pers: 0,
+        name_pers: "",
+        disc_sale: 0,
+        tItens: 0,
+        tNote: 0,
+        paySale: 0,
+        id: 0,
+        item: 0,
+        descric: '',
+        amount: 0,
+        valor: 0,
+        tItem: 0,
+    });
+
+    const [sales, setSales] = useState<TSale[]>([])
 
     const handleChange = (e: any) => {
         const name = e.target.name;
@@ -62,42 +78,49 @@ export function ProcessItensSale() {
         processNote()
     }, [sale]);
 
-   function payment() {
-        if(itens !== null ){
-        const sum: number = processNote()
-        let payment = sale.paySale
-        let totalNote = 0
-        const limitDesc = (sale.disc_sale > sum * 0.10)
-        totalNote += sum
-        totalNote -= sale.disc_sale
-        if (limitDesc) {
-            alert("Desconto não autorizado")
-        } else {
-            if (totalNote === 0) {
-                alert("Nenhum item(s) no momento !!")
+    function payment() {
+        if (itens !== null) {
+            const sum: number = processNote()
+            let payment = sale.paySale
+            let totalNote = 0
+            const limitDesc = (sale.disc_sale > sum * 0.10)
+            totalNote += sum
+            totalNote -= sale.disc_sale
+            if (limitDesc) {
+                alert("Desconto não autorizado")
             } else {
-                if (payment == sale.tNote) {
-                    alert("Pagto OK." + payment)
-                    alert("A venda será enviada !")
-                    registerSale()
-                    setTimeout(()=>{ registerItens()},1000)
-                    localStorage.removeItem('i');
-                    setTimeout(() => { 
-                        window.location.replace("/sale")
-                    }, 3000);
+                if (totalNote === 0) {
+                    alert("Nenhum item(s) no momento !!")
                 } else {
-                    alert("Realizar pagto. " + (totalNote - sale.paySale))
+                    if (payment == sale.tNote) {
+                        alert("Pagto OK." + payment)
+                        alert("A venda será enviada !")
+                        registerSale()
+                        setTimeout(() => {
+                            window.location.replace("/sale")
+                        }, 3000);
+                    } else {
+                        alert("Realizar pagto. " + (totalNote - sale.paySale))
+                    }
                 }
             }
-        }
-    }else{
+        } else {
             alert("Pedido já foi Enviado")
-         }
+        }
+    };
+
+    function prepareSales() {
+        sales.push(sale)
+        for (let i = 0; itens.length > i; i++) {
+            sales.push(itens[i])
+        }
+        setSales(sales)
     };
 
     async function handleSubmit(e: Event) {
         e.preventDefault();
-            payment()  
+        payment()
+        prepareSales()
     };
 
     async function registerSale() {
@@ -105,27 +128,14 @@ export function ProcessItensSale() {
             const response = await fetch(urlSales, {
                 method: "POST",
                 headers: { "Content-Type": "application/json", },
-                body: JSON.stringify(sale),
+                body: JSON.stringify(sales),
             });
             const num_sale = await response.json();
-            console.log(num_sale)
+            alert(JSON.stringify("Nota Nº:" + num_sale + " inserida com sucesso !"))
         } catch (error) {
             console.error("Error:", error)
         }
     };
-    async function registerItens() {
-        try {
-            const response = await fetch(urlItens, {
-                method: "POST",
-                headers: { "Content-Type": "application/json", },
-                body: JSON.stringify(itens),
-            });
-            const num_sale = await response.json();
-            alert(JSON.stringify("Itens da Nota Nº:" + num_sale + " inserido com sucesso !"))
-        } catch (error) {
-            console.error("Error:", error)
-        }
-    }
 
     return (
         <>

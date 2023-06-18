@@ -58,10 +58,7 @@ export function RegisterSale() {
     const getSale = useCallback(async () => {
         const res: [] | any = localStorage.getItem('u')
         const user = JSON.parse(res)
-        if (user === null) {
-            alert("nenhum usuário logado no momento")
-        }
-        else if (user !== null) {
+         if (user !== null) {
             try {
                 setSale(user[0].id);
                 setSale(user[0].username);
@@ -84,7 +81,7 @@ export function RegisterSale() {
                 console.log("error occurred !" + err)
             }
         }
-    }, [setSale]);
+    },[setSale]);
 
     useEffect(() => {
         getSale()
@@ -109,7 +106,7 @@ export function RegisterSale() {
         for (let i = 0; products.length > i; i++) {
             setEditId(editId)
             if (editId === null) {
-                if (product.descric == products[i].id_product
+                if (product.descric === products[i].id_product
                     || product.descric === products[i].bar_code
                     || product.descric === products[i].descric_product) {
                     product.id = id
