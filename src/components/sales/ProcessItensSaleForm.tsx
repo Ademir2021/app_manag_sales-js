@@ -4,12 +4,14 @@ type TProcessItensSaleForm= {
   children: string | number | readonly string[] | undefined | any;
   handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
   handleSubmit: React.FormEventHandler<HTMLFormElement> | undefined | any;
+  loadItens?:any
 }
 
 export function ProcessItensSaleForm({
   handleChange,
   handleSubmit,
   children,
+  loadItens
 
 }: TProcessItensSaleForm) {
 
@@ -17,7 +19,7 @@ export function ProcessItensSaleForm({
       <div className="container" >
         <div className="main">
           <div className='f-form'>
-            <form style={{fontSize:'12px'}} onSubmit={handleSubmit}>
+            <form style={{fontSize:'1rem'}} onSubmit={handleSubmit}>
               <header>
               <div>
               <strong><span>Filial </span>{children.filial}</strong>
@@ -39,7 +41,7 @@ export function ProcessItensSaleForm({
                 </div>
                 <strong><span>Total Nota: R$</span>{children.tNote}</strong>
                 <div>
-                <strong><span>Pagamneto: R$</span>{children.paySale}</strong>
+                <strong><span>Pagamento: R$</span>{children.paySale}</strong>
                 </div>
               </main>
 
@@ -60,7 +62,8 @@ export function ProcessItensSaleForm({
                 required
                 onChange={handleChange}
                 />
-              <button className='sale-save-update'>Gravar Venda</button>
+              <button className='sale-send-sale'>Gravar Venda</button>
+              <span className='load-list-itens' >{loadItens}</span>
             </form>
             </div>
           </div>

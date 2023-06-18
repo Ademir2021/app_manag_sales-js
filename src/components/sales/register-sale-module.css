@@ -189,7 +189,7 @@
     position: absolute;
     width: 7rem;
     left: 0rem;
-    top: 9rem;
+    top: 12rem;
     cursor: pointer;
 }
 
@@ -197,7 +197,16 @@
     position: absolute;
     width: 7rem;
     left: 0rem;
-    top: 12rem;
+    top: 15rem;
     cursor: pointer;
+}
+.sale-send-sale{
+    position: absolute;
+    width: 9rem;
+    left: 0rem;
+    top: 18rem;
+    cursor: pointer;
+    border:none;
+
 }
 

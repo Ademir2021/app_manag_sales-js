@@ -10,10 +10,10 @@ type TSale = {
     user: string;
     fk_name_pers: number;
     name_pers: string;
-    disc_sale: number ;
-    tItens:number;
-    tNote:number;
-    paySale:number
+    disc_sale: number;
+    tItens: number;
+    tNote: number;
+    paySale: number
 };
 
 type TItens = {
@@ -31,14 +31,14 @@ export function ProcessItensSale() {
     const urlItens = url + "/itens"
     const [itens, setItens] = useState<TItens[]>([]);
     const [sale, setSale] = useState<TSale>(
-       { filial:0, user_id:0, user:"", fk_name_pers:0, name_pers:"", disc_sale:0, tItens:0, tNote:0, paySale:0 });
+        { filial: 0, user_id: 0, user: "", fk_name_pers: 0, name_pers: "", disc_sale: 0, tItens: 0, tNote: 0, paySale: 0 });
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
         setSale((values: any) => ({ ...values, [name]: value }))
     };
-    
-    function processNote(){
+
+    function processNote() {
         const resSum: [] | any = localStorage.getItem('s')
         const sum = JSON.parse(resSum)
         const resNote: [] | any = localStorage.getItem('n')
@@ -56,13 +56,13 @@ export function ProcessItensSale() {
         setItens(itens)
         return sum
     }
-   
+
     useEffect(() => {
         processNote()
-    },[sale]);
+    }, [sale]);
 
     function payment() {
-        const sum:number = processNote() 
+        const sum: number = processNote()
         let payment = sale.paySale
         let totalNote = 0
         const limitDesc = (sale.disc_sale > sum * 0.10)
@@ -77,8 +77,8 @@ export function ProcessItensSale() {
                 if (payment == sale.tNote) {
                     alert("Pagto OK." + payment)
                     alert("A venda será enviada !")
-                    // registerSale()
-                    // registerItens()
+                    registerSale()
+                    registerItens()
                 } else {
                     alert("Realizar pagto. " + (totalNote - sale.paySale))
                 }
@@ -96,7 +96,7 @@ export function ProcessItensSale() {
         try {
             const response = await fetch(urlSales, {
                 method: "POST",
-                headers: { "Content-Type": "application/json",},
+                headers: { "Content-Type": "application/json", },
                 body: JSON.stringify(sale),
             });
             const num_sale = await response.json();
@@ -109,20 +109,19 @@ export function ProcessItensSale() {
         try {
             const response = await fetch(urlItens, {
                 method: "POST",
-                headers: { "Content-Type": "application/json",},
+                headers: { "Content-Type": "application/json", },
                 body: JSON.stringify(itens),
             });
             const num_sale = await response.json();
-            alert(JSON.stringify("Itens da Nota Nº:" + num_sale + " inseridi com sucesso !"))
+            alert(JSON.stringify("Itens da Nota Nº:" + num_sale + " inserido com sucesso !"))
         } catch (error) {
             console.error("Error:", error)
         }
     }
-    
+
     return (
         <>
-            <BackHome/>
-
+            <BackHome />
             <ProcessItensSaleForm
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
@@ -130,5 +129,7 @@ export function ProcessItensSale() {
                 {sale}
             </ProcessItensSaleForm>
         </>
+
+
     )
 }
