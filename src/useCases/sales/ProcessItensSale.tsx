@@ -13,6 +13,7 @@ type TSale = {
     disc_sale: number ;
     tItens:number;
     tNote:number;
+    paySale:number
 };
 
 type TItens = {
@@ -30,7 +31,7 @@ export function ProcessItensSale() {
     const urlItens = url + "/itens"
     const [itens, setItens] = useState<TItens[]>([]);
     const [sale, setSale] = useState<TSale>(
-       { filial:0, user_id:0, user:"", fk_name_pers:0, name_pers:"", disc_sale:0, tItens:0, tNote:0 });
+       { filial:0, user_id:0, user:"", fk_name_pers:0, name_pers:"", disc_sale:0, tItens:0, tNote:0, paySale:0 });
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -53,16 +54,41 @@ export function ProcessItensSale() {
         const itens = JSON.parse(resItens)
         setSale(sale)
         setItens(itens)
+        return sum
     }
    
     useEffect(() => {
         processNote()
     },[sale]);
 
+    function payment() {
+        const sum:number = processNote() 
+        let payment = sale.paySale
+        let totalNote = 0
+        const limitDesc = (sale.disc_sale > sum * 0.10)
+        totalNote += sum
+        totalNote -= sale.disc_sale
+        if (limitDesc) {
+            alert("Desconto não autorizado")
+        } else {
+            if (totalNote === 0) {
+                alert("Nenhum item(s) no momento !!")
+            } else {
+                if (payment == sale.tNote) {
+                    alert("Pagto OK." + payment)
+                    alert("A venda será enviada !")
+                    // registerSale()
+                    // registerItens()
+                } else {
+                    alert("Realizar pagto. " + (totalNote - sale.paySale))
+                }
+            }
+        }
+    };
+
     async function handleSubmit(e: Event) {
         e.preventDefault();
-         registerSale()
-         registerItens()
+        payment()
         localStorage.removeItem('i');
     };
 

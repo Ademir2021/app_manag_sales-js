@@ -184,12 +184,20 @@
     top:14.3rem;
     cursor: pointer;
 }
+
 .sale-input-disc_sale{
     position: absolute;
-    width: 6rem;
-    left: 8.6rem;
-    top: 20rem;
+    width: 7rem;
+    left: 0rem;
+    top: 9rem;
     cursor: pointer;
+}
 
+.sale-input-payment-sale{
+    position: absolute;
+    width: 7rem;
+    left: 0rem;
+    top: 12rem;
+    cursor: pointer;
 }
 

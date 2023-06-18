@@ -38,12 +38,24 @@ export function ProcessItensSaleForm({
                 <strong><span>Desconto </span>{children.disc_sale}</strong>
                 </div>
                 <strong><span>Total Nota: R$</span>{children.tNote}</strong>
+                <div>
+                <strong><span>Pagamneto: R$</span>{children.paySale}</strong>
+                </div>
               </main>
+
+              <input className='sale-input-payment-sale'
+                type='number'
+                name="paySale"
+                value={children.paySale || ""}
+                placeholder="Pagamento"
+                required
+                onChange={handleChange}
+                />
 
               <input className='sale-input-disc_sale'
                 type='number'
                 name="disc_sale"
-                value={children.disc_sale }
+                value={children.disc_sale || "" }
                 placeholder='Desconto'
                 required
                 onChange={handleChange}
