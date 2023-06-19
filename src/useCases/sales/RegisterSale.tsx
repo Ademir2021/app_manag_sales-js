@@ -10,7 +10,7 @@ import "../../App.css"
 type TProduct = {
     id: number;
     item: number;
-    descric: string | number | "" | 0 | any;
+    descric: string |  number;
     valor: number;
     amount: number;
     tItem: number;
@@ -18,7 +18,7 @@ type TProduct = {
 type TItens = {
     id: number;
     item: number;
-    descric: string | number | "" | 0;
+    descric: string | number;
     amount: number;
     valor: number;
     tItem: number;
@@ -106,7 +106,7 @@ export function RegisterSale() {
         for (let i = 0; products.length > i; i++) {
             setEditId(editId)
             if (editId === null) {
-                if (product.descric === products[i].id_product
+                if (product.descric == products[i].id_product
                     || product.descric === products[i].bar_code
                     || product.descric === products[i].descric_product) {
                     product.id = id
@@ -134,13 +134,15 @@ export function RegisterSale() {
         for (let i = 0; products.length > i; i++) {
             setEditId(editId)
             if (editId !== null) {
-                if (product.descric === products[i].id_product
+                if (product.descric == products[i].id_product
                     || product.descric === products[i].bar_code
                     || product.descric === products[i].descric_product) {
-                    let up = { id: 0, item: 0, descric: '', valor: 0, amount: 0, tItem: 0 }
+                    let up = { id: 0, item: 0, descric: 0, valor: 0, amount: 0, tItem: 0 }
+                    let temp: any = ''
                     up.id = editId
                     up.item = products[i].id_product
-                    up.descric = product.descric
+                    temp = products[i].descric_product
+                    up.descric = temp
                     up.valor = products[i].val_max_product
                     up.amount = product.amount
                     up.tItem = 0
