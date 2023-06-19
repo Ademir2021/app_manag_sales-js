@@ -95,7 +95,9 @@ export function ProcessItensSale() {
                     if (payment == sale.tNote) {
                         alert("Pagto OK." + payment)
                         alert("A venda será enviada !")
+                        prepareSales()
                         registerSale()
+                        localStorage.removeItem('i');
                         setTimeout(() => {
                             window.location.replace("/sale")
                         }, 3000);
@@ -120,7 +122,7 @@ export function ProcessItensSale() {
     async function handleSubmit(e: Event) {
         e.preventDefault();
         payment()
-        prepareSales()
+        console.log(sales)
     };
 
     async function registerSale() {
