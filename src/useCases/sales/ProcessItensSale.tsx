@@ -26,9 +26,7 @@ export function ProcessItensSale() {
 
     const url = "http://192.168.80.109:3000";
     const urlSales = url + "/sales";
-
     const [itens, setItens] = useState<TSale[]>([]);
-
     const [sale, setSale] = useState<TSale>({
         filial: 0,
         user_id: 0,
@@ -46,7 +44,6 @@ export function ProcessItensSale() {
         valor: 0,
         tItem: 0,
     });
-
     const [sales, setSales] = useState<TSale[]>([])
 
     const handleChange = (e: any) => {
@@ -60,11 +57,12 @@ export function ProcessItensSale() {
         const sum = JSON.parse(resSum)
         const resNote: [] | any = localStorage.getItem('n')
         const note = JSON.parse(resNote)
-        sale.filial = note.filial
-        sale.user_id = note.user_id
-        sale.user = note.user
-        sale.fk_name_pers = note.fk_name_pers
-        sale.name_pers = note.name_pers
+        const {filial, user_id, user, fk_name_pers, name_pers} = note
+        sale.filial = filial
+        sale.user_id = user_id
+        sale.user = user
+        sale.fk_name_pers = fk_name_pers
+        sale.name_pers = name_pers
         sale.tItens = sum
         sale.tNote = sale.tItens - sale.disc_sale
         const resItens: [] | any = localStorage.getItem('i')
@@ -102,7 +100,7 @@ export function ProcessItensSale() {
                             window.location.replace("/sale")
                         }, 3000);
                     } else {
-                        alert("Realizar pagto. " + (totalNote - sale.paySale))
+                        alert("Confirme devido de " + (totalNote - sale.paySale))
                     }
                 }
             }

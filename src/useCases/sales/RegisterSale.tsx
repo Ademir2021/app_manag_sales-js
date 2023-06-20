@@ -10,7 +10,7 @@ import "../../App.css"
 type TProduct = {
     id: number;
     item: number;
-    descric: string |  number;
+    descric: string | number;
     valor: number;
     amount: number;
     tItem: number;
@@ -58,7 +58,7 @@ export function RegisterSale() {
     const getSale = useCallback(async () => {
         const res: [] | any = localStorage.getItem('u')
         const user = JSON.parse(res)
-         if (user !== null) {
+        if (user !== null) {
             try {
                 setSale(user[0].id);
                 setSale(user[0].username);
@@ -81,7 +81,7 @@ export function RegisterSale() {
                 console.log("error occurred !" + err)
             }
         }
-    },[setSale]);
+    }, [setSale]);
 
     useEffect(() => {
         getSale()
@@ -211,7 +211,7 @@ export function RegisterSale() {
         e.preventDefault();
         if (editId !== null) {
             deleteProduct()
-            alert("Item do ID: " + editId + " deletado com sucesso")
+            alert("Item com ID: " + editId + " deletado com sucesso")
             openClearNewSale()
         } else {
             alert("Busque um novo item !")
@@ -219,7 +219,7 @@ export function RegisterSale() {
         }
     };
 
-    async function handleSubmit(e: Event) {
+    function handleSubmit(e: Event) {
         e.preventDefault();
         if (statusBtnSaleSubmit === "Iniciar") {
             itens.length === 0 ? alert("Iniciar compra !") :
@@ -227,19 +227,24 @@ export function RegisterSale() {
             setStatusBtnSaleSubmit("Enviar")
         } else {
             setStatusBtnSaleSubmit("Iniciar")
-            alert("Seu pedido será gravada")
-            const itens_store_res: [] | any = localStorage.getItem('i')
-            const itens_store = JSON.parse(itens_store_res)
-            console.log(itens_store)
-            if (itens_store_res === null) {
-                localStorage.setItem("i", JSON.stringify(itens))
-                localStorage.setItem("s", JSON.stringify(sumItens()))
-                alert("Pedido gravado com sucesso")
-                setTimeout(() => {
-                    window.location.replace("/process_sale")
-                }, 1000)
+            if (itens.length === 0) {
+                alert("Informe ao menos um item e clique em Salvar !")
             } else {
-                alert("Aguarde o retorno! existe um pedido gravado em aberto !")
+                alert("Seu pedido será gravado")
+                console.log(itens)
+                const itens_store_res: [] | any = localStorage.getItem('i')
+                const itens_store = JSON.parse(itens_store_res)
+                console.log(itens_store)
+                if (itens_store_res === null) {
+                    localStorage.setItem("i", JSON.stringify(itens))
+                    localStorage.setItem("s", JSON.stringify(sumItens()))
+                    alert("Pedido gravado com sucesso")
+                    setTimeout(() => {
+                        window.location.replace("/process_sale")
+                    }, 1000)
+                } else {
+                    alert("Aguarde retorno! existe um pedido  em aberto !")
+                }
             }
         }
     };

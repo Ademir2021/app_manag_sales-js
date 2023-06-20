@@ -18,29 +18,29 @@ export function ProcessItensSaleForm({
       <div className="container" >
         <div className="main">
           <div className='f-form'>
-            <form style={{fontSize:'1rem'}} onSubmit={handleSubmit}>
+          
+            <form onSubmit={handleSubmit}>
               <header>
               <div>
-              <strong><span>Filial </span>{children.filial}</strong>
+              <div><>Filial </>{children.filial}</div>
               </div>
               <div>
-              <strong><span>User </span>{children.user_id}</strong>
-              <strong><span> </span>{children.user}</strong>
+              <div><>User_ID </>{children.user_id}</div>
+              <div><>User_email </>{children.user}</div>
               </div>
               <div>
-              <strong><span>Cliente </span>{children.fk_name_pers}</strong>
-              <strong><span> </span>{children.name_pers}</strong>
+              <div><>Cliente_ID </>{children.fk_name_pers}</div>
+              <div><>Cliente </>{children.name_pers}</div>
               </div>
               </header>
-
-              <main>
-                <strong><span>Total Produtos: R$ </span>{children.tItens}</strong>
+              <main style={{color:"blue"}} >
+                <div><>Total Produtos R$ </>{children.tItens}</div>
                 <div>
-                <strong><span>Desconto </span>{children.disc_sale}</strong>
+                <div><>Desconto </>{children.disc_sale}</div>
                 </div>
-                <strong><span>Total Nota: R$</span>{children.tNote}</strong>
+                <div><>Total Nota R$</>{children.tNote}</div>
                 <div>
-                <strong><span>Pagamento: R$</span>{children.paySale}</strong>
+                <div><>Pagamento R$</>{children.paySale}</div>
                 </div>
               </main>
 
@@ -65,7 +65,7 @@ export function ProcessItensSaleForm({
               <span className='load-list-itens' >{loadItens}</span>
             </form>
             </div>
+            </div>
           </div>
-        </div>
   );
 }
