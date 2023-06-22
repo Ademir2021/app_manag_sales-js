@@ -6,7 +6,6 @@ import { Dashboard } from "./useCases/dashboard/Dashboard";
 import { UserRegister } from './useCases/users/UserRegister';
 import { UsersList } from './useCases/users/UsersList';
 import { UserUpdate } from "./useCases/users/UserUpdate";
-import { Sale } from './useCases/sales/Sale'
 import { RegisterSale } from "./useCases/sales/RegisterSale";
 import { ProcessItensSale } from './useCases/sales/ProcessItensSale';
 import { ListSales } from './useCases/sales/ListSale';
@@ -45,7 +44,6 @@ export function AppRoutes() {
                     <Route path="/dashboard" element={<Private><Dashboard/></Private>} />
                     <Route path="/users_list" element={<Private><UsersList/></Private>} />
                     <Route path="/user_update" element={<Private><UserUpdate/></Private>} />
-                    <Route path="/update_sale" element={<Private><Sale/></Private>} />
                     <Route path="/process_sale" element={<Private><ProcessItensSale/></Private>} />
                     <Route path="/sale" element={<Private><RegisterSale/></Private>} />
                     <Route path="/list_sale" element={<Private><ListSales/></Private>} />

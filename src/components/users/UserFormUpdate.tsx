@@ -1,4 +1,6 @@
-import './styles.css'
+
+import '../global-module.css';
+import './index.css';
 
 type PropsUsersFormUpdate = {
     children: string | number | readonly string[] | undefined | any;
@@ -24,10 +26,10 @@ export function UserFormUpdate({
     return (
 
         <div ref={modalRef} className={`${className} modal`}>
-            <div className="container">
-                <div className="main">
+            <div className="container-modal_">
+                <div className="main_">
                     <button className="btn-modal" onClick={close}>Voltar</button>
-                    <div className='f-form'>
+                    <div className='form_'>
                     <form onSubmit={handleSubmit}>
                         <label className="update-text-id">ID do Usuário</label>
                         <input

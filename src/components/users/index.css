@@ -1,10 +1,12 @@
-div {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* color: #0b0c3d; */
-    /* color:rgb(165, 191, 191); */
-    color: white;
-    border-radius: 2px;
+.container-user_{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: -7rem;
+    /* min-height: 100vh; */
 }
+
 
 ::placeholder {
     font-size: 13px;
@@ -12,7 +14,6 @@ div {
 
 .modal {
     display: none;
-    margin-top: 3rem;
 }
 
 .btn-modal {
@@ -26,28 +27,7 @@ div {
     margin-top: 6.7rem;
 }
 
-.container {
-    margin-top: -6.2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 0 2rem;
-}
 
-.main {
-    height: 29rem;
-    width: 24rem;
-    padding: 22px 0px 0px 22px;
-    background-color: rgb(73, 80, 80);
-}
-
-.f-form {
-    padding: 0px 0px 0px 0px;
-    position: relative;
-    width: 20rem;
-}
 
 .email-label {
     position: absolute;
@@ -261,7 +241,7 @@ div {
     left: 0.1rem;
     top: 19.6rem;
     cursor: pointer;
-    text-decoration: none;
+    text-decoration:none;
     font-family: var(--label-font-family);
     font-size: var(--label-font-size);
     color: var(--label-color)

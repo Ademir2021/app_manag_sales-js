@@ -21,7 +21,7 @@
 .menu-home{
   display: flex;
   text-decoration: none;
-  margin-top: 1rem;
+  margin-top: 0rem;
   justify-content: center;
   padding: 12px;
   color:blue

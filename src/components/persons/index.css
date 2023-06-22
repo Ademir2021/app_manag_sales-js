@@ -1,15 +1,3 @@
-.modal {
-    display: none;
-    margin-top: 3rem;
-}
-
-.btn-modal {
-    display:contents;
-    cursor: pointer;
-}
-
-
-
 .button-pers {
     position: absolute;
     height: 40px;
@@ -96,8 +84,6 @@
     cursor: pointer;
 }
 
-
-
 .update-register {
     position: absolute;
     width: 5rem;
@@ -139,7 +125,6 @@
 .update-delete:hover {
     background-size: 2rem;
 }
-
 
 .pers-up-label-id{
     position: absolute;

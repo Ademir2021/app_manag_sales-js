@@ -307,14 +307,12 @@ export function RegisterSale() {
                                 editar={<div onClick={() =>
                                     updateListProduct(item)}>
                                     <a style={{ textDecoration: 'none' }}
-                                        href="##">Atualizar</a></div>}
+                                        href="#">Atualizar</a></div>}
                             />
                         )))}
             >
                 {product}
             </RegisterSaleForm>
-            <div><a href="/process_sale" >Nota</a></div>
-            <footer><br /><strong style={{ color: 'blue' }}>Fim</strong></footer>
         </>
     )
 }

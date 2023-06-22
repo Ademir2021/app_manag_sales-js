@@ -1,5 +1,7 @@
 import InputMask from "react-input-mask";
-import "./styles.css"
+
+import '../global-module.css'
+import "./index.css"
 
 type PropsPersonsFormUpdate = {
     children: string | number | readonly string[] | undefined | any;
@@ -25,10 +27,10 @@ export function PersonFormUpdate({
     return (
 
         <div ref={modalRef} className={`${className} modal`}>
-            <div className="container">
-                <div className="main">
+            <div className="container-modal_">
+                <div className="main_">
                     <button className="btn-modal" onClick={close}>Voltar</button>
-                    <div className='f-form'>
+                    <div className='form_'>
                         <form onSubmit={handleSubmit}>
                             <label className="pers-up-label-id">ID Cliente</label>
                             <input

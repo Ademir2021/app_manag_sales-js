@@ -1,13 +1,7 @@
-.menu-home{
-    text-decoration: none;
-    margin-top: 1rem;
-    justify-content: center;
-    padding: 12px;
-  }
-
 .container-module-list {
     /* height: auto; */
     /* background: #848a94; */
+    color:aqua;
     background: #112a49;
     width: 24rem;
     margin-left: auto;
@@ -160,5 +154,6 @@
 }
 
 .list-user-btn {
-    display: contents;
+    margin: none;
+    color:blue
  }

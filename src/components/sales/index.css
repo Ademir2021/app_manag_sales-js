@@ -1,31 +1,7 @@
-.container {
-    margin-top: -6rem;
-    height: 29rem;
-    width: 24rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-
-.main {
-    height: 30rem;
-    width: 25.5rem;
-    background-color: rgb(73, 80, 80);
-    border-radius: 1rem;
-     border: 2px solid gray;
-}
-
-.f-form {
-    width: 24rem;
-    height: 29rem;
-}
-
 .container-list-itens{
     display: flex;
-    width: 21rem;
-    height: 4rem;
+    width: 18.7rem;
+    height: 3.1rem;
     margin-top: 1px;
     flex-direction: column;
     align-items: center;
@@ -35,17 +11,17 @@
 
 .main-list-itens {
     height: 3rem;
-    width: 25.6rem;
-    font-size: 12px;
+    width: 26rem;
+    font-size: 0.8rem;
     border: 1px rgba(225, 225, 235, 0.889) solid;
     background-color: rgba(199, 217, 217, 0.559);
     border-radius: 6px;
 }
 
-.f-form-itens {
+.form-itens {
     padding: 2px 2px 2px 5px;
-    color:rgba(2, 12, 28, 0.882);
-    width: 23rem;
+    color:rgba(25, 19, 99, 0.882);
+    width: 27rem;
 }
 
 .load-list-itens{
@@ -62,7 +38,7 @@
     position: absolute;
     width: 7rem;
     height: 2.2rem;
-    left: 8rem;
+    left: 7rem;
     top: 23rem;
     border: none;
     cursor: pointer;
@@ -76,7 +52,7 @@
     position: absolute;
     width: 6rem;
     height: 2.2rem;
-    left: 16rem;
+    left: 15rem;
     top: 23rem;
     border: none;
     cursor: pointer;
@@ -90,7 +66,7 @@
     position: absolute;
     width: 6rem;
     height: 2.2rem;
-    left: 1rem;
+    left: 0rem;
     top: 23rem;
     border: none;
     cursor: pointer;
@@ -101,15 +77,15 @@
 }
 
 :root {
-    --label--color: rgba(147, 226, 200, 0.859);
-    --label--font-family:Verdana, Geneva, Tahoma, sans-serif;
-    --label--font-size:1.7rem;
+    --label--color:rgba(5, 10, 36, 0.867);;
+    --label--font-family:Arial;
+    --label--font-size:1.5rem;
 }
 
 .sale-label-descric {
     position: absolute;
     width: 18rem;
-    left: 1rem;
+    left: 0rem;
     top: 7rem;
     font-family:var(--label--font-family);
     color:var(--label--color);
@@ -119,7 +95,7 @@
 .sale-label-amount {
     position: absolute;
     width: 18rem;
-    left: 1rem;
+    left: 0rem;
     top: 12.3rem;
     font-family:var(--label--font-family);
     color:var(--label--color);
@@ -129,7 +105,7 @@
 .sale-label-total-itens{
     position: absolute;
     width: 19rem;
-    left: 1rem;
+    left: 0rem;
     top: 16rem;
     font-family:var(--label--font-family);
     color:var(--label--color);
@@ -139,7 +115,7 @@
 .sale-label-valor{
     position: absolute;
     width: 18rem;
-    left: 3rem;
+    left: 2rem;
     top: 12.2rem;
     font-family:var(--label--font-family);
     color:var(--label--color);
@@ -149,7 +125,8 @@
 .sale-input-descric {
     position: absolute;
     width: 21rem;
-    left: 1rem;
+    height: 2.4rem;
+    left: 0rem;
     top: 4rem;
     cursor: pointer;
 }
@@ -157,7 +134,7 @@
 .sale-input-amount {
     position: absolute;
     width: 5rem;
-    left: 17rem;
+    left: 16rem;
     top: 7rem;
     cursor: pointer;
 }
@@ -165,7 +142,7 @@
 .sale-input-val-max {
     position: absolute;
     width: 6rem;
-    left: 16rem;
+    left: 15rem;
     top: 12.3rem;
     cursor: pointer;
 }
@@ -173,7 +150,7 @@
 .sale-input-id{
     position: absolute;
     width: 3rem;
-    left: 15.9rem;
+    left: 14.9rem;
     top: 2rem;
     cursor: pointer;
 
@@ -182,20 +159,19 @@
 .sale-input-item{
     position: absolute;
     width: 3rem;
-    left: 19rem;
+    left: 18rem;
     top: 2rem;
     cursor: pointer;
 
 }
 
 .sale-search-item{
-    font-size: 12px;
-    display: flex;
     position: absolute;
+    font-size: 0.8rem;
     border:none;
-    width: 4.2rem;
-    left: 17.7rem;
-    top:14.3rem;
+    width: 6rem;
+    left: 15rem;
+    top:14.1rem;
     cursor: pointer;
 }
 

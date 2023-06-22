@@ -1,4 +1,5 @@
-import './register-sale-module.css'
+import '../global-module.css'
+import './index.css'
 
 type TProcessItensSaleForm= {
   children: string | number | readonly string[] | undefined | any;
@@ -15,9 +16,9 @@ export function ProcessItensSaleForm({
 }: TProcessItensSaleForm) {
 
   return (
-      <div className="container" >
-        <div className="main">
-          <div className='f-form'>
+      <div className="container_" >
+        <div className="main_">
+          <div className='form_'>
           
             <form onSubmit={handleSubmit}>
               <header>
@@ -33,7 +34,7 @@ export function ProcessItensSaleForm({
               <div><>Cliente </>{children.name_pers}</div>
               </div>
               </header>
-              <main style={{color:"blue"}} >
+              <main style={{color:"aqua"}} >
                 <div><>Total Produtos R$ </>{children.tItens}</div>
                 <div>
                 <div><>Desconto </>{children.disc_sale}</div>

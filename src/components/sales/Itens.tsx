@@ -1,4 +1,4 @@
-import './styles.css'
+import './index.css'
 
 type TItem = {
     id: number;
@@ -14,7 +14,7 @@ export function Itens({ id, item, descric, amount, valor, tItem, editar}:TItem){
     return(
     <div className='container-list-itens' >
         <div className='main-list-itens'>
-        <div className='f-form-itens'>
+        <div className='form-itens'>
             <span>ID:{id} </span>
             <span>Item:{item} </span>
             <span>{descric} </span>

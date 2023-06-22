@@ -1,6 +1,7 @@
 import { Button } from "../button/Button";
 
-import "./styles.css"
+import '../global-module.css'
+import "./index.css"
 
 type IProdctForm = {
     children:React.ChangeEventHandler<HTMLInputElement> | undefined | any;
@@ -13,9 +14,9 @@ export function ProductForm({
     handleChange,
     handleSubmit }: IProdctForm) {
     return (
-        <div className="container">
-            <fieldset className="main">
-                <form className="f-form" onSubmit={handleSubmit}>
+        <div className="container_">
+            <fieldset className="main_">
+                <form className="form_" onSubmit={handleSubmit}>
                     <label className="prod-descr-label" >Descrição Produto</label>
                     <input className="prod-descr-input"
                         type="text"

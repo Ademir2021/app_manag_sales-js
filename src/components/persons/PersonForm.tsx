@@ -2,7 +2,8 @@ import React from "react";
 import InputMask from "react-input-mask";
 import { Button } from "../button/Button";
 
-import "./styles.css"
+import '../global-module.css'
+import "./index.css"
 
 type IPersonForm = {
     children:string | number | readonly string[] | undefined | any;
@@ -16,9 +17,9 @@ export function PersonForm({
     handleSubmit,
  }: IPersonForm): JSX.Element {
     return (
-        <div className='container'>
-            <fieldset className="main">
-                <form className="f-form" onSubmit={handleSubmit}>
+        <div className='container_'>
+            <fieldset className="main_">
+                <form className="form_" onSubmit={handleSubmit}>
                     <label className="pers-name-label">Nome *</label>
                     <input className="pers-name-input"
                         type="text"

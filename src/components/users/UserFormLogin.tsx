@@ -3,7 +3,9 @@ import { BackHome } from '../utils/backHome/BackHome';
 import { Header } from './UserHeader';
 import { UserLink } from './UserLink';
 
- import './styles.css';
+
+import '../global-module.css';
+import './index.css';
 
 type PropsUserFormLogin = {
     children: string | number | readonly string[] | undefined | any;
@@ -21,12 +23,12 @@ export function UserFormLogin({
     alert }: PropsUserFormLogin) {
     return (
         <>
-            <div className='container'>
+            <div className='container-user_'>
                 <img className='login-secure' src='./img/secure.png'></img>
                 <BackHome/>
-                <fieldset className='main'>
+                <fieldset className='main_'>
                     <Header name="Login Usuário" />
-                    <form className="f-form" onSubmit={handleSubmit}>
+                    <form className="form_" onSubmit={handleSubmit}>
                         <label className='email-label'>Email</label>
                         <input className='email-input'
                             type="email"

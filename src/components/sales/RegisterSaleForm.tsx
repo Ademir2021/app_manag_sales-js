@@ -1,4 +1,5 @@
-import './register-sale-module.css'
+import '../global-module.css'
+import './index.css'
 
 type TRegisterSaleForm = {
   children: string | number | readonly string[] | undefined | any;
@@ -35,9 +36,10 @@ export function RegisterSaleForm({
 }: TRegisterSaleForm) {
 
   return (
-      <div className="container">
-        <div className="main">
-          <div className='f-form'>
+      <div className="container_">
+        <div className="main_">
+          <div>Formulário  pedido de venda</div>
+          <div className='form_'>
             <form onSubmit={handleSaveUpdate}>
               <label className='sale-label-descric'>{item}</label>
               <datalist id="data-itens">
