@@ -108,15 +108,15 @@ export function PersonFormUpdate({
                                 // required
                             />
 
-                            <button className="update-register">Registrar</button>
+                            <button className="update-person-register">Registrar</button>
                         </form>
 
                         <form onSubmit={handleUpdate}>
-                            <button className="update-update">Atualizar</button>
+                            <button className="update-person-update">Atualizar</button>
                         </form>
 
                         <form onSubmit={handleDelete}>
-                            <button className="update-delete">Novo</button>
+                            <button className="update-person-new">Novo</button>
                         </form>
 
                     </div>

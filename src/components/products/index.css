@@ -22,6 +22,8 @@
 
 .prod-descr-input {
     position: absolute;
+    width: 16rem;
+    height: 2rem;
     left: 0.1rem;
     top: 1.5rem;
 }
@@ -34,6 +36,8 @@
 
 .prod-val-max-input {
     position: absolute;
+    width: 8rem;
+    height: 2rem;
     left: 0.1rem;
     top: 5rem;
 }
@@ -46,6 +50,8 @@
 
 .prod-val-min-input {
     position: absolute;
+    width:8rem;
+    height: 2rem;
     left: 0.1rem;
     top: 8.6rem;
 }
@@ -58,6 +64,8 @@
 
 .prod-brand-input {
     position: absolute;
+    width:10rem;
+    height: 2rem;
     left: 0.1rem;
     top: 0rem;
 }
@@ -82,6 +90,8 @@
 
 .prod-sector-input {
     position: absolute;
+    width: 10rem;
+    height: 2rem;
     left: 0.1rem;
     top: 16rem;
 }
@@ -94,6 +104,8 @@
 
 .prod-barcode-input {
     position: absolute;
+    width: 16rem;
+    height: 2rem;
     left: 0.1rem;
     top: 20rem;
 }

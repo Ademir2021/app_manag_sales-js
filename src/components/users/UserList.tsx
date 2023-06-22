@@ -1,4 +1,4 @@
-import '../listStyles/module-list.css'
+import '../global-module-list.css'
 
 export type PropsUsers = {
     id: number;

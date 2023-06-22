@@ -1,8 +1,6 @@
 .container-module-list {
-    /* height: auto; */
-    /* background: #848a94; */
-    color:aqua;
-    background: #112a49;
+    color:rgba(26, 26, 161, 0.85);
+    background: #9ca4c71b;
     width: 24rem;
     margin-left: auto;
     margin-right: auto;
@@ -16,8 +14,7 @@
 
 :root {
     --list--font-size: 14px;
-    /* --list--color:rgb(15, 9, 55); */
-    --list--color:rgb(181, 178, 201);
+    --list--color:rgb(18, 57, 136);
 }
 
 .list-product-id {
@@ -155,5 +152,5 @@
 
 .list-user-btn {
     margin: none;
-    color:blue
+    color: var(--list--color)
  }

@@ -10,10 +10,11 @@
     width: 25rem;
     height: 30rem;
     padding: 2rem 2rem;
-    background-color: rgb(73, 80, 80);
+    background-color: rgb(103, 108, 107);
+    /* background-color: rgb(73, 80, 80); */
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;
-    color:rgba(232, 232, 218, 0.749);
+    color:rgba(228, 228, 217, 0.874);
     border-radius: 1rem;
     border:gray 0.2rem solid;
 }

@@ -38,7 +38,7 @@ export function RegisterSaleForm({
   return (
       <div className="container_">
         <div className="main_">
-          <div>Formulário  pedido de venda</div>
+          <div>Formulário de pedido</div>
           <div className='form_'>
             <form onSubmit={handleSaveUpdate}>
               <label className='sale-label-descric'>{item}</label>

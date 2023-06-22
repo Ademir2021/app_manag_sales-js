@@ -23,6 +23,7 @@
 .pers-name-input {
     position: absolute;
     width: 16rem;
+    height: 2rem;
     left: 0.1rem;
     top: 3rem;
     cursor: pointer;
@@ -37,6 +38,7 @@
 .pers-cpf-input {
     position: absolute;
     width: 9rem;
+    height: 2rem;
     left: 0.1rem;
     top: 6.6rem;
     cursor: pointer;
@@ -51,6 +53,7 @@
 .pers-phone-input {
     position: absolute;
     width: 9rem;
+    height: 2rem;
     left: 0.1rem;
     top: 10.4rem;
     cursor: pointer;
@@ -64,7 +67,8 @@
 
 .pers-address-input {
     position: absolute;
-    width: 18rem;
+    width: 21rem;
+    height: 2rem;
     left: 0.1rem;
     top: 14.2rem;
     cursor: pointer;
@@ -79,28 +83,29 @@
 .pers-filial-input {
     position: absolute;
     width: 4rem;
+    height: 2rem;
     left: 0.1rem;
     top: 18.1rem;
     cursor: pointer;
 }
 
-.update-register {
+.update-person-register {
     position: absolute;
-    width: 5rem;
+    width: 6rem;
     height: 2.2rem;
-    left: 2rem;
+    left: 1rem;
     top: 23rem;
     border: none;
     cursor: pointer;
 }
 
-.update-register:hover {
+.update-person-register:hover {
     background-size: 3rem;
 }
 
-.update-update {
+.update-person-update {
     position: absolute;
-    width: 5rem;
+    width: 6rem;
     height: 2.2rem;
     left: 8rem;
     top: 23rem;
@@ -108,34 +113,35 @@
     cursor: pointer;
 }
 
-.update-update:hover {
+.update-person-update:hover {
     background-size: 4rem;
 }
 
-.update-delete {
+.update-person-new {
     position: absolute;
-    width: 5rem;
+    width: 6rem;
     height: 2.2rem;
-    left: 14rem;
+    left: 15rem;
     top: 23rem;
     border: none;
     cursor: pointer;
 }
 
-.update-delete:hover {
+.update-person-new:hover {
     background-size: 2rem;
 }
 
 .pers-up-label-id{
     position: absolute;
     width: 7rem;
-    left: 12rem;
+    left: 10.8rem;
     top: 0.3rem;
 }
 
 .pers-up-in-id{
     position: absolute;
     width: 4rem;
+    height:2rem;
     left: 17rem;
     top: 0rem;
     cursor: pointer;
@@ -149,7 +155,8 @@
 
 .pers-up-in-name{
     position: absolute;
-    width: 21rem;
+    width: 16rem;
+    height:2rem;
     left: 0.1rem;
     top: 2.7rem;
     cursor: pointer;
@@ -163,7 +170,8 @@
 
 .pers-up-in-cpf{
     position: absolute;
-    width: 9rem;
+    width: 8rem;
+    height: 2rem;
     left: 0.1rem;
     top: 6.2rem;
     cursor: pointer;
@@ -178,7 +186,8 @@
 
 .pers-up-in-phone{
     position: absolute;
-    width: 10rem;
+    width: 8rem;
+    height: 2rem;
     left: 0.1rem;
     top: 9.7rem;
     cursor: pointer;
@@ -194,6 +203,7 @@
 .pers-up-in-address{
     position: absolute;
     width: 21rem;
+    height:2rem;
     left: 0.1rem;
     top: 13.1rem;
     cursor: pointer;
@@ -208,6 +218,7 @@
 .pers-up-in-filial{
     position: absolute;
     width: 4rem;
+    height:2rem;
     left: 0.1rem;
     top: 16.5rem;
     cursor: pointer;
@@ -223,6 +234,7 @@
 .pers-up-in-user{
     position: absolute;
     width: 4rem;
+    height: 2rem;
     left: 0.1rem;
     top: 20rem;
     cursor: pointer;

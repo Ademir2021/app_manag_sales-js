@@ -77,15 +77,15 @@ export function UserFormUpdate({
                             required
                         />
                         
-                        <button className="update-register">Registrar</button>
+                        <button className="update-user-register">Registrar</button>
                     </form>
 
                     <form onSubmit={handleUpdate}>
-                        <button className="update-update">Atualizar</button>
+                        <button className="update-user-update">Atualizar</button>
                     </form>
 
                     <form onSubmit={handleDelete}>
-                        <button className="update-delete">Novo</button>
+                        <button className="update-user-new">Novo</button>
                     </form>
 
                 </div>

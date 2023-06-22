@@ -12,22 +12,12 @@
     font-size: 13px;
 }
 
-.modal {
-    display: none;
-}
-
-.btn-modal {
-    display:contents;
-    cursor: pointer;
-}
 
 .login-secure{
     width:60px;
     height:60px;
     margin-top: 6.7rem;
 }
-
-
 
 .email-label {
     position: absolute;
@@ -37,6 +27,8 @@
 
 .email-input {
     position: absolute;
+    width: 16rem;
+    height: 2rem;
     left: 0.1rem;
     top: 1.6rem;
     cursor: pointer;
@@ -50,6 +42,8 @@
 
 .pass-input {
     position: absolute;
+    width: 10rem;
+    height: 2rem;
     left: 0.1rem;
     top: 7.5rem;
     cursor: pointer;
@@ -63,6 +57,8 @@
 
 .reg-name-input {
     position: absolute;
+    width: 16rem;
+    height: 2rem;
     left: 0.1rem;
     top: 1.6rem;
     cursor: pointer;
@@ -76,6 +72,8 @@
 
 .reg-email-input {
     position: absolute;
+    width: 16rem;
+    height: 2rem;
     left: 0.1rem;
     top: 5.5rem;
     cursor: pointer;
@@ -89,6 +87,8 @@
 
 .reg-pass-input {
     position: absolute;
+    width: 10rem;
+    height: 2rem;
     left: 0.1rem;
     top: 9.7rem;
     cursor: pointer;
@@ -102,6 +102,8 @@
 
 .reg-pass-repeat-input {
     position: absolute;
+    width: 10rem;
+    height: 2rem;
     left: 0.1rem;
     top: 13.4rem;
     cursor: pointer;
@@ -129,7 +131,8 @@
 
 .update-in-user {
     position: absolute;
-    width: 15rem;
+    width: 16rem;
+    height: 2rem;
     left: 2rem;
     top: 6.2rem;
     cursor: pointer;
@@ -143,7 +146,8 @@
 
 .update-in-email {
     position: absolute;
-    width: 15rem;
+    width: 16rem;
+    height:2rem;
     left: 2rem;
     top: 10.2rem;
     cursor: pointer;
@@ -157,7 +161,8 @@
 
 .update-in-password{
     position: absolute;
-    width: 15rem;
+    width: 10rem;
+    height:2rem;
     left: 2rem;
     top: 14.2rem;
     cursor: pointer;
@@ -171,15 +176,16 @@
 
 .update-in-psw-repeat{
     position: absolute;
-    width: 15rem;
+    width: 10rem;
+    height: 2rem;
     left: 2rem;
     top: 18.2rem;
     cursor: pointer;
 }
 
-.update-register {
+.update-user-register {
     position: absolute;
-    width: 5rem;
+    width: 6rem;
     height: 2.2rem;
     left: 2rem;
     top: 22rem;
@@ -187,35 +193,35 @@
     cursor: pointer;
 }
 
-.update-register:hover {
+.update-user-register:hover {
     background-size: 3rem;
 }
 
-.update-update {
+.update-user-update {
     position: absolute;
-    width: 5rem;
+    width: 6rem;
     height: 2.2rem;
-    left: 8rem;
+    left: 9rem;
     top: 22rem;
     border: none;
     cursor: pointer;
 }
 
-.update-update:hover {
+.update-user-update:hover {
     background-size: 4rem;
 }
 
-.update-delete {
+.update-user-new {
     position: absolute;
-    width: 5rem;
+    width: 6rem;
     height: 2.2rem;
-    left: 14rem;
+    left: 16rem;
     top: 22rem;
     border: none;
     cursor: pointer;
 }
 
-.update-delete:hover {
+.update-user-new:hover {
     background-size: 2rem;
 }
 

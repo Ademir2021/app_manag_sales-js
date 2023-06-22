@@ -1,4 +1,4 @@
-import '../../components/listStyles/module-list.css'
+import '../global-module-list.css'
 
 export function SalesList(props: any) {
     return (

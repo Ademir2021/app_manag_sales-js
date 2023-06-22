@@ -134,6 +134,7 @@
 .sale-input-amount {
     position: absolute;
     width: 5rem;
+    height:2rem;
     left: 16rem;
     top: 7rem;
     cursor: pointer;
@@ -142,16 +143,18 @@
 .sale-input-val-max {
     position: absolute;
     width: 6rem;
+    height: 2rem;
     left: 15rem;
-    top: 12.3rem;
+    top: 11.8rem;
     cursor: pointer;
 }
 
 .sale-input-id{
     position: absolute;
     width: 3rem;
+    height: 2rem;
     left: 14.9rem;
-    top: 2rem;
+    top: 1.6rem;
     cursor: pointer;
 
 }
@@ -159,8 +162,9 @@
 .sale-input-item{
     position: absolute;
     width: 3rem;
+    height: 2rem;
     left: 18rem;
-    top: 2rem;
+    top: 1.6rem;
     cursor: pointer;
 
 }
@@ -170,14 +174,16 @@
     font-size: 0.8rem;
     border:none;
     width: 6rem;
+    height: 2rem;
     left: 15rem;
-    top:14.1rem;
+    top:14rem;
     cursor: pointer;
 }
 
 .sale-input-disc_sale{
     position: absolute;
     width: 7rem;
+    height: 2rem;
     left: 0rem;
     top: 15rem;
     cursor: pointer;
@@ -186,6 +192,7 @@
 .sale-input-payment-sale{
     position: absolute;
     width: 7rem;
+    height:2rem;
     left: 0rem;
     top: 18rem;
     cursor: pointer;
