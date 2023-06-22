@@ -176,9 +176,9 @@ export function RegisterSale() {
         return itens.push(product)
     };
 
-    const currencyFormat = (valor: number) => {
-        return valor.toLocaleString('pt-BR',
-            { style: 'currency', currency: 'BRL', })
+    function currencyFormat  (money: number)  {
+        return money.toLocaleString('pt-br',{
+            style: 'currency', currency: 'BRL'});
     };
 
     function sumItens() {
@@ -186,8 +186,7 @@ export function RegisterSale() {
         for (var i = 0; i < itens.length; i++) {
             sum += (itens[i].amount * itens[i].valor)
         }
-        currencyFormat(sum)
-        setTotalItens(sum)
+            setTotalItens(sum)
         return sum
     };
 
@@ -292,7 +291,7 @@ export function RegisterSale() {
                 valor={preco <= 0 ? '' : ' X ' + preco}
                 statusBtnSaveUpdate={statusBtnSaveUpdate}
                 statusBtnSaleSubmit={statusBtnSaleSubmit}
-                totalItens={totalItens <= 0 ? '' : "Total compra: R$" + totalItens}
+                totalItens={totalItens <= 0 ? '' : "Total compra " + currencyFormat(totalItens)}
                 loadItens={itens.length === 0 ?
                     <strong style={{ color: "blue" }} >Carregando...</strong> : (
                         itens.map((item: TItens) => (
@@ -302,8 +301,8 @@ export function RegisterSale() {
                                 item={item.item}
                                 descric={item.descric}
                                 amount={item.amount}
-                                valor={item.valor}
-                                tItem={item.tItem}
+                                valor={currencyFormat(item.valor)}
+                                tItem={currencyFormat(item.tItem)}
                                 editar={<div onClick={() =>
                                     updateListProduct(item)}>
                                     <a style={{ textDecoration: 'none' }}

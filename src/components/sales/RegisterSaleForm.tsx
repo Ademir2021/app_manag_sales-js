@@ -11,7 +11,7 @@ type TRegisterSaleForm = {
   list: HTMLSelectElement | HTMLOptionElement | any;
   item: any
   amount: number | string;
-  valor:number | string
+  valor:number | string 
   statusBtnSaveUpdate: "Salvar" | "Atualizar";
   statusBtnSaleSubmit:"Iniciar" | "Enviar";
   loadItens:string | any;

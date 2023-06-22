@@ -5,8 +5,8 @@ type TItem = {
     item: number;
     descric: string | number | "" | 0;
     amount: number;
-    valor: number;
-    tItem: number;
+    valor: number | string | "money";
+    tItem: number | string | "money";
     editar: any
 }
 
@@ -20,7 +20,7 @@ export function Itens({ id, item, descric, amount, valor, tItem, editar}:TItem){
             <span>{descric} </span>
             <span>{amount}</span>
             <span>X{valor}</span>
-            <span>=R${tItem}</span>
+            <span>={tItem}</span>
             <span><strong> {editar}</strong></span>
         </div>
         </div>
