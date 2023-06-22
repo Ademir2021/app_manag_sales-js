@@ -89,48 +89,6 @@
     cursor: pointer;
 }
 
-.update-person-register {
-    position: absolute;
-    width: 6rem;
-    height: 2.2rem;
-    left: 1rem;
-    top: 23rem;
-    border: none;
-    cursor: pointer;
-}
-
-.update-person-register:hover {
-    background-size: 3rem;
-}
-
-.update-person-update {
-    position: absolute;
-    width: 6rem;
-    height: 2.2rem;
-    left: 8rem;
-    top: 23rem;
-    border: none;
-    cursor: pointer;
-}
-
-.update-person-update:hover {
-    background-size: 4rem;
-}
-
-.update-person-new {
-    position: absolute;
-    width: 6rem;
-    height: 2.2rem;
-    left: 15rem;
-    top: 23rem;
-    border: none;
-    cursor: pointer;
-}
-
-.update-person-new:hover {
-    background-size: 2rem;
-}
-
 .pers-up-label-id{
     position: absolute;
     width: 7rem;

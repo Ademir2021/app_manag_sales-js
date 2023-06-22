@@ -100,7 +100,7 @@ export function ProcessItensSale() {
                             window.location.replace("/sale")
                         }, 3000);
                     } else {
-                        alert("Confirme devido de " + (totalNote - sale.paySale))
+                        alert("Valor diferente do total da nota ! " + (sale.paySale))
                     }
                 }
             }

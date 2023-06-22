@@ -7,12 +7,6 @@
     /* min-height: 100vh; */
 }
 
-
-::placeholder {
-    font-size: 13px;
-}
-
-
 .login-secure{
     width:60px;
     height:60px;

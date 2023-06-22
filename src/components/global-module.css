@@ -11,10 +11,9 @@
     height: 30rem;
     padding: 2rem 2rem;
     background-color: rgb(103, 108, 107);
-    /* background-color: rgb(73, 80, 80); */
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;
-    color:rgba(228, 228, 217, 0.874);
+    color:rgba(7, 17, 7, 0.987);
     border-radius: 1rem;
     border:gray 0.2rem solid;
 }
@@ -39,4 +38,50 @@
 .btn-modal {
     display:contents;
     cursor: pointer;
+}
+
+::placeholder {
+    color: rgb(14, 165, 14);
+}
+
+.btn-update-register {
+    position: absolute;
+    width: 6rem;
+    height: 2.2rem;
+    left: 1rem;
+    top: 23rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-update-register:hover {
+    background-size: 3rem;
+}
+
+.btn-update-update {
+    position: absolute;
+    width: 6rem;
+    height: 2.2rem;
+    left: 8rem;
+    top: 23rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-update-update:hover {
+    background-size: 4rem;
+}
+
+.btn-update-new {
+    position: absolute;
+    width: 6rem;
+    height: 2.2rem;
+    left: 15rem;
+    top: 23rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-update-new:hover {
+    background-size: 2rem;
 }
