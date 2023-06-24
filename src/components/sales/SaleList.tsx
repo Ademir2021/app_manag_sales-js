@@ -2,7 +2,7 @@ import '../global-module-list.css'
 
 export function SalesList(props: any) {
     return (
-        <>
+        <> 
             <div className='container-module-list' >
                 <div className='main-module-list'>
                 <strong className='list-sale-id'>Venda: </strong>{props.id}<br />

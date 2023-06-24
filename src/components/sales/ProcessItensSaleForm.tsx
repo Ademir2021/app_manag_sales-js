@@ -1,3 +1,5 @@
+import { currencyFormat } from '../utils/currentFormat/CurrentFormat';
+
 import '../global-module.css'
 import './index.css'
 
@@ -35,20 +37,20 @@ export function ProcessItensSaleForm({
               </div>
               </header>
               <main style={{color:"aqua"}} >
-                <div><>Total Produtos R$ </>{children.tItens}</div>
+                <div><>Total Produtos </>{currencyFormat(children.tItens)}</div>
                 <div>
-                <div><>Desconto </>{children.disc_sale}</div>
+                <div><>Desconto </>{currencyFormat(children.disc_sale)}</div>
                 </div>
-                <div><>Total Nota R$</>{children.tNote}</div>
+                <div><>Total Nota </>{currencyFormat(children.tNote)}</div>
                 <div>
-                <div><>Pagamento R$</>{children.paySale}</div>
+                <div><>Pagamento </>{currencyFormat(children.paySale)}</div>
                 </div>
               </main>
 
               <input className='sale-input-payment-sale'
                 type='number'
                 name="paySale"
-                value={children.paySale || ""}
+                value= {children.paySale || ""}
                 placeholder="Pagamento"
                 required
                 onChange={handleChange}
@@ -68,5 +70,5 @@ export function ProcessItensSaleForm({
             </div>
             </div>
           </div>
-  );
+  ); 
 }

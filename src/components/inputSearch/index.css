@@ -1,0 +1,54 @@
+.input-search-container_{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0rem; 
+    padding: 0px;
+}
+.input-search-main_ {
+    width: 25rem;
+    height: 2.4rem;
+    background-color: rgb(103, 108, 107);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color:rgba(7, 17, 7, 0.987);
+    border-radius: 0.3rem;
+    border:gray 0.2rem solid;
+}
+
+.input-search-form_ {
+    position: relative;
+}
+
+.input-created-init{
+    position: absolute;
+    width: 7.6rem;
+    height: 2rem;
+    left: 0.7rem;
+    top: 0rem;
+    cursor: pointer;
+}
+
+.input-created-end{
+    position: absolute;
+    width: 7.6rem;
+    height: 2rem;
+    left: 9rem;
+    top: 0rem;
+    cursor: pointer;
+}
+
+.btn-search {
+    position: absolute;
+    width: 6rem;
+    height: 2rem;
+    left: 17rem;
+    top: 0rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-search:hover {
+    background-size: 2rem;
+}

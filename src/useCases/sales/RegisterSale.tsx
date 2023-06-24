@@ -3,6 +3,7 @@ import { RegisterSaleForm } from "../../components/sales/RegisterSaleForm";
 import { Itens } from "../../components/sales/Itens";
 import { TProductRegister } from "../products/ProductRegister";
 import { BackHome } from "../../components/utils/backHome/BackHome";
+import { currencyFormat } from "../../components/utils/currentFormat/CurrentFormat";
 import api from "../../services/api/api";
 
 import "../../App.css"
@@ -103,7 +104,7 @@ export function RegisterSale() {
     }, [getProducts]);
 
     function saveProduct() {
-        for (let i = 0; products.length > i; i++) {
+        for (let i = 0; products.length > i; i++){
             setEditId(editId)
             if (editId === null) {
                 if (product.descric == products[i].id_product
@@ -176,10 +177,6 @@ export function RegisterSale() {
         return itens.push(product)
     };
 
-    function currencyFormat  (money: number)  {
-        return money.toLocaleString('pt-br',{
-            style: 'currency', currency: 'BRL'});
-    };
 
     function sumItens() {
         let sum = 0

@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { ProcessItensSaleForm } from '../../components/sales/ProcessItensSaleForm';
 import { BackHome } from "../../components/utils/backHome/BackHome";
 
-import "../../App.css"
-
 type TSale = {
     filial: number;
     user_id: number;
@@ -100,7 +98,8 @@ export function ProcessItensSale() {
                             window.location.replace("/sale")
                         }, 3000);
                     } else {
-                        alert("Valor diferente do total da nota ! " + (sale.paySale))
+                        alert("Valor diferente do total da nota ! "
+                        + sale.paySale)
                     }
                 }
             }

@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FormatDate } from "../../components/utils/formatDate";
 import { SalesList } from "../../components/sales/SaleList";
 import api from '../../services/api/api'
 import { BackHome } from "../../components/utils/backHome/BackHome";
+import { InputSearch } from "../../components/inputSearch/InputSearch";
 
 type TSaleList = {
   id_sale: string;
@@ -16,26 +17,48 @@ type TSaleList = {
 export function ListSales() {
 
   const [sales, setSales] = useState<TSaleList[]>([]);
+  const [created_int, setInt] = useState<Date | any>('')
+  const [created_end, setEnd] = useState<Date | any>('')
+
+  function searchSales() {
+    setSales([])
+    setInt(created_int)
+    setEnd(created_end)
+    getSales()
+  };
 
   const getSales = async () => {
     try {
       await api.get<TSaleList[]>('/sales')
         .then(response => {
-          setSales(response.data)
+          const res:TSaleList[] = response.data
+          let data_sale:TSaleList[] = []
+          for(let i = 0; res.length > i; i++){
+            if(res[i].created_at >= created_int  && res[i].created_at <= created_end){
+              data_sale.push((res[i]))
+              setSales(data_sale)
+            }
+          }
         })
     } catch (err) {
       alert("error occurred !!: " + err);
     }
-  }
-
-  useEffect(() => {
-    getSales()
-  }, []);
+  };
 
   return (
     <>
       <BackHome />
-      {sales.length === 0 ? <p>Carregando...</p> : (
+            <InputSearch
+            created_int = {created_int}
+            created_end = {created_end}
+            setInt = {setInt}
+            setEnd = {setEnd}
+            searchSales = {searchSales}
+             />
+
+      {sales.length === 0 ? <p style={{
+        display:'flex', flexDirection:'column', alignItems:'center'
+      }}>Carregando...</p> : (
         sales.map((sale: TSaleList) => (
           <SalesList
             key={sale.id_sale}
