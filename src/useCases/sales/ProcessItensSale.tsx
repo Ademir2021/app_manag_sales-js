@@ -89,7 +89,7 @@ export function ProcessItensSale() {
                     alert("Nenhum item(s) no momento !!")
                 } else {
                     if (payment == sale.tNote) {
-                        alert("Pagto OK." + payment)
+                        alert("Pagamento efetuado com sucesso ! " + payment)
                         alert("A venda será enviada !")
                         prepareSales()
                         registerSale()

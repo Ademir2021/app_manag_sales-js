@@ -21,9 +21,6 @@ export function ListSales() {
   const [created_end, setEnd] = useState<Date | any>('')
 
   function searchSales() {
-    setSales([])
-    setInt(created_int)
-    setEnd(created_end)
     getSales()
   };
 
@@ -31,14 +28,15 @@ export function ListSales() {
     try {
       await api.get<TSaleList[]>('/sales')
         .then(response => {
-          const res:TSaleList[] = response.data
-          let data_sale:TSaleList[] = []
-          for(let i = 0; res.length > i; i++){
-            if(res[i].created_at >= created_int  && res[i].created_at <= created_end){
+          const res: TSaleList[] = response.data
+          let data_sale: TSaleList[] = []
+          for (let i = 0; res.length > i; i++) {
+            if (res[i].created_at >= created_int
+              && res[i].created_at <= created_end) {
               data_sale.push((res[i]))
-              setSales(data_sale)
             }
           }
+          setSales(data_sale)
         })
     } catch (err) {
       alert("error occurred !!: " + err);
@@ -48,17 +46,17 @@ export function ListSales() {
   return (
     <>
       <BackHome />
-            <InputSearch
-            created_int = {created_int}
-            created_end = {created_end}
-            setInt = {setInt}
-            setEnd = {setEnd}
-            searchSales = {searchSales}
-             />
+      <InputSearch
+        int={created_int}
+        end={created_end}
+        setInt={setInt}
+        setEnd={setEnd}
+        searchHandle={searchSales}
+      />
 
       {sales.length === 0 ? <p style={{
-        display:'flex', flexDirection:'column', alignItems:'center'
-      }}>Carregando...</p> : (
+        display: 'flex', flexDirection: 'column', alignItems: 'center'
+      }}>Aguardando busca !</p> : (
         sales.map((sale: TSaleList) => (
           <SalesList
             key={sale.id_sale}
