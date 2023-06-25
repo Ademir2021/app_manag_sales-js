@@ -4,10 +4,11 @@ import { SalesList } from "../../components/sales/SaleList";
 import api from '../../services/api/api'
 import { BackHome } from "../../components/utils/backHome/BackHome";
 import { InputSearch } from "../../components/inputSearch/InputSearch";
+import { Waiting } from "../../components/utils/waiting/Waiting";
 
 type TSaleList = {
   id_sale: string;
-  created_at: 'date' | string | any;
+  created_at: Date | string | any;
   fk_name_pers: number;
   val_rec: number;
   disc_sale: number;
@@ -53,10 +54,7 @@ export function ListSales() {
         setEnd={setEnd}
         searchHandle={searchSales}
       />
-
-      {sales.length === 0 ? <p style={{
-        display: 'flex', flexDirection: 'column', alignItems: 'center'
-      }}>Aguardando busca !</p> : (
+      {sales.length === 0 ? <Waiting waiting={'Aguardado busca !'}/> : (
         sales.map((sale: TSaleList) => (
           <SalesList
             key={sale.id_sale}
@@ -68,6 +66,7 @@ export function ListSales() {
             total_note={sale.total_sale}
           />
         )))}
+  
     </>
   )
 }
