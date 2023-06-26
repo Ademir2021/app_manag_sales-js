@@ -2,34 +2,22 @@ import '../global-module-list.css'
 
 export type PropsUsers = {
     id: number;
-    created_at:'date' | any;
+    created_at:Date | any;
     name: string;
     username: string;
     password?: string;
-    update?: 'date' | any;
-}
+    update?: Date | any;
+};
 
-export const ListUSers = (
-    {
-        id,
-        created_at,
-        name,
-        username,
-        password,
-        update
-    }: PropsUsers) => {
-
+export const ListUSers = (props: PropsUsers) => {
     return (
         <>
             <div className="container-module-list">
                 <div className="main-module-list">
-                    <strong className="list-user-id">ID_User: </strong><strong>{id}</strong><br />
-                    <strong className="list-user-create">Criado: </strong><strong>{created_at}</strong><br />
-                    <strong className="list-user-name">Nome Completo: </strong><strong>{name}</strong><br />
-                    <strong className="list-user-email">Email: </strong><strong>{username}</strong><br />
-                    {/* <strong className="list-user-password">Senha: </strong><strong>{password}</strong><br /> */}
-                    <button className='list-user-btn'>{update}</button>
-                    <hr />
+                    <strong className="list-user-id">ID: </strong><strong>{props.id}</strong><br />
+                    <strong className="list-user-create">Criado: </strong><strong>{props.created_at}</strong><br />
+                    <strong className="list-user-name">Nome completo: </strong><strong>{props.name}</strong><br />
+                    <strong className="list-user-email">Email: </strong><strong>{props.username}</strong><br />
                 </div>
             </div>
         </>

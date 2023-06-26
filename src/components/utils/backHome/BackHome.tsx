@@ -1,8 +1,12 @@
 export const BackHome = () => {
     return (
-        < a className='menu-home'
+        <>
+        <strong>
+        <a className='menu-home'
             href="/dashboard">
             {'Menu Principal'}
         </a>
+        </strong>
+        </>
     )
 }

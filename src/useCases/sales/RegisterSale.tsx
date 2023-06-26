@@ -177,14 +177,13 @@ export function RegisterSale() {
         return itens.push(product)
     };
 
-
     function sumItens() {
         let sum = 0
         for (var i = 0; i < itens.length; i++) {
             sum += (itens[i].amount * itens[i].valor)
         }
             setTotalItens(sum)
-        return sum
+            return sum
     };
 
     async function handleSaveUpdate(e: Event) {
@@ -288,7 +287,7 @@ export function RegisterSale() {
                 valor={preco <= 0 ? '' : ' X ' + preco}
                 statusBtnSaveUpdate={statusBtnSaveUpdate}
                 statusBtnSaleSubmit={statusBtnSaleSubmit}
-                totalItens={totalItens <= 0 ? '' : "Total compra " + currencyFormat(totalItens)}
+                totalItens={totalItens <= 0 ? '' : "Total " + currencyFormat(totalItens)}
                 loadItens={itens.length === 0 ?
                     <strong style={{ color: "blue" }} >Carregando...</strong> : (
                         itens.map((item: TItens) => (

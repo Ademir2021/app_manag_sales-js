@@ -104,7 +104,7 @@ export function ProcessItensSale() {
                 }
             }
         } else {
-            alert("Pedido já foi Enviado")
+            alert("Pedido já foi enviado ! ")
         }
     };
 

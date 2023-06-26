@@ -1,4 +1,4 @@
-import { Button } from "../button/Button";
+import { Button } from "../users/button/Button";
 
 import '../global-module.css'
 import "./index.css"
@@ -17,7 +17,7 @@ export function ProductForm({
         <div className="container_">
             <fieldset className="main_">
                 <form className="form_" onSubmit={handleSubmit}>
-                    <label className="prod-descr-label" >Descrição Produto</label>
+                    <label className="prod-descr-label" >Descrição produto</label>
                     <input className="prod-descr-input"
                         type="text"
                         name="descric_product"
@@ -57,7 +57,7 @@ export function ProductForm({
                         value={children.fk_sector || ""}
                         onChange={handleChange}
                     />
-                    <label className="prod-barcode-label">Código de Barras</label>
+                    <label className="prod-barcode-label">Código de barras</label>
                     <input className="prod-barcode-input"
                         type="text"
                         name="bar_code"

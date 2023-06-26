@@ -1,8 +1,7 @@
-import { Button } from '../button/Button';
+import { Button } from './button/Button';
 import { BackHome } from '../utils/backHome/BackHome';
 import { Header } from './UserHeader';
 import { UserLink } from './UserLink';
-
 
 import '../global-module.css';
 import './index.css';

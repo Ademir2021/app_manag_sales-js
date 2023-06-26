@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 import { FormatDate } from "../../components/utils/formatDate";
 import { SalesList } from "../../components/sales/SaleList";
 import api from '../../services/api/api'
@@ -7,8 +7,8 @@ import { InputSearch } from "../../components/inputSearch/InputSearch";
 import { Waiting } from "../../components/utils/waiting/Waiting";
 
 type TSaleList = {
-  id_sale: string;
-  created_at: Date | string | any;
+  id_sale: number;
+  created_at: Date | any;
   fk_name_pers: number;
   val_rec: number;
   disc_sale: number;
@@ -16,13 +16,17 @@ type TSaleList = {
 };
 
 export function ListSales() {
-
+  
   const [sales, setSales] = useState<TSaleList[]>([]);
   const [created_int, setInt] = useState<Date | any>('')
   const [created_end, setEnd] = useState<Date | any>('')
 
-  function searchSales() {
+  function searchSales(e:Event) {
+    e.preventDefault()
+    if(created_int.length &&
+       created_end.length != ''){
     getSales()
+    }
   };
 
   const getSales = async () => {

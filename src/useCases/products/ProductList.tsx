@@ -38,6 +38,7 @@ export function ProductsList() {
                         brand={product.fk_brand}
                         sector={product.fk_sector}
                         bar_code={product.bar_code}
+                        update={'Inativo'}
                     />
                 )))}
         </>

@@ -30,8 +30,6 @@ const [users, setUsers] = useState<PropsUsers[]>([])
             created_at={FormatDate(user.created_at)}
             name={user.name}
             username={user.username}
-            password={user.password}
-            // update={<a href="http://localhost:3001/user_update">Update: {user.id}</a>}
           />
         )))}
     </>

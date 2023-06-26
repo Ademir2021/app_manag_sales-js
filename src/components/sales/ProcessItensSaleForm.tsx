@@ -21,7 +21,6 @@ export function ProcessItensSaleForm({
       <div className="container_" >
         <div className="main_">
           <div className='form_'>
-          
             <form onSubmit={handleSubmit}>
               <header>
               <div>
@@ -37,16 +36,15 @@ export function ProcessItensSaleForm({
               </div>
               </header>
               <main style={{color:"aqua"}} >
-                <div><>Total Produtos </>{currencyFormat(children.tItens)}</div>
+                <div><>Total produtos </>{currencyFormat(children.tItens)}</div>
                 <div>
                 <div><>Desconto </>{currencyFormat(children.disc_sale)}</div>
                 </div>
-                <div><>Total Nota </>{currencyFormat(children.tNote)}</div>
+                <div><>Total nota </>{currencyFormat(children.tNote)}</div>
                 <div>
                 <div><>Pagamento </>{currencyFormat(children.paySale)}</div>
                 </div>
               </main>
-
               <input className='sale-input-payment-sale'
                 type='number'
                 name="paySale"
@@ -64,7 +62,7 @@ export function ProcessItensSaleForm({
                 required
                 onChange={handleChange}
                 />
-              <button className='sale-send-sale'>Gravar Venda</button>
+              <button className='sale-send-sale'>Gravar venda</button>
               <span className='load-list-itens' >{loadItens}</span>
             </form>
             </div>

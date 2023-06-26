@@ -1,15 +1,34 @@
 .container-module-list {
     color:rgba(26, 26, 161, 0.85);
     background: #9ca4c71b;
-    width: 24rem;
+    width: 26rem;
+    height: auto;
+    border:0.1rem solid white;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 1px;
+    padding-top: auto;
+    border-radius: 0.4rem;
+}
+.main-module-list {
+    padding: 0.4rem 0.4rem 0.4rem 0.6rem;
+    font-size: 0.8rem;
 }
 
-.main-module-list {
-    padding: 12px;
-    font-size: 12px;
+.btn-div-list{
+    display: flex;
+    flex-direction: column;
+    align-items: auto;
+    justify-content: auto;
+    margin: 0.2rem;
+}
+
+.btn-button-list{
+    width:5rem;
+    height:2rem;
+    font-Size:1rem;
+    border:none;
+    border-radius: 0.3rem;
+    color:green;
 }
 
 :root {
@@ -19,7 +38,7 @@
 
 .list-product-id {
     font-size: var(--list--font-size);
-    color: var(--list--color)
+    color: var(--list--color);
 }
 
 .list-product-create {

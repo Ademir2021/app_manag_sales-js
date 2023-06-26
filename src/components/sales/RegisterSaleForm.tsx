@@ -38,7 +38,7 @@ export function RegisterSaleForm({
   return (
       <div className="container_">
         <div className="main_">
-          <div>Formulário de pedido</div>
+          <div>Formulário pedido de venda</div>
           <div className='form_'>
             <form onSubmit={handleSaveUpdate}>
               <label className='sale-label-descric'>{item}</label>
@@ -92,18 +92,15 @@ export function RegisterSaleForm({
               <label className='sale-label-total-itens' >{totalItens}</label>
               <button className='sale-save-update'>{statusBtnSaveUpdate}</button>
             </form>
-
             <form onClick={handleSubmit}>
               <button className='sale-submit'>{statusBtnSaleSubmit}</button>
             </form>
-
             <form onSubmit={handleDelete}>
               <button className='sale-delete'>Deletar</button>
             </form>
             <form onSubmit={handleSearchItem}>
               <button className='sale-search-item'>Ver preço</button>
             </form>
-
           </div>
         </div>
       </div>

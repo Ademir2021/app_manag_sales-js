@@ -1,6 +1,6 @@
 import './index.css'
 
-type TItem = {
+type Props = {
     id: number;
     item: number;
     descric: string | number | "" | 0;
@@ -10,18 +10,18 @@ type TItem = {
     editar: any
 }
 
-export function Itens({ id, item, descric, amount, valor, tItem, editar}:TItem){
+export function Itens(props:Props){
     return(
     <div className='container-list-itens' >
         <div className='main-list-itens'>
         <div className='form-itens'>
-            <span>ID:{id} </span>
-            <span>Item:{item} </span>
-            <span>{descric} </span>
-            <span>{amount}</span>
-            <span>X{valor}</span>
-            <span>={tItem}</span>
-            <span><strong> {editar}</strong></span>
+            <span>ID:{props.id} </span>
+            <span>Item:{props.item} </span>
+            <span>{props.descric} </span>
+            <span>{props.amount}</span>
+            <span>X{props.valor}</span>
+            <span>={props.tItem}</span>
+            <span><strong> {props.editar}</strong></span>
         </div>
         </div>
     </div>

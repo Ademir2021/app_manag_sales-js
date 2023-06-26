@@ -1,6 +1,6 @@
 import React from "react";
 import InputMask from "react-input-mask";
-import { Button } from "../button/Button";
+import { Button } from "../users/button/Button";
 
 import '../global-module.css'
 import "./index.css"
@@ -35,7 +35,7 @@ export function PersonForm({
                         placeholder="000.000.000-00"
                         mask="999.999.999-99"
                         mask-selectonfocus="true"
-                        // maxLength={14}
+                        maxLength={14}
                         autoComplete="off"
                         maskChar={null}
                         value={children.cpf_pers || ""}
@@ -48,7 +48,7 @@ export function PersonForm({
                         placeholder="()99999-9999"
                         mask="(99)99999-9999"
                         mask-selectonfocus="true"
-                        // maxLength={14}
+                        maxLength={14}
                         autoComplete="off"
                         maskChar={null}
                         value={children.phone_pers || ""}

@@ -1,26 +1,25 @@
-import { useState, useEffect, useRef, useContext } from 'react';
+import { useState, useRef, useContext } from 'react';
 import { UserFormUpdate } from "../../components/users/UserFormUpdate";
-import { ListUSers, PropsUsers } from "../../components/users/UserList";
-import { FormatDate } from "../../components/utils/formatDate";
 import { crypt, UsersValFields } from '../../components/utils/crypt/Crypt'
 import { BackHome } from "../../components/utils/backHome/BackHome"
 import { AuthContext } from '../../context/auth'
+import { ButtonOnClick } from '../../components/utils/btnOnClick/BtnOnClick';
 import api from '../../services/api/api'
 
 import '../../App.css'
 
 type TUpdateUser = {
     id: number;
-    created_at?: 'date' | 'null' | undefined;
+    created_at?:Date | any;
     name: string;
     username: string;
-    password?: string;
+    password: string;
     psw_repeat: string;
 }
 
 export function UserUpdate() {
     const { user: isLogged }: any = useContext(AuthContext);
-    const [users, setUsers] = useState<TUpdateUser[]>()
+    const [,setUsers] = useState<TUpdateUser[]>([])
     const [user, setUser] = useState<TUpdateUser>({
         id: 0,
         name: "",
@@ -31,14 +30,6 @@ export function UserUpdate() {
 
     const [dropdown, setDropdown] = useState<string>("");
     const modalRef = useRef<any>(null);
-
-    function listUpdate(id: number, name: string, username: string) {
-        user.id = id
-        user.name = name
-        user.username = username
-        getUsers()
-        toggleDropdown()
-    }
 
     const handleChange = (e:any) => {
         const name = e.target.name;
@@ -62,22 +53,15 @@ export function UserUpdate() {
     }
 
     async function getUsers(): Promise<void> {
-        await api.get<TUpdateUser[]>(`/users`)
+        await api.get<TUpdateUser[]>(`/user/${isLogged[0].id}`)
             .then(response => {
                 const res: TUpdateUser[] = response.data
                 setUsers(res)
-                for (let i = 0; res.length > i; i++) {
-                    if (user.id === res[i].id) {
-                        user.name = res[i].name
-                        user.username = res[i].username
-                    }
-                }
+                user.id = res[0].id
+                user.name = res[0].name
+                user.username = res[0].username
             })
-        }
-
-    useEffect(() => {
-        setUsers(users)
-    }, [users])
+        };
 
     async function handleSubmit(e: Event) {
         e.preventDefault();
@@ -93,7 +77,6 @@ export function UserUpdate() {
         e.preventDefault();
         if (UsersValFields(user)) {
             user.password = crypt(user.password)
-            getUsers()
             updateUser()
             user.password = ''
             user.psw_repeat = ''
@@ -113,6 +96,7 @@ export function UserUpdate() {
     }
 
     function toggleDropdown(): void {
+        getUsers()
         setDropdown("modal-show");
     }
 
@@ -128,6 +112,9 @@ export function UserUpdate() {
     return (
         <>
             <BackHome />
+            <ButtonOnClick
+            onClickHandle={toggleDropdown}
+            text={"Entrar"}/>
             <UserFormUpdate
                 handleSubmit={handleSubmit}
                 handleUpdate={handleUpdate}
@@ -139,19 +126,7 @@ export function UserUpdate() {
             >
                 {user}
             </UserFormUpdate>
-            {isLogged.length === 0 ? <p>Carregando...</p> : (
-                isLogged.map((user: PropsUsers) => (
-                    <ListUSers
-                        key={user.id}
-                        id={user.id}
-                        created_at={'date' || FormatDate(user.created_at)}
-                        name={'null'}
-                        username={user.username}
-                        password={user.password}
-                        update={<div onClick={() =>
-                            listUpdate(user.id, user.name, user.username)}>Atualizar</div>}
-                    />
-                )))}
+          
         </>
     )
 }
