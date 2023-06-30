@@ -6,6 +6,10 @@
   display: block !important;
 }
 
+body{
+  background-color: rgb(226, 233, 240);
+}
+
 .modal-btn-open {
   position: absolute;
   height: 2rem;
