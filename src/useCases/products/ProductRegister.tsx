@@ -6,6 +6,7 @@ import api from '../../services/api/api'
 export type TProductRegister = {
     id_product: number;
     created_at?: Date | any;
+    updated_at?: Date  | any | null;
     descric_product: string | number;
     val_max_product: number;
     val_min_product: number;

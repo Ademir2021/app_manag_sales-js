@@ -16,6 +16,7 @@ export function PersonUpdate() {
     const [person, setPerson] = useState<TPersonRegister>({
         id_person: 0,
         created_at: '',
+        updated_at: '',
         name_pers: '',
         cpf_pers: "",
         phone_pers: "",
@@ -154,7 +155,8 @@ export function PersonUpdate() {
                     <PersonList
                         key={person.id_person}
                         id_person={person.id_person}
-                        create={FormatDate(person.created_at)}
+                        created_at={FormatDate(person.created_at)}
+                        updated_at={FormatDate(person.updated_at)}
                         name={person.name_pers}
                         phone={person.phone_pers}
                         address={person.address_pers}

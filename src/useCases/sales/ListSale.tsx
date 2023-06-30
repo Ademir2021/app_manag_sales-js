@@ -26,6 +26,8 @@ export function ListSales() {
     if(created_int.length &&
        created_end.length != ''){
     getSales()
+    }else{
+      alert("Preencha os 2 campo de datas !")
     }
   };
 

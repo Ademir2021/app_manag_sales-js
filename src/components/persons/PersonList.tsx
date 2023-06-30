@@ -2,7 +2,8 @@ import '../global-module-list.css'
 
 export type Props = {
     id_person: any;
-    create: Date | any;
+    created_at: Date | any;
+    updated_at: Date | any;
     name: string
     cpf: string;
     phone: string;
@@ -17,7 +18,8 @@ export const PersonList = (props: Props) => {
         <div className="container-module-list" >
             <div className="main-module-list">
                 <strong className="list-person-id" >ID:</strong> {props.id_person}<br />
-                <strong className="list-person-create" >Data cadastro:</strong>  {props.create}<br />
+                <strong className="list-person-create" >Data cadastro:</strong>  {props.created_at}<br />
+                <strong className="list-person-create" >Atualizado:</strong>  {props.updated_at}<br />
                 <strong className="list-person-name" >Nome pessoa:</strong>  {props.name}<br />
                 <strong className="list-person-cpf" >CPF:</strong>  {props.cpf}<br />
                 <strong className="list-person-phone" >Telefone:</strong>  {props.phone}<br />

@@ -7,6 +7,7 @@ import { Dashboard } from "../dashboard/Dashboard";
 export type TPersonRegister = {
     id_person?: number | any;
     created_at?: 'date' | any;
+    updated_at?: 'date' | any;
     name_pers: string | any;
     cpf_pers: string;
     phone_pers:string;

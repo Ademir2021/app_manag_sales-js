@@ -8,7 +8,8 @@ export function HomePage() {
     const sale = '/sale#'
 
     return (
-        <>
+        <>  
+            <div>Contato (44) 98852-1033</div>
             <NavBar
                 home={home}
                 register={register}

@@ -29,7 +29,8 @@ export function PersonsList() {
                     <PersonList
                     key={person.id_person}
                     id_person={person.id_person}
-                    create={FormatDate(person.created_at)}
+                    created_at={FormatDate(person.created_at)}
+                    updated_at={FormatDate(person.updated_at)}
                     name={person.name_pers}
                     phone={person.phone_pers}
                     address={person.address_pers}
