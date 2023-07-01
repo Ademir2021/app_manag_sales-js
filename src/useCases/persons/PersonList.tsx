@@ -12,7 +12,6 @@ export function PersonsList() {
             await api.get<TPersonRegister[]>('persons')
                 .then(response => {
                     setPerson(response.data)
-                    console.log(response.data)
                 })
         } catch (err) {
             alert("error occurred !!" + err)
