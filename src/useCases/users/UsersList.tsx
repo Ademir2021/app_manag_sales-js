@@ -28,7 +28,8 @@ const [users, setUsers] = useState<PropsUsers[]>([])
             key={user.id}
             id={user.id}
             created_at={FormatDate(user.created_at)}
-            updated_at={FormatDate(user.updated_at)}
+            updated_at={user.updated_at === null ?
+              "não houve atualização": FormatDate(user.updated_at)}
             name={user.name}
             username={user.username}
           />

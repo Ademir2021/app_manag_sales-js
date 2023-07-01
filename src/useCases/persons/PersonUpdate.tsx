@@ -156,7 +156,8 @@ export function PersonUpdate() {
                         key={person.id_person}
                         id_person={person.id_person}
                         created_at={FormatDate(person.created_at)}
-                        updated_at={FormatDate(person.updated_at)}
+                        updated_at={person.updated_at === null ?
+                        "não houve atualização": (FormatDate(person.updated_at))}
                         name={person.name_pers}
                         phone={person.phone_pers}
                         address={person.address_pers}

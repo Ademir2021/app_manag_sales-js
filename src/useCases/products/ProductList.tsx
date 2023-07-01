@@ -32,7 +32,8 @@ export function ProductsList() {
                         key={product.id_product}
                         id={product.id_product}
                         created_at={FormatDate(product.created_at)}
-                        updated_at={FormatDate(product.updated_at)}
+                        updated_at={product.updated_at === null ?
+                        "não houve atualização":FormatDate(product.updated_at)}
                         name={product.descric_product}
                         val_max={product.val_max_product}
                         val_min={product.val_min_product}
