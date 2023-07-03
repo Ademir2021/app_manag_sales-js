@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ProductForm } from '../../components/products/ProductForm';
+import { ProductValFields } from "../../components/utils/ValFields/ValFields";
 import { Dashboard } from "../dashboard/Dashboard";
 import api from '../../services/api/api'
 
@@ -33,20 +34,7 @@ export function FormProduct() {
         setProduct(values => ({ ...values, [name]: value }))
     }
 
-    function valFields(product: TProductRegister) {
-        let msg = ''
-        if (product.descric_product === "") { msg += "Digite um produto !\n" };
-        if (product.val_max_product === 0) { msg += "Informe um valor MAX !\n" };
-        if (product.val_min_product === 0) { msg += "Informe um valor MIN !\n" };
-        if (product.fk_brand === 0) { msg += "Informe a Marca !\n" };
-        if (product.fk_sector === 0) { msg += "Informe o Setor !\n" };
-        if (product.bar_code === "") { msg += "Informe o código de Barras !\n" };
-        if (msg !== "") {
-            alert(msg)
-            return false;
-        };
-        return true;
-    };
+
 
     async function handleProduct() {
         await api.post<TProductRegister>('/products', product)
@@ -57,7 +45,7 @@ export function FormProduct() {
 
     async function handleSubmit(e: any) {
         e.preventDefault();
-        if (valFields(product)) {
+        if (ProductValFields(product)) {
             handleProduct()
         }
     }

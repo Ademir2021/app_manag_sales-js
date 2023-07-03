@@ -15,7 +15,7 @@ export function Dashboard() {
     const listSale = '/list_sale#'
     const listUser = '/users_list#'
     const upPerson = '/person_update#'
-    const upProduct = '#'
+    const upProduct = '/product_update#'
     const { logout }: any = useContext(AuthContext);
     const res: any = localStorage.getItem('u')
     const user = JSON.parse(res)

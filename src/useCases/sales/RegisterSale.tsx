@@ -104,7 +104,7 @@ export function RegisterSale() {
     }, [getProducts]);
 
     function saveProduct() {
-        for (let i = 0; products.length > i; i++){
+        for (let i = 0; products.length > i; i++) {
             setEditId(editId)
             if (editId === null) {
                 if (product.descric == products[i].id_product
@@ -182,8 +182,8 @@ export function RegisterSale() {
         for (var i = 0; i < itens.length; i++) {
             sum += (itens[i].amount * itens[i].valor)
         }
-            setTotalItens(sum)
-            return sum
+        setTotalItens(sum)
+        return sum
     };
 
     async function handleSaveUpdate(e: Event) {
@@ -205,9 +205,12 @@ export function RegisterSale() {
     async function handleDelete(e: Event) {
         e.preventDefault();
         if (editId !== null) {
-            deleteProduct()
-            alert("Item com ID: " + editId + " deletado com sucesso")
-            openClearNewSale()
+            if (window.confirm(
+                "Realmente deseja remover o Item de ID: "
+                + editId + " ?")) {
+                deleteProduct()
+                openClearNewSale()
+            }
         } else {
             alert("Busque um novo item !")
             openClearNewSale()

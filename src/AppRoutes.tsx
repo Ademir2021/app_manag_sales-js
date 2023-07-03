@@ -11,6 +11,7 @@ import { ProcessItensSale } from './useCases/sales/ProcessItensSale';
 import { ListSales } from './useCases/sales/ListSale';
 import { FormProduct } from "./useCases/products/ProductRegister";
 import { ProductsList } from './useCases/products/ProductList';
+import { ProductUpdate } from "./useCases/products/ProductUpdate";
 import { FormPerson } from "./useCases/persons/PersonRegister";
 import { PersonUpdate } from "./useCases/persons/PersonUpdate";
 import { PersonsList } from './useCases/persons/PersonList';
@@ -21,7 +22,6 @@ import { FormModel } from "./useCases/formModel/FormModel";
 export function AppRoutes() {
     const Private = ({ children }: any) => {
         const { authenticated, loading }: any = useContext(AuthContext)
-        
         if(loading){
             return <div className="loading">Carregando...</div>
         }
@@ -31,7 +31,6 @@ export function AppRoutes() {
         }
         return children
     };
-
     return (
         <Router>
             <AuthProvider>
@@ -49,6 +48,7 @@ export function AppRoutes() {
                     <Route path="/list_sale" element={<Private><ListSales/></Private>} />
                     <Route path="/form_product" element={<Private><FormProduct/></Private>} />
                     <Route path="/product_list" element={<Private><ProductsList/></Private>} />
+                    <Route path="product_update" element={<Private><ProductUpdate/></Private>}/>
                     <Route path="/form_person" element={<Private><FormPerson/></Private>} />
                     <Route path="/person_list" element={<Private><PersonsList/></Private>} />
                     <Route path="/person_update" element={<Private><PersonUpdate/></Private>} />

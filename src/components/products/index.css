@@ -109,3 +109,139 @@
     left: 0.1rem;
     top: 20rem;
 }
+
+
+.prod-up-label-id{
+    position: absolute;
+    width: 7rem;
+    left: 15.8rem;
+    top: 0rem;
+}
+
+.prod-up-in-id{
+    position: absolute;
+    width: 4rem;
+    height:2rem;
+    left: 17rem;
+    top: -0.5rem;
+    cursor: pointer;
+}
+
+.prod-up-label-descric{
+    position: absolute;
+    left: 0.1rem;
+    top: 0.6rem;
+}
+
+.prod-up-in-descric{
+    position: absolute;
+    width: 21rem;
+    height:2rem;
+    left: 0.1rem;
+    top: 1.8rem;
+    cursor: pointer;
+}
+
+.prod-up-label-val-max{
+    position: absolute;
+    left: 0.1rem;
+    top: 3.8rem;
+}
+
+.prod-up-in-val-max{
+    position: absolute;
+    width: 6rem;
+    height: 2rem;
+    left: 0.1rem;
+    top: 4.9rem;
+    cursor: pointer;
+}
+
+.prod-up-label-val-min{
+    position: absolute;
+    left: 0.1rem;
+    top: 7rem;
+}
+
+.prod-up-in-val-min{
+    position: absolute;
+    width: 6rem;
+    height: 2rem;
+    left: 0.1rem;
+    top: 8rem;
+    cursor: pointer;
+}
+
+.prod-up-label-brand{
+    position: absolute;
+    left: 0.1rem;
+    top: 10.3rem;
+}
+.prod-up-in-brand{
+    position: absolute;
+    width: 8rem;
+    height: 2rem;
+    left: 0.1rem;
+    top: 11.5rem;
+}
+
+.prod-up-label-sector{
+    position: absolute;
+    left: 0.1rem;
+    top: 13.6rem;
+}
+
+.prod-up-in-sector{
+    position: absolute;
+    width: 8rem;
+    height: 2rem;
+    left: 0.1rem;
+    top: 14.7rem;
+    cursor: pointer;
+}
+
+.prod-up-label-barras{
+    position: absolute;
+    left: 0.1rem;
+    top: 16.8rem;
+}
+
+.prod-up-in-barras{
+    position: absolute;
+    width: 21rem;
+    height:2rem;
+    left: 0.1rem;
+    top: 18.1rem;
+    cursor: pointer;
+}
+
+.pers-up-label-filial{
+    position: absolute;
+    left: 0.1rem;
+    top: 15.3rem;
+}
+
+.pers-up-in-filial{
+    position: absolute;
+    width: 4rem;
+    height:2rem;
+    left: 0.1rem;
+    top: 16.5rem;
+    cursor: pointer;
+}
+
+.pers-up-label-user{
+    position: absolute;
+    left: 0.1rem;
+    top: 18.8rem;
+
+}
+
+.pers-up-in-user{
+    position: absolute;
+    width: 4rem;
+    height: 2rem;
+    left: 0.1rem;
+    top: 20rem;
+    cursor: pointer;
+}

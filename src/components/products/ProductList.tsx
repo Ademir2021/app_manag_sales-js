@@ -18,7 +18,7 @@ export function ProductList(props: Props) {
         <>
              <div className="container-module-list">
                 <div className="main-module-list">
-                <strong className='list-product-id'>ID_Produto:</strong> {props.id}<br />
+                <strong className='list-product-id'>ID:</strong> {props.id}<br />
                 <strong className='list-product-create'>Data cadastro:</strong>  {props.created_at}<br />
                 <strong className='list-product-create'>Atualizado:</strong>  {props.updated_at}<br />
                 <strong className='list-product-descricao'>Descrição:</strong>  {props.name}<br />
