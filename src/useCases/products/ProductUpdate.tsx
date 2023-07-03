@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { FormatDate } from "../../components/utils/formatDate";
-import { TProductRegister } from "./ProductRegister";
+import { TProductRegister, RProductRegister, RProductUpdate } from "../../services/handleService";
 import { ProductValFields } from "../../components/utils/ValFields/ValFields";
 import { ProductFormUpdate } from "../../components/products/ProductFormUpdate";
 import { ProductList } from "../../components/products/ProductList";
@@ -40,32 +40,17 @@ export function ProductUpdate() {
         toggleDropdown()
     }
 
-    async function handleProduct() {
-        await api.post<TProductRegister>('/products', product)
-            .then(response => {
-                alert(response.data)
-            }).catch(error => alert(error))
-    };
-
-    async function updateProduct(): Promise<void> {
-        await api.put<TProductRegister>(`/products/${product.id_product}`, product)
-            .then(response => {
-                alert(response.data)
-            })
-            .catch(error => alert(error))
-    }
-
-    async function getProduct() {
+    async function getProducts() {
         await api.get<TProductRegister[]>(`/products`)
             .then(response => {
                 const res: TProductRegister[] = response.data
                 setProducts(res)
             })
+            .catch(error => alert(error));
     };
     useEffect(() => {
-        getProduct()
-    }, [])
-
+        getProducts()
+    }, []);
 
     function toggleDropdown(): void {
         setDropdown("modal-show");
@@ -79,19 +64,18 @@ export function ProductUpdate() {
             document.body.removeEventListener("click", closeDropdown);
         }
     };
-
     async function handleSubmit(e: any) {
         e.preventDefault();
-        if(ProductValFields(product)){
-        handleProduct();
+        if (ProductValFields(product)) {
+            RProductRegister(product);
         }
     };
     async function handleUpdate(e: Event) {
         e.preventDefault();
-        if(ProductValFields(product)){
-        updateProduct()
+        if (ProductValFields(product)) {
+            RProductUpdate(product.id_product, product)
         }
-        getProduct()
+        getProducts()
     };
     async function handleDelete(e: Event) {
         e.preventDefault();

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { RegisterSaleForm } from "../../components/sales/RegisterSaleForm";
 import { Itens } from "../../components/sales/Itens";
-import { TProductRegister } from "../products/ProductRegister";
+import { TProductRegister } from "../../services/handleService";
 import { BackHome } from "../../components/utils/backHome/BackHome";
 import { currencyFormat } from "../../components/utils/currentFormat/CurrentFormat";
 import api from "../../services/api/api";

@@ -1,4 +1,5 @@
 #bin/sh
+clear
 echo "<< init >>"
 git add .
 git commit -m "stns"

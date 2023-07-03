@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FormatDate } from "../../components/utils/formatDate";
 import { ProductList } from "../../components/products/ProductList";
-import { TProductRegister } from './ProductRegister'
+import { TProductRegister } from "../../services/handleService";
 import {BackHome} from "../../components/utils/backHome/BackHome"
 import api from "../../services/api/api";
 

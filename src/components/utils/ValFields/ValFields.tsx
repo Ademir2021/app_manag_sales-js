@@ -1,4 +1,4 @@
-import { TProductRegister } from "../../../useCases/products/ProductRegister"
+import { TProductRegister } from "../../../services/handleService" 
 
 export  function ProductValFields(product: TProductRegister) {
     let msg = ''
