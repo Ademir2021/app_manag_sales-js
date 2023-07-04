@@ -119,7 +119,6 @@ export function RegisterSale() {
             }
         }
     };
-
     function updateListProduct(item: TItens) {
         setStatusBtnSaveUpdate("Atualizar")
         setEditId(item.id)
@@ -130,7 +129,6 @@ export function RegisterSale() {
         product.valor = item.valor
         product.tItem = item.amount * item.valor
     };
-
     function updateProduct() {
         for (let i = 0; products.length > i; i++) {
             setEditId(editId)
@@ -138,24 +136,17 @@ export function RegisterSale() {
                 if (product.descric == products[i].id_product
                     || product.descric === products[i].bar_code
                     || product.descric === products[i].descric_product) {
-                    let up = { id: 0, item: 0, descric: 0, valor: 0, amount: 0, tItem: 0 }
                     let temp: any = ''
-                    up.id = editId
-                    up.item = products[i].id_product
+                    product.id = editId
+                    product.item = products[i].id_product
                     temp = products[i].descric_product
-                    up.descric = temp
-                    up.valor = products[i].val_max_product
-                    up.amount = product.amount
-                    up.tItem = 0
-                    up.tItem = products[i].val_max_product * product.amount
-                    deleteProduct()
-                    setItens(itens)
-                    itens.push(up)
+                    product.descric = temp
+                    product.valor = products[i].val_max_product
+                    product.tItem = products[i].val_max_product * product.amount
                 }
             }
         }
-    }
-
+    };
     function deleteProduct() {
         for (let i = 0; itens.length > i; i++) {
             setEditId(editId)
@@ -167,16 +158,25 @@ export function RegisterSale() {
             }
         }
     };
-
     function verifItem(product: TProduct) {
         for (let i = 0; itens.length > i; i++)
             if (product.item === itens[i].item && editId == null) {
-                return alert("Producto já foi lançado")
+              return  alert("Producto já foi lançado")
             }
-        setId(id + 1)
-        return itens.push(product)
+              setId(id + 1)
+              return itens.push(product)
     };
-
+    function verifItemUP(product: TProduct) {
+        for (let i = 0; itens.length > i; i++)
+            if (product.item === itens[i].item && editId !== null) {
+                itens[i].amount = product.amount
+                itens[i].tItem = product.amount * product.valor
+                return  alert("Producto já foi lançado ! somente será atualizado a quantidade !")
+            }
+                deleteProduct()
+                setItens(itens)
+                return itens.push(product)
+    };
     function sumItens() {
         let sum = 0
         for (var i = 0; i < itens.length; i++) {
@@ -196,7 +196,9 @@ export function RegisterSale() {
             setStatusBtnSaleSubmit("Enviar")
         } else {
             updateProduct()
+            verifItemUP(product)
             sumItens()
+            openClearNewSale()
             setEditId(null)
             setPreco(0)
         }
@@ -226,7 +228,7 @@ export function RegisterSale() {
         } else {
             setStatusBtnSaleSubmit("Iniciar")
             if (itens.length === 0) {
-                alert("Informe ao menos um item e clique em Salvar !")
+                alert("Informe ao menos um item e clique em salvar !")
             } else {
                 alert("Seu pedido será gravado")
                 console.log(itens)
@@ -270,7 +272,7 @@ export function RegisterSale() {
                 }
             }
         }
-    }
+    };
 
     return (
         <>

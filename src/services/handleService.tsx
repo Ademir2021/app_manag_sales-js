@@ -1,3 +1,5 @@
+// import { useState } from 'react';
+
 import api from './api/api';
 
 export async function postRegister(object: any, route: string) {
@@ -14,3 +16,4 @@ export async function putUpdate(id: number, object: any, route: string) {
         })
         .catch(error => alert(error));
 };
+
