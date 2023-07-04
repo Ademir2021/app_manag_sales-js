@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { FormatDate } from "../../components/utils/formatDate";
-import { TProductRegister, RProductRegister, RProductUpdate } from "../../services/handleService";
+import { TProductRegister } from "./ProductRegister";
+import { postRegister, putUpdate } from "../../services/handleService";
 import { ProductValFields } from "../../components/utils/ValFields/ValFields";
 import { ProductFormUpdate } from "../../components/products/ProductFormUpdate";
 import { ProductList } from "../../components/products/ProductList";
@@ -10,6 +11,7 @@ import api from '../../services/api/api';
 import "../../App.css"
 
 export function ProductUpdate() {
+    const route = 'products'
     const [products, setProducts] = useState<TProductRegister[]>([])
     const [product, setProduct] = useState<TProductRegister>({
         id_product: 0,
@@ -38,13 +40,12 @@ export function ProductUpdate() {
         product.fk_sector = product_.fk_sector
         product.bar_code = product_.bar_code
         toggleDropdown()
-    }
+    };
 
     async function getProducts() {
         await api.get<TProductRegister[]>(`/products`)
             .then(response => {
-                const res: TProductRegister[] = response.data
-                setProducts(res)
+                setProducts(response.data)
             })
             .catch(error => alert(error));
     };
@@ -67,13 +68,13 @@ export function ProductUpdate() {
     async function handleSubmit(e: any) {
         e.preventDefault();
         if (ProductValFields(product)) {
-            RProductRegister(product);
+            postRegister(product, route);
         }
     };
     async function handleUpdate(e: Event) {
         e.preventDefault();
         if (ProductValFields(product)) {
-            RProductUpdate(product.id_product, product)
+            putUpdate(product.id_product, product, route)
         }
         getProducts()
     };
@@ -90,8 +91,7 @@ export function ProductUpdate() {
             bar_code: ''
         })
         alert("Digite um novo produto !!")
-    }
-
+    };
     return (
         <>
             <BackHome />
@@ -105,7 +105,8 @@ export function ProductUpdate() {
                 close={closeDropdown}
             >
                 {product}
-            </ProductFormUpdate>{products.length === 0 ? <p>Carregando ...</p> : (
+            </ProductFormUpdate>
+            {products.length === 0 ? <p>Carregando ...</p> : (
                 products.map((product: TProductRegister) => (
                     <ProductList
                         key={product.id_product}
@@ -124,6 +125,7 @@ export function ProductUpdate() {
                             listUpdate(product)}>Atualizar</div>}
                     />
                 )))}
+
         </>
     )
 }

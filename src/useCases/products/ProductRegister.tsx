@@ -2,9 +2,22 @@ import { useState } from "react";
 import { ProductForm } from '../../components/products/ProductForm';
 import { ProductValFields } from "../../components/utils/ValFields/ValFields";
 import { Dashboard } from "../dashboard/Dashboard";
-import { TProductRegister, RProductRegister } from "../../services/handleService";
+import { postRegister } from "../../services/handleService";
+
+export type TProductRegister = {
+    id_product: number;
+    created_at?: Date | any;
+    updated_at?: Date | any | null;
+    descric_product: string | number;
+    val_max_product: number;
+    val_min_product: number;
+    fk_brand: number;
+    fk_sector: number;
+    bar_code: string;
+};
 
 export function FormProduct() {
+    const route = 'products'
     const [product, setProduct] = useState<TProductRegister>({
         id_product: 0,
         descric_product: '',
@@ -22,7 +35,7 @@ export function FormProduct() {
     async function handleSubmit(e: any) {
         e.preventDefault();
         if (ProductValFields(product)) {
-          RProductRegister(product)
+          postRegister(product, route)
         }
     };
     return (

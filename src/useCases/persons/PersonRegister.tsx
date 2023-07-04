@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PersonForm } from '../../components/persons/PersonForm';
-import api from '../../services/api/api'
+import { postRegister } from "../../services/handleService";
 import { PersonsValFields } from '../../components/utils/crypt/Crypt';
 import { Dashboard } from "../dashboard/Dashboard";
 
@@ -17,7 +17,7 @@ export type TPersonRegister = {
   }
 
 export function FormPerson() {
-
+    const route = 'persons'
     const [person, setPerson] = useState<TPersonRegister>({
         name_pers: "",
         cpf_pers: "",
@@ -37,19 +37,12 @@ export function FormPerson() {
         setPerson(values => ({ ...values, [name]: value }))
     }
 
-    async function handlePerson() {
-        await api.post<TPersonRegister>('/persons', person)
-            .then(response => {
-                alert(response.data)
-            }).catch(error => alert(error))
-    };
-
     async function handleSubmit(e: any) {
         e.preventDefault();
         if (PersonsValFields(person)) {
             person.cpf_pers = person.cpf_pers.replace(/[..-]/g ,'')
             person.phone_pers = person.phone_pers.replace(/[()-]/g ,'')
-            handlePerson()
+            postRegister(person, route)
         }
     }
 

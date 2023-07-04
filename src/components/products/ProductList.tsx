@@ -10,7 +10,7 @@ type Props = {
     brand:number;
     sector:number;
     bar_code:string;
-    update:any;
+    update?:any;
 }
 
 export function ProductList(props: Props) {

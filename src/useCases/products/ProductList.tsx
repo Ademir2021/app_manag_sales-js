@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { FormatDate } from "../../components/utils/formatDate";
 import { ProductList } from "../../components/products/ProductList";
-import { TProductRegister } from "../../services/handleService";
-import {BackHome} from "../../components/utils/backHome/BackHome"
+import { TProductRegister } from "./ProductRegister";
+import { BackHome } from "../../components/utils/backHome/BackHome"
 import api from "../../services/api/api";
 
-export function ProductsList() {
 
+export function ProductsList() {
     const [products, setProducts] = useState<TProductRegister[]>([])
 
     const getProducts = async () => {
@@ -18,14 +18,14 @@ export function ProductsList() {
         } catch (err) {
             alert("error occurred !!" + err)
         }
-    }
+    };
     useEffect(() => {
         getProducts()
     }, [])
 
     return (
         <>
-            <BackHome/>
+            <BackHome />
             {products.length === 0 ? <p>Carregando...</p> : (
                 products.map((product: TProductRegister) => (
                     <ProductList
@@ -33,7 +33,7 @@ export function ProductsList() {
                         id={product.id_product}
                         created_at={FormatDate(product.created_at)}
                         updated_at={product.updated_at === null ?
-                        "não houve atualização":FormatDate(product.updated_at)}
+                            "não houve atualização" : FormatDate(product.updated_at)}
                         name={product.descric_product}
                         val_max={product.val_max_product}
                         val_min={product.val_min_product}
@@ -45,4 +45,5 @@ export function ProductsList() {
                 )))}
         </>
     )
+   
 }

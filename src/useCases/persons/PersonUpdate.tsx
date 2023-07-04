@@ -3,6 +3,7 @@ import { FormatDate } from "../../components/utils/formatDate";
 import { PersonFormUpdate } from "../../components/persons/PersonFormUpdate";
 import { PersonList } from "../../components/persons/PersonList";
 import { TPersonRegister } from './PersonRegister'
+import { postRegister, putUpdate } from "../../services/handleService";
 import { PersonsValFields } from "../../components/utils/crypt/Crypt";
 import { BackHome } from "../../components/utils/backHome/BackHome"
 import { AuthContext } from '../../context/auth'
@@ -11,6 +12,7 @@ import api from "../../services/api/api";
 import "../../App.css"
 
 export function PersonUpdate() {
+    const route = 'persons'
     const { user: isLogged }: any = useContext(AuthContext);
     const [persons, setPersons] = useState<TPersonRegister[]>([])
     const [person, setPerson] = useState<TPersonRegister>({
@@ -28,13 +30,12 @@ export function PersonUpdate() {
     const [dropdown, setDropdown] = useState<string>("");
     const modalRef = useRef<any>(null);
 
-    function listUpdate(id_person: number, name_pers: string,
-        cpf_pers: string, phone_pers: string, address_pers: string) {
-        person.id_person = id_person
-        person.name_pers = name_pers
-        person.cpf_pers = cpf_pers
-        person.phone_pers = phone_pers
-        person.address_pers = address_pers
+    function listUpdate(_person: TPersonRegister) {
+        person.id_person = _person.id_person
+        person.name_pers = _person.name_pers
+        person.cpf_pers = _person.cpf_pers
+        person.phone_pers = _person.phone_pers
+        person.address_pers = _person.address_pers
         getPersons()
         toggleDropdown()
     }
@@ -43,22 +44,7 @@ export function PersonUpdate() {
         const name = e.target.name;
         const value = e.target.value;
         setPerson(values => ({ ...values, [name]: value }))
-    }
-
-    async function registerPerson(): Promise<void> {
-        await api.post<TPersonRegister[]>('/persons', person)
-            .then(response => {
-                alert(response.data)
-            }).catch(error => console.log(error))
-    }
-
-    async function updatePerson(): Promise<void> {
-        await api.put<TPersonRegister>(`/persons/${person.id_person}`, person)
-            .then(response => {
-                alert(response.data)
-            })
-            .catch(error => alert(error))
-    }
+    };
 
     async function getPersons(): Promise<void> {
         await api.get<TPersonRegister[]>(`/person_users/${isLogged[0].id}`)
@@ -76,36 +62,36 @@ export function PersonUpdate() {
                     }
                 }
             })
-    }
+    };
 
-    if(person.fk_id_user === 0){ /** Busca Person somente 1 vez ! */
+    if (person.fk_id_user === 0) { /** Busca Person somente 1 vez ! */
         getPersons()
         person.fk_id_user = isLogged[0].id
     }
 
     useEffect(() => {
-    },[person.id_person] )
+    }, [person.id_person])
 
     async function handleSubmit(e: Event) {
         e.preventDefault();
         if (PersonsValFields(person)) {
             person.cpf_pers = person.cpf_pers.replace(/[..-]/g, '')
             person.phone_pers = person.phone_pers.replace(/[()-]/g, '')
-            registerPerson()
+            postRegister(person, route)
         } else {
             alert("Digite um novo usuário")
         }
-    }
+    };
 
     async function handleUpdate(e: Event) {
         e.preventDefault();
         if (PersonsValFields(person)) {
             person.cpf_pers = person.cpf_pers.replace(/[..-]/g, '')
             person.phone_pers = person.phone_pers.replace(/[()-]/g, '')
-            updatePerson()
+            putUpdate(person.id_person, person, route)
             getPersons()
         }
-    }
+    };
 
     async function handleDelete(e: Event) {
         e.preventDefault();
@@ -121,12 +107,10 @@ export function PersonUpdate() {
         })
         person.fk_id_user = isLogged[0].id
         alert("Digite um novo usuário !!")
-    }
-
+    };
     function toggleDropdown(): void {
         setDropdown("modal-show");
-    }
-
+    };
     function closeDropdown(e: Event) {
         e.stopPropagation();
         const contain = modalRef.current.contains(e.target);
@@ -134,8 +118,7 @@ export function PersonUpdate() {
             setDropdown("");
             document.body.removeEventListener("click", closeDropdown);
         }
-    }
-
+    };
     return (
         <>
             <PersonFormUpdate
@@ -157,7 +140,7 @@ export function PersonUpdate() {
                         id_person={person.id_person}
                         created_at={FormatDate(person.created_at)}
                         updated_at={person.updated_at === null ?
-                        "não houve atualização": (FormatDate(person.updated_at))}
+                            "não houve atualização" : (FormatDate(person.updated_at))}
                         name={person.name_pers}
                         phone={person.phone_pers}
                         address={person.address_pers}
@@ -165,8 +148,7 @@ export function PersonUpdate() {
                         id_user={person.fk_id_user}
                         filial={person.fk_name_filial}
                         update={<div onClick={() =>
-                            listUpdate(person.id_person, person.name_pers, person.phone_pers,
-                                person.address_pers, person.cpf_pers)}>Atualizar</div>}
+                            listUpdate(person)}>Atualizar</div>}
                     />
                 )))}
         </>
