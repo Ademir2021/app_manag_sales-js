@@ -110,24 +110,24 @@ export function RegisterSale() {
                 if (product.descric == products[i].id_product
                     || product.descric === products[i].bar_code
                     || product.descric === products[i].descric_product) {
-                    product.id = id
-                    product.item = products[i].id_product
-                    product.descric = products[i].descric_product
-                    product.valor = products[i].val_max_product
-                    product.tItem = product.amount * product.valor
+                    product.id = id;
+                    product.item = products[i].id_product;
+                    product.descric = products[i].descric_product;
+                    product.valor = products[i].val_max_product;
+                    product.tItem = product.amount * product.valor;
                 }
             }
         }
     };
     function updateListProduct(item: TItens) {
         setStatusBtnSaveUpdate("Atualizar")
-        setEditId(item.id)
-        product.id = item.id
-        product.item = item.item
-        product.descric = item.descric
-        product.amount = item.amount
-        product.valor = item.valor
-        product.tItem = item.amount * item.valor
+        setEditId(item.id);
+        product.id = item.id;
+        product.item = item.item;
+        product.descric = item.descric;
+        product.amount = item.amount;
+        product.valor = item.valor;
+        product.tItem = item.amount * item.valor;
     };
     function updateProduct() {
         for (let i = 0; products.length > i; i++) {
@@ -136,13 +136,11 @@ export function RegisterSale() {
                 if (product.descric == products[i].id_product
                     || product.descric === products[i].bar_code
                     || product.descric === products[i].descric_product) {
-                    let temp: any = ''
-                    product.id = editId
-                    product.item = products[i].id_product
-                    temp = products[i].descric_product
-                    product.descric = temp
-                    product.valor = products[i].val_max_product
-                    product.tItem = products[i].val_max_product * product.amount
+                    product.id = editId;
+                    product.item = products[i].id_product;
+                    product.descric = products[i].descric_product;
+                    product.valor = products[i].val_max_product;
+                    product.tItem = product.valor * product.amount;
                 }
             }
         }
@@ -158,24 +156,29 @@ export function RegisterSale() {
             }
         }
     };
+
     function verifItem(product: TProduct) {
-        for (let i = 0; itens.length > i; i++)
-            if (product.item === itens[i].item && editId == null) {
-              return  alert("Producto já foi lançado")
-            }
-              setId(id + 1)
-              return itens.push(product)
+        if (product.item !== 0) {
+            for (let i = 0; itens.length > i; i++)
+                if (product.item === itens[i].item && editId == null) {
+                    return alert("Producto já foi lançado")
+                }
+            setId(id + 1)
+            return itens.push(product)
+        } else {
+            alert("Item não existe")
+        }
     };
     function verifItemUP(product: TProduct) {
         for (let i = 0; itens.length > i; i++)
             if (product.item === itens[i].item && editId !== null) {
                 itens[i].amount = product.amount
                 itens[i].tItem = product.amount * product.valor
-                return  alert("Producto já foi lançado ! somente será atualizado a quantidade !")
+                return alert("Producto já foi lançado ! a quantidade é de " + product.amount + " item(s)")
             }
-                deleteProduct()
-                setItens(itens)
-                return itens.push(product)
+        deleteProduct()
+        setItens(itens)
+        return itens.push(product)
     };
     function sumItens() {
         let sum = 0
