@@ -186,7 +186,7 @@ export function RegisterSale() {
             sum += (itens[i].amount * itens[i].valor)
         }
         setTotalItens(sum)
-        return sum
+        return  sum
     };
 
     async function handleSaveUpdate(e: Event) {
@@ -240,7 +240,7 @@ export function RegisterSale() {
                 console.log(itens_store)
                 if (itens_store_res === null) {
                     localStorage.setItem("i", JSON.stringify(itens))
-                    localStorage.setItem("s", JSON.stringify(sumItens()))
+                    localStorage.setItem("s", JSON.stringify(sumItens().toFixed(2)))
                     alert("Pedido gravado com sucesso")
                     setTimeout(() => {
                         window.location.replace("/process_sale")

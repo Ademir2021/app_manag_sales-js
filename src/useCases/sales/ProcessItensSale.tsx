@@ -81,7 +81,7 @@ export function ProcessItensSale() {
             let totalNote = 0
             const limitDesc = (sale.disc_sale > sum * 0.10)
             totalNote += sum
-            totalNote -= sale.disc_sale
+            totalNote -= sale.disc_sale;
             if (limitDesc) {
                 alert("Desconto não autorizado")
             } else {
