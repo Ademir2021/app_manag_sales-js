@@ -34,7 +34,6 @@ type TSale = {
 }
 
 export function RegisterSale() {
-
     const [product, setProduct] = useState<TProduct>(
         { id: 0, item: 0, descric: "", valor: 0, amount: 1, tItem: 0 });
     const [products, setProducts] = useState<TProductRegister[]>([]);
@@ -101,24 +100,8 @@ export function RegisterSale() {
 
     useEffect(() => {
         getProducts()
-    }, [getProducts]);
+    }, [setProducts]);
 
-    function saveProduct() {
-        for (let i = 0; products.length > i; i++) {
-            setEditId(editId)
-            if (editId === null) {
-                if (product.descric == products[i].id_product
-                    || product.descric === products[i].bar_code
-                    || product.descric === products[i].descric_product) {
-                    product.id = id;
-                    product.item = products[i].id_product;
-                    product.descric = products[i].descric_product;
-                    product.valor = products[i].val_max_product;
-                    product.tItem = product.amount * product.valor;
-                }
-            }
-        }
-    };
     function updateListProduct(item: TItens) {
         setStatusBtnSaveUpdate("Atualizar")
         setEditId(item.id);
@@ -129,19 +112,20 @@ export function RegisterSale() {
         product.valor = item.valor;
         product.tItem = item.amount * item.valor;
     };
-    function updateProduct() {
+    function findProducts() {
         for (let i = 0; products.length > i; i++) {
-            setEditId(editId)
-            if (editId !== null) {
-                if (product.descric == products[i].id_product
-                    || product.descric === products[i].bar_code
-                    || product.descric === products[i].descric_product) {
+            if (product.descric == products[i].id_product
+                || product.descric === products[i].bar_code
+                || product.descric === products[i].descric_product) {
+                if (editId !== null) {
                     product.id = editId;
-                    product.item = products[i].id_product;
-                    product.descric = products[i].descric_product;
-                    product.valor = products[i].val_max_product;
-                    product.tItem = product.valor * product.amount;
+                } else {
+                    product.id = products[i].id_product
                 }
+                product.item = products[i].id_product;
+                product.descric = products[i].descric_product;
+                product.valor = products[i].val_max_product;
+                product.tItem = product.valor * product.amount;
             }
         }
     };
@@ -156,7 +140,6 @@ export function RegisterSale() {
             }
         }
     };
-
     function verifItem(product: TProduct) {
         if (product.item !== 0) {
             for (let i = 0; itens.length > i; i++)
@@ -176,9 +159,9 @@ export function RegisterSale() {
                 itens[i].tItem = product.amount * product.valor
                 return alert("Producto já foi lançado ! a quantidade é de " + product.amount + " item(s)")
             }
-        deleteProduct()
-        setItens(itens)
-        return itens.push(product)
+        deleteProduct();
+        setItens(itens);
+        return itens.push(product);
     };
     function sumItens() {
         let sum = 0
@@ -186,24 +169,23 @@ export function RegisterSale() {
             sum += (itens[i].amount * itens[i].valor)
         }
         setTotalItens(sum)
-        return  sum
+        return sum
     };
-
     async function handleSaveUpdate(e: Event) {
         e.preventDefault();
         if (editId === null) {
-            saveProduct()
-            verifItem(product)
-            sumItens()
-            openClearNewSale()
-            setStatusBtnSaleSubmit("Enviar")
+            findProducts();
+            verifItem(product);
+            sumItens();
+            openClearNewSale();
+            setStatusBtnSaleSubmit("Enviar");
         } else {
-            updateProduct()
-            verifItemUP(product)
-            sumItens()
-            openClearNewSale()
-            setEditId(null)
-            setPreco(0)
+            findProducts();
+            verifItemUP(product);
+            sumItens();
+            openClearNewSale();
+            setEditId(null);
+            setPreco(0);
         }
     };
 
@@ -213,12 +195,12 @@ export function RegisterSale() {
             if (window.confirm(
                 "Realmente deseja remover o Item de ID: "
                 + editId + " ?")) {
-                deleteProduct()
-                openClearNewSale()
+                deleteProduct();
+                openClearNewSale();
             }
         } else {
-            alert("Busque um novo item !")
-            openClearNewSale()
+            alert("Busque um novo item !");
+            openClearNewSale();
         }
     };
 
@@ -226,57 +208,40 @@ export function RegisterSale() {
         e.preventDefault();
         if (statusBtnSaleSubmit === "Iniciar") {
             itens.length === 0 ? alert("Iniciar compra !") :
-                openClearNewSale()
-            setStatusBtnSaleSubmit("Enviar")
+                openClearNewSale();
+            setStatusBtnSaleSubmit("Enviar");
         } else {
-            setStatusBtnSaleSubmit("Iniciar")
+            setStatusBtnSaleSubmit("Iniciar");
             if (itens.length === 0) {
-                alert("Informe ao menos um item e clique em salvar !")
+                alert("Informe ao menos um item e clique em salvar !");
             } else {
-                alert("Seu pedido será gravado")
-                console.log(itens)
-                const itens_store_res: [] | any = localStorage.getItem('i')
-                const itens_store = JSON.parse(itens_store_res)
-                console.log(itens_store)
+                alert("Seu pedido será gravado");
+                const itens_store_res: [] | any = localStorage.getItem('i');
                 if (itens_store_res === null) {
                     localStorage.setItem("i", JSON.stringify(itens))
-                    localStorage.setItem("s", JSON.stringify(sumItens().toFixed(2)))
+                    localStorage.setItem("s", JSON.stringify(sumItens().toFixed(2)));
                     alert("Pedido gravado com sucesso")
                     setTimeout(() => {
-                        window.location.replace("/process_sale")
-                    }, 1000)
+                        window.location.replace("/process_sale");
+                    }, 1000);
                 } else {
-                    alert("Aguarde retorno! existe um pedido  em aberto !")
+                    alert("Aguarde retorno! existe um pedido  em aberto !");
                 }
             }
         }
     };
-
     function openClearNewSale() {
         setProduct({ id: 0, item: 0, descric: '', valor: 0, amount: 1, tItem: 0 });
-        setStatusBtnSaveUpdate("Salvar")
-        setStatusBtnSaleSubmit("Iniciar")
-        setEditId(null)
-        setPreco(0)
+        setStatusBtnSaveUpdate("Salvar");
+        setStatusBtnSaleSubmit("Iniciar");
+        setEditId(null);
+        setPreco(0);
     };
-
     function searchItem(e: Event) {
-        e.preventDefault()
-        for (let i = 0; products.length > i; i++) {
-            if (editId === null || editId !== null) {
-                if (product.descric === products[i].id_product
-                    || product.descric === products[i].bar_code
-                    || product.descric === products[i].descric_product) {
-                    product.id = id
-                    product.item = products[i].id_product
-                    product.descric = products[i].descric_product
-                    product.valor = products[i].val_max_product
-                    setPreco(product.valor)
-                }
-            }
-        }
+        e.preventDefault();
+        findProducts();
+        setPreco(product.valor);
     };
-
     return (
         <>
             <BackHome />

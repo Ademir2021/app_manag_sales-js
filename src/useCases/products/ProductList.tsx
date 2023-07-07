@@ -5,7 +5,6 @@ import { TProductRegister } from "./ProductRegister";
 import { BackHome } from "../../components/utils/backHome/BackHome"
 import api from "../../services/api/api";
 
-
 export function ProductsList() {
     const [products, setProducts] = useState<TProductRegister[]>([])
 
