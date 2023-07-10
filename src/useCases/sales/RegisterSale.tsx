@@ -264,7 +264,7 @@ export function RegisterSale() {
                 statusBtnSaveUpdate={statusBtnSaveUpdate}
                 statusBtnSaleSubmit={statusBtnSaleSubmit}
                 item_img={itemImg}
-                totalItens={totalItens <= 0 ? '' : "Total " + currencyFormat(totalItens)}
+                totalItens={totalItens <= 0 ? '' : "SubTotal " + currencyFormat(totalItens)}
                 loadItens={itens.length === 0 ?
                     <strong style={{ color: "blue" }} >Carregando...</strong> : (
                         itens.map((item: TItens) => (
