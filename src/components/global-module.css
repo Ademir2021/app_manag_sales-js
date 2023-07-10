@@ -5,23 +5,29 @@
     justify-content: center;
     margin: 1rem;
 }
-
 .main_ {
-    width: 25.5rem;
+    width: 35rem;
     height: 30rem;
-    padding: 2rem 2rem;
-    background-color: rgb(103, 108, 107);
+    /* flex-wrap: nowrap; */
+    padding: 1rem 2rem;
+    background-color:rgb(131, 131, 141);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1rem;
     color:rgba(7, 17, 7, 0.987);
-    border-radius: 1rem;
-    border:gray 0.2rem solid;
+    border-radius: 0.3rem;
+    border:green 0.1rem solid;
+}
+
+@media screen and (max-width:768px) {
+    .main_{
+        width: 25.4rem;
+        /* flex-wrap: nowrap; */
+    }
 }
 
 .form_ {
     position: relative;
 }
-
 .container-modal_{
     display: flex;
     flex-direction: column;

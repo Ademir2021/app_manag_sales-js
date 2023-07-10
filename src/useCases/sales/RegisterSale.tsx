@@ -2,20 +2,12 @@ import { useState, useEffect, useCallback } from "react";
 import { RegisterSaleForm } from "../../components/sales/RegisterSaleForm";
 import { Itens } from "../../components/sales/Itens";
 import { TProductRegister } from "../products/ProductRegister";
-import { BackHome } from "../../components/utils/backHome/BackHome";
+import { Dashboard } from "../dashboard/Dashboard";
 import { currencyFormat } from "../../components/utils/currentFormat/CurrentFormat";
 import api from "../../services/api/api";
 
 import "../../App.css"
 
-type TProduct = {
-    id: number;
-    item: number;
-    descric: string | number;
-    valor: number;
-    amount: number;
-    tItem: number;
-};
 type TItens = {
     id: number;
     item: number;
@@ -34,7 +26,7 @@ type TSale = {
 }
 
 export function RegisterSale() {
-    const [product, setProduct] = useState<TProduct>(
+    const [product, setProduct] = useState<TItens>(
         { id: 0, item: 0, descric: "", valor: 0, amount: 1, tItem: 0 });
     const [products, setProducts] = useState<TProductRegister[]>([]);
     const [itens, setItens] = useState<TItens[]>([]);
@@ -48,7 +40,8 @@ export function RegisterSale() {
     let [totalItens, setTotalItens] = useState<number>(0)
     const [statusBtnSaleSubmit, setStatusBtnSaleSubmit] = useState<"Iniciar" | "Enviar">("Iniciar");
     const [statusBtnSaveUpdate, setStatusBtnSaveUpdate] = useState<"Salvar" | "Atualizar">("Salvar");
-
+    const [itemImg, setIemImg] = useState<string>('./img/img_itens/sale_init.png')
+   
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -81,11 +74,11 @@ export function RegisterSale() {
                 console.log("error occurred !" + err)
             }
         }
-    }, [setSale]);
+    },[setSale]);
 
     useEffect(() => {
         getSale()
-    }, [getSale]);
+    },);
 
     const getProducts = useCallback(async () => {
         try {
@@ -100,10 +93,10 @@ export function RegisterSale() {
 
     useEffect(() => {
         getProducts()
-    }, [setProducts]);
+    },[setProduct]);
 
     function updateListProduct(item: TItens) {
-        setStatusBtnSaveUpdate("Atualizar")
+        setStatusBtnSaveUpdate("Atualizar");
         setEditId(item.id);
         product.id = item.id;
         product.item = item.item;
@@ -111,6 +104,11 @@ export function RegisterSale() {
         product.amount = item.amount;
         product.valor = item.valor;
         product.tItem = item.amount * item.valor;
+        if(product.id === null){
+            setIemImg('./img/img_itens/sale_avatar.png')
+        }else{
+        findProducts();
+        }
     };
     function findProducts() {
         for (let i = 0; products.length > i; i++) {
@@ -120,12 +118,17 @@ export function RegisterSale() {
                 if (editId !== null) {
                     product.id = editId;
                 } else {
-                    product.id = products[i].id_product
+                    product.id = id;
                 }
                 product.item = products[i].id_product;
                 product.descric = products[i].descric_product;
                 product.valor = products[i].val_max_product;
                 product.tItem = product.valor * product.amount;
+                if(products[i].id_product === null){
+                    setIemImg('./img/img_itens/sale_avatar.png')
+                }else{
+                setIemImg('./img/img_itens/'+products[i].id_product+".jpg");
+                }
             }
         }
     };
@@ -140,19 +143,19 @@ export function RegisterSale() {
             }
         }
     };
-    function verifItem(product: TProduct) {
+    function verifItem(product: TItens) {
         if (product.item !== 0) {
             for (let i = 0; itens.length > i; i++)
                 if (product.item === itens[i].item && editId == null) {
                     return alert("Producto já foi lançado")
                 }
-            setId(id + 1)
+            setId(id + 1);
             return itens.push(product)
         } else {
             alert("Item não existe")
         }
     };
-    function verifItemUP(product: TProduct) {
+    function verifItemUP(product: TItens) {
         for (let i = 0; itens.length > i; i++)
             if (product.item === itens[i].item && editId !== null) {
                 itens[i].amount = product.amount
@@ -171,7 +174,7 @@ export function RegisterSale() {
         setTotalItens(sum)
         return sum
     };
-    async function handleSaveUpdate(e: Event) {
+    function handleSaveUpdate(e: Event) {
         e.preventDefault();
         if (editId === null) {
             findProducts();
@@ -189,7 +192,7 @@ export function RegisterSale() {
         }
     };
 
-    async function handleDelete(e: Event) {
+    function handleDelete(e: Event) {
         e.preventDefault();
         if (editId !== null) {
             if (window.confirm(
@@ -203,7 +206,6 @@ export function RegisterSale() {
             openClearNewSale();
         }
     };
-
     function handleSubmit(e: Event) {
         e.preventDefault();
         if (statusBtnSaleSubmit === "Iniciar") {
@@ -236,6 +238,7 @@ export function RegisterSale() {
         setStatusBtnSaleSubmit("Iniciar");
         setEditId(null);
         setPreco(0);
+        setIemImg('./img/img_itens/sale_avatar.png')
     };
     function searchItem(e: Event) {
         e.preventDefault();
@@ -244,7 +247,7 @@ export function RegisterSale() {
     };
     return (
         <>
-            <BackHome />
+            <Dashboard />
             <RegisterSaleForm
                 handleChange={handleChange}
                 handleSaveUpdate={handleSaveUpdate}
@@ -256,10 +259,11 @@ export function RegisterSale() {
                         {product.descric_product}</option>))}
                 </select>}
                 item={(product.descric)}
-                amount={product.amount <= 0 ? '' : product.amount}
+                amount={product.amount <= 1 ? '' : product.amount}
                 valor={preco <= 0 ? '' : ' X ' + preco}
                 statusBtnSaveUpdate={statusBtnSaveUpdate}
                 statusBtnSaleSubmit={statusBtnSaleSubmit}
+                item_img={itemImg}
                 totalItens={totalItens <= 0 ? '' : "Total " + currencyFormat(totalItens)}
                 loadItens={itens.length === 0 ?
                     <strong style={{ color: "blue" }} >Carregando...</strong> : (
@@ -272,10 +276,9 @@ export function RegisterSale() {
                                 amount={item.amount}
                                 valor={currencyFormat(item.valor)}
                                 tItem={currencyFormat(item.tItem)}
-                                editar={<div onClick={() =>
+                                editar={<strong onClick={() =>
                                     updateListProduct(item)}>
-                                    <a style={{ textDecoration: 'none' }}
-                                        href="#">Atualizar</a></div>}
+                                   <a href="#">Editar</a></strong>}
                             />
                         )))}
             >

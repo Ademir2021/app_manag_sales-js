@@ -1,39 +1,64 @@
-.container-list-itens{
+.container-list-itens {
     display: flex;
-    width: 18.7rem;
-    height: 3.1rem;
-    margin-top: 1px;
+    width: 31rem;
+    height: 1rem;
+    margin-top: -0.4rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 6vh;
 }
-
 .main-list-itens {
-    height: 3rem;
-    width: 26rem;
-    font-size: 0.8rem;
-    border: 1px rgba(225, 225, 235, 0.889) solid;
+    height: 2rem;
+    width: 34.9rem;
+    font-size: 0.7rem;
+    border: 0.1rem green solid;
     background-color: rgba(199, 217, 217, 0.559);
-    border-radius: 6px;
+    border-radius: 3px;
 }
-
 .form-itens {
-    padding: 2px 2px 2px 5px;
-    color:green;
+    padding: 7px 7px 7px 7px;
+    color: rgb(17, 18, 17);
     width: 27rem;
 }
+.form-itens strong a {
+    text-decoration: none;
+}
+@media screen and (max-width:768px) {
+    .container-list-itens{
+        display: flex;
+        width: 21rem;
+    }
+    .main-list-itens{
+        width: 25.4rem;
+    }
+    .sale-label-descric{
+        font-size: 2rem;
+    }
+}
 
-.load-list-itens{
+.item-img {
+    display: flex;
+    position: relative;
+    margin-top: -7.6rem;
+    width: 10rem;
+    height: 9rem;
+    left: -2rem;
+    top: 8rem;
+    border-radius: 4px;
+    background-color: gainsboro;
+    border: 0.1rem solid green;
+    cursor: pointer;
+}
+.load-list-itens {
     font-size: 12px;
     display: inline;
     position: relative;
-     border:none;
-     width: 99%;
-     left: 1rem;
-     top: 28rem;
+    border: none;
+    width: 99%;
+    left: 0rem;
+    top: 28rem;
 }
-
 .sale-save-update {
     position: absolute;
     width: 7rem;
@@ -43,144 +68,127 @@
     border: none;
     cursor: pointer;
 }
-
 .sale-save-update:hover {
     background-size: 3rem;
 }
-
 .sale-submit {
     position: absolute;
     width: 6rem;
     height: 2.2rem;
-    left: 15rem;
+    left: 17rem;
     top: 23rem;
     border: none;
     cursor: pointer;
 }
-
 .sale-submit:hover {
     background-size: 4rem;
 }
-
 .sale-delete {
     position: absolute;
     width: 6rem;
     height: 2.2rem;
-    left: 0rem;
+    left: -2rem;
     top: 23rem;
     border: none;
     cursor: pointer;
 }
-
 .sale-delete:hover {
     background-size: 2rem;
 }
-
 :root {
-    --label--color:rgba(5, 19, 5, 0.987);
-    --label--font-family:Arial;
-    --label--font-size:1.5rem;
+    --label--color: rgba(16, 17, 16, 0.987);
+    --label--font-family: Arial;
+    --label--font-size: 1.6rem;
 }
-
 .sale-label-descric {
     position: absolute;
-    width: 18rem;
-    left: 0rem;
-    top: 9rem;
-    font-family:var(--label--font-family);
-    color:var(--label--color);
-    font-size:var(--label--font-size);
+    width: 38rem;
+    left: -2rem;
+    top: 8.9rem;
+    font-family: var(--label--font-family);
+    color: var(--label--color);
+    font-size: var(--label--font-size);
 }
-
 .sale-label-amount {
     position: absolute;
     width: 18rem;
-    left: 0rem;
-    top: 14rem;
-    font-family:var(--label--font-family);
-    color:var(--label--color);
-    font-size:var(--label--font-size);
+    left: 12rem;
+    top: 0rem;
+    font-family: var(--label--font-family);
+    color: var(--label--color);
+    font-size: var(--label--font-size);
 }
-
-.sale-label-total-itens{
+.sale-label-total-itens {
     position: absolute;
     width: 19rem;
-    left: 0rem;
+    left: -1.8rem;
     top: 19rem;
-    font-family:var(--label--font-family);
-    color:var(--label--color);
-    font-size:var(--label--font-size);
+    font-family: var(--label--font-family);
+    color: var(--label--color);
+    font-size: var(--label--font-size);
 }
-
-.sale-label-valor{
+.sale-label-valor {
     position: absolute;
     width: 18rem;
-    left: 2rem;
-    top: 14rem;
-    font-family:var(--label--font-family);
-    color:var(--label--color);
-    font-size:var(--label--font-size);
+    left: 14rem;
+    top: 0rem;
+    font-family: var(--label--font-family);
+    color: var(--label--color);
+    font-size: var(--label--font-size);
 }
-
 .sale-input-descric {
     position: absolute;
-    width: 21rem;
+    width: 24.7rem;
     height: 2.4rem;
-    left: 0rem;
-    top: 4rem;
+    left: -1.8rem;
+    top: 14rem;
     cursor: pointer;
 }
-
 .sale-input-amount {
     position: absolute;
     width: 5rem;
-    height:2rem;
-    left: 16rem;
-    top: 7rem;
+    height: 2.1rem;
+    left: 18rem;
+    top: 17rem;
     cursor: pointer;
 }
-
 .sale-input-val-max {
     position: absolute;
     width: 6rem;
     height: 2rem;
-    left: 15rem;
-    top: 18rem;
+    left: 16.9rem;
+    top: 11.7rem;
     cursor: pointer;
 }
-
-.sale-input-id{
+.sale-input-id {
     position: absolute;
     width: 3rem;
     height: 2rem;
-    left: 0rem;
-    top: 1.6rem;
+    left: 10rem;
+    top: 11.7rem;
     cursor: pointer;
 
 }
-
-.sale-input-item{
+.sale-input-item {
     position: absolute;
     width: 3rem;
     height: 2rem;
-    left: 3rem;
-    top: 1.6rem;
+    left: 13.5rem;
+    top: 11.7rem;
     cursor: pointer;
 
 }
-
-.sale-search-item{
+.sale-search-item {
     position: absolute;
     font-size: 0.8rem;
-    border:none;
+    border: none;
     width: 6rem;
     height: 2rem;
-    left: 15rem;
-    top:20.5rem;
+    left: 17rem;
+    top: 20.5rem;
     cursor: pointer;
 }
-
-.sale-input-disc_sale{
+.sale-input-disc_sale {
     position: absolute;
     width: 7rem;
     height: 2rem;
@@ -188,23 +196,21 @@
     top: 15rem;
     cursor: pointer;
 }
-
-.sale-input-payment-sale{
+.sale-input-payment-sale {
     position: absolute;
     width: 7rem;
-    height:2rem;
+    height: 2rem;
     left: 0rem;
     top: 18rem;
     cursor: pointer;
 }
-
-.sale-send-sale{
+.sale-send-sale {
     position: absolute;
     width: 9rem;
     height: 3rem;
     left: 0rem;
     top: 22rem;
     cursor: pointer;
-    border:none;
+    border: none;
     border-radius: 0.3rem;
 }

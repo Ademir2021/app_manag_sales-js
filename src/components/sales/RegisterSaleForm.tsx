@@ -16,6 +16,7 @@ type TRegisterSaleForm = {
   statusBtnSaleSubmit:"Iniciar" | "Enviar";
   loadItens:string | any;
   totalItens:number | string;
+  item_img:any;
 }
 
 export function RegisterSaleForm({
@@ -33,12 +34,14 @@ export function RegisterSaleForm({
   statusBtnSaleSubmit,
   loadItens,
   totalItens,
+  item_img
 }: TRegisterSaleForm) {
 
   return (
       <div className="container_">
         <div className="main_">
-          <div>Check out de controle de Vendas</div>
+          {/* <div>Check out de controle de Vendas</div> */}
+          <img className='item-img' src={item_img} alt='image'></img>
           <div className='form_'>
             <form onSubmit={handleSaveUpdate}>
               <label className='sale-label-descric'>{item}</label>
@@ -66,7 +69,7 @@ export function RegisterSaleForm({
                <input className='sale-input-id'
                 type="text"
                 name="id"
-                value={children.id }
+                value={children.id || "ID"}
                 placeholder='ID'
                 onChange={handleChange}
                 disabled
@@ -74,15 +77,15 @@ export function RegisterSaleForm({
                <input className='sale-input-item'
                 type="text"
                 name="item"
-                value={children.item}
+                value={children.item || "Item"}
                 placeholder='Item'
                 onChange={handleChange}
                 disabled
               />
               <input className='sale-input-val-max'
-                type="number"
+                type="text"
                 name="valor"
-                value={children.tItem}
+                value={children.tItem || "Unitário"}
                 placeholder='Valor'
                 onChange={handleChange}
                 disabled
@@ -99,7 +102,7 @@ export function RegisterSaleForm({
               <button className='sale-delete'>Deletar</button>
             </form>
             <form onSubmit={handleSearchItem}>
-              <button className='sale-search-item'>Ver preço</button>
+              <button className='sale-search-item'>Buscar Item</button>
             </form>
           </div>
         </div>

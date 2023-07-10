@@ -1,13 +1,13 @@
 import './index.css'
-
+import "../assets/dist/css/bootstrap.min.css"
 type Props = {
-    id: number;
-    item: number;
+    id?: number;
+    item?: number;
     descric: string | number | "" | 0;
     amount: number;
     valor: number | string | "money";
     tItem: number | string | "money";
-    editar: any
+    editar: any;
 }
 
 export function Itens(props:Props){
@@ -15,13 +15,14 @@ export function Itens(props:Props){
     <div className='container-list-itens' >
         <div className='main-list-itens'>
         <div className='form-itens'>
-            <span>ID:{props.id} </span>
-            <span>Item:{props.item} </span>
-            <span>{props.descric} </span>
-            <span>{props.amount}</span>
-            <span>X{props.valor}</span>
-            <span>={props.tItem}</span>
-            <span><strong> {props.editar}</strong></span>
+            <strong> {props.id} </strong>
+            <strong> &#x2705; </strong>
+            <strong> Item {props.item} </strong>
+            <strong> {props.descric} </strong>
+            <strong> {props.amount} </strong>
+            <strong> X {props.valor} </strong>
+            <strong> = {props.tItem} </strong>
+            <strong className="bi bi-pencil-square">{props.editar}</strong>
         </div>
         </div>
     </div>

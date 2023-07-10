@@ -21,10 +21,14 @@ export function Dashboard() {
     const user = JSON.parse(res)
     const handleLogout = () => {
         logout()
-    }
-
+    };
     return (
         <>
+            {/* <header style={{ color: 'blue', padding: '0.5rem' }}>
+                <div>Dashboard</div>
+                <h1 style={{ color: "red", fontSize: "12px" }}>{"Cod. 0" + user[0].id + " " + user[0].username}</h1>
+                <h1><button style={{ color: 'blue', border: 'none', display: "flex" }} onClick={handleLogout}>Logout</button></h1>
+            </header> */}
             <NavBar
                 home={home}
                 register={register}
@@ -40,11 +44,7 @@ export function Dashboard() {
                 upPerson={upPerson}
                 uṕProduct={upProduct}
             />
-            <header style={{color:'blue', padding:'0.5rem'}}>
-            <strong>Dashboard</strong>
-           <p style={{color:"red", fontSize:"12px"}}>{"Cod. 0" + user[0].id +" "+ user[0].username}</p>
-            <button style={{color:'blue', border:'none'}} onClick={handleLogout}>Logout</button>
-            </header>
+
         </>
     )
 }
