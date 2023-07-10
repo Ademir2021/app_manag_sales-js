@@ -16,7 +16,7 @@ type TRegisterSaleForm = {
   statusBtnSaleSubmit:"Iniciar" | "Enviar";
   loadItens:string | any;
   totalItens:number | string;
-  item_img:any;
+  item_img:string;
 }
 
 export function RegisterSaleForm({
@@ -61,6 +61,8 @@ export function RegisterSaleForm({
               <input className='sale-input-amount'
                 type="number"
                 name="amount"
+                min='1'
+                max='99'
                 value={children.amount}
                 placeholder='Quant'
                 onChange={handleChange}
