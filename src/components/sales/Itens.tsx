@@ -1,8 +1,7 @@
 import './index.css'
-import "../assets/dist/css/bootstrap.min.css"
 type Props = {
-    id?: number;
-    item?: number;
+    id: number;
+    item: number;
     descric: string | number | "" | 0;
     amount: number;
     valor: number | string | "money";
@@ -22,7 +21,7 @@ export function Itens(props:Props){
             <strong> {props.amount} </strong>
             <strong> X {props.valor} </strong>
             <strong> = {props.tItem} </strong>
-            <strong className="bi bi-pencil-square">{props.editar}</strong>
+            <strong>{props.editar}</strong>
         </div>
         </div>
     </div>

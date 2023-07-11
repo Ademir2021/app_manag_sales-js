@@ -1,0 +1,46 @@
+.header-home{
+    display: flex;
+    left: 100%;
+    padding: 6px 6px 6px 6px;
+    margin: 0;
+}
+
+.header-home-fale-conosco{
+    display: flex;
+    color:blue;
+    position:relative;
+    top: 0rem;
+}
+.header-home-sub-total{
+    display:flex;
+    align-items: baseline;
+    position: absolute;
+    color:blue;
+    left:80%;
+    top: 0.5rem;
+
+}
+.header-home-carrinho{
+    display: flex;
+    position: absolute;
+    top: 0.4rem;
+    left:90%;
+    background-image: url("../../../public/img/carrinho_counter.png");
+    width: 42px;
+    height: 38px;
+}
+.header-home-counter{
+    display:flex;
+    position: absolute;
+    left:92%;
+    top: 0rem;
+    color:green;
+}
+@media screen and (max-width:768px) {
+    .header-home-sub-total{
+        left:60%;
+    }
+    .header-home-counter{
+        left:95%;
+    }
+}

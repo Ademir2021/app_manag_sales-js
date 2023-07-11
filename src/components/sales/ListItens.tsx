@@ -1,30 +1,26 @@
-import './styles.css'
+import './listItens.css'
 
-type TListItens = {
-    itens: any[];
-    editar: string | number | any
+type Props = {
+    id?: number;
+    item?: number;
+    descric: string | number | "" | 0;
+    amount?: number;
+    valor?: number | string | "money";
+    tItem?: number | string | "money";
+    editar?: any;
+    item_img?:string;
 }
-/**Para testes */
-export function ListItens(props: TListItens) { 
-                    
-    const editar = <></>
 
-    const content = props.itens.map((item) =>
-        <div className='container-list-itens' >
-            <div className='main-list-itens'>
-                <span key={item.id}>ID:{item.id} </span>
-                <span>Item:{item.id} </span>
-                <span>{item.descric} </span>
-                <span>{item.amount}</span>
-                <span>X{item.valor}</span>
-                <span>=R${item.tItem}</span>
-                <span><strong> {props.editar}</strong></span>
-            </div>
+export function ListItens(props:Props){
+    return(
+    <div className='container-itens'>
+        <div className='main-itens'>
+            <p> {props.id} </p>
+        <img className='itens-img' src={props.item_img} alt='Image'></img>
+            <p> {props.descric} </p>
+            <p> {props.valor} </p>
+            <p> {props.editar} </p>
         </div>
-    );
-    return (
-        <>
-            {content} {editar}
-        </>
-    );
+    </div>
+    )
 }

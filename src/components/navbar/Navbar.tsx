@@ -1,19 +1,23 @@
 import "../assets/dist/css/bootstrap.min.css"
 
 type PropsNavBar = {
-    home: string;
-    register: string;
-    update: string;
-    login: string;
-    sale: string
-    person: string;
-    product: string
-    listPerson: string;
-    listProduct: string;
-    listSale:string;
-    usersList:string;
-    upPerson:string;
-    uṕProduct:string;
+    home?: string;
+    register?: string;
+    update?: string;
+    login?: string;
+    sale?: string
+    person?: string;
+    product?: string
+    listPerson?: string;
+    listProduct?: string;
+    listSale?:string;
+    usersList?:string;
+    upPerson?:string;
+    uṕProduct?:string;
+    list?: HTMLSelectElement | HTMLOptionElement | any;
+    handleChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
+    handleSubmit?: React.FormEventHandler<HTMLFormElement> | undefined | any;
+    descric?:string;
 }
 
 export function NavBar(props: PropsNavBar): JSX.Element {
@@ -107,10 +111,13 @@ export function NavBar(props: PropsNavBar): JSX.Element {
                                 </ul>
                             </li>
                         </ul>
-                        <form className="d-flex mt-3 mt-lg-0" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" />
-                            <button className="btn btn-primary" type="submit">Pesquisar</button>
-                        </form>
+                        <form onSubmit={props.handleSubmit} className="d-flex mt-3 mt-lg-0" role="search">
+                            <datalist id='data-itens' >{props.list}</datalist>
+                            <input className="form-control me-2" type="search" placeholder="Pesquisar Produtos" aria-label="Search"
+                            list='data-itens' name='descric' value={props.descric}
+                            onChange={props.handleChange}/>
+                            <button className="btn btn-primary" type="submit">Buscar</button>
+                        </form >
                     </div>
                 </div>
             </div>
